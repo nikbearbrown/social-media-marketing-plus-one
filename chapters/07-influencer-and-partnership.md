@@ -4,212 +4,102 @@
 
 ---
 
-## Opening case
+A DTC supplement brand launching a women's prenatal line in 2024 bought one of the better influencer discovery platforms on the market, ran its brief through the tool's audience-fit classifier, and received a shortlist of fourteen micro-creators, each scoring above 80 on "lifestyle-wellness fit" and above 70 on "audience-demographic match." The team was under launch pressure. The shortlist looked clean. The outreach drafts auto-generated. They sent them.
 
-A Series-B DTC supplement brand — call it Vireo, ~$22M ARR, launching a women's prenatal line into a category dominated by three incumbents — bought a top-tier influencer discovery platform in Q2 2024 and onboarded its first cohort of 14 micro-creators through the tool's "audience-fit" classifier. (Illustrative composite; the failure pattern is documented across multiple agency post-mortems in *Modern Retail* and *Digiday* through 2023–2024.) The tool's classifier scored each creator above 80 on "lifestyle-wellness fit" and above 70 on "audience-demographic match." The shortlist looked clean. Outreach drafts auto-generated. The Vireo team — under launch pressure — sent them.
+Three things surfaced inside six weeks. Eleven of the fourteen creators had audiences that skewed toward fitness performance rather than family planning — the tool had matched on topical-content clusters like yoga, smoothies, and breathwork without weighting life-stage signals that any experienced reader would have caught in five minutes of scrolling. One creator had posted a since-deleted thread disputing the safety of a category-adjacent supplement; the tool's brand-safety classifier had not surfaced it because the thread had been deleted, though it persisted in screenshots circulating in wellness-skeptic communities. When that creator published a prenatal post, it became the flashpoint that pulled the campaign into a category controversy the brand had no infrastructure to handle. And the AI-drafted outreach emails — competent on every technical dimension — had produced a 6% reply rate against a category benchmark of 18–25%. Two of the three creators who did reply mentioned, unprompted, that the email felt automated.
 
-Three things surfaced inside six weeks.
-
-First, eleven of the fourteen creators had audiences that skewed heavily to a demographic the tool had labeled "women 25–44 wellness" but that in practice was "women 25–44 fitness performance" — a category whose buyers are, for product reasons, the wrong target for prenatal supplements. The tool was matching on topical-content clusters (yoga, smoothies, breathwork) without weighting *life-stage* signals (early-career fitness vs. family-planning) that an experienced reader would have caught in five minutes of scrolling. Second, one creator had posted a since-deleted thread eighteen months earlier disputing the safety of a category-adjacent supplement; the tool's brand-safety classifier had not surfaced it because the thread had been deleted but persisted in screenshots circulating in wellness-skeptic communities. A subsequent prenatal post from her became the small-volume flashpoint that pulled the campaign into a category controversy Vireo had no infrastructure to handle. Third, the AI-drafted outreach emails — competent on every dimension — had produced a 6% reply rate against a category benchmark of 18–25%. The drafts read as institutional. Two of the three creators who *did* reply mentioned, unprompted, that the email "felt automated."
-
-The campaign's measurable cost was the $180K booked spend and the months to recover positioning. The deeper cost was that Vireo's CMO concluded — wrongly, in the same direction the chapter is trying to push back against — that "influencer doesn't work for our category." It worked. The delegation did not.
-
-The lesson is the chapter's central claim. AI tools have become genuinely good at the front-end pattern work in influencer marketing. The fit read, the trajectory read, the relationship signal — currently require a human. A program that delegates the first and skips the second is structurally optimized to produce shortlists faster while losing campaigns more reliably.
+The campaign's measurable cost was the booked spend and the months spent recovering positioning. The deeper cost was that the CMO concluded influencer marketing didn't work for the category. It worked. The delegation did not.
 
 ---
 
-## The pattern-shaped work in this task (Delegate List)
+The failure has a precise structure, and understanding it is worth more than any list of tools or tactics. The influencer discovery platform did exactly what it was designed to do. It filtered a large candidate pool against demographic and topical filters, scored audience fit against stated criteria, and generated outreach copy. These are pattern-shaped tasks — structured inputs producing structured outputs according to transferable recipes — and current tools handle them well. What the tool could not do was read *fit* in the sense that actually determines whether a campaign works.
 
-Across the influencer workflow, the following pieces are pattern-shaped and AI handles them well today:
+Fit, in influencer marketing, is not demographic overlap. It is whether this creator's audience will plausibly act on a recommendation for this product in this moment, given everything you know about the category's current trust temperature, the audience's actual life stage and intent, and the creator's trajectory. The tool sees the last twenty posts and the follower demographics. You see those things too, but you also see what the comment section is doing, whether the creator is six months into a quiet reinvention, what your buyers were talking about at the last category event, and what happened to the last brand that tried to enter this space from this angle. None of that is in the classifier. All of it is in the fit read.
 
-1. **Discovery by audience demographic and topical content.** Filtering a longlist of two thousand candidate creators down to a working shortlist of fifteen against named filters — age, geography, language, content topic, engagement-rate floor. CreatorIQ, HypeAuditor, Modash, Grin, Aspire, Heepsy, and the platform-native marketplaces (TikTok Creator Marketplace, Meta Branded Content, YouTube BrandConnect, LinkedIn Thought Leader partnerships) all do this competently. This is genuine pattern work.
+The aphorism the chapter is built around: AI shortens the shortlist. It does not shorten the decision.
 
-2. **Audience-overlap calculation.** Computing the overlap between a creator's audience and your existing customer base, or between two candidate creators you're considering booking in sequence, to avoid paying twice for the same reach. The math is pattern-shaped and the tools do it reliably.
-
-3. **Fraud-signal detection.** Follower-growth anomalies, engagement-pod patterns, comment-bot signatures, geographic-distribution mismatches between claimed audience and actual followers. HypeAuditor's published methodology is the cleanest in this category; treat the score as a starting signal, not a verdict.
-
-4. **First-draft outreach.** Personalized first-contact emails and follow-ups. AI produces competent first drafts in seconds. The Guard is that the first draft is never the sent draft (more on this below).
-
-5. **Brief and contract first drafts.** A campaign brief or a contract scaffolded from a template — deliverables, posting cadence, usage rights window, exclusivity terms, kill fee, payment schedule — is pattern-shaped. AI fills the template; the human fills the negotiation.
-
-6. **Disclosure presence check.** Verifying that a submitted post contains "#ad" or the platform-equivalent disclosure in the visible portion of the caption (not buried below a "more" fold) is a mechanical check. AI does it reliably; the FTC's *Disclosures 101 for Social Media Influencers* (2019, updated through 2024) defines what visible means.
-
-7. **Campaign reporting.** Pulling reach, impressions, engagement, link clicks, code redemptions, and earned-media-value figures into a structured report. Pattern work.
-
-8. **Translation and localization of briefs.** First-pass translation of briefs for international creators. The Guard is idiomatic and cultural review by a native speaker before the brief is sent.
-
-Nothing on this list is the creative or the relationship work. All of it is mechanically structured input-to-structured output. Delegate it, log the output, move on.
+<!-- → [INFOGRAPHIC: two-stage funnel — AI stage: discovery, audience overlap calculation, fraud audit, outreach first drafts, contract scaffolding, disclosure presence check, campaign reporting; Human stage: fit reading, reputational forward-look, tier-and-mix strategy, negotiation, gray-zone disclosure calls, crisis decisions, relationship escalation; label the boundary between stages "the decision point AI cannot cross"] -->
 
 ---
 
-## The judgment-shaped work in this task (Guard List)
+The front-end pattern work in an influencer campaign is genuinely large, and getting it off the team's plate matters. A modern discovery platform can filter a longlist of two thousand candidates to a working shortlist of fifteen against named demographic, topical, and geographic filters in minutes. Audience-overlap calculation — computing how much of one creator's audience also follows another you've already booked, to avoid paying twice for the same reach — is arithmetic, and the tools do it reliably. Fraud-signal detection: follower-growth anomalies, engagement-pod patterns, comment-bot signatures. First-draft outreach emails and contract scaffolding from a template. Disclosure presence checks — verifying that a submitted post contains the required disclosure in the visible portion of the caption rather than buried below a fold. Campaign reporting. All of this is pattern-shaped and well within current capability.
 
-Influencer work currently requires a human for the following:
+None of it is the creative or the relationship work. All of it is mechanically structured input to structured output. The point is not that these tasks are trivial — collectively they represent a substantial fraction of the labor hours in a campaign cycle — but that they can be delegated without meaningful loss of quality, and doing them by hand is burning time that the judgment work actually requires.
 
-1. **Fit reading.** Whether this creator's audience will plausibly buy *this product* in *this moment* given the cultural air around the category. AI summarizes the last twenty posts; the manager forms a view about whether the audience will sit still for a tenth such post or treat it as a category breach. This is where the Vireo campaign failed.
-
-2. **Reputational forward-look.** Whether the creator is a risk in the next 12–24 months. AI flags surfaced past behavior; it cannot read trajectory — a creator's developing political stance, a deteriorating personal life, a category they are drifting toward. The forward-look is a judgment call against incomplete information.
-
-3. **Tier-and-mix strategy.** The portfolio shape — one mega-creator versus forty nano-creators versus a mid-tier ambassador program — is strategy. AI can present the tier-distribution data. Hughes, Swaminathan & Brooks (2019, *Journal of Marketing* 83(5)) is the rigorous causal-inference source for the claim that the effective creator type depends on campaign goal (awareness vs. trial vs. conversion). The choice is yours.
-
-4. **Negotiation past the template.** Rate, exclusivity, usage rights window, content approval, posting cadence, kill fee, whitelisting, contract length. The skeleton is pattern; the negotiation is reading the agent's signal, knowing when to concede on usage rights to win on exclusivity, knowing when to walk.
-
-5. **Disclosure-adequacy calls in gray zones.** Gifted product with no contract. An employee posting in personal capacity. A long-standing personal relationship with a brand owner. 16 CFR Part 255 (revised 2023) tightened liability up to the advertiser — not only the creator — and explicit on "incentivized reviews." The clear cases are pattern-checkable. The gray cases sit with brand and counsel.
-
-6. **Crisis call during a live campaign.** A creator's prior content surfaces. The creator's behavior during the campaign goes sideways. The creator publicly criticizes the brand. Pull, pause, distance, let run — the call belongs entirely on the human side. (Chapter 8 covers the monitoring layer.)
-
-7. **Relationship escalation.** Who becomes an ambassador. Who gets the personal note after a campaign. Who gets a renewal at the right moment. Who gets quietly retired. Compounding returns in serious programs live here, and AI involvement beyond a CRM reminder currently subtracts value.
-
-8. **The brand-voice override.** When AI's polished outreach reads as institutional and the creator will only respond to a human. The Vireo 6% reply rate is the cost of skipping this Guard.
-
-The aphorism the chapter wants you to carry: *AI shortens the shortlist. It does not shorten the decision.*
+The front-end failure in the prenatal campaign was not that the team used a discovery tool. It was that they skipped the step between the tool's shortlist and the outreach. That step — watching three to five pieces of content per creator, reading the comment section, checking prior brand partnerships for tonal alignment, asking whether the life-stage signals match the target — is load-bearing. It is where eleven of the fourteen bad bookings would have been caught. It takes two to four hours for a shortlist of twenty-five. No tool currently does it. The team that skips it is not moving faster; it is producing a shorter list of worse decisions more efficiently.
 
 ---
 
-## Do This with AI
+The fit read is the most important judgment call in influencer marketing and the one most likely to be displaced by tool confidence. It is worth examining why it currently requires a human, because the reason is not obvious.
 
-A working protocol for one campaign cycle end-to-end. Adjust to your stack; the boundary is the durable element.
+Audience demographics are measurable. Topical content is classifiable. Engagement rates are computable. The tools that perform these measurements and classifications have gotten quite good at them. So why can't fit be computed from demographics plus topical fit plus engagement rate?
 
-**Step 1 — Brief and target spec (human, 30 min).** Before opening any tool, write a one-page brief: product, target buyer (life-stage and intent, not just demographic), campaign goal (awareness / trial / conversion / retention — pick one primary), budget, timeline, deliverables, disclosure requirements per jurisdiction. Define the *anti-target* — who you do not want the message reaching. This page becomes the input to every tool downstream.
+Because the dimension that actually determines fit — whether the audience will act — is not the audience's demographic profile. It is the audience's *relationship* to the creator's recommendations. That relationship is a function of how long the creator has been making recommendations in this category, whether the audience treats the creator as a trusted source or an entertainment source, whether the creator's voice in sponsored content reads as consistent with their editorial voice or as a jarring shift, and whether the specific product being offered fits the audience's self-image at the moment they encounter it. Life-stage is one proxy for this — a fitness-performance audience in their late twenties is demographically similar to a family-planning audience in their early thirties, and a classifier that does not weight life-stage signals cannot distinguish them. But life-stage is only one dimension of fit. The rest requires reading.
 
-**Step 2 — Discovery (AI, 30 min).** Run the brief through the discovery tool. Set filters tightly. The De Veirman, Cauberghe & Hudders (2017, *International Journal of Advertising* 36(5)) experimental finding — engagement rate declines roughly log-linearly with follower count — is the empirical anchor for not defaulting to mega-tier. Pull a longlist of 150–300 candidates.
-
-**Step 3 — Audience overlap and fraud audit (AI, 20 min).** Run the longlist through the audit. Eliminate creators with audience overlap above your threshold against creators you've already booked. Flag fraud signals above the tool's "likely" threshold but do not yet remove — the score is starting signal, not verdict.
-
-**Step 4 — Shortlist review (human, 2–4 hours).** This is the load-bearing step. For each of the top 25–40 candidates: watch three to five recent pieces of content end-to-end. Read the comment section. Check prior brand partnerships for tonal alignment. Open the audience-composition view and ask whether the *life-stage* signals match your target. Form an opinion. Cut to 12–15.
-
-**Step 5 — Outreach drafting (AI + human, 45 min).** Generate first-draft outreach emails per creator. Then — without exception — rewrite the first sentence and add one piece of specific, demonstrably-human content: reference to a specific recent post (named, with what you noticed), plausible reason the brand chose them (not "we love your content"), one non-template sentence. The Lou & Yuan (2019, *Journal of Interactive Advertising* 19(1)) empirical work on message credibility supports that the human signal is read by recipients; the reply-rate data backs it up.
-
-**Step 6 — Contract scaffolding (AI + human + counsel, variable).** AI drafts the contract from your template. The human negotiates rate, exclusivity, usage rights window, content approval rights, FTC disclosure language, kill fee. Counsel reviews any language touching liability allocation under 16 CFR Part 255.
-
-**Step 7 — Brief delivery and content review (human, per creator).** AI-drafted brief, human-reviewed for the specific creator. When the creator submits content, AI checks disclosure presence and platform compliance. Human reviews for tonal alignment, factual accuracy on product claims, and the disclosure-adequacy question in any gray case.
-
-**Step 8 — Reporting and post-campaign (AI + human, 60 min).** AI pulls the report. Human writes the narrative: what worked, what didn't, who to renew, who to retire, who to escalate to ambassador. The narrative is the artifact the program compounds on.
-
-**Worked output — Vireo, take two.** The same brief, with the human-shortlist step inserted between discovery and outreach. Of the 14 creators booked in the original campaign, eight would not have survived the shortlist review (life-stage mismatch). Of the six remaining, two would have triggered an additional reputational forward-look (one historic post in a related category controversy). Outreach drafts get rewritten with the first-sentence rule. The reply rate climbs into category benchmark; the surviving creator set delivers against the actual target. Same budget, materially different campaign.
+De Veirman, Cauberghe, and Hudders found in 2017 that engagement rate declines roughly log-linearly with follower count — the empirical basis for the case that micro-creators often outperform mega-creators on a per-dollar basis for trial and conversion goals. But this finding only holds when the micro-creator's audience is actually in the market for the product. The creator with fifty thousand highly engaged followers in the wrong life stage will underperform the creator with two hundred thousand moderate-engagement followers in the right one. The tool can give you the engagement rate. The life-stage read is yours.
 
 ---
 
-## Never Do This with AI
+There is a second judgment category in influencer work that is distinct from fit and equally resistant to automation: the reputational forward-look.
 
-Seven failure modes specifically about the AI-in-influencer-work boundary.
+Brand-safety classifiers surface documented past behavior. A creator who has publicly disparaged a category-adjacent product, a creator whose comments section has developed a hostile-to-brand-partnerships subculture, a creator who posted something inflammatory two years ago that still circulates in screenshots — these are signals the tools flag with varying reliability. The deleted thread in the prenatal case was a classifier failure, and that kind of failure is part of the landscape you have to accept when using these tools.
 
-1. **Never trust the tool's "brand-safe" or "audience-fit" score as the final filter.** The classifiers are noisy on the dimensions that matter — life-stage, value alignment, trajectory, deleted-but-circulating content. Use them to surface candidates, not to certify them.
+But the forward-look is not about past behavior at all. It is about trajectory. A creator who has been producing consistent wellness content for three years is one kind of bet. A creator who is six months into a visible drift toward political commentary, or whose personal life has become the content, or who is quietly building toward a category pivot, is a different kind of bet — and the difference is not in the historical data. It is in your read of where the creator is going. That read requires watching enough content, in enough context, to form a view about direction rather than position.
 
-2. **Never send an AI-drafted outreach email unedited.** The 6% reply rate is the documentable cost. The relationship signal is the entire ask of the first email.
+No classifier produces a trajectory score because trajectory is not a function of past posts. It is an inference about the gap between where the creator is and where they are heading, which requires a kind of judgment that is not computable from the training data the tools have access to. This is not a temporary limitation of current classifiers. It is a structural feature of what trajectory means.
 
-3. **Never let AI make the tier-and-mix call.** It can compare scenarios; it cannot weigh your specific reputational appetite, your team's relationship-management capacity, or your category's trust requirements.
-
-4. **Never use AI to ghost-write content for the creator.** Beyond the obvious authenticity collapse, the FTC's 2023 revisions to 16 CFR Part 255 have tightened the framing on what counts as misleading. A creator endorsement written by the brand and posted in the creator's voice without disclosure of the authorship arrangement is a documented enforcement risk. The Sunday Riley 2019 FTC consent order is the cleanest analog — that case was employee astroturfing, but the principle (brand-authored "endorsement" is deceptive) generalizes.
-
-5. **Never delegate the disclosure-adequacy call in a gray case.** The CMA (UK) 2023 *Hidden ads* principles, the FTC's 2019/2024 guidance, the EU DSA Article 26, and the AI Act Articles 50/52 each treat ambiguous cases slightly differently. The disposition is yours and counsel's, not the model's.
-
-6. **Never let AI run the relationship maintenance.** A CRM reminder is fine. An AI-drafted "happy birthday" or "miss you, want to renew?" message in your name lands as exactly what it is, and the creator economy is small enough that the same person hears about it from three other brands within a week.
-
-7. **Never partner with a synthetic creator without an explicit position on disclosure.** AI-generated personalities — Lil Miquela (Brud, 2016–present), Lu do Magalu (Magazine Luiza, Brazil, 2003–present, AI-augmented), Imma (Aww Inc., Japan, 2018–present) — are an established category. FTC guidance as of late 2024 is suggestive but not yet prescriptive. [verify currency] The chapter's stance: if you partner with a synthetic, disclose the synthesis explicitly in the post itself, not only in the contract.
+<!-- → [TABLE: four-column table — judgment category / what AI can provide / what AI cannot provide / cost of skipping the human step; rows: fit read, reputational forward-look, outreach signal, negotiation, disclosure gray zones, crisis call, relationship escalation] -->
 
 ---
 
-## The +1
+The outreach failure in the prenatal campaign is worth a separate examination, because it illustrates a subtler delegation error than the fit failure.
 
-What you bring that AI cannot, in this chapter specifically:
+The AI-drafted emails were competent. They referenced the creator's content category, they stated the brand's value proposition, they proposed terms. By any surface measure they were adequate first-contact emails. And yet they produced a 6% reply rate against an 18–25% category benchmark, and two of the three creators who responded named the automation.
 
-- **The fit read.** AI can describe the creator's last twenty posts. You decide whether your audience will sit still for a tenth. That decision draws on knowledge AI does not have: your category's current trust temperature, your buyer's actual life-stage, the comment-section vibe you noticed under a competitor's recent post, the conversation you had at a category conference last month. None of that is in the tool.
+What the emails lacked was not information. They lacked the signal that a specific person, at a specific brand, had looked at this specific creator and decided she was the right fit. That signal — the evidence of discretion — is exactly what the outreach email is supposed to carry. The creator economy is a reputation economy, and creators evaluate outreach in part on whether the brand appears to have actually read their work. An email that could have been sent to any of two thousand candidates on a platform's database is evidence that the brand did not read their work. The 6% reply rate is the cost of that evidence.
 
-- **The trajectory read.** A creator who has been steady for three years is one bet. A creator who is six months into a public reinvention is another. AI flags surfaced behavior; you read trajectory.
+The fix is not a better AI prompt. It is a structural commitment to rewriting the first sentence — not editing for clarity, but replacing the AI's generic opener with a sentence that no one could have written without actually watching the content. A reference to a specific post, named and described. One sentence about what the brand noticed. This is the Lou and Yuan finding from 2019 on message credibility: recipient evaluation is sensitive to perceived authenticity of outreach, and perceived authenticity is most legible in the opening lines. The first sentence is where the creator decides whether a human is actually there.
 
-- **The first sentence of the first email.** The relationship signal. The Hughes et al. and De Veirman work both back the empirical claim that recipient evaluation is sensitive to perceived authenticity of outreach. The first sentence is where the audience for that signal is the creator herself.
-
-- **The negotiation read.** When the creator's agent makes a strange demand, when the rate card shifts mid-conversation, when the exclusivity ask comes with a request you didn't anticipate. Pattern templates do not cover negotiation; negotiation is reading.
-
-- **The disclosure judgment in gray cases.** The FTC, CMA, EU AI Act, India's ASCI guidelines, Brazil's CONAR — each treats ambiguous behavior slightly differently. The disposition requires a human who carries the legal exposure.
-
-- **The relationship escalation call.** Who becomes an ambassador. Who you write to personally. Who you let go without saying so. Compounding returns live here. Madam C. J. Walker's documented sales-agent network — roughly 40,000 Black women in the U.S. and Caribbean by 1919 — ran on exactly this kind of personal vetting and retraining at scale. The tools were ledgers and letters; the practice was relationship-intensive at the human layer.
-
-The chapter's +1 is the practitioner who runs discovery hard and then runs judgment harder. The Vireo failure was not "AI is bad." It was a team that bought the front-end pattern work and skipped the middle, where the campaign actually lives.
+This matters beyond reply rates. The first email is the first moment of the relationship. Influencer programs that produce compounding returns over time are built on the relational capital accumulated in those early exchanges. A program that starts with an email that reads as automated is starting from zero relational capital even if the creator eventually responds. The cost of the first-sentence failure is paid over the life of the relationship, not just in the reply rate.
 
 ---
 
-## Claude Code prompt
+Negotiation sits in the same category as outreach but is more obviously judgment-shaped. A contract template for a sponsored post has a known structure: deliverables, posting cadence, usage rights window, exclusivity terms, kill fee, payment schedule, FTC disclosure language. AI drafts the skeleton reliably. What AI cannot do is read the negotiation.
 
-*Illustrative — likely to age within 12–18 months. The structure is the durable element; the specific tool invocation will change.*
+When the creator's agent makes a strange demand, the question is not what the demand says on its face but what it signals about the creator's priorities. A push for a longer exclusivity-free period might signal an adjacent deal in progress. An unusual ask on content-approval rights might signal a past bad experience with a brand that overreached. An unexpected flexibility on rate might signal that the creator wants this brand association more than the money. None of these signals are available in the contract text. They emerge in the conversation, and reading them is what determines whether you get the deal you want or the deal that was available to anyone who showed up.
 
-```text
-You are helping me run a Chapter 7 influencer shortlist review
-for a campaign. This is the AI-shortens-the-shortlist /
-human-makes-the-call workflow from Social Media Marketing +1.
-
-CONTEXT
-- Brand: [name, category, stage]
-- Product to feature: [specific]
-- Campaign goal (pick one primary): [awareness / trial / conversion / retention]
-- Target buyer: [demographic + life-stage + intent, not just demographic]
-- Anti-target: [who you do not want the message reaching]
-- Budget: [total + per-creator range]
-- Jurisdictions in scope: [US / UK / EU / other — disclosure regimes vary]
-- Tier mix: [nano / micro / mid / macro / mega — current portfolio shape]
-
-CANDIDATE INPUTS (paste below)
-- Up to 25 candidate creator handles + platform
-- For each: follower count, recent engagement rate, top three
-  content topics, primary geography, primary language
-
-DO THIS
-1. For each candidate, produce a structured fit assessment:
-   - Topical fit (high / medium / low) with reasoning
-   - Audience-demographic match against my target (with the
-     caveat that audience composition data is tool-reported)
-   - Three observable life-stage signals from recent content
-   - One reputational forward-look note (any visible drift,
-     category-controversial stances, or trajectory signal)
-   - Disclosure-track-record observation (do prior brand posts
-     contain visible #ad / #sponsored in the first two lines)
-
-2. Mark each candidate with one of three flags:
-   - GO TO HUMAN REVIEW — looks promising, human must watch
-     content and read comments before booking
-   - HOLD — surface-level disqualifier (audience-demographic
-     mismatch, fraud signal, prior category controversy)
-   - HUMAN JUDGMENT REQUIRED — interesting but the call
-     requires brand-specific context the tool does not have
-
-3. For the GO TO HUMAN REVIEW set, propose three specific
-   questions I should answer before booking each one.
-
-DO NOT
-- Make the booking call.
-- Score "brand safety" as a single number; describe
-  observable signals.
-- Generate outreach emails in this run (separate prompt).
-- Cite FTC, CMA, or EU rules as binding. Cite as starting
-  points I will verify with counsel.
-
-OUTPUT FORMAT
-- Markdown.
-- One section per candidate.
-- A summary table at the end: handle / flag / top reason.
-- A footer noting which candidates I have not yet personally
-  watched content from.
-```
-
-A companion outreach-drafting prompt sits in your prompt library, structured the same way: it produces a first draft with three explicit blanks marked HUMAN FILL — specific recent work to reference, specific reason the brand chose them, one non-template sentence. The first sentence is never AI default. Ever.
+The same logic applies to the disclosure-adequacy calls in gray cases. The FTC's 16 CFR Part 255, revised in 2023, tightened liability up to the advertiser — not only the creator — for inadequate disclosure of material connections. The clear cases are pattern-checkable: paid sponsorship requires visible disclosure above the fold. The gray cases — gifted product without contract, an employee posting in personal capacity, a longstanding personal relationship with the brand owner — require a human who carries the legal exposure to make the call. The model can flag the ambiguity. The decision is yours and counsel's.
 
 ---
 
-## Key terms
+Relationship escalation is the last judgment category, and the most compounding.
 
-**Material connection.** The FTC's term (16 CFR Part 255) for any relationship between an endorser and a brand — payment, free product, employment, family — that a reasonable consumer would want to know about when evaluating the endorsement. The presence of a material connection triggers the disclosure requirement; the disposition in ambiguous cases (gifted product without contract, longstanding personal relationship) is a judgment call.
+Most influencer programs manage creators transactionally — a campaign, a payment, a thank-you email. Programs that build durable competitive advantage do something different: they identify which creators are candidates for escalation to ambassador status, invest in those relationships personally and specifically, and treat the ambassador cohort as a long-term asset rather than a recurring line item. The difference in outcomes between these two approaches is well-documented in the practitioner literature, though the causal mechanisms are harder to isolate than the correlation.
 
-**Earned media value (EMV).** A modeled estimate of what equivalent paid-media reach would have cost, applied to the organic reach a creator post generated. Useful as a benchmark across campaigns; not useful as a hard ROI metric, because the model assumptions vary across vendors.
+AI has no role in this except as a CRM reminder. The escalation call — who deserves the personal note, who gets the early product access, who gets the renewal conversation at the right moment, who gets quietly retired without making it an event — is a relational judgment. It draws on everything you know about the creator's current priorities, their audience's relationship to the category, the brand's current strategic needs, and what the creator's engagement with the brand over the past year actually felt like. A CRM prompt can remind you when the contract anniversary occurs. It cannot tell you whether the anniversary is worth celebrating.
 
-**Engagement rate.** Engagements (likes, comments, shares, saves) divided by follower count, usually reported per post or as a 30-day median. The De Veirman et al. (2017) finding that engagement declines log-linearly with follower count is the empirical anchor for the micro-creator case.
+The prenatal campaign's deepest failure was not the shortlist or the outreach or the missing forward-look. It was that a team under launch pressure treated the discovery tool's output as a substitute for the judgment layer, rather than as a faster way to get to the judgment layer. The tool did its job. The team skipped theirs.
 
-**Audience overlap.** The percentage of one creator's audience that also follows another creator (or your brand's own account). High overlap means you are paying twice for the same reach.
+The corrected workflow is not more sophisticated tooling. It is the same tools, followed by two to four hours of human shortlist review, followed by first-sentence rewrites on every outreach email. The repair is structural. The tools shorten the path to the decision. The decision still requires a person.
 
-**Whitelisting.** A contractual arrangement allowing the brand to run paid ads through the creator's account handle. Materially extends the creative's reach; materially changes the legal exposure and the disclosure requirements; needs explicit contract language.
+<!-- → [IMAGE: campaign cycle diagram — brief (human) → discovery and audit (AI) → shortlist review (human, load-bearing) → outreach with first-sentence rule (AI draft + human rewrite) → contract negotiation (AI skeleton + human) → content review (AI checks + human judgment) → reporting (AI) + narrative (human); label each stage with time estimate] -->
 
-**Usage rights window.** The period during which the brand may re-use the creator's content in other channels (paid social, OOH, web, email). Standard windows range from 30 days to perpetual; perpetual costs materially more and is often unnecessary.
+---
 
-**Kill fee.** The payment owed to a creator if the brand cancels the engagement after the contract is signed but before content is delivered. Industry-standard ranges 25–50% of the contract value depending on stage.
+## LLM Exercises
 
-**Exclusivity clause.** A contractual prohibition on the creator promoting competing brands for a specified period. Tighter exclusivity costs more; over-broad exclusivity (entire category for a year) is a frequent over-ask that gets renegotiated.
+**Exercise 1 — Generate and examine**
+
+Run the Chapter 7 shortlist-review prompt on a real or hypothetical candidate set of ten to fifteen creators in a category you know. Review the model's fit assessments and flags. Find the three candidates where your own read of fit differs most from the model's. For each disagreement: is the model's error in the demographic data, the topical classification, or the life-stage read? What does the pattern of errors tell you about where your specific category's fit judgment actually lives?
+
+**Exercise 2 — Apply to known context**
+
+Take one past influencer campaign — yours, a competitor's, or a documented case study — and reconstruct the shortlist-to-outreach sequence. At each step, identify which work was pattern-shaped and which required judgment. Where in the sequence did the campaign's success or failure actually get determined? Does that location match where the team spent the most time?
+
+**Exercise 3 — Stress-test a specific claim**
+
+The chapter claims that the first sentence of an outreach email is where the creator evaluates whether a human is actually present. Write three versions of an outreach email for the same hypothetical campaign: (a) pure AI default, (b) AI draft with only the first sentence rewritten by a human, (c) fully human-written. Show the three versions to someone with influencer marketing experience and ask them to rank by perceived authenticity. Does the ranking match the chapter's prediction? What features of the first sentence drive the evaluation?
+
+**Exercise 4 — Draft or audit a professional deliverable**
+
+Using the Chapter 7 protocol, produce a one-page influencer brief for a real or hypothetical campaign. The brief should specify: product, target buyer with life-stage and intent (not just demographic), campaign goal, anti-target, budget, timeline, deliverables, disclosure requirements by jurisdiction, and the criteria for the human shortlist review step. Draft a first version using a language model, then audit it against what you would actually need in the room during the shortlist review. Mark every place where the brief's framing would lead the discovery tool to surface the wrong candidates.
