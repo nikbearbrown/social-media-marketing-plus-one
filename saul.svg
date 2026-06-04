@@ -1,0 +1,136 @@
+<!--
+  Four-Cadence Practice (Daily / Weekly / Monthly / Quarterly)
+  Book: Social Media Marketing plus One
+  Chapter: 12-the-plus-one-practice
+  Figure: 03
+  Type: cadence
+  Generated: 2026-05-27
+  Source: pantry/12-the-plus-one-practice-cajal.md
+-->
+<svg viewBox="0 0 700 480" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="fig-title-03">
+  <title id="fig-title-03">Four-Cadence Practice</title>
+  <desc>Four columns lay out the daily, weekly, monthly, and quarterly cadences of the +1 practice with two to three specific actions each. The quarterly column is in red — the load-bearing cadence that holds the rest together.</desc>
+  <metadata><cajal:figure xmlns:cajal="https://bearbrown.ai/cajal/1.0" book="Social Media Marketing plus One" book-slug="social-media-marketing-plus-one" chapter="12-the-plus-one-practice" figure-number="03" figure-title="Four-Cadence Practice" figure-slug="four-cadence-practice" figure-type="cadence" priority="Critical" author="Nik Bear Brown Milivoje Davidovic" date-generated="2026-05-27" source-file="pantry/12-the-plus-one-practice-cajal.md"/></metadata>
+  <defs><marker id="arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#2a1a0e"/></marker></defs>
+  <rect x="0" y="0" width="700" height="480" fill="#FFFFFF"/>
+  <text x="32" y="36" font-family="'EB Garamond', 'Garamond', Georgia, serif" font-size="14" fill="#2a1a0e">Four-cadence practice — what the +1 looks like across time scales</text>
+  <text x="32" y="56" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="11" fill="#545454">Daily logs feed weekly audits feed monthly map revisions feed the quarterly re-audit. The quarterly is load-bearing.</text>
+
+  <!-- Time axis above columns -->
+  <line x1="80" y1="92" x2="660" y2="92" stroke="#2a1a0e" stroke-width="1" marker-end="url(#arrow)"/>
+  <text x="78" y="86" text-anchor="end" font-family="'Inter', sans-serif" font-size="10" fill="#545454">shorter</text>
+
+  <!-- Column dimensions: 4 cols, each ~145 wide, x = 40 + i*155 -->
+
+  <!-- Column 1: Daily -->
+  <rect x="40" y="104" width="145" height="316" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="0.75"/>
+  <rect x="40" y="104" width="145" height="42" fill="#787878"/>
+  <text x="112" y="125" text-anchor="middle" font-family="'Inter', sans-serif" font-size="13" font-weight="700" fill="#FFFFFF">Daily</text>
+  <text x="112" y="140" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="10" fill="#FFFFFF">5–10 min</text>
+
+  <circle cx="56" cy="166" r="3" fill="#2a1a0e"/>
+  <text x="65" y="170" font-family="'Inter', sans-serif" font-size="10" font-weight="700" fill="#2a1a0e">Classify before</text>
+  <text x="65" y="183" font-family="'Inter', sans-serif" font-size="10" font-weight="700" fill="#2a1a0e">each task</text>
+  <text x="65" y="197" font-family="'Inter', sans-serif" font-size="9" fill="#545454">Delegate, Guard,</text>
+  <text x="65" y="208" font-family="'Inter', sans-serif" font-size="9" fill="#545454">or boundary?</text>
+
+  <circle cx="56" cy="234" r="3" fill="#2a1a0e"/>
+  <text x="65" y="238" font-family="'Inter', sans-serif" font-size="10" font-weight="700" fill="#2a1a0e">Five-sentence</text>
+  <text x="65" y="251" font-family="'Inter', sans-serif" font-size="10" font-weight="700" fill="#2a1a0e">delegation log</text>
+  <text x="65" y="265" font-family="'Inter', sans-serif" font-size="9" fill="#545454">what / why / what</text>
+  <text x="65" y="276" font-family="'Inter', sans-serif" font-size="9" fill="#545454">surprised you</text>
+
+  <circle cx="56" cy="302" r="3" fill="#2a1a0e"/>
+  <text x="65" y="306" font-family="'Inter', sans-serif" font-size="10" font-weight="700" fill="#2a1a0e">Note any</text>
+  <text x="65" y="319" font-family="'Inter', sans-serif" font-size="10" font-weight="700" fill="#2a1a0e">boundary case</text>
+  <text x="65" y="333" font-family="'Inter', sans-serif" font-size="9" fill="#545454">for the weekly</text>
+  <text x="65" y="344" font-family="'Inter', sans-serif" font-size="9" fill="#545454">review</text>
+
+  <text x="112" y="404" text-anchor="middle" font-family="'Inter', sans-serif" font-size="9" font-style="italic" fill="#787878">minimum viable —</text>
+  <text x="112" y="416" text-anchor="middle" font-family="'Inter', sans-serif" font-size="9" font-style="italic" fill="#787878">the survival floor</text>
+
+  <!-- Column 2: Weekly -->
+  <rect x="195" y="104" width="145" height="316" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="0.75"/>
+  <rect x="195" y="104" width="145" height="42" fill="#787878"/>
+  <text x="267" y="125" text-anchor="middle" font-family="'Inter', sans-serif" font-size="13" font-weight="700" fill="#FFFFFF">Weekly</text>
+  <text x="267" y="140" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="10" fill="#FFFFFF">15–30 min</text>
+
+  <circle cx="211" cy="166" r="3" fill="#2a1a0e"/>
+  <text x="220" y="170" font-family="'Inter', sans-serif" font-size="10" font-weight="700" fill="#2a1a0e">Inbox + routing</text>
+  <text x="220" y="183" font-family="'Inter', sans-serif" font-size="10" font-weight="700" fill="#2a1a0e">audit</text>
+  <text x="220" y="197" font-family="'Inter', sans-serif" font-size="9" fill="#545454">where did AI carry?</text>
+  <text x="220" y="208" font-family="'Inter', sans-serif" font-size="9" fill="#545454">where did it slip?</text>
+
+  <circle cx="211" cy="234" r="3" fill="#2a1a0e"/>
+  <text x="220" y="238" font-family="'Inter', sans-serif" font-size="10" font-weight="700" fill="#2a1a0e">Re-read the</text>
+  <text x="220" y="251" font-family="'Inter', sans-serif" font-size="10" font-weight="700" fill="#2a1a0e">week's logs</text>
+  <text x="220" y="265" font-family="'Inter', sans-serif" font-size="9" fill="#545454">tag patterns,</text>
+  <text x="220" y="276" font-family="'Inter', sans-serif" font-size="9" fill="#545454">flag drift</text>
+
+  <circle cx="211" cy="302" r="3" fill="#2a1a0e"/>
+  <text x="220" y="306" font-family="'Inter', sans-serif" font-size="10" font-weight="700" fill="#2a1a0e">Triage boundary</text>
+  <text x="220" y="319" font-family="'Inter', sans-serif" font-size="10" font-weight="700" fill="#2a1a0e">cases</text>
+  <text x="220" y="333" font-family="'Inter', sans-serif" font-size="9" fill="#545454">decide for now,</text>
+  <text x="220" y="344" font-family="'Inter', sans-serif" font-size="9" fill="#545454">flag for monthly</text>
+
+  <!-- Column 3: Monthly -->
+  <rect x="350" y="104" width="145" height="316" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="0.75"/>
+  <rect x="350" y="104" width="145" height="42" fill="#787878"/>
+  <text x="422" y="125" text-anchor="middle" font-family="'Inter', sans-serif" font-size="13" font-weight="700" fill="#FFFFFF">Monthly</text>
+  <text x="422" y="140" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="10" fill="#FFFFFF">45–60 min</text>
+
+  <circle cx="366" cy="166" r="3" fill="#2a1a0e"/>
+  <text x="375" y="170" font-family="'Inter', sans-serif" font-size="10" font-weight="700" fill="#2a1a0e">Delegate /</text>
+  <text x="375" y="183" font-family="'Inter', sans-serif" font-size="10" font-weight="700" fill="#2a1a0e">Guard map check</text>
+  <text x="375" y="197" font-family="'Inter', sans-serif" font-size="9" fill="#545454">does the live map</text>
+  <text x="375" y="208" font-family="'Inter', sans-serif" font-size="9" fill="#545454">still match practice?</text>
+
+  <circle cx="366" cy="234" r="3" fill="#2a1a0e"/>
+  <text x="375" y="238" font-family="'Inter', sans-serif" font-size="10" font-weight="700" fill="#2a1a0e">Promote /</text>
+  <text x="375" y="251" font-family="'Inter', sans-serif" font-size="10" font-weight="700" fill="#2a1a0e">demote items</text>
+  <text x="375" y="265" font-family="'Inter', sans-serif" font-size="9" fill="#545454">boundary cases that</text>
+  <text x="375" y="276" font-family="'Inter', sans-serif" font-size="9" fill="#545454">have earned a side</text>
+
+  <circle cx="366" cy="302" r="3" fill="#2a1a0e"/>
+  <text x="375" y="306" font-family="'Inter', sans-serif" font-size="10" font-weight="700" fill="#2a1a0e">Tool audit</text>
+  <text x="375" y="319" font-family="'Inter', sans-serif" font-size="10" font-weight="700" fill="#2a1a0e">touch-up</text>
+  <text x="375" y="333" font-family="'Inter', sans-serif" font-size="9" fill="#545454">prompt library,</text>
+  <text x="375" y="344" font-family="'Inter', sans-serif" font-size="9" fill="#545454">model swaps</text>
+
+  <text x="422" y="404" text-anchor="middle" font-family="'Inter', sans-serif" font-size="9" font-style="italic" fill="#787878">minimum viable —</text>
+  <text x="422" y="416" text-anchor="middle" font-family="'Inter', sans-serif" font-size="9" font-style="italic" fill="#787878">the survival floor</text>
+
+  <!-- Column 4: Quarterly — RED, load-bearing -->
+  <rect x="505" y="104" width="155" height="316" fill="#C8102E" opacity="0.10" stroke="#C8102E" stroke-width="1.5"/>
+  <rect x="505" y="104" width="155" height="42" fill="#C8102E"/>
+  <text x="582" y="125" text-anchor="middle" font-family="'Inter', sans-serif" font-size="13" font-weight="700" fill="#FFFFFF">Quarterly</text>
+  <text x="582" y="140" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="10" fill="#FFFFFF">3–4 hours</text>
+
+  <circle cx="521" cy="166" r="3" fill="#C8102E"/>
+  <text x="530" y="170" font-family="'Inter', sans-serif" font-size="10" font-weight="700" fill="#2a1a0e">Full re-audit</text>
+  <text x="530" y="183" font-family="'Inter', sans-serif" font-size="10" font-weight="700" fill="#2a1a0e">of two weeks of work</text>
+  <text x="530" y="197" font-family="'Inter', sans-serif" font-size="9" fill="#545454">inventory, classify,</text>
+  <text x="530" y="208" font-family="'Inter', sans-serif" font-size="9" fill="#545454">tool-audit, draft lists</text>
+
+  <circle cx="521" cy="234" r="3" fill="#C8102E"/>
+  <text x="530" y="238" font-family="'Inter', sans-serif" font-size="10" font-weight="700" fill="#2a1a0e">Capability-watch</text>
+  <text x="530" y="251" font-family="'Inter', sans-serif" font-size="10" font-weight="700" fill="#2a1a0e">forecast review</text>
+  <text x="530" y="265" font-family="'Inter', sans-serif" font-size="9" fill="#545454">re-read forecast</text>
+  <text x="530" y="276" font-family="'Inter', sans-serif" font-size="9" fill="#545454">register, mark hits</text>
+
+  <circle cx="521" cy="302" r="3" fill="#C8102E"/>
+  <text x="530" y="306" font-family="'Inter', sans-serif" font-size="10" font-weight="700" fill="#2a1a0e">Write-up + socialize</text>
+  <text x="530" y="319" font-family="'Inter', sans-serif" font-size="10" font-weight="700" fill="#2a1a0e">with stakeholders</text>
+  <text x="530" y="333" font-family="'Inter', sans-serif" font-size="9" fill="#545454">compliance,</text>
+  <text x="530" y="344" font-family="'Inter', sans-serif" font-size="9" fill="#545454">leadership, peers</text>
+
+  <text x="582" y="386" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10" font-weight="700" fill="#C8102E">load-bearing cadence</text>
+  <text x="582" y="402" text-anchor="middle" font-family="'Inter', sans-serif" font-size="9" font-style="italic" fill="#C8102E">skip this and the</text>
+  <text x="582" y="414" text-anchor="middle" font-family="'Inter', sans-serif" font-size="9" font-style="italic" fill="#C8102E">other three drift</text>
+
+  <text x="660" y="86" text-anchor="end" font-family="'Inter', sans-serif" font-size="10" fill="#545454">longer</text>
+
+  <!-- Footer minimum viable note -->
+  <line x1="40" y1="438" x2="660" y2="438" stroke="#D4D4D4" stroke-width="0.75"/>
+  <text x="40" y="458" font-family="'Inter', sans-serif" font-size="10" fill="#545454">Minimum viable: daily five-sentence log plus monthly map check. Everything else is layered on once the floor is stable.</text>
+</svg>

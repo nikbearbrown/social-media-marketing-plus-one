@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 2560" width="1600" height="2560" preserveAspectRatio="xMidYMid meet" shape-rendering="geometricPrecision">
+  <g id="background"><rect x="0" y="0" width="1600" height="2560" fill="#2B2B2B"/></g>
+  <g id="symbol-fragments" transform="rotate(3, 800, 830)">
+    <polygon points="269,308 382,312 365,396 252,392" fill="#F5F0E8"/>
+    <polygon points="713,1421 881,1444 859,1476 709,1456" fill="#F5F0E8"/>
+    <polygon points="285,222 430,232 426,276 285,275" fill="#F5F0E8"/>
+    <polygon points="287,188 540,201 513,330 274,312" fill="#F5F0E8"/>
+    <polygon points="249,229 450,236 422,285 240,277" fill="#F5F0E8"/>
+    <polygon points="520,313 678,321 659,430 517,416" fill="#F5F0E8"/>
+    <polygon points="249,1118 322,1123 310,1264 235,1263" fill="#F5F0E8"/>
+    <polygon points="1334,207 1571,226 1554,265 1324,254" fill="#F5F0E8"/>
+    <polygon points="245,183 415,199 409,341 230,331" fill="#F5F0E8"/>
+    <polygon points="1166,473 1237,495 1222,539 1154,536" fill="#F5F0E8"/>
+    <polygon points="259,228 478,229 468,279 250,274" fill="#F5F0E8"/>
+    <polygon points="645,237 899,241 872,356 629,341" fill="#F5F0E8"/>
+    <polygon points="224,178 327,188 310,246 219,244" fill="#F5F0E8"/>
+    <polygon points="591,213 670,214 647,266 573,251" fill="#F5C518"/>
+  </g>
+  <g id="title-letterforms">
+    <text x="120" y="1482" font-family="Arial Black, Arial, sans-serif" font-size="190" font-weight="900" letter-spacing="0" fill="#F5F0E8">SOCIAL</text>
+    <text x="120" y="1678" font-family="Arial Black, Arial, sans-serif" font-size="190" font-weight="900" letter-spacing="0" fill="#F5C518">MEDIA</text>
+    <text x="120" y="1874" font-family="Arial Black, Arial, sans-serif" font-size="190" font-weight="900" letter-spacing="0" fill="#F5F0E8" textLength="1300" lengthAdjust="spacingAndGlyphs">MARKETING</text>
+    <text x="120" y="2070" font-family="Arial Black, Arial, sans-serif" font-size="190" font-weight="900" letter-spacing="0" fill="#F5F0E8" textLength="1300" lengthAdjust="spacingAndGlyphs">PLUS ONE</text>
+  </g>
+</svg>
