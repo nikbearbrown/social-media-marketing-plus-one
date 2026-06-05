@@ -1,0 +1,92 @@
+<!--
+  Vosoughi — false-news velocity vs correction velocity
+  Book: Social Media Marketing plus One
+  Chapter: 08-crisis-and-reputation
+  Figure: 03
+  Type: LINE
+  Generated: 2026-05-27
+  Source: pantry/08-crisis-and-reputation-cajal.md
+-->
+<svg viewBox="0 0 700 480" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="fig-title-03 fig-desc-03">
+  <title id="fig-title-03">Vosoughi — false-news velocity vs correction velocity</title>
+  <desc id="fig-desc-03">Two cumulative-reach curves over time. The upper red curve is the false-news cascade climbing rapidly (Vosoughi et al. 2018). The lower gray curve is the correction climbing more slowly with persistent lag. At t=12h the gap is enormous; the United late-correction at t=36h arrives after the story has reached most viewers.</desc>
+  <metadata><cajal:figure xmlns:cajal="https://bearbrown.ai/cajal/1.0" book="Social Media Marketing plus One" book-slug="social-media-marketing-plus-one" chapter="08-crisis-and-reputation" figure-number="03" figure-title="Vosoughi — false-news velocity vs correction velocity" figure-slug="vosoughi-false-news-velocity" figure-type="LINE" priority="Critical" author="Nik Bear Brown Milivoje Davidovic" date-generated="2026-05-27" source-file="pantry/08-crisis-and-reputation-cajal.md"/></metadata>
+  <defs><marker id="arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#2a1a0e"/></marker></defs>
+  <rect x="0" y="0" width="700" height="480" fill="#FFFFFF"/>
+  <text x="32" y="36" font-family="'EB Garamond', 'Garamond', Georgia, serif" font-size="14" fill="#2a1a0e">False news travels six times faster than its correction</text>
+  <text x="32" y="56" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="11" fill="#545454">Vosoughi, Roy &amp; Aral (2018, Science) on Twitter cascades — applied to the United Flight 3411 timeline.</text>
+
+  <!-- Plot region -->
+  <rect x="80" y="90" width="560" height="290" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="0.75"/>
+
+  <!-- Axes -->
+  <line x1="80" y1="90" x2="80" y2="380" stroke="#2a1a0e" stroke-width="1"/>
+  <line x1="80" y1="380" x2="640" y2="380" stroke="#2a1a0e" stroke-width="1"/>
+
+  <!-- Y-axis title -->
+  <text x="36" y="235" font-family="'Inter', sans-serif" font-size="11" fill="#545454" transform="rotate(-90 36 235)" text-anchor="middle">cumulative reach (views, log scale)</text>
+
+  <!-- X-axis title -->
+  <text x="360" y="412" text-anchor="middle" font-family="'Inter', sans-serif" font-size="12" fill="#2a1a0e">hours since the cascade started</text>
+
+  <!-- X axis tick labels — t=0, 4h, 12h, 24h, 36h, 72h -->
+  <g font-family="'JetBrains Mono', monospace" font-size="11" fill="#545454">
+    <text x="80" y="396" text-anchor="middle">0h</text>
+    <text x="173" y="396" text-anchor="middle">4h</text>
+    <text x="290" y="396" text-anchor="middle">12h</text>
+    <text x="430" y="396" text-anchor="middle">24h</text>
+    <text x="540" y="396" text-anchor="middle">36h</text>
+    <text x="635" y="396" text-anchor="middle">72h</text>
+  </g>
+
+  <!-- Faint horizontal gridlines -->
+  <g stroke="#D4D4D4" stroke-width="0.5">
+    <line x1="80" y1="148" x2="640" y2="148"/>
+    <line x1="80" y1="206" x2="640" y2="206"/>
+    <line x1="80" y1="264" x2="640" y2="264"/>
+    <line x1="80" y1="322" x2="640" y2="322"/>
+  </g>
+
+  <!-- Y axis labels (log-like) -->
+  <g font-family="'JetBrains Mono', monospace" font-size="10" fill="#545454">
+    <text x="74" y="384" text-anchor="end">1k</text>
+    <text x="74" y="326" text-anchor="end">100k</text>
+    <text x="74" y="268" text-anchor="end">1M</text>
+    <text x="74" y="210" text-anchor="end">10M</text>
+    <text x="74" y="152" text-anchor="end">100M</text>
+  </g>
+
+  <!-- False-news cascade curve (red, steep) -->
+  <path d="M 80 372 C 130 360, 170 330, 200 290 C 240 240, 280 180, 320 142 C 380 110, 480 102, 640 100" fill="none" stroke="#C8102E" stroke-width="2.25"/>
+
+  <!-- Correction curve (gray, shallower) -->
+  <path d="M 80 376 C 200 374, 320 350, 420 300 C 500 260, 560 220, 640 200" fill="none" stroke="#787878" stroke-width="2"/>
+
+  <!-- Monitoring tick marks at t=0 and t=4h below axis (Bluish Green => secondary gray) -->
+  <line x1="80" y1="380" x2="80" y2="392" stroke="#545454" stroke-width="2"/>
+  <line x1="173" y1="380" x2="173" y2="392" stroke="#545454" stroke-width="2"/>
+  <text x="125" y="436" text-anchor="middle" font-family="'EB Garamond', Georgia, serif" font-style="italic" font-size="11" fill="#545454">AI monitoring flags fired here —</text>
+  <text x="125" y="450" text-anchor="middle" font-family="'EB Garamond', Georgia, serif" font-style="italic" font-size="11" fill="#545454">well before either curve inflects</text>
+
+  <!-- Vertical gap arrow at t=12h between the two curves -->
+  <line x1="290" y1="148" x2="290" y2="335" stroke="#2a1a0e" stroke-width="1" stroke-dasharray="4 3"/>
+  <line x1="284" y1="160" x2="296" y2="160" stroke="#2a1a0e" stroke-width="1"/>
+  <line x1="284" y1="328" x2="296" y2="328" stroke="#2a1a0e" stroke-width="1"/>
+  <text x="305" y="220" font-family="'EB Garamond', Georgia, serif" font-style="italic" font-size="13" fill="#2a1a0e">the gap at t = 12h</text>
+  <text x="305" y="236" font-family="'Inter', sans-serif" font-size="11" fill="#545454">100M views vs ~50k corrections</text>
+
+  <!-- 100M-view marker at t=12h on red curve -->
+  <polygon points="285,143 295,143 290,153" fill="#C8102E"/>
+  <text x="300" y="138" font-family="'JetBrains Mono', monospace" font-size="10" fill="#C8102E">100M views (United, t=12h)</text>
+
+  <!-- Late-correction marker on lower curve at t=36h -->
+  <circle cx="540" cy="247" r="6" fill="#C8860E"/>
+  <text x="552" y="240" font-family="'JetBrains Mono', monospace" font-size="10" fill="#2a1a0e">United correction lands here</text>
+  <text x="552" y="254" font-family="'EB Garamond', Georgia, serif" font-style="italic" font-size="11" fill="#545454">t=36h · story is already seen</text>
+
+  <!-- Curve labels -->
+  <text x="500" y="110" font-family="'Inter', sans-serif" font-size="12" font-weight="700" fill="#C8102E">false-news cascade</text>
+  <text x="500" y="210" font-family="'Inter', sans-serif" font-size="12" font-weight="700" fill="#787878">correction</text>
+
+  <text x="32" y="468" font-family="'Inter', sans-serif" font-size="10" fill="#545454">Vosoughi, Roy &amp; Aral 2018, Science 359:1146 · United Express Flight 3411 timeline, April 9–11, 2017 [verify]</text>
+</svg>

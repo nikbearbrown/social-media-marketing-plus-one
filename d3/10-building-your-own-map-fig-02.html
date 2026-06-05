@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Map Lifecycle — Nine-Station Audit Cycle</title>
+<style>
+:root{--color-white:#FFFFFF;--color-ink:#2a1a0e;--color-red:#C8102E;--color-secondary:#545454;--color-border:#D4D4D4;--color-ochre:#C8860E;--color-fill:#F5F5F5;}
+@media (prefers-color-scheme: dark){:root{--color-white:#111111;--color-ink:#F0EBE3;--color-red:#E8243A;--color-secondary:#A0978C;--color-border:#2E2E2E;--color-ochre:#D49A30;--color-fill:#1A1A1A;}}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--color-white);color:var(--color-ink);font-family:'Inter',sans-serif;padding:24px;}
+#chart{width:100%;min-height:600px;}
+.tooltip{position:absolute;pointer-events:none;opacity:0;background:var(--color-ink);color:var(--color-white);padding:6px 10px;font-size:12px;}
+.title{font-family:'EB Garamond',Georgia,serif;font-size:16px;fill:var(--color-ink);}
+.subtitle{font-family:'Inter',sans-serif;font-size:12px;fill:var(--color-secondary);}
+.station-num{font-family:'Inter',sans-serif;font-size:10px;font-weight:700;}
+.station-label{font-family:'Inter',sans-serif;font-size:11px;fill:var(--color-ink);}
+.station-sub{font-family:'Inter',sans-serif;font-size:9px;fill:var(--color-secondary);}
+.outputs-label{font-family:'Inter',sans-serif;font-size:11px;font-weight:700;fill:var(--color-secondary);}
+.output-cap{font-family:'Inter',sans-serif;font-size:10px;fill:var(--color-ink);}
+.footer{font-family:'Inter',sans-serif;font-size:11px;font-style:italic;fill:var(--color-secondary);}
+@media (prefers-reduced-motion: reduce){*{transition:none !important;animation:none !important;}}
+</style></head><body>
+<div id="chart" role="main"></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+<script>
+function draw(){
+  const c=document.getElementById('chart');
+  d3.select(c).selectAll('*').remove();
+  const W=c.clientWidth||800,H=600;
+  const svg=d3.select(c).append('svg')
+    .attr('viewBox',`0 0 ${W} ${H}`)
+    .attr('role','img')
+    .attr('aria-labelledby','t d');
+  svg.append('title').attr('id','t').text('Map Lifecycle — Nine-Station Audit Cycle');
+  svg.append('desc').attr('id','d').text('Clockwise nine-station cycle: inventory, classify, tool audit, draft lists, boundary cases, trial, revise, socialize, quarterly re-audit. The red return arrow closes the loop.');
+
+  const defs=svg.append('defs');
+  function mk(id,fill){defs.append('marker').attr('id',id).attr('markerWidth',8).attr('markerHeight',6).attr('refX',7).attr('refY',3).attr('orient','auto').append('polygon').attr('points','0 0, 8 3, 0 6').attr('fill',fill);}
+  mk('arrowLd3','var(--color-ink)');
+  mk('arrowRd3','var(--color-red)');
+
+  svg.append('text').attr('class','title').attr('x',32).attr('y',36).text('Map lifecycle — the map is a living document');
+  svg.append('text').attr('class','subtitle').attr('x',32).attr('y',56).text('Nine stations clockwise. Quarterly re-audit closes the loop and re-opens the cycle.');
+
+  const cx = W/2, cy=320, R=200;
+  const stations = [
+    {n:1,deg:-90,label:'inventory',sub:'two weeks of actual tasks'},
+    {n:2,deg:-50,label:'classify',sub:'three axes'},
+    {n:3,deg:-10,label:'tool audit',sub:'incl. shadow AI'},
+    {n:4,deg:30,label:'draft lists',sub:'Delegate / Guard'},
+    {n:5,deg:70,label:'boundary cases',sub:''},
+    {n:6,deg:110,label:'trial — one week',sub:''},
+    {n:7,deg:150,label:'revise',sub:''},
+    {n:8,deg:190,label:'socialize',sub:'with compliance'},
+    {n:9,deg:230,label:'quarterly',sub:'re-audit',accent:true}
+  ];
+  // Convert deg to xy
+  stations.forEach(s=>{
+    const rad = s.deg * Math.PI/180;
+    s.x = cx + R*Math.cos(rad);
+    s.y = cy + R*Math.sin(rad);
+  });
+
+  // Arcs between stations (clockwise)
+  for(let i=0;i<stations.length;i++){
+    const a = stations[i];
+    const b = stations[(i+1)%stations.length];
+    // start/end on perimeter of node circles (radius 22), so back off slightly
+    const dx = b.x-a.x, dy=b.y-a.y, dist=Math.hypot(dx,dy);
+    const ux=dx/dist, uy=dy/dist;
+    const sx = a.x + ux*24, sy=a.y + uy*24;
+    const ex = b.x - ux*26, ey = b.y - uy*26;
+    const isReturn = (i===stations.length-1);
+    svg.append('path')
+      .attr('d',`M ${sx} ${sy} A ${R} ${R} 0 0 1 ${ex} ${ey}`)
+      .attr('fill','none')
+      .attr('stroke', isReturn ? 'var(--color-red)' : 'var(--color-ink)')
+      .attr('stroke-width', isReturn ? 1.25 : 1)
+      .attr('marker-end', isReturn ? 'url(#arrowRd3)' : 'url(#arrowLd3)');
+  }
+
+  // Stations
+  stations.forEach(s=>{
+    svg.append('circle').attr('cx',s.x).attr('cy',s.y).attr('r',22)
+      .attr('fill','var(--color-fill)')
+      .attr('stroke',s.accent?'var(--color-red)':'var(--color-ink)')
+      .attr('stroke-width',s.accent?1.25:1)
+      .attr('tabindex',0)
+      .attr('aria-label',`Station ${s.n}: ${s.label}`);
+    svg.append('text').attr('class','station-num').attr('x',s.x).attr('y',s.y+4)
+      .attr('text-anchor','middle')
+      .attr('fill',s.accent?'var(--color-red)':'var(--color-ink)')
+      .text(s.n);
+    // Place label radially outward
+    const rad = s.deg * Math.PI/180;
+    const lx = cx + (R+38)*Math.cos(rad);
+    const ly = cy + (R+38)*Math.sin(rad);
+    const anchor = Math.cos(rad) > 0.3 ? 'start' : (Math.cos(rad) < -0.3 ? 'end' : 'middle');
+    svg.append('text').attr('class','station-label').attr('x',lx).attr('y',ly)
+      .attr('text-anchor',anchor)
+      .attr('fill',s.accent?'var(--color-red)':'var(--color-ink)')
+      .text(s.label);
+    if(s.sub){
+      svg.append('text').attr('class','station-sub').attr('x',lx).attr('y',ly+14)
+        .attr('text-anchor',anchor).text(s.sub);
+    }
+  });
+
+  // Center outputs
+  svg.append('text').attr('class','outputs-label').attr('x',cx).attr('y',cy-30).attr('text-anchor','middle').text('outputs');
+  svg.append('circle').attr('cx',cx-32).attr('cy',cy).attr('r',14).attr('fill','var(--color-secondary)');
+  svg.append('text').attr('class','output-cap').attr('x',cx-32).attr('y',cy+34).attr('text-anchor','middle').text('Delegate');
+  svg.append('circle').attr('cx',cx+32).attr('cy',cy).attr('r',14).attr('fill','var(--color-red)');
+  svg.append('text').attr('class','output-cap').attr('x',cx+32).attr('y',cy+34).attr('text-anchor','middle').text('Guard');
+  svg.append('circle').attr('cx',cx).attr('cy',cy+50).attr('r',10).attr('fill','var(--color-ochre)');
+  svg.append('text').attr('class','output-cap').attr('x',cx).attr('y',cy+74).attr('text-anchor','middle').text('boundary backlog');
+
+  svg.append('text').attr('class','footer').attr('x',cx).attr('y',H-20).attr('text-anchor','middle')
+    .text('The red return arrow is the discipline — quarterly re-audit, never optional.');
+}
+draw();
+new ResizeObserver(draw).observe(document.getElementById('chart'));
+</script></body></html>

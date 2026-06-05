@@ -34,6 +34,18 @@ Data aggregation across APIs: pulling from Meta, TikTok, LinkedIn, X, YouTube, a
 
 Descriptive statistics: engagement rates, reach, impressions, follower deltas, posting-time distributions, format performance, hashtag co-occurrence, week-over-week changes. The basic shape of what happened. All of this is rung-one work, and rung-one work is what these tools are built for.
 
+| Task | Why it is pattern-shaped | The one spot-check that keeps it honest |
+| --- | --- | --- |
+| Cross-API data aggregation | Field-mapping and normalization across Meta, TikTok, LinkedIn, X, YouTube is rule-governed plumbing | Reconcile one platform's totals against its native export each month |
+| Descriptive statistics | Means, distributions, week-over-week deltas, format breakdowns are mechanical | Verify the denominator on engagement rate matches the rate the platform reports |
+| Posting-time and format distributions | Histogram-shaped summaries over a fixed taxonomy | Confirm post taxonomy matches what the team actually shipped |
+| Anomaly flagging | Statistical-process-control on a rolling window scales without human effort | Re-classify a sample of flags by hand and check the false-positive rate |
+| Aggregate sentiment classification | Volume tasks tolerate model error that single-post reads cannot | Sample 30 posts across registers (sarcasm, AAVE, in-group code) and audit |
+| Hashtag and co-occurrence mining | Counting and clustering is what these tools are built for | Sanity-check the top cluster against the actual posts that drove it |
+| First-pass chart captions and boilerplate | Boilerplate scales; the strategic narrative does not | Read every caption against the chart before the report ships |
+
+*Figure 5.1 — Delegate list for analytics: pattern-shaped tasks and the spot-check each one earns.*
+
 <!-- → [TABLE: Delegate List for analytics — tasks, why pattern-shaped, the one spot-check that keeps each honest] -->
 
 Anomaly flagging: spikes, dips, format outliers, sudden sentiment shifts. Statistical-process-control style monitoring on a rolling window. AI is genuinely good at this, and it was genuinely painful as a manual task before. The flag is useful. The interpretation of the flag is not the tool's job.
@@ -54,6 +66,18 @@ The causal interpretation. This is Pearl's rung two and three, and it is where t
 
 The competitive-context read. The same data point means three different things in three different competitive contexts. A share-of-voice spike that looks like organic growth may be the consequence of a competitor's silence, a competitor's crisis, or a news cycle that happened to mention your brand. AI does not know which. Reading the competitive context is grounded in industry knowledge that does not fit in a brief.
 
+| Judgment task | What AI produces instead | What the human supplies |
+| --- | --- | --- |
+| Causal interpretation (Pearl rung 2/3) | Fluent rung-two language wrapped around rung-one correlations | Confounders, intervention tests, counterfactual framing |
+| Competitive-context read | A share-of-voice number with no story behind it | Knowledge of competitor silence, crisis, news cycle |
+| Naming what is not in the data | A confident summary that smooths over gaps | Survivorship, bot inflation, attribution attrition — named explicitly |
+| Deming common- vs. special-cause call | A flag fired on every anomaly | Recognition that stable variation does not warrant a response |
+| Cultural-political read | A positive sentiment score on a tone-deaf post | Memory of what the audience has been through this week |
+| Strategic narrative | Paragraphs describing the numbers | Paragraphs describing the situation and the next move |
+| Inaction recommendation | A default ramp-up suggestion on the flagged metric | The judgment that no action is the correct response this month |
+
+*Figure 5.2 — Guard list for analytics: judgment tasks, the artefact AI returns, the human contribution.*
+
 <!-- → [TABLE: Guard List for analytics — judgment tasks, what AI produces instead, what the human supplies] -->
 
 Naming what is not in the data. This is the analyst's first responsibility and the one AI most consistently fails. Survivorship bias: the posts, accounts, and signals visible in your dataset are the ones that survived moderation, algorithmic boost, and your own filters. The posts that never ran, the accounts that were suspended, the segments the platform under-counts — none of these are in the data. Bot inflation: HypeAuditor and CreatorIQ have documented through 2020–2024 how bot activity and pod behavior have broken engagement rate as a cross-account comparison metric. Attribution attrition: post-iOS 14.5 in April 2021 and the privacy-shift arc, attribution chains are fragmentary. AI attribution models smooth over the gaps; the smoothing is invisible to the dashboard reader. AI extrapolates confidently over all of these absences. The honest move is to name them explicitly before any interpretation begins.
@@ -71,6 +95,10 @@ The strategic narrative. A monthly report is a story about what is happening, wh
 Before any interpretation, eight questions asked every time:
 
 What is the API coverage this month? What did the platform restrict? Where is privacy attrition eating attribution? What posts did not run that would have shown up in a different month? Which audience segments are systematically under-represented in the data? What competitor activity might confound any apparent share-of-voice move? Is any spike correlated with a news-cycle event the brand did not create? What is the sample size for any sub-segment claim, and is it adequate?
+
+![Funnel-shaped diagram showing eight gating questions filtering raw dashboard data down to a verified-for-interpretation output, with a parallel WYSIATI bypass arrow indicating the shortcut the checklist prevents.](../images/05-analytics-and-reporting-fig-01.png)
+
+*Figure 5.3 — The eight-question checklist as a pre-interpretation filter.*
 
 <!-- → [INFOGRAPHIC: The eight-question "what isn't here" checklist as a pre-interpretation protocol — each question paired with the specific failure mode it prevents] -->
 
@@ -95,6 +123,10 @@ The practitioner-written version:
 The first summary is fluent and wrong in the direction of expensive action. It takes a rung-one finding — Reels and engagement rose together — and presents it as a rung-two recommendation: increase Reels production. The evidence does not support the move. One viral post is not a format strategy.
 
 The second summary is awkward and right. It does the work the analyst is actually paid to do: look past the aggregate, find the outlier that is driving the number, and tell the room what the number would look like without the outlier. Then it gives a recommendation grounded in what the data actually shows — which is that the right next move is investigation, not production ramp.
+
+![Two annotated panels — an AI-generated summary marked as rung-one evidence in rung-two language with an unjustified upward recommendation arrow, and a practitioner summary that strips the viral-Reel outlier with an X-mark, shows the corrected flat baseline, and recommends investigation rather than scaling production.](../images/05-analytics-and-reporting-fig-02.png)
+
+*Figure 5.4 — Two summaries, same month: rung labels and the moves that make the practitioner version honest.*
 
 <!-- → [IMAGE: Side-by-side visual of the two executive summaries, annotated — AI version with rung labels showing where rung-one evidence has been rephrased as rung-two recommendation; practitioner version with annotations showing the moves that make it honest] -->
 
@@ -149,3 +181,11 @@ Take a month of your own data and write two executive summaries: first, generate
 
 **Exercise 4 — The Deming Judgment**
 Identify three consecutive months of a single metric from your own or a publicly available brand's reporting. For each week-over-week change, classify the variation as likely common-cause noise or likely special-cause signal. On how many of the flagged changes would a Deming-informed practitioner have recommended action? On how many would they have recommended leaving the system alone?
+
+---
+
+## Prompts
+
+**Figure 5.3 — Eight-question checklist (INFOGRAPHIC).** Render a vertical funnel that opens at the top into a band labelled "raw dashboard data" and narrows through eight horizontal cross-bars, each cross-bar a single gating question. Place a Guard marker (red `#C8102E` filled circle) at the left end of every bar and a Delegate marker (secondary `#545454` filled circle) at the right end naming the failure mode the question prevents. Emerge at the bottom into a rectangle labelled "verified for interpretation." Run a parallel ochre `#C8860E` bypass arrow alongside the funnel to mark the WYSIATI shortcut that skips the checklist. Ink axes, hairlines `#D4D4D4`, `#F5F5F5` plot fill, no rounded corners, no gradients.
+
+**Figure 5.4 — Two summaries, same month (IMAGE).** Render two equal-size panels separated by a vertical hairline. Left panel: AI-generated summary as boilerplate hairlines stacked vertically, capped by a red-inked recommendation block and an upward-sweep ochre arrow into a question-mark dot at the tip. Annotate with `Evidence: rung 1 — association` in JetBrains Mono and `Language: rung 2 — intervention` in red. Right panel: practitioner summary as descriptive lines with a single red X-mark at the viral-Reel outlier, a short flat-baseline arrow labelled "engagement was flat," and a magnifying-glass icon paired with "recommend: investigate, not staff up." Annotate as `Evidence: rung 1` / `Language: rung 1`. Footer band reads "SHARED DATA: Engagement +12% MoM · driver concentrated in one week-two Reel · CEO interview resurfaced organically." Red encodes only the AI panel's mis-rung recommendation and the outlier strike.

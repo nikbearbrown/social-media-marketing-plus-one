@@ -1,0 +1,88 @@
+<!--
+  Parasocial Bond Accumulation and Retroactive Collapse
+  Book: Social Media Marketing plus One · Chapter: 04-community-management · Figure: 02
+  Type: image · Generated: 2026-05-27 · Source: chapters/04-community-management.md
+-->
+<svg viewBox="0 0 700 480" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="fig-title-02">
+  <title id="fig-title-02">Parasocial Bond — Linear Accumulation, Retroactive Collapse</title>
+  <desc>Two side-by-side panels. Left panel shows perceived bond strength rising as a gray step-line over many interactions, each step labeled as perceived choice by a human. Right panel shows the same accumulation, then a red marker at the rightmost interaction indicating automation detected, then a vertical drop to zero, then a red dashed sweep backward retroactively recoloring the prior curve. Beneath the right panel a red label reads non-recoverable.</desc>
+  <metadata><cajal:figure xmlns:cajal="https://bearbrown.ai/cajal/1.0" book="Social Media Marketing plus One" chapter="04-community-management" figure-number="02" figure-title="Parasocial Bond Accumulation and Retroactive Collapse" figure-type="image" author="Nik Bear Brown Milivoje Davidovic" date-generated="2026-05-27" source-file="chapters/04-community-management.md"/></metadata>
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#2a1a0e"/></marker>
+    <marker id="arrowRed" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#C8102E"/></marker>
+  </defs>
+  <rect x="0" y="0" width="700" height="480" fill="#FFFFFF"/>
+  <text x="32" y="36" font-family="'EB Garamond', 'Garamond', Georgia, serif" font-size="14" fill="#2a1a0e">Bonds accumulate slowly. Detection reinterprets the whole history at once.</text>
+  <text x="32" y="56" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="11" fill="#545454">The parasocial mechanism Horton and Wohl named in 1956, applied to automated reply.</text>
+
+  <!-- LEFT PANEL — normal accumulation -->
+  <text x="100" y="92" font-family="'Inter', sans-serif" font-size="12" fill="#2a1a0e" font-weight="600">Bond accumulates through perceived choice</text>
+
+  <!-- Plot region -->
+  <rect x="50" y="110" width="280" height="240" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="0.75"/>
+  <!-- Axes -->
+  <line x1="50" y1="350" x2="50" y2="110" stroke="#2a1a0e" stroke-width="1"/>
+  <line x1="50" y1="350" x2="330" y2="350" stroke="#2a1a0e" stroke-width="1"/>
+  <!-- Y label -->
+  <text x="20" y="230" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" fill="#545454" transform="rotate(-90 20 230)">bond strength</text>
+  <!-- X label -->
+  <text x="190" y="372" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" fill="#545454">interactions over time</text>
+  <!-- Y axis tick 0 -->
+  <text x="44" y="354" text-anchor="end" font-family="'JetBrains Mono', monospace" font-size="10" fill="#545454">0</text>
+  <text x="44" y="114" text-anchor="end" font-family="'JetBrains Mono', monospace" font-size="10" fill="#545454">100</text>
+
+  <!-- Step line — normal accumulation: 0 -> 75 -->
+  <!-- Coordinates: baseline y=350, top of plot y=110; step from (70,350) up to (310,170) -->
+  <polyline points="50,350 70,350 70,330 95,330 95,308 125,308 125,284 160,284 160,258 200,258 200,232 245,232 245,205 295,205 295,175 330,175" fill="none" stroke="#545454" stroke-width="2"/>
+  <!-- Step circles at choice events -->
+  <circle cx="70" cy="350" r="3" fill="#545454"/>
+  <circle cx="95" cy="330" r="3" fill="#545454"/>
+  <circle cx="125" cy="308" r="3" fill="#545454"/>
+  <circle cx="160" cy="284" r="3" fill="#545454"/>
+  <circle cx="200" cy="258" r="3" fill="#545454"/>
+  <circle cx="245" cy="232" r="3" fill="#545454"/>
+  <circle cx="295" cy="205" r="3" fill="#545454"/>
+
+  <!-- Step-up annotation -->
+  <text x="100" y="395" font-family="'EB Garamond', Georgia, serif" font-size="11" fill="#545454" font-style="italic">each step = perceived choice by a human</text>
+
+  <!-- "vs" divider -->
+  <text x="350" y="232" text-anchor="middle" font-family="'EB Garamond', Georgia, serif" font-size="14" fill="#2a1a0e">vs</text>
+
+  <!-- RIGHT PANEL — collapse -->
+  <text x="440" y="92" font-family="'Inter', sans-serif" font-size="12" fill="#C8102E" font-weight="600">Detection collapses the entire history at once</text>
+
+  <rect x="370" y="110" width="280" height="240" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="0.75"/>
+  <line x1="370" y1="350" x2="370" y2="110" stroke="#2a1a0e" stroke-width="1"/>
+  <line x1="370" y1="350" x2="650" y2="350" stroke="#2a1a0e" stroke-width="1"/>
+  <text x="510" y="372" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" fill="#545454">interactions over time</text>
+  <text x="364" y="354" text-anchor="end" font-family="'JetBrains Mono', monospace" font-size="10" fill="#545454">0</text>
+  <text x="364" y="114" text-anchor="end" font-family="'JetBrains Mono', monospace" font-size="10" fill="#545454">100</text>
+
+  <!-- Retroactively recolored step line (red at 50% opacity) -->
+  <polyline points="370,350 390,350 390,330 415,330 415,308 445,308 445,284 480,284 480,258 520,258 520,232 565,232 565,205 615,205" fill="none" stroke="#C8102E" stroke-width="2" opacity="0.5"/>
+  <circle cx="390" cy="350" r="3" fill="#C8102E" opacity="0.5"/>
+  <circle cx="415" cy="330" r="3" fill="#C8102E" opacity="0.5"/>
+  <circle cx="445" cy="308" r="3" fill="#C8102E" opacity="0.5"/>
+  <circle cx="480" cy="284" r="3" fill="#C8102E" opacity="0.5"/>
+  <circle cx="520" cy="258" r="3" fill="#C8102E" opacity="0.5"/>
+  <circle cx="565" cy="232" r="3" fill="#C8102E" opacity="0.5"/>
+  <circle cx="615" cy="205" r="3" fill="#C8102E" opacity="0.5"/>
+
+  <!-- Detection event marker (solid red) -->
+  <circle cx="615" cy="205" r="6" fill="#C8102E"/>
+  <text x="615" y="190" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="9" fill="#C8102E">automation detected</text>
+
+  <!-- Vertical drop -->
+  <line x1="615" y1="210" x2="615" y2="348" stroke="#C8102E" stroke-width="2" marker-end="url(#arrowRed)"/>
+
+  <!-- Retroactive sweep — dashed horizontal arrow pointing leftward across the curve -->
+  <line x1="610" y1="170" x2="380" y2="170" stroke="#C8102E" stroke-width="1.25" stroke-dasharray="4 3" marker-end="url(#arrowRed)"/>
+  <text x="495" y="162" text-anchor="middle" font-family="'EB Garamond', Georgia, serif" font-size="11" fill="#C8102E" font-style="italic">whole history reinterpreted</text>
+
+  <!-- Non-recoverable marker beneath plot -->
+  <rect x="430" y="392" width="160" height="20" fill="#C8102E"/>
+  <text x="510" y="406" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="10" fill="#FFFFFF">NON-RECOVERABLE</text>
+
+  <text x="350" y="460" text-anchor="middle" font-family="'EB Garamond', Georgia, serif" font-size="11" fill="#C8102E" font-style="italic">You don't lose one interaction. You lose the capital of all of them.</text>
+</svg>

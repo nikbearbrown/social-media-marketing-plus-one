@@ -1,0 +1,108 @@
+<!--
+  Framework Anatomy at a Glance
+  Book: Social Media Marketing plus One
+  Chapter: 02-the-framework
+  Figure: 03
+  Type: architecture
+  Generated: 2026-05-27
+  Source: pantry/02-the-framework-cajal.md
+-->
+<svg viewBox="0 0 700 480" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="fig-title-03">
+  <title id="fig-title-03">Framework Anatomy at a Glance</title>
+  <desc>Three-zone framework anatomy. A central decomposition hub fans into two parallel five-column list templates: a Delegate List on the left and a Guard List on the right. A downward arrow routes boundary cases into a re-audit bucket scheduled for ninety days.</desc>
+  <metadata><cajal:figure xmlns:cajal="https://bearbrown.ai/cajal/1.0" book="Social Media Marketing plus One" book-slug="social-media-marketing-plus-one" chapter="02-the-framework" figure-number="03" figure-title="Framework Anatomy at a Glance" figure-slug="framework-anatomy" figure-type="architecture" priority="Important" author="Nik Bear Brown Milivoje Davidovic" date-generated="2026-05-27" source-file="pantry/02-the-framework-cajal.md"/></metadata>
+  <defs><marker id="arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#2a1a0e"/></marker><marker id="arrowOchre" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#C8860E"/></marker></defs>
+  <rect x="0" y="0" width="700" height="480" fill="#FFFFFF"/>
+  <text x="32" y="36" font-family="'EB Garamond', 'Garamond', Georgia, serif" font-size="14" fill="#2a1a0e">Framework anatomy at a glance — two lists, one decomposition, one re-audit bucket</text>
+  <text x="32" y="56" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="11" fill="#545454">Every task routes through the center. Most split across both lists. Boundary cases get scheduled.</text>
+
+  <!-- Central decomposition node -->
+  <rect x="310" y="120" width="80" height="80" fill="#F5F5F5" stroke="#2a1a0e" stroke-width="1.5" rx="0"/>
+  <text x="350" y="156" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" font-weight="700" fill="#2a1a0e">Decompose</text>
+  <text x="350" y="172" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10" fill="#545454">the task</text>
+  <text x="350" y="188" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="9" fill="#545454">step by step</text>
+
+  <!-- LEFT: Delegate List frame (5 columns) -->
+  <text x="155" y="92" text-anchor="middle" font-family="'Inter', sans-serif" font-size="12" font-weight="700" fill="#545454">Delegate List</text>
+  <text x="155" y="106" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10" fill="#545454">pattern-shaped work</text>
+  <rect x="40" y="120" width="230" height="180" fill="#FFFFFF" stroke="#545454" stroke-width="1.5"/>
+  <!-- 5 column dividers -->
+  <line x1="86" y1="120" x2="86" y2="300" stroke="#545454" stroke-width="0.5" opacity="0.55"/>
+  <line x1="132" y1="120" x2="132" y2="300" stroke="#545454" stroke-width="0.5" opacity="0.55"/>
+  <line x1="178" y1="120" x2="178" y2="300" stroke="#545454" stroke-width="0.5" opacity="0.55"/>
+  <line x1="224" y1="120" x2="224" y2="300" stroke="#545454" stroke-width="0.5" opacity="0.55"/>
+  <!-- Column header band -->
+  <rect x="40" y="120" width="230" height="22" fill="#545454" opacity="0.12"/>
+  <text x="63" y="135" text-anchor="middle" font-family="'Inter', sans-serif" font-size="8.5" fill="#2a1a0e" font-weight="600">task</text>
+  <text x="109" y="135" text-anchor="middle" font-family="'Inter', sans-serif" font-size="8.5" fill="#2a1a0e" font-weight="600">why pattern</text>
+  <text x="155" y="135" text-anchor="middle" font-family="'Inter', sans-serif" font-size="8.5" fill="#2a1a0e" font-weight="600">tool</text>
+  <text x="201" y="135" text-anchor="middle" font-family="'Inter', sans-serif" font-size="8.5" fill="#2a1a0e" font-weight="600">time saved</text>
+  <text x="247" y="135" text-anchor="middle" font-family="'Inter', sans-serif" font-size="8.5" fill="#2a1a0e" font-weight="600">quality risk</text>
+  <!-- Sample row labels -->
+  <text x="63" y="170" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="8" fill="#787878">draft</text>
+  <text x="63" y="200" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="8" fill="#787878">tag</text>
+  <text x="63" y="230" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="8" fill="#787878">schedule</text>
+  <text x="63" y="260" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="8" fill="#787878">classify</text>
+  <text x="63" y="290" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="8" fill="#787878">outline</text>
+  <!-- light dot per cell -->
+  <g fill="#D4D4D4">
+    <circle cx="109" cy="167" r="1.5"/><circle cx="155" cy="167" r="1.5"/><circle cx="201" cy="167" r="1.5"/><circle cx="247" cy="167" r="1.5"/>
+    <circle cx="109" cy="197" r="1.5"/><circle cx="155" cy="197" r="1.5"/><circle cx="201" cy="197" r="1.5"/><circle cx="247" cy="197" r="1.5"/>
+    <circle cx="109" cy="227" r="1.5"/><circle cx="155" cy="227" r="1.5"/><circle cx="201" cy="227" r="1.5"/><circle cx="247" cy="227" r="1.5"/>
+    <circle cx="109" cy="257" r="1.5"/><circle cx="155" cy="257" r="1.5"/><circle cx="201" cy="257" r="1.5"/><circle cx="247" cy="257" r="1.5"/>
+    <circle cx="109" cy="287" r="1.5"/><circle cx="155" cy="287" r="1.5"/><circle cx="201" cy="287" r="1.5"/><circle cx="247" cy="287" r="1.5"/>
+  </g>
+  <text x="155" y="320" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10" fill="#545454">produces: Do This</text>
+
+  <!-- RIGHT: Guard List frame (5 columns) -->
+  <text x="545" y="92" text-anchor="middle" font-family="'Inter', sans-serif" font-size="12" font-weight="700" fill="#C8102E">Guard List</text>
+  <text x="545" y="106" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10" fill="#545454">judgment-shaped work</text>
+  <rect x="430" y="120" width="230" height="180" fill="#FFFFFF" stroke="#C8102E" stroke-width="1.5"/>
+  <line x1="476" y1="120" x2="476" y2="300" stroke="#C8102E" stroke-width="0.5" opacity="0.55"/>
+  <line x1="522" y1="120" x2="522" y2="300" stroke="#C8102E" stroke-width="0.5" opacity="0.55"/>
+  <line x1="568" y1="120" x2="568" y2="300" stroke="#C8102E" stroke-width="0.5" opacity="0.55"/>
+  <line x1="614" y1="120" x2="614" y2="300" stroke="#C8102E" stroke-width="0.5" opacity="0.55"/>
+  <rect x="430" y="120" width="230" height="22" fill="#C8102E" opacity="0.10"/>
+  <text x="453" y="135" text-anchor="middle" font-family="'Inter', sans-serif" font-size="8.5" fill="#2a1a0e" font-weight="600">task</text>
+  <text x="499" y="135" text-anchor="middle" font-family="'Inter', sans-serif" font-size="8.5" fill="#2a1a0e" font-weight="600">why judgment</text>
+  <text x="545" y="135" text-anchor="middle" font-family="'Inter', sans-serif" font-size="8.5" fill="#2a1a0e" font-weight="600">failure mode</text>
+  <text x="591" y="135" text-anchor="middle" font-family="'Inter', sans-serif" font-size="8.5" fill="#2a1a0e" font-weight="600">human</text>
+  <text x="637" y="135" text-anchor="middle" font-family="'Inter', sans-serif" font-size="8.5" fill="#2a1a0e" font-weight="600">escalation</text>
+  <text x="453" y="170" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="8" fill="#787878">voice</text>
+  <text x="453" y="200" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="8" fill="#787878">hook</text>
+  <text x="453" y="230" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="8" fill="#787878">angle</text>
+  <text x="453" y="260" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="8" fill="#787878">crisis</text>
+  <text x="453" y="290" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="8" fill="#787878">reply</text>
+  <g fill="#C8102E" opacity="0.55">
+    <circle cx="499" cy="167" r="1.5"/><circle cx="545" cy="167" r="1.5"/><circle cx="591" cy="167" r="1.5"/><circle cx="637" cy="167" r="1.5"/>
+    <circle cx="499" cy="197" r="1.5"/><circle cx="545" cy="197" r="1.5"/><circle cx="591" cy="197" r="1.5"/><circle cx="637" cy="197" r="1.5"/>
+    <circle cx="499" cy="227" r="1.5"/><circle cx="545" cy="227" r="1.5"/><circle cx="591" cy="227" r="1.5"/><circle cx="637" cy="227" r="1.5"/>
+    <circle cx="499" cy="257" r="1.5"/><circle cx="545" cy="257" r="1.5"/><circle cx="591" cy="257" r="1.5"/><circle cx="637" cy="257" r="1.5"/>
+    <circle cx="499" cy="287" r="1.5"/><circle cx="545" cy="287" r="1.5"/><circle cx="591" cy="287" r="1.5"/><circle cx="637" cy="287" r="1.5"/>
+  </g>
+  <text x="545" y="320" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10" fill="#545454">produces: Never Do This</text>
+
+  <!-- Routing arrows from center to lists -->
+  <line x1="305" y1="160" x2="280" y2="160" stroke="#2a1a0e" stroke-width="1" marker-end="url(#arrow)"/>
+  <line x1="395" y1="160" x2="420" y2="160" stroke="#2a1a0e" stroke-width="1" marker-end="url(#arrow)"/>
+  <text x="290" y="151" text-anchor="end" font-family="'Inter', sans-serif" font-size="9" fill="#545454">pattern</text>
+  <text x="410" y="151" text-anchor="start" font-family="'Inter', sans-serif" font-size="9" fill="#C8102E">judgment</text>
+
+  <!-- Downward boundary-case arrow -->
+  <line x1="350" y1="205" x2="350" y2="360" stroke="#C8860E" stroke-width="1" marker-end="url(#arrowOchre)"/>
+  <text x="358" y="290" font-family="'Inter', sans-serif" font-size="9" fill="#C8860E" font-style="italic">unclear?</text>
+
+  <!-- Boundary-case bucket -->
+  <rect x="280" y="365" width="140" height="60" fill="#FFFFFF" stroke="#C8860E" stroke-width="1.5"/>
+  <text x="350" y="385" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" font-weight="600" fill="#2a1a0e">Boundary cases</text>
+  <circle cx="312" cy="405" r="4" fill="#C8860E"/>
+  <text x="350" y="409" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="9" fill="#545454">re-audit in 90 days</text>
+
+  <!-- Bottom legend -->
+  <rect x="40" y="440" width="14" height="14" fill="#545454" opacity="0.20" stroke="#545454" stroke-width="1"/>
+  <text x="60" y="451" font-family="'Inter', sans-serif" font-size="10" fill="#2a1a0e">Delegate — pattern-shaped, AI-safe</text>
+  <rect x="280" y="440" width="14" height="14" fill="#C8102E" opacity="0.18" stroke="#C8102E" stroke-width="1"/>
+  <text x="300" y="451" font-family="'Inter', sans-serif" font-size="10" fill="#2a1a0e">Guard — judgment-shaped, human-only</text>
+  <rect x="540" y="440" width="14" height="14" fill="#FFFFFF" stroke="#C8860E" stroke-width="1.5"/>
+  <text x="560" y="451" font-family="'Inter', sans-serif" font-size="10" fill="#2a1a0e">Boundary — schedule re-audit</text>
+</svg>

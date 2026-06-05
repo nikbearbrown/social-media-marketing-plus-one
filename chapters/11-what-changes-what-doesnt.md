@@ -38,6 +38,14 @@ The forecasts that overshot scope are also the majority, in a different directio
 
 The forecasts that aged well tend to be structural claims rather than timeline claims. David Autor's 2015 essay "Why Are There Still So Many Jobs?" made the Polanyi's Paradox case: we know more than we can tell, and tasks that depend on that knowing-more resist automation because they cannot be fully specified. A decade later it holds better than most forecasts of the same vintage. Michael Polanyi's original 1966 formulation — "we can know more than we can tell" — is the deepest version of the argument, and it is why attribution-bound Guard items are structurally durable even when capability-bound Guard items are closing.
 
+| Forecast type | General pattern | Canonical overshot example | Canonical undershot example | What held up |
+|---|---|---|---|---|
+| Capability-timing forecasts | Anchored on present limits; missed the curve | "Photorealistic AI faces are years away" (2019–2020); deployed by 2022 | Most timelines for long-form video; Sora arrived Feb 2024 | Almost none — the curve was steeper than nearly every dated estimate |
+| Scope forecasts | Right about task automation; wrong about role elimination | "AI will replace [role] by [year]" trade-press headlines (post-Eloundou 2023) | Few — most overshot in this direction | Eloundou et al.'s careful "exposure" framing; roles changed shape, not count |
+| Structural forecasts | Claims about what resists automation, not when | Few — structural claims rarely overshoot | Some underweighted how much of the residual work is judgment-dense | Autor (2015), Polanyi (1966): tacit knowledge claims have aged best |
+
+*Table 11.1 — Three forecast types and their track record. Structural claims age best; timing claims age worst.*
+
 <!-- → [TABLE: Forecast track record summary — rows: capability-timing forecasts / scope forecasts / structural forecasts; columns: general pattern, canonical overshot example, canonical undershot example, what held up] -->
 
 The most defensible quantitative trajectory claim currently in circulation is from METR's work on measuring AI ability to complete long tasks, published through 2024 and 2025. Their finding: the time-horizon over which AI can autonomously complete tasks at meaningful reliability is doubling on roughly a seven-month rhythm, but starting from a low base. That is one data point, not a law. The Kaplan et al. scaling-laws paper from January 2020 and the Hoffmann et al. Chinchilla correction from March 2022 describe loss-versus-compute relationships, not real-world capability on real tasks — keep the distinction. Loss goes down on a curve; whether that translates to capability on your specific workflow is a separate measurement.
@@ -53,6 +61,10 @@ The discipline that Tetlock's research established — documented in *Expert Pol
 The task-family level is the right grain for forecasting in this domain. "Will the social media manager exist in 2030?" is not a tractable question. "What share of paid social copy variation will be AI-led by 2028?" is. The difference is that the second question has a falsification condition: you can measure share of AI-led work at the end of 2028 and compare it to your estimate. The first question does not have a falsification condition in any operationalizable sense — "exists" is too loose, and roles change shape before they disappear.
 
 The two-question test applied to each Guard List item: What current capability gap makes this item Guard? And is there a structural reason — accountability, relationship, or context — that a human is required regardless of capability? The first question identifies capability-bound items. The second identifies attribution-bound items. An item with a closeable capability gap and no structural reason is on a clock. An item with a structural reason is not, at least not on model-release timescales.
+
+![Decision tree of the two-question test classifying Guard items into four quadrants by capability gap and structural reason](../images/11-what-changes-what-doesnt-fig-01.png)
+
+*Figure 11.1 — The two-question test. Two of the four terminal quadrants remain Guard.*
 
 <!-- → [INFOGRAPHIC: The two-question test as a decision tree — first branch: capability gap present or not; second branch: structural reason present or not; four quadrants: (1) capability-bound only — watch for capability close, (2) attribution-bound only — stable; social-fact timescale, (3) both — capability gate opens but structural reason may persist, (4) neither — why is this on Guard?] -->
 
@@ -83,6 +95,15 @@ Name the move conditions. What would have to be true for you to actually act on 
 Run the three scenarios for the two or three items with the highest stakes. Under continuation-scaling, plateau, capability-overhang: does the move make sense? Does it only make sense under the most optimistic scenario?
 
 Log and schedule. Write the register entries with claim, probability range, horizon, falsifier, and review date. Put the review date on your calendar 90 days out. Without the scheduled review, the discipline collapses on the second quarter.
+
+| Item | Label | Probability range | Horizon | Falsifier (down) | Falsifier (up) | Move conditions | Review date |
+|---|---|---|---|---|---|---|---|
+| AI brand-voice comment reply | capability-bound | 50–70% | Q4 2027 | Two consecutive quarters of worse-than-baseline brand-voice eval | A peer brand at our scale runs the workflow two quarters incident-free and publishes the eval | Compliance sign-off; 90-day pilot; logged-output requirement; named-executive review | Sep 2026 |
+| Crisis-response first draft | both | 20–35% | 36 months | Any flagged hallucination in a documented dry run | Peer brand crisis run end-to-end without intervention | Legal review; CCO sign-off; dual human review until 12 months incident-free | Sep 2026 |
+| Quarterly recap deck narrative | capability-bound | 75–90% | 12 months | Two quarters of analyst-flagged misreads | Internal A/B audit shows no decline vs. human draft | Analytics lead sign-off; reviewer-on-record per deck | Sep 2026 |
+| CEO LinkedIn ghostwriting | attribution-bound | <10% | 36 months | n/a — structural | Audience study shows readers indifferent to authorship | Not on the table absent the attribution shift | Sep 2026 |
+
+*Table 11.2 — Sample forecast register. Each Guard item carries a label, a range, a horizon, two falsifiers, move conditions, and a scheduled review.*
 
 <!-- → [TABLE: Sample forecast register — columns: item, label (capability-bound / attribution-bound / both), probability range, horizon, falsifier (down), falsifier (up), move conditions, review date] -->
 
@@ -119,3 +140,9 @@ Take the Guard List item on your map with the highest downside if delegated prem
 
 **Exercise 4 — Track Record Audit**
 Find three forecasts about AI in marketing that you or your organization made 12 to 24 months ago — from meeting notes, strategy decks, emails, or public statements. For each: what was the specific claim, what was the timeline, and what actually happened? Classify each as overshot timing, overshot scope, roughly calibrated, or undershot. What pattern do you see in your own forecast errors? What would have made each forecast more precise?
+
+---
+
+## Prompts
+
+**Figure 11.1 — The two-question test.** Two-stage decision tree, top-to-bottom. Root diamond labelled "Guard item — capability gap?" branches yes/no into two mid-diamonds asking "structural reason?". Four terminal quadrant boxes at the bottom, equal size: (1) capability + structural → "Guard — durable" (red border); (2) capability only → "On a clock" (ochre border, Delegate-with-Review); (3) structural only → "Guard — stable" (red border, attribution-bound); (4) neither → "Surface it" (secondary border). Faint red 0.75pt brackets group the two Guard quadrants with the caption "two of four remain Guard." Margins 32px; viewBox 700×540; ink axes; arrows via shared marker; no rounded corners, no shadows.

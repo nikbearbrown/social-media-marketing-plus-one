@@ -1,0 +1,86 @@
+<!--
+  Two summaries, same month — annotated divergence
+  Book: Social Media Marketing plus One · Chapter: 05-analytics-and-reporting · Figure: 02
+  Type: IMAGE · Generated: 2026-05-27 · Source: chapters/05-analytics-and-reporting.md
+-->
+<svg viewBox="0 0 700 480" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="fig-title-02">
+  <title id="fig-title-02">Two summaries, same month — annotated divergence</title>
+  <desc>Side-by-side: AI-generated summary reads rung-one evidence as a rung-two recommendation; practitioner summary strips the viral-post outlier, shows the flat baseline, and recommends investigation rather than production ramp.</desc>
+  <metadata><cajal:figure xmlns:cajal="https://bearbrown.ai/cajal/1.0" book="Social Media Marketing plus One" chapter="05-analytics-and-reporting" figure-number="02" figure-title="Two summaries, same month — annotated divergence" figure-type="IMAGE" author="Nik Bear Brown Milivoje Davidovic" date-generated="2026-05-27" source-file="chapters/05-analytics-and-reporting.md"/></metadata>
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#2a1a0e"/></marker>
+    <marker id="arrow-red" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#C8102E"/></marker>
+    <marker id="arrow-grey" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#545454"/></marker>
+  </defs>
+  <rect x="0" y="0" width="700" height="480" fill="#FFFFFF"/>
+  <text x="32" y="36" font-family="'EB Garamond', 'Garamond', Georgia, serif" font-size="14" fill="#2a1a0e">Same data, two summaries — where rung-one becomes rung-two</text>
+  <text x="32" y="56" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="11" fill="#545454">Left: AI-generated. Right: practitioner-written. Annotations mark the load-bearing moves.</text>
+
+  <!-- vertical rule -->
+  <line x1="350" y1="80" x2="350" y2="450" stroke="#D4D4D4" stroke-width="1"/>
+
+  <!-- LEFT panel: AI summary -->
+  <rect x="48" y="90" width="270" height="210" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="0.75"/>
+  <text x="60" y="110" font-family="'Inter', sans-serif" font-size="11" font-weight="700" fill="#545454">AI-GENERATED SUMMARY</text>
+
+  <!-- boilerplate lines (secondary) -->
+  <line x1="60" y1="130" x2="306" y2="130" stroke="#545454" stroke-width="1"/>
+  <line x1="60" y1="148" x2="296" y2="148" stroke="#545454" stroke-width="1"/>
+  <line x1="60" y1="166" x2="280" y2="166" stroke="#545454" stroke-width="1"/>
+  <line x1="60" y1="184" x2="296" y2="184" stroke="#545454" stroke-width="1"/>
+  <line x1="60" y1="202" x2="240" y2="202" stroke="#545454" stroke-width="1"/>
+
+  <!-- recommendation block -->
+  <line x1="60" y1="232" x2="306" y2="232" stroke="#C8102E" stroke-width="1.25"/>
+  <line x1="60" y1="250" x2="280" y2="250" stroke="#C8102E" stroke-width="1.25"/>
+  <line x1="60" y1="268" x2="240" y2="268" stroke="#C8102E" stroke-width="1.25"/>
+  <text x="60" y="288" font-family="'Inter', sans-serif" font-size="10.5" fill="#C8102E">"Increase Reels production"</text>
+
+  <!-- rung labels (annotation) -->
+  <text x="60" y="324" font-family="'Inter', sans-serif" font-size="10.5" fill="#545454">Evidence:</text>
+  <text x="120" y="324" font-family="'JetBrains Mono', monospace" font-size="11" fill="#2a1a0e">rung 1 — association</text>
+  <text x="60" y="342" font-family="'Inter', sans-serif" font-size="10.5" fill="#545454">Language:</text>
+  <text x="120" y="342" font-family="'JetBrains Mono', monospace" font-size="11" fill="#C8102E">rung 2 — intervention</text>
+
+  <!-- upward sweep arrow with question dot at tip -->
+  <line x1="245" y1="280" x2="300" y2="220" stroke="#C8860E" stroke-width="1.25" marker-end="url(#arrow-red)"/>
+  <text x="220" y="370" font-family="'Inter', sans-serif" font-size="10.5" fill="#545454" font-style="italic">unjustified ramp recommendation</text>
+  <line x1="260" y1="365" x2="280" y2="290" stroke="#545454" stroke-width="0.75" stroke-dasharray="2,2"/>
+
+  <!-- RIGHT panel: practitioner summary -->
+  <rect x="382" y="90" width="270" height="210" fill="#FFFFFF" stroke="#2a1a0e" stroke-width="1"/>
+  <text x="394" y="110" font-family="'Inter', sans-serif" font-size="11" font-weight="700" fill="#2a1a0e">PRACTITIONER SUMMARY</text>
+
+  <!-- description lines -->
+  <line x1="394" y1="130" x2="640" y2="130" stroke="#545454" stroke-width="1"/>
+  <line x1="394" y1="148" x2="610" y2="148" stroke="#545454" stroke-width="1"/>
+
+  <!-- outlier X mark inline -->
+  <line x1="430" y1="160" x2="445" y2="175" stroke="#C8102E" stroke-width="1.5"/>
+  <line x1="445" y1="160" x2="430" y2="175" stroke="#C8102E" stroke-width="1.5"/>
+  <text x="460" y="172" font-family="'Inter', sans-serif" font-size="10.5" fill="#C8102E">strip the viral CEO clip</text>
+
+  <line x1="394" y1="190" x2="630" y2="190" stroke="#545454" stroke-width="1"/>
+  <line x1="394" y1="208" x2="590" y2="208" stroke="#545454" stroke-width="1"/>
+
+  <!-- corrected baseline: flat arrow -->
+  <line x1="394" y1="244" x2="460" y2="244" stroke="#2a1a0e" stroke-width="1.25" marker-end="url(#arrow-grey)"/>
+  <text x="470" y="248" font-family="'Inter', sans-serif" font-size="10.5" fill="#2a1a0e">engagement was flat</text>
+
+  <!-- investigate marker (magnifying glass abstracted) -->
+  <circle cx="404" cy="278" r="7" fill="none" stroke="#C8860E" stroke-width="1.5"/>
+  <line x1="409" y1="283" x2="416" y2="290" stroke="#C8860E" stroke-width="1.5"/>
+  <text x="424" y="282" font-family="'Inter', sans-serif" font-size="10.5" fill="#2a1a0e">recommend: investigate, not staff up</text>
+
+  <text x="394" y="324" font-family="'Inter', sans-serif" font-size="10.5" fill="#545454">Evidence:</text>
+  <text x="454" y="324" font-family="'JetBrains Mono', monospace" font-size="11" fill="#2a1a0e">rung 1 — association</text>
+  <text x="394" y="342" font-family="'Inter', sans-serif" font-size="10.5" fill="#545454">Language:</text>
+  <text x="454" y="342" font-family="'JetBrains Mono', monospace" font-size="11" fill="#2a1a0e">rung 1 — association</text>
+
+  <text x="394" y="370" font-family="'Inter', sans-serif" font-size="10.5" fill="#545454" font-style="italic">awkward and right · outlier named and removed</text>
+
+  <!-- footer: shared numerator -->
+  <rect x="48" y="400" width="604" height="50" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="0.75"/>
+  <text x="60" y="420" font-family="'Inter', sans-serif" font-size="11" font-weight="700" fill="#545454">SHARED DATA</text>
+  <text x="60" y="438" font-family="'Inter', sans-serif" font-size="11" fill="#2a1a0e">Engagement +12% MoM · driver concentrated in one week-two Reel · CEO interview resurfaced organically</text>
+</svg>

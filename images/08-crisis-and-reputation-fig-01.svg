@@ -1,0 +1,129 @@
+<!--
+  Crisis response timeline: AI handles, human decides
+  Book: Social Media Marketing plus One · Chapter: 08-crisis-and-reputation · Figure: 01
+  Type: INFOGRAPHIC · Generated: 2026-05-27 · Source: chapters/08-crisis-and-reputation.md
+-->
+<svg viewBox="0 0 700 540" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="fig-title-01 fig-desc-01">
+  <title id="fig-title-01">Crisis response timeline: AI handles, human decides</title>
+  <desc id="fig-desc-01">A seven-stage horizontal crisis response timeline. Pre-crisis configure, alert fire, escalation read, posture pick, draft, publish-and-read, second move. Escalation read, posture pick, and second move are highlighted as the three highest-stakes judgment decisions. Below the row, a time axis marks pre-crisis, the live window, and the 90-day program.</desc>
+  <metadata><cajal:figure xmlns:cajal="https://bearbrown.ai/cajal/1.0" book="Social Media Marketing plus One" chapter="08-crisis-and-reputation" figure-number="01" figure-title="Crisis response timeline: AI handles, human decides" figure-type="INFOGRAPHIC" author="Nik Bear Brown Milivoje Davidovic" date-generated="2026-05-27" source-file="chapters/08-crisis-and-reputation.md"/></metadata>
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#2a1a0e"/></marker>
+  </defs>
+  <rect x="0" y="0" width="700" height="540" fill="#FFFFFF"/>
+  <text x="32" y="36" font-family="'EB Garamond', 'Garamond', Georgia, serif" font-size="18" fill="#2a1a0e">Crisis response timeline: AI handles, human decides</text>
+  <text x="32" y="56" font-family="'Inter', sans-serif" font-size="12" fill="#545454">Three ringed nodes are the highest-stakes decisions. The 36-hour gap lives in those rings.</text>
+
+  <!-- Legend -->
+  <g font-family="'Inter', sans-serif" font-size="10" fill="#2a1a0e">
+    <rect x="32" y="78" width="14" height="14" fill="#C8102E"/><text x="52" y="89">Human (Guard)</text>
+    <rect x="160" y="78" width="14" height="14" fill="#545454"/><text x="180" y="89">AI (Delegate)</text>
+    <rect x="270" y="78" width="14" height="14" fill="#545454"/><rect x="277" y="78" width="7" height="14" fill="#C8860E"/><text x="293" y="89">Delegate-with-Review</text>
+    <rect x="430" y="78" width="14" height="14" fill="none" stroke="#C8860E" stroke-width="2" stroke-dasharray="3 2"/><text x="450" y="89">Load-bearing</text>
+  </g>
+
+  <!-- Stages -->
+  <g font-family="'Inter', sans-serif" font-size="10" fill="#FFFFFF">
+    <!-- 1. Configure monitoring (human, quarterly) -->
+    <rect x="32" y="130" width="90" height="100" fill="#C8102E" stroke="#2a1a0e" stroke-width="0.75"/>
+    <text x="40" y="148" font-size="9" font-weight="700">1. CONFIGURE</text>
+    <text x="40" y="162" font-size="9" font-weight="700">MONITORING</text>
+    <text x="40" y="184" font-size="9">Human</text>
+    <text x="40" y="198" font-size="9">Quarterly</text>
+    <text x="40" y="220" font-size="9" font-family="'JetBrains Mono', monospace">pre-crisis</text>
+
+    <!-- 2. Alert fires (AI) -->
+    <rect x="132" y="130" width="80" height="100" fill="#545454" stroke="#2a1a0e" stroke-width="0.75"/>
+    <text x="140" y="148" font-size="9" font-weight="700">2. ALERT</text>
+    <text x="140" y="162" font-size="9" font-weight="700">FIRES</text>
+    <text x="140" y="184" font-size="9">AI</text>
+    <text x="140" y="198" font-size="9">Anomaly</text>
+    <text x="140" y="220" font-size="9" font-family="'JetBrains Mono', monospace">t = 0</text>
+
+    <!-- 3. Escalation read (human, ringed) -->
+    <rect x="222" y="130" width="90" height="100" fill="#C8102E" stroke="#2a1a0e" stroke-width="0.75"/>
+    <rect x="217" y="125" width="100" height="110" fill="none" stroke="#C8860E" stroke-width="2" stroke-dasharray="3 2"/>
+    <text x="230" y="148" font-size="9" font-weight="700">3. ESCALATION</text>
+    <text x="230" y="162" font-size="9" font-weight="700">READ</text>
+    <text x="230" y="184" font-size="9">Human</text>
+    <text x="230" y="198" font-size="9">Crisis/brigade/</text>
+    <text x="230" y="210" font-size="9">ticket/noise</text>
+    <text x="230" y="225" font-size="9" font-family="'JetBrains Mono', monospace">5 min</text>
+
+    <!-- 4. Posture pick (human, ringed) -->
+    <rect x="322" y="130" width="90" height="100" fill="#C8102E" stroke="#2a1a0e" stroke-width="0.75"/>
+    <rect x="317" y="125" width="100" height="110" fill="none" stroke="#C8860E" stroke-width="2" stroke-dasharray="3 2"/>
+    <text x="330" y="148" font-size="9" font-weight="700">4. POSTURE</text>
+    <text x="330" y="162" font-size="9" font-weight="700">PICK</text>
+    <text x="330" y="184" font-size="9">Human</text>
+    <text x="330" y="198" font-size="9">One of five</text>
+    <text x="330" y="210" font-size="9">postures</text>
+    <text x="330" y="225" font-size="9" font-family="'JetBrains Mono', monospace">15 min</text>
+
+    <!-- 5. Draft in posture (split AI / Delegate-with-Review) -->
+    <rect x="422" y="130" width="45" height="100" fill="#545454" stroke="#2a1a0e" stroke-width="0.75"/>
+    <rect x="467" y="130" width="45" height="100" fill="#C8860E" stroke="#2a1a0e" stroke-width="0.75"/>
+    <text x="430" y="148" font-size="9" font-weight="700">5. DRAFT</text>
+    <text x="430" y="184" font-size="9">AI</text>
+    <text x="430" y="198" font-size="9">3 variants</text>
+    <text x="475" y="184" font-size="9">Edit</text>
+    <text x="475" y="198" font-size="9">specifics</text>
+    <text x="430" y="225" font-size="9" font-family="'JetBrains Mono', monospace">30 min</text>
+
+    <!-- 6. Publish + read comments (split AI / human) -->
+    <rect x="522" y="130" width="45" height="100" fill="#545454" stroke="#2a1a0e" stroke-width="0.75"/>
+    <rect x="567" y="130" width="45" height="100" fill="#C8102E" stroke="#2a1a0e" stroke-width="0.75"/>
+    <text x="530" y="148" font-size="9" font-weight="700">6. PUBLISH</text>
+    <text x="530" y="184" font-size="9">AI</text>
+    <text x="530" y="198" font-size="9">sentiment</text>
+    <text x="575" y="184" font-size="9">Read</text>
+    <text x="575" y="198" font-size="9">comments</text>
+    <text x="530" y="225" font-size="9" font-family="'JetBrains Mono', monospace">6 hr</text>
+
+    <!-- 7. Second move (human, ringed) -->
+    <rect x="622" y="130" width="50" height="100" fill="#C8102E" stroke="#2a1a0e" stroke-width="0.75"/>
+    <rect x="617" y="125" width="60" height="110" fill="none" stroke="#C8860E" stroke-width="2" stroke-dasharray="3 2"/>
+    <text x="628" y="148" font-size="9" font-weight="700">7. SECOND</text>
+    <text x="628" y="162" font-size="9" font-weight="700">MOVE</text>
+    <text x="628" y="184" font-size="9">Human</text>
+    <text x="628" y="198" font-size="9">Amend or</text>
+    <text x="628" y="210" font-size="9">double-down</text>
+    <text x="628" y="225" font-size="9" font-family="'JetBrains Mono', monospace">6–24 hr</text>
+  </g>
+
+  <!-- Connector arrows between boxes -->
+  <g>
+    <line x1="122" y1="180" x2="132" y2="180" stroke="#2a1a0e" stroke-width="1" marker-end="url(#arrow)"/>
+    <line x1="212" y1="180" x2="222" y2="180" stroke="#2a1a0e" stroke-width="1" marker-end="url(#arrow)"/>
+    <line x1="312" y1="180" x2="322" y2="180" stroke="#2a1a0e" stroke-width="1" marker-end="url(#arrow)"/>
+    <line x1="412" y1="180" x2="422" y2="180" stroke="#2a1a0e" stroke-width="1" marker-end="url(#arrow)"/>
+    <line x1="512" y1="180" x2="522" y2="180" stroke="#2a1a0e" stroke-width="1" marker-end="url(#arrow)"/>
+    <line x1="612" y1="180" x2="622" y2="180" stroke="#2a1a0e" stroke-width="1" marker-end="url(#arrow)"/>
+  </g>
+
+  <!-- Time axis below -->
+  <line x1="32" y1="280" x2="670" y2="280" stroke="#2a1a0e" stroke-width="1" marker-end="url(#arrow)"/>
+  <g font-family="'JetBrains Mono', monospace" font-size="10" fill="#545454">
+    <line x1="80" y1="275" x2="80" y2="285" stroke="#2a1a0e" stroke-width="1"/>
+    <text x="50" y="300">pre-crisis</text>
+    <line x1="280" y1="275" x2="280" y2="285" stroke="#2a1a0e" stroke-width="1"/>
+    <text x="240" y="300">t = 0 alert</text>
+    <line x1="440" y1="275" x2="440" y2="285" stroke="#2a1a0e" stroke-width="1"/>
+    <text x="400" y="300">live window</text>
+    <line x1="600" y1="275" x2="600" y2="285" stroke="#2a1a0e" stroke-width="1"/>
+    <text x="560" y="300">90-day program</text>
+  </g>
+
+  <!-- United case annotation strip -->
+  <rect x="32" y="330" width="638" height="80" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="0.75"/>
+  <text x="44" y="352" font-family="'EB Garamond', serif" font-style="italic" font-size="14" fill="#2a1a0e">Where the United 36 hours actually lived:</text>
+  <text x="44" y="372" font-family="'Inter', sans-serif" font-size="11" fill="#2a1a0e">Stage 2 fired within minutes. Stage 3 was correct. Stage 4 picked corporate-legal-formal when the crisis type was preventable.</text>
+  <text x="44" y="388" font-family="'Inter', sans-serif" font-size="11" fill="#2a1a0e">Stage 7 corrected to named-executive acknowledgment 36 hours later — which is late enough that the correction became a second story.</text>
+
+  <!-- Pull line -->
+  <text x="32" y="450" font-family="'EB Garamond', serif" font-style="italic" font-size="14" fill="#2a1a0e">The dashboard tells you something is happening.</text>
+  <text x="32" y="470" font-family="'EB Garamond', serif" font-style="italic" font-size="14" fill="#2a1a0e">Only you can tell the room what kind of thing it is.</text>
+
+  <!-- Asymmetry footer -->
+  <text x="32" y="510" font-family="'Inter', sans-serif" font-size="11" fill="#545454">Under-delegating monitoring costs hours. Over-delegating judgment costs years. The asymmetry is not symmetric.</text>
+</svg>

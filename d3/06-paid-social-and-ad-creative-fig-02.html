@@ -1,0 +1,112 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Campaign cycle — where the judgment sits</title>
+<style>
+:root{--color-white:#FFFFFF;--color-ink:#2a1a0e;--color-red:#C8102E;--color-secondary:#545454;--color-border:#D4D4D4;--color-ochre:#C8860E;--color-fill:#F5F5F5;}
+@media (prefers-color-scheme: dark){:root{--color-white:#111111;--color-ink:#F0EBE3;--color-red:#E8243A;--color-secondary:#A0978C;--color-border:#2E2E2E;--color-ochre:#D49A30;--color-fill:#1A1A1A;}}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--color-white);color:var(--color-ink);font-family:'Inter',-apple-system,'Helvetica Neue',sans-serif;padding:24px;}
+#chart{width:100%;min-height:480px;}
+.tooltip{position:absolute;pointer-events:none;opacity:0;background:var(--color-ink);color:var(--color-white);padding:6px 10px;font-size:12px;max-width:260px;}
+.title{font-family:'EB Garamond','Garamond',Georgia,serif;font-size:16px;fill:var(--color-ink);}
+.subtitle{font-family:'Inter',sans-serif;font-size:12px;fill:var(--color-secondary);}
+.stage-num{font-family:'Inter',sans-serif;font-size:12px;font-weight:700;fill:var(--color-white);}
+.stage-label{font-family:'Inter',sans-serif;font-size:11px;fill:var(--color-white);}
+.stage-sub{font-family:'Inter',sans-serif;font-size:9.5px;fill:var(--color-white);font-style:italic;}
+.consequential{font-family:'EB Garamond',Georgia,serif;font-size:13px;font-style:italic;fill:var(--color-ochre);}
+.legend-text{font-family:'Inter',sans-serif;font-size:11px;fill:var(--color-ink);}
+@media (prefers-reduced-motion: reduce){*{transition:none !important;animation:none !important;}}
+</style></head><body>
+<div id="chart" role="main"></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+<script>
+const stages = [
+  {n:1, label:'Brief',                sub:'page-1, human',         role:'Guard',    star:true,  detail:'The bet, the audience, the lines not to cross. The only place strategic content enters.'},
+  {n:2, label:'Competitive scan',     sub:'+ benchmarks',          role:'Delegate', star:false, detail:'Pattern-shaped — AI reads competitor activity and recent platform-policy updates.'},
+  {n:3, label:'Concept',              sub:'the bet',               role:'Guard',    star:false, detail:'A human call about what to say. AI multiplexes; it does not bet.'},
+  {n:4, label:'Variant generation',   sub:'~200×',                 role:'Delegate', star:false, detail:'Headlines, hooks, body copy, asset crops — marginal cost effectively zero.'},
+  {n:5, label:'Brand-safety review',  sub:'questions, not rules',  role:'Guard',    star:true,  detail:'Contextual reading: news-cycle adjacency, worst-faith screenshot, who is implied.'},
+  {n:6, label:'Bid management',       sub:'auto-campaign',         role:'Delegate', star:false, detail:'Meta Advantage+ / Performance Max / TikTok SPC. Direct-response slice.'},
+  {n:7, label:'Quarterly brand check',sub:'search-volume, awareness', role:'Guard', star:false, detail:'Brand-search-volume, share-of-search, awareness tracker on quarterly cadence.'}
+];
+
+function draw(){
+  const c=document.getElementById('chart');
+  d3.select(c).selectAll('*').remove();
+  const W=c.clientWidth||1000,H=500;
+  const svg=d3.select(c).append('svg').attr('viewBox',`0 0 ${W} ${H}`).attr('role','img').attr('aria-labelledby','t d');
+  svg.append('title').attr('id','t').text('Campaign cycle — where the judgment sits');
+  svg.append('desc').attr('id','d').text('Seven-stage horizontal flow alternating Guard and Delegate stages, with brief and brand-safety review highlighted as the consequential-judgment stages.');
+
+  svg.append('text').attr('class','title').attr('x',32).attr('y',32).text('The campaign cycle — alternating Delegate and Guard');
+  svg.append('text').attr('class','subtitle').attr('x',32).attr('y',52).text('The brief and the brand-safety review do all the consequential judgment work.');
+
+  const defs = svg.append('defs');
+  defs.append('marker').attr('id','arrow-ink').attr('markerWidth',9).attr('markerHeight',7).attr('refX',8).attr('refY',3.5).attr('orient','auto')
+      .append('polygon').attr('points','0 0, 9 3.5, 0 7').attr('fill','var(--color-ink)');
+
+  // Layout: 7 boxes across, then stage 7 sits below stage 6
+  const margin = 40, gap = 14;
+  const boxW = (W - margin*2 - gap*6) / 7;
+  const boxH = 90;
+  const rowY = 180;
+
+  const tooltip = d3.select('body').append('div').attr('class','tooltip');
+  function show(event, d){ tooltip.html(`<strong>${d.n}. ${d.label}</strong><br/><em>${d.role}</em> · ${d.detail}`).style('left',(event.pageX+12)+'px').style('top',(event.pageY-28)+'px').transition().duration(150).style('opacity',1); }
+  function move(event){ tooltip.style('left',(event.pageX+12)+'px').style('top',(event.pageY-28)+'px'); }
+  function hide(){ tooltip.transition().duration(100).style('opacity',0); }
+
+  stages.slice(0,6).forEach((s,i)=>{
+    const x = margin + i*(boxW+gap);
+    const fill = s.role==='Guard' ? 'var(--color-red)' : 'var(--color-secondary)';
+    const stroke = s.star ? 'var(--color-ochre)' : 'var(--color-ink)';
+    const strokeW = s.star ? 3 : 1;
+    const g = svg.append('g').attr('tabindex',0).attr('aria-label',`Stage ${s.n}: ${s.label}, ${s.role}`)
+       .on('mouseover',(e)=>show(e,s)).on('mousemove',move).on('mouseout',hide);
+    g.append('rect').attr('x',x).attr('y', s.star?rowY-6:rowY).attr('width',boxW).attr('height', s.star?boxH+12:boxH).attr('fill',fill).attr('stroke',stroke).attr('stroke-width',strokeW);
+    g.append('text').attr('class','stage-num').attr('x',x+boxW/2).attr('y', s.star?rowY+22:rowY+24).attr('text-anchor','middle').text(s.n);
+    g.append('text').attr('class','stage-label').attr('x',x+boxW/2).attr('y', s.star?rowY+48:rowY+48).attr('text-anchor','middle').text(s.label);
+    g.append('text').attr('class','stage-sub').attr('x',x+boxW/2).attr('y', s.star?rowY+66:rowY+66).attr('text-anchor','middle').text(s.sub);
+    if(s.star){
+      const starY = rowY-22;
+      g.append('polygon').attr('points',`${x+boxW/2},${starY} ${x+boxW/2+4},${starY+8} ${x+boxW/2+12},${starY+8} ${x+boxW/2+6},${starY+13} ${x+boxW/2+9},${starY+20} ${x+boxW/2},${starY+16} ${x+boxW/2-9},${starY+20} ${x+boxW/2-6},${starY+13} ${x+boxW/2-12},${starY+8} ${x+boxW/2-4},${starY+8}`).attr('fill','var(--color-ochre)');
+      svg.append('text').attr('class','consequential').attr('x',x+boxW/2).attr('y',starY-22).attr('text-anchor','middle').text('consequential');
+      svg.append('text').attr('class','consequential').attr('x',x+boxW/2).attr('y',starY-6).attr('text-anchor','middle').text('judgment');
+    }
+    // arrow to next box
+    if(i<5){
+      const ax = x+boxW+2, ay = rowY + boxH/2;
+      svg.append('line').attr('x1',ax).attr('y1',ay).attr('x2',ax+gap-4).attr('y2',ay).attr('stroke','var(--color-ink)').attr('stroke-width',1).attr('marker-end','url(#arrow-ink)');
+    }
+  });
+
+  // Stage 7: spans across, sits below
+  const s7 = stages[6];
+  const s7x = margin + 2*(boxW+gap);
+  const s7y = rowY + boxH + 60;
+  const s7w = boxW*3 + gap*2;
+  const g7 = svg.append('g').attr('tabindex',0).attr('aria-label',`Stage ${s7.n}: ${s7.label}, ${s7.role}`)
+     .on('mouseover',(e)=>show(e,s7)).on('mousemove',move).on('mouseout',hide);
+  g7.append('rect').attr('x',s7x).attr('y',s7y).attr('width',s7w).attr('height',60).attr('fill','var(--color-red)').attr('stroke','var(--color-ink)').attr('stroke-width',1);
+  g7.append('text').attr('class','stage-num').attr('x',s7x+s7w/2).attr('y',s7y+22).attr('text-anchor','middle').text(s7.n);
+  g7.append('text').attr('class','stage-label').attr('x',s7x+s7w/2).attr('y',s7y+40).attr('text-anchor','middle').text(s7.label);
+  g7.append('text').attr('class','stage-sub').attr('x',s7x+s7w/2).attr('y',s7y+54).attr('text-anchor','middle').text(s7.sub);
+
+  // Curved arrow from stage 6 down to stage 7
+  const stage6x = margin + 5*(boxW+gap) + boxW/2;
+  svg.append('path').attr('d',`M ${stage6x} ${rowY+boxH} Q ${stage6x} ${s7y-10}, ${s7x+s7w} ${s7y+30}`).attr('fill','none').attr('stroke','var(--color-ink)').attr('stroke-width',1).attr('marker-end','url(#arrow-ink)');
+
+  // Timeline arrow
+  svg.append('line').attr('x1',margin).attr('y1',rowY+boxH+22).attr('x2',margin+boxW*2+gap).attr('y2',rowY+boxH+22).attr('stroke','var(--color-secondary)').attr('stroke-width',0.75).attr('stroke-dasharray','3,2');
+  svg.append('text').attr('class','legend-text').attr('fill','var(--color-secondary)').attr('font-style','italic').attr('x',margin + boxW + gap/2).attr('y',rowY+boxH+18).attr('text-anchor','middle').text('campaign duration');
+
+  // Legend
+  const ly = H-44;
+  svg.append('rect').attr('x',32).attr('y',ly).attr('width',16).attr('height',12).attr('fill','var(--color-red)');
+  svg.append('text').attr('class','legend-text').attr('x',54).attr('y',ly+10).text('Guard — human judgment');
+  svg.append('rect').attr('x',230).attr('y',ly).attr('width',16).attr('height',12).attr('fill','var(--color-secondary)');
+  svg.append('text').attr('class','legend-text').attr('x',252).attr('y',ly+10).text('Delegate — AI-handled');
+  svg.append('polygon').attr('points',`420,${ly+4} 424,${ly+12} 432,${ly+12} 426,${ly+17} 429,${ly+24} 420,${ly+20} 411,${ly+24} 414,${ly+17} 408,${ly+12} 416,${ly+12}`).attr('fill','var(--color-ochre)');
+  svg.append('text').attr('class','legend-text').attr('x',440).attr('y',ly+14).text('Consequential-judgment stage');
+}
+draw();
+new ResizeObserver(draw).observe(document.getElementById('chart'));
+</script></body></html>

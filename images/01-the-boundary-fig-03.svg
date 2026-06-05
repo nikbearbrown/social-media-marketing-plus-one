@@ -1,0 +1,56 @@
+<!--
+  The +1 Decision Node — Three Structural Inputs Before Publish
+  Book: Social Media Marketing plus One · Chapter: 01-the-boundary · Figure: 03
+-->
+<svg viewBox="0 0 700 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="fig-title fig-desc">
+  <title id="fig-title">The +1 Decision Node — AI Output → Human Gate → Publish</title>
+  <desc id="fig-desc">A horizontal pipeline. AI output (left) flows into a central human decision node. Three structural inputs the human brings — accountability, relationship, context — feed the node from above and below. A single arrow exits to the published artifact on the right.</desc>
+  <metadata><cajal:figure xmlns:cajal="https://bearbrown.ai/cajal/1.0" book="Social Media Marketing plus One" book-slug="social-media-marketing-plus-one" chapter="01-the-boundary" figure-number="03" figure-title="The +1 Decision Node" figure-slug="plus-one-decision-node" figure-type="flow" priority="Important" author="Humanitarians AI" date-generated="2026-05-27" source-file="pantry/01-the-boundary-cajal.md"/></metadata>
+  <rect x="0" y="0" width="700" height="420" fill="#FFFFFF"/>
+  <text x="32" y="36" font-family="'EB Garamond', Georgia, serif" font-size="14" fill="#2a1a0e">The +1 Decision Node — What the Human Brings That the Model Cannot</text>
+  <text x="32" y="56" font-family="'Inter', sans-serif" font-size="11" fill="#545454">Accountability, relationship, and context enter the gate. Only one outflow.</text>
+
+  <!-- AI output tile (left) -->
+  <rect x="60" y="200" width="130" height="60" fill="#787878" opacity="0.25" stroke="#545454" stroke-width="1"/>
+  <text x="125" y="226" text-anchor="middle" font-family="'Inter', sans-serif" font-size="12" fill="#2a1a0e">AI output</text>
+  <text x="125" y="244" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10" fill="#545454">draft / caption / reply</text>
+
+  <!-- Arrow from AI output to gate -->
+  <line x1="190" y1="230" x2="285" y2="230" stroke="#2a1a0e" stroke-width="1"/>
+  <polygon points="285,230 277,226 277,234" fill="#2a1a0e"/>
+
+  <!-- Central +1 decision node (hexagon) -->
+  <polygon points="350,170 430,170 470,230 430,290 350,290 310,230" fill="#FFFFFF" stroke="#2a1a0e" stroke-width="1.5"/>
+  <text x="390" y="225" text-anchor="middle" font-family="'EB Garamond', Georgia, serif" font-size="13" fill="#2a1a0e">+1</text>
+  <text x="390" y="245" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10" fill="#545454">human gate</text>
+
+  <!-- Three inputs into hexagon: accountability (top), relationship (top-left of bottom), context (right of bottom) -->
+  <!-- Accountability arrow (top, vertical down) -->
+  <line x1="390" y1="100" x2="390" y2="167" stroke="#C8860E" stroke-width="1"/>
+  <polygon points="390,170 386,162 394,162" fill="#C8860E"/>
+  <circle cx="390" cy="170" r="3" fill="#C8860E"/>
+  <text x="390" y="90" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" fill="#C8860E">accountability</text>
+
+  <!-- Relationship arrow (bottom-left, up-right into hex) -->
+  <line x1="310" y1="350" x2="345" y2="293" stroke="#C8860E" stroke-width="1"/>
+  <polygon points="347,290 339,290 343,297" fill="#C8860E"/>
+  <circle cx="345" cy="293" r="3" fill="#C8860E"/>
+  <text x="295" y="368" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" fill="#C8860E">relationship</text>
+
+  <!-- Context arrow (bottom-right, up-left into hex) -->
+  <line x1="470" y1="350" x2="435" y2="293" stroke="#C8860E" stroke-width="1"/>
+  <polygon points="433,290 437,297 441,290" fill="#C8860E"/>
+  <circle cx="435" cy="293" r="3" fill="#C8860E"/>
+  <text x="485" y="368" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" fill="#C8860E">context</text>
+
+  <!-- Output arrow to publish tile -->
+  <line x1="470" y1="230" x2="555" y2="230" stroke="#2a1a0e" stroke-width="1.5"/>
+  <polygon points="555,230 547,226 547,234" fill="#2a1a0e"/>
+
+  <!-- Publish tile -->
+  <rect x="555" y="200" width="100" height="60" fill="#C8102E" opacity="0.15" stroke="#C8102E" stroke-width="1.5"/>
+  <text x="605" y="226" text-anchor="middle" font-family="'Inter', sans-serif" font-size="12" fill="#2a1a0e" font-weight="600">publish</text>
+  <text x="605" y="244" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10" fill="#545454">named human ships</text>
+
+  <text x="350" y="402" text-anchor="middle" font-family="'EB Garamond', Georgia, serif" font-size="11" fill="#C8102E" font-style="italic">"Who decided to publish this?" The answer cannot be "the model."</text>
+</svg>

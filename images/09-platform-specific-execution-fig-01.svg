@@ -1,0 +1,76 @@
+<!--
+  Two-Layer Execution Model — Format vs Fit
+  Book: Social Media Marketing plus One · Chapter: 09-platform-specific-execution · Figure: 01
+  Type: infographic · Generated: 2026-05-27 · Source: chapters/09-platform-specific-execution.md
+-->
+<svg viewBox="0 0 700 480" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="fig-title-01 fig-desc-01">
+  <title id="fig-title-01">Two-Layer Execution Model — Format (Delegate) vs Fit (Guard)</title>
+  <desc id="fig-desc-01">A two-tier diagram. Top tier — Layer 1 Format — lists six pattern-shaped tasks marked Delegate. Bottom tier — Layer 2 Fit — lists six judgment-shaped tasks marked Guard. A curved arrow on the right shows the failure mode of treating Layer 1 compliance as if it solved Layer 2.</desc>
+  <metadata><cajal:figure xmlns:cajal="https://bearbrown.ai/cajal/1.0" book="Social Media Marketing plus One" chapter="09-platform-specific-execution" figure-number="01" figure-title="Two-Layer Execution Model" figure-type="infographic" author="Nik Bear Brown Milivoje Davidovic" date-generated="2026-05-27" source-file="chapters/09-platform-specific-execution.md"/></metadata>
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#2a1a0e"/>
+    </marker>
+  </defs>
+  <rect x="0" y="0" width="700" height="480" fill="#FFFFFF"/>
+  <text x="32" y="36" font-family="'EB Garamond', Georgia, serif" font-size="14" fill="#2a1a0e">Two-layer execution — format is delegable, fit is not</text>
+  <text x="32" y="56" font-family="'Inter', sans-serif" font-size="11" fill="#545454">The Lattice failure: treating Layer 1 compliance as a proxy for Layer 2 fit.</text>
+
+  <!-- Tier divider -->
+  <line x1="32" y1="96" x2="32" y2="420" stroke="#2a1a0e" stroke-width="1"/>
+
+  <!-- Layer 1 — Format band -->
+  <rect x="56" y="100" width="540" height="120" fill="#545454" opacity="0.15" stroke="#D4D4D4" stroke-width="0.75"/>
+  <text x="72" y="128" font-family="'EB Garamond', Georgia, serif" font-size="14" fill="#2a1a0e">Layer 1 — Format</text>
+  <text x="72" y="146" font-family="'Inter', sans-serif" font-size="11" fill="#545454">Pattern-shaped, mechanical, hours saved</text>
+
+  <!-- Six task circles -->
+  <circle cx="100" cy="190" r="9" fill="#545454"/>
+  <circle cx="180" cy="190" r="9" fill="#545454"/>
+  <circle cx="260" cy="190" r="9" fill="#545454"/>
+  <circle cx="340" cy="190" r="9" fill="#545454"/>
+  <circle cx="420" cy="190" r="9" fill="#545454"/>
+  <circle cx="500" cy="190" r="9" fill="#545454"/>
+
+  <!-- Task labels -->
+  <text x="100" y="212" font-family="'Inter', sans-serif" font-size="10" fill="#2a1a0e" text-anchor="middle">aspect ratio</text>
+  <text x="180" y="212" font-family="'Inter', sans-serif" font-size="10" fill="#2a1a0e" text-anchor="middle">length</text>
+  <text x="260" y="212" font-family="'Inter', sans-serif" font-size="10" fill="#2a1a0e" text-anchor="middle">caption length</text>
+  <text x="340" y="212" font-family="'Inter', sans-serif" font-size="10" fill="#2a1a0e" text-anchor="middle">hashtags</text>
+  <text x="420" y="212" font-family="'Inter', sans-serif" font-size="10" fill="#2a1a0e" text-anchor="middle">thumbnail</text>
+  <text x="500" y="212" font-family="'Inter', sans-serif" font-size="10" fill="#2a1a0e" text-anchor="middle">scheduling</text>
+
+  <!-- Delegate marker -->
+  <rect x="616" y="148" width="40" height="40" fill="#545454"/>
+  <text x="636" y="172" font-family="'Inter', sans-serif" font-size="11" font-weight="700" fill="#FFFFFF" text-anchor="middle">Delegate</text>
+
+  <!-- Layer 2 — Fit band -->
+  <rect x="56" y="260" width="540" height="120" fill="#C8102E" opacity="0.15" stroke="#D4D4D4" stroke-width="0.75"/>
+  <text x="72" y="288" font-family="'EB Garamond', Georgia, serif" font-size="14" fill="#2a1a0e">Layer 2 — Fit</text>
+  <text x="72" y="306" font-family="'Inter', sans-serif" font-size="11" fill="#545454">Judgment-shaped, continuously refreshed, brand-load-bearing</text>
+
+  <!-- Six fit circles -->
+  <circle cx="100" cy="350" r="9" fill="#C8102E"/>
+  <circle cx="180" cy="350" r="9" fill="#C8102E"/>
+  <circle cx="260" cy="350" r="9" fill="#C8102E"/>
+  <circle cx="340" cy="350" r="9" fill="#C8102E"/>
+  <circle cx="420" cy="350" r="9" fill="#C8102E"/>
+  <circle cx="500" cy="350" r="9" fill="#C8102E"/>
+
+  <text x="100" y="372" font-family="'Inter', sans-serif" font-size="10" fill="#2a1a0e" text-anchor="middle">voice</text>
+  <text x="180" y="372" font-family="'Inter', sans-serif" font-size="10" fill="#2a1a0e" text-anchor="middle">pacing</text>
+  <text x="260" y="372" font-family="'Inter', sans-serif" font-size="10" fill="#2a1a0e" text-anchor="middle">hook selection</text>
+  <text x="340" y="372" font-family="'Inter', sans-serif" font-size="10" fill="#2a1a0e" text-anchor="middle">trend timing</text>
+  <text x="420" y="372" font-family="'Inter', sans-serif" font-size="10" fill="#2a1a0e" text-anchor="middle">community norms</text>
+  <text x="500" y="372" font-family="'Inter', sans-serif" font-size="10" fill="#2a1a0e" text-anchor="middle">comment policy</text>
+
+  <!-- Guard marker -->
+  <rect x="616" y="308" width="40" height="40" fill="#C8102E"/>
+  <text x="636" y="332" font-family="'Inter', sans-serif" font-size="11" font-weight="700" fill="#FFFFFF" text-anchor="middle">Guard</text>
+
+  <!-- Failure-mode curved arrow -->
+  <path d="M 600 200 C 670 200, 670 280, 600 280" fill="none" stroke="#2a1a0e" stroke-width="1" marker-end="url(#arrow)"/>
+
+  <!-- Failure caption -->
+  <text x="56" y="420" font-family="'Inter', sans-serif" font-size="11" font-style="italic" fill="#545454">Lattice failure mode — Layer 1 compliance read as Layer 2 solved. Format: correct. Fit: absent.</text>
+</svg>

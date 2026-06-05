@@ -1,0 +1,122 @@
+<!--
+  Regulated-Industry Calibration Matrix
+  Book: Social Media Marketing plus One
+  Chapter: 10-building-your-own-map
+  Figure: 03
+  Type: matrix
+  Generated: 2026-05-27
+  Source: pantry/10-building-your-own-map-cajal.md
+-->
+<svg viewBox="0 0 700 480" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="fig-title-03">
+  <title id="fig-title-03">Regulated-Industry Calibration Matrix</title>
+  <desc>Three rows show how the same audit method produces different Guard items, AI risks, and escalation owners across Healthcare/HIPAA, Finance/SEC Marketing Rule, and Legal/Bar advertising rules. Same method, different maps.</desc>
+  <metadata><cajal:figure xmlns:cajal="https://bearbrown.ai/cajal/1.0" book="Social Media Marketing plus One" book-slug="social-media-marketing-plus-one" chapter="10-building-your-own-map" figure-number="03" figure-title="Regulated-Industry Calibration Matrix" figure-slug="regulated-industry-calibration-matrix" figure-type="matrix" priority="Important" author="Nik Bear Brown Milivoje Davidovic" date-generated="2026-05-27" source-file="pantry/10-building-your-own-map-cajal.md"/></metadata>
+  <defs><marker id="arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#2a1a0e"/></marker></defs>
+  <rect x="0" y="0" width="700" height="480" fill="#FFFFFF"/>
+  <text x="32" y="36" font-family="'EB Garamond', 'Garamond', Georgia, serif" font-size="14" fill="#2a1a0e">Regulated-industry calibration matrix — same method, three different maps</text>
+  <text x="32" y="56" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="11" fill="#545454">Each row applies the audit method to a regime where the wrong delegation has a regulatory cost. Red tone indicates regulatory weight.</text>
+
+  <!-- Plot region -->
+  <rect x="32" y="80" width="636" height="320" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="0.75"/>
+
+  <!-- Column headers -->
+  <rect x="32" y="80" width="636" height="36" fill="#2a1a0e"/>
+  <text x="148" y="103" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" font-weight="700" fill="#FFFFFF">Regime</text>
+  <text x="312" y="103" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" font-weight="700" fill="#FFFFFF">Typical Guard items</text>
+  <text x="476" y="103" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" font-weight="700" fill="#FFFFFF">AI risk if delegated</text>
+  <text x="612" y="103" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" font-weight="700" fill="#FFFFFF">Escalation owner</text>
+
+  <!-- Column dividers -->
+  <line x1="232" y1="80" x2="232" y2="400" stroke="#D4D4D4" stroke-width="0.75"/>
+  <line x1="404" y1="80" x2="404" y2="400" stroke="#D4D4D4" stroke-width="0.75"/>
+  <line x1="552" y1="80" x2="552" y2="400" stroke="#D4D4D4" stroke-width="0.75"/>
+
+  <!-- Row 1: Healthcare / HIPAA -->
+  <rect x="32" y="116" width="200" height="94" fill="#C8102E" opacity="0.10"/>
+  <rect x="32" y="116" width="6" height="94" fill="#C8102E"/>
+  <text x="48" y="138" font-family="'Inter', sans-serif" font-size="12" font-weight="700" fill="#2a1a0e">Healthcare</text>
+  <text x="48" y="152" font-family="'Inter', sans-serif" font-size="10" fill="#545454">HIPAA, 45 CFR Part 164</text>
+  <text x="48" y="172" font-family="'JetBrains Mono', monospace" font-size="9" fill="#787878">18 identifiers</text>
+  <text x="48" y="186" font-family="'JetBrains Mono', monospace" font-size="9" fill="#787878">PHI exposure</text>
+  <text x="48" y="200" font-family="'JetBrains Mono', monospace" font-size="9" fill="#787878">FDA-adjacent claims</text>
+
+  <text x="244" y="138" font-family="'Inter', sans-serif" font-size="10" fill="#2a1a0e">patient stories,</text>
+  <text x="244" y="152" font-family="'Inter', sans-serif" font-size="10" fill="#2a1a0e">disease-awareness copy,</text>
+  <text x="244" y="166" font-family="'Inter', sans-serif" font-size="10" fill="#2a1a0e">treatment outcome claims,</text>
+  <text x="244" y="180" font-family="'Inter', sans-serif" font-size="10" fill="#2a1a0e">community replies that</text>
+  <text x="244" y="194" font-family="'Inter', sans-serif" font-size="10" fill="#2a1a0e">touch a specific case</text>
+
+  <text x="416" y="138" font-family="'Inter', sans-serif" font-size="10" fill="#2a1a0e">inadvertent PHI in</text>
+  <text x="416" y="152" font-family="'Inter', sans-serif" font-size="10" fill="#2a1a0e">paraphrased prompts;</text>
+  <text x="416" y="166" font-family="'Inter', sans-serif" font-size="10" fill="#2a1a0e">unsubstantiated efficacy;</text>
+  <text x="416" y="180" font-family="'Inter', sans-serif" font-size="10" fill="#2a1a0e">tone that reads as</text>
+  <text x="416" y="194" font-family="'Inter', sans-serif" font-size="10" fill="#2a1a0e">medical advice</text>
+
+  <text x="564" y="138" font-family="'Inter', sans-serif" font-size="10" font-weight="700" fill="#C8102E">Privacy officer</text>
+  <text x="564" y="152" font-family="'Inter', sans-serif" font-size="10" fill="#545454">+ clinical reviewer</text>
+  <text x="564" y="172" font-family="'JetBrains Mono', monospace" font-size="9" fill="#787878">block-before-publish</text>
+
+  <!-- Row 1 separator -->
+  <line x1="32" y1="210" x2="668" y2="210" stroke="#2a1a0e" stroke-width="1"/>
+
+  <!-- Row 2: Finance / SEC Marketing Rule -->
+  <rect x="32" y="210" width="200" height="95" fill="#C8102E" opacity="0.13"/>
+  <rect x="32" y="210" width="6" height="95" fill="#C8102E"/>
+  <text x="48" y="232" font-family="'Inter', sans-serif" font-size="12" font-weight="700" fill="#2a1a0e">Finance</text>
+  <text x="48" y="246" font-family="'Inter', sans-serif" font-size="10" fill="#545454">SEC Marketing Rule,</text>
+  <text x="48" y="260" font-family="'Inter', sans-serif" font-size="10" fill="#545454">FINRA retainability</text>
+  <text x="48" y="280" font-family="'JetBrains Mono', monospace" font-size="9" fill="#787878">performance promise</text>
+  <text x="48" y="294" font-family="'JetBrains Mono', monospace" font-size="9" fill="#787878">testimonial rules</text>
+
+  <text x="244" y="232" font-family="'Inter', sans-serif" font-size="10" fill="#2a1a0e">return claims,</text>
+  <text x="244" y="246" font-family="'Inter', sans-serif" font-size="10" fill="#2a1a0e">"punchier" rewrites that</text>
+  <text x="244" y="260" font-family="'Inter', sans-serif" font-size="10" fill="#2a1a0e">become forward-looking,</text>
+  <text x="244" y="274" font-family="'Inter', sans-serif" font-size="10" fill="#2a1a0e">DM replies with advice,</text>
+  <text x="244" y="288" font-family="'Inter', sans-serif" font-size="10" fill="#2a1a0e">unarchived live posts</text>
+
+  <text x="416" y="232" font-family="'Inter', sans-serif" font-size="10" fill="#2a1a0e">performance promise from</text>
+  <text x="416" y="246" font-family="'Inter', sans-serif" font-size="10" fill="#2a1a0e">"make it punchier" prompt;</text>
+  <text x="416" y="260" font-family="'Inter', sans-serif" font-size="10" fill="#2a1a0e">unfair-balance violations;</text>
+  <text x="416" y="274" font-family="'Inter', sans-serif" font-size="10" fill="#2a1a0e">retention gap on</text>
+  <text x="416" y="288" font-family="'Inter', sans-serif" font-size="10" fill="#2a1a0e">AI-generated drafts</text>
+
+  <text x="564" y="232" font-family="'Inter', sans-serif" font-size="10" font-weight="700" fill="#C8102E">CCO</text>
+  <text x="564" y="246" font-family="'Inter', sans-serif" font-size="10" fill="#545454">+ outside counsel</text>
+  <text x="564" y="266" font-family="'JetBrains Mono', monospace" font-size="9" fill="#787878">pre-publish review</text>
+  <text x="564" y="280" font-family="'JetBrains Mono', monospace" font-size="9" fill="#787878">+ archive trail</text>
+
+  <!-- Row 2 separator -->
+  <line x1="32" y1="305" x2="668" y2="305" stroke="#2a1a0e" stroke-width="1"/>
+
+  <!-- Row 3: Legal / Bar advertising -->
+  <rect x="32" y="305" width="200" height="95" fill="#C8102E" opacity="0.16"/>
+  <rect x="32" y="305" width="6" height="95" fill="#C8102E"/>
+  <text x="48" y="327" font-family="'Inter', sans-serif" font-size="12" font-weight="700" fill="#2a1a0e">Legal</text>
+  <text x="48" y="341" font-family="'Inter', sans-serif" font-size="10" fill="#545454">State bar advertising,</text>
+  <text x="48" y="355" font-family="'Inter', sans-serif" font-size="10" fill="#545454">ABA Model Rule 7.x</text>
+  <text x="48" y="375" font-family="'JetBrains Mono', monospace" font-size="9" fill="#787878">specialization claims</text>
+  <text x="48" y="389" font-family="'JetBrains Mono', monospace" font-size="9" fill="#787878">solicitation rules</text>
+
+  <text x="244" y="327" font-family="'Inter', sans-serif" font-size="10" fill="#2a1a0e">case-outcome posts,</text>
+  <text x="244" y="341" font-family="'Inter', sans-serif" font-size="10" fill="#2a1a0e">"expert" / "specialist"</text>
+  <text x="244" y="355" font-family="'Inter', sans-serif" font-size="10" fill="#2a1a0e">framing in AI drafts,</text>
+  <text x="244" y="369" font-family="'Inter', sans-serif" font-size="10" fill="#2a1a0e">DM responses that</text>
+  <text x="244" y="383" font-family="'Inter', sans-serif" font-size="10" fill="#2a1a0e">form attorney-client expectations</text>
+
+  <text x="416" y="327" font-family="'Inter', sans-serif" font-size="10" fill="#2a1a0e">implied guarantees from</text>
+  <text x="416" y="341" font-family="'Inter', sans-serif" font-size="10" fill="#2a1a0e">enthusiastic rewrites;</text>
+  <text x="416" y="355" font-family="'Inter', sans-serif" font-size="10" fill="#2a1a0e">jurisdictional rule</text>
+  <text x="416" y="369" font-family="'Inter', sans-serif" font-size="10" fill="#2a1a0e">mismatch across states;</text>
+  <text x="416" y="383" font-family="'Inter', sans-serif" font-size="10" fill="#2a1a0e">inadvertent legal advice</text>
+
+  <text x="564" y="327" font-family="'Inter', sans-serif" font-size="10" font-weight="700" fill="#C8102E">Managing partner</text>
+  <text x="564" y="341" font-family="'Inter', sans-serif" font-size="10" fill="#545454">+ ethics counsel</text>
+  <text x="564" y="361" font-family="'JetBrains Mono', monospace" font-size="9" fill="#787878">jurisdiction-by-jurisdiction</text>
+
+  <!-- Bottom arrow indicating method consistency -->
+  <line x1="48" y1="430" x2="660" y2="430" stroke="#2a1a0e" stroke-width="1" marker-end="url(#arrow)"/>
+  <text x="350" y="424" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" font-style="italic" fill="#2a1a0e">same audit method — different maps</text>
+
+  <!-- Footer -->
+  <text x="32" y="462" font-family="'Inter', sans-serif" font-size="10" fill="#545454">Borrowing another regime's list wholesale fails. The method generalizes; the lists do not.</text>
+</svg>

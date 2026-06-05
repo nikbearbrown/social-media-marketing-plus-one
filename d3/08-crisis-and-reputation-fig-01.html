@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Crisis response timeline: AI handles, human decides</title>
+<style>
+:root{--color-white:#FFFFFF;--color-ink:#2a1a0e;--color-red:#C8102E;--color-secondary:#545454;--color-border:#D4D4D4;--color-ochre:#C8860E;--color-fill:#F5F5F5;}
+@media (prefers-color-scheme: dark){:root{--color-white:#111111;--color-ink:#F0EBE3;--color-red:#E8243A;--color-secondary:#A0978C;--color-border:#2E2E2E;--color-ochre:#D49A30;--color-fill:#1A1A1A;}}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--color-white);color:var(--color-ink);font-family:'Inter',-apple-system,'Helvetica Neue',sans-serif;padding:24px;}
+#chart{width:100%;min-height:540px;}
+.tooltip{position:absolute;pointer-events:none;opacity:0;background:var(--color-ink);color:var(--color-white);padding:6px 10px;font-size:12px;}
+.title{font-family:'EB Garamond','Garamond',Georgia,serif;font-size:18px;fill:var(--color-ink);}
+.subtitle{font-family:'Inter',sans-serif;font-size:12px;fill:var(--color-secondary);}
+.legend{font-family:'Inter',sans-serif;font-size:10px;fill:var(--color-ink);}
+.stage-lbl{font-family:'Inter',sans-serif;font-size:9px;font-weight:700;fill:#FFFFFF;}
+.stage-body{font-family:'Inter',sans-serif;font-size:9px;fill:#FFFFFF;}
+.axis-tick{font-family:'JetBrains Mono','Fira Code','Courier New',monospace;font-size:10px;fill:var(--color-secondary);}
+.pull{font-family:'EB Garamond',serif;font-style:italic;font-size:14px;fill:var(--color-ink);}
+.annot{font-family:'Inter',sans-serif;font-size:11px;fill:var(--color-ink);}
+@media (prefers-reduced-motion: reduce){*{transition:none !important;animation:none !important;}}
+</style></head><body>
+<div id="chart" role="main"></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+<script>
+const stages=[
+ {n:1,name:"CONFIGURE MONITORING",owner:"human",detail:["Quarterly"],time:"pre-crisis"},
+ {n:2,name:"ALERT FIRES",owner:"ai",detail:["Anomaly"],time:"t = 0"},
+ {n:3,name:"ESCALATION READ",owner:"human-ring",detail:["Crisis / brigade /","ticket / noise"],time:"5 min"},
+ {n:4,name:"POSTURE PICK",owner:"human-ring",detail:["One of five","postures"],time:"15 min"},
+ {n:5,name:"DRAFT",owner:"split-dwr",aiLbl:["AI","3 variants"],hLbl:["Edit","specifics"],time:"30 min"},
+ {n:6,name:"PUBLISH",owner:"split",aiLbl:["AI","sentiment"],hLbl:["Read","comments"],time:"6 hr"},
+ {n:7,name:"SECOND MOVE",owner:"human-ring",detail:["Amend or","double-down"],time:"6–24 hr"}
+];
+function draw(){
+  const c=document.getElementById('chart');
+  d3.select(c).selectAll('*').remove();
+  const W=c.clientWidth||900,H=540;
+  const svg=d3.select(c).append('svg').attr('viewBox',`0 0 ${W} ${H}`).attr('role','img').attr('aria-labelledby','t d');
+  svg.append('title').attr('id','t').text('Crisis response timeline: AI handles, human decides');
+  svg.append('desc').attr('id','d').text('Seven-stage crisis response timeline with three load-bearing human decisions ringed in ochre — escalation read, posture pick, and second move.');
+  const defs=svg.append('defs');
+  defs.append('marker').attr('id','arrow').attr('markerWidth',8).attr('markerHeight',6).attr('refX',7).attr('refY',3).attr('orient','auto')
+    .append('polygon').attr('points','0 0, 8 3, 0 6').attr('fill','var(--color-ink)');
+
+  svg.append('text').attr('class','title').attr('x',32).attr('y',32).text('Crisis response timeline: AI handles, human decides');
+  svg.append('text').attr('class','subtitle').attr('x',32).attr('y',52).text('Three ringed nodes are the highest-stakes decisions. The 36-hour gap lives in those rings.');
+
+  // Legend
+  const lg=svg.append('g').attr('transform','translate(32,72)');
+  lg.append('rect').attr('width',14).attr('height',14).attr('fill','var(--color-red)');
+  lg.append('text').attr('class','legend').attr('x',20).attr('y',11).text('Human (Guard)');
+  lg.append('rect').attr('x',128).attr('width',14).attr('height',14).attr('fill','var(--color-secondary)');
+  lg.append('text').attr('class','legend').attr('x',148).attr('y',11).text('AI (Delegate)');
+  lg.append('rect').attr('x',238).attr('width',14).attr('height',14).attr('fill','var(--color-secondary)');
+  lg.append('rect').attr('x',245).attr('width',7).attr('height',14).attr('fill','var(--color-ochre)');
+  lg.append('text').attr('class','legend').attr('x',258).attr('y',11).text('Delegate-with-Review');
+  lg.append('rect').attr('x',398).attr('width',14).attr('height',14).attr('fill','none').attr('stroke','var(--color-ochre)').attr('stroke-width',2).attr('stroke-dasharray','3 2');
+  lg.append('text').attr('class','legend').attr('x',418).attr('y',11).text('Load-bearing');
+
+  // 7 stages
+  const margin=32, gap=10, available=W-margin*2-gap*6;
+  const bw=available/7, by=120, bh=120;
+  stages.forEach((s,i)=>{
+    const x=margin+i*(bw+gap);
+    const g=svg.append('g').attr('transform',`translate(${x},${by})`);
+    if(s.owner==='human'||s.owner==='human-ring'){
+      g.append('rect').attr('width',bw).attr('height',bh).attr('fill','var(--color-red)').attr('stroke','var(--color-ink)').attr('stroke-width',0.75);
+    } else if(s.owner==='ai'){
+      g.append('rect').attr('width',bw).attr('height',bh).attr('fill','var(--color-secondary)').attr('stroke','var(--color-ink)').attr('stroke-width',0.75);
+    } else if(s.owner==='split'){
+      g.append('rect').attr('width',bw/2).attr('height',bh).attr('fill','var(--color-secondary)').attr('stroke','var(--color-ink)').attr('stroke-width',0.75);
+      g.append('rect').attr('x',bw/2).attr('width',bw/2).attr('height',bh).attr('fill','var(--color-red)').attr('stroke','var(--color-ink)').attr('stroke-width',0.75);
+    } else if(s.owner==='split-dwr'){
+      g.append('rect').attr('width',bw/2).attr('height',bh).attr('fill','var(--color-secondary)').attr('stroke','var(--color-ink)').attr('stroke-width',0.75);
+      g.append('rect').attr('x',bw/2).attr('width',bw/2).attr('height',bh).attr('fill','var(--color-ochre)').attr('stroke','var(--color-ink)').attr('stroke-width',0.75);
+    }
+    if(s.owner==='human-ring'){
+      g.append('rect').attr('x',-5).attr('y',-5).attr('width',bw+10).attr('height',bh+10).attr('fill','none').attr('stroke','var(--color-ochre)').attr('stroke-width',2).attr('stroke-dasharray','3 2');
+    }
+    // Wrap label across two lines if needed
+    const parts=s.name.split(' ');
+    g.append('text').attr('class','stage-lbl').attr('x',5).attr('y',16).text(`${s.n}. ${parts[0]}`);
+    if(parts.length>1) g.append('text').attr('class','stage-lbl').attr('x',5).attr('y',28).text(parts.slice(1).join(' '));
+
+    if(s.owner==='split'||s.owner==='split-dwr'){
+      s.aiLbl.forEach((t,j)=>g.append('text').attr('class','stage-body').attr('x',4).attr('y',50+j*14).text(t));
+      s.hLbl.forEach((t,j)=>g.append('text').attr('class','stage-body').attr('x',bw/2+4).attr('y',50+j*14).text(t));
+    } else {
+      g.append('text').attr('class','stage-body').attr('x',5).attr('y',50).text(s.owner==='ai'?'AI':'Human');
+      (s.detail||[]).forEach((t,j)=>g.append('text').attr('class','stage-body').attr('x',5).attr('y',66+j*12).text(t));
+    }
+    g.append('text').attr('class','stage-body').attr('x',5).attr('y',bh-6).style('font-family',"'JetBrains Mono', monospace").text(s.time);
+    if(i<stages.length-1){
+      svg.append('line').attr('x1',x+bw).attr('y1',by+bh/2).attr('x2',x+bw+gap-2).attr('y2',by+bh/2).attr('stroke','var(--color-ink)').attr('stroke-width',1).attr('marker-end','url(#arrow)');
+    }
+  });
+
+  // Time axis
+  svg.append('line').attr('x1',32).attr('y1',280).attr('x2',W-30).attr('y2',280).attr('stroke','var(--color-ink)').attr('stroke-width',1).attr('marker-end','url(#arrow)');
+  [
+    [80,'pre-crisis'],
+    [W*0.32,'t = 0 alert'],
+    [W*0.55,'live window'],
+    [W*0.85,'90-day program']
+  ].forEach(([x,lbl])=>{
+    svg.append('line').attr('x1',x).attr('y1',275).attr('x2',x).attr('y2',285).attr('stroke','var(--color-ink)');
+    svg.append('text').attr('class','axis-tick').attr('x',x-40).attr('y',300).text(lbl);
+  });
+
+  // United annotation
+  svg.append('rect').attr('x',32).attr('y',330).attr('width',W-64).attr('height',80).attr('fill','var(--color-fill)').attr('stroke','var(--color-border)').attr('stroke-width',0.75);
+  svg.append('text').attr('class','pull').attr('x',44).attr('y',352).text('Where the United 36 hours actually lived:');
+  svg.append('text').attr('class','annot').attr('x',44).attr('y',372).text('Stage 2 fired within minutes. Stage 3 was correct. Stage 4 picked corporate-legal-formal when the crisis type was preventable.');
+  svg.append('text').attr('class','annot').attr('x',44).attr('y',388).text('Stage 7 corrected to named-executive acknowledgment 36 hours later — late enough that the correction became a second story.');
+
+  svg.append('text').attr('class','pull').attr('x',32).attr('y',450).text('The dashboard tells you something is happening.');
+  svg.append('text').attr('class','pull').attr('x',32).attr('y',470).text('Only you can tell the room what kind of thing it is.');
+
+  svg.append('text').attr('class','subtitle').attr('x',32).attr('y',510).text('Under-delegating monitoring costs hours. Over-delegating judgment costs years. The asymmetry is not symmetric.');
+}
+draw();
+new ResizeObserver(draw).observe(document.getElementById('chart'));
+</script></body></html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Campaign cycle: handoffs and time estimates</title>
+<style>
+:root{--color-white:#FFFFFF;--color-ink:#2a1a0e;--color-red:#C8102E;--color-secondary:#545454;--color-border:#D4D4D4;--color-ochre:#C8860E;--color-fill:#F5F5F5;}
+@media (prefers-color-scheme: dark){:root{--color-white:#111111;--color-ink:#F0EBE3;--color-red:#E8243A;--color-secondary:#A0978C;--color-border:#2E2E2E;--color-ochre:#D49A30;--color-fill:#1A1A1A;}}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--color-white);color:var(--color-ink);font-family:'Inter',-apple-system,'Helvetica Neue',sans-serif;padding:24px;}
+#chart{width:100%;min-height:480px;}
+.tooltip{position:absolute;pointer-events:none;opacity:0;background:var(--color-ink);color:var(--color-white);padding:6px 10px;font-size:12px;}
+.title{font-family:'EB Garamond','Garamond',Georgia,serif;font-size:18px;fill:var(--color-ink);}
+.subtitle{font-family:'Inter',sans-serif;font-size:12px;fill:var(--color-secondary);}
+.stage-lbl{font-family:'Inter',sans-serif;font-size:10px;font-weight:700;fill:#FFFFFF;}
+.stage-body{font-family:'Inter',sans-serif;font-size:10px;fill:#FFFFFF;}
+.legend{font-family:'Inter',sans-serif;font-size:10px;fill:var(--color-ink);}
+.axis-tick{font-family:'JetBrains Mono','Fira Code','Courier New',monospace;font-size:10px;fill:var(--color-secondary);}
+.pull{font-family:'EB Garamond',serif;font-style:italic;font-size:12px;fill:var(--color-ink);}
+@media (prefers-reduced-motion: reduce){*{transition:none !important;animation:none !important;}}
+</style></head><body>
+<div id="chart" role="main"></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+<script>
+// Seven stages with ownership types
+const stages=[
+ {n:1,name:"BRIEF",owner:"human",detail:"Life-stage + intent",time:"~3 hr"},
+ {n:2,name:"DISCOVERY + AUDIT",owner:"ai",detail:"Filter, score, fraud",time:"~30 min"},
+ {n:3,name:"SHORTLIST REVIEW",owner:"human-ring",detail:"Fit read, forward-look",time:"~2–4 hr",sub:"load-bearing"},
+ {n:4,name:"OUTREACH",owner:"split-dwr",aiLbl:"AI draft",hLbl:"1st sentence",time:"~45 min"},
+ {n:5,name:"NEGOTIATION",owner:"split",aiLbl:"AI skeleton",hLbl:"Read the asks",time:"~variable"},
+ {n:6,name:"CONTENT REVIEW",owner:"split",aiLbl:"AI checks",hLbl:"Tone, disclosure",time:"~1 hr"},
+ {n:7,name:"REPORT + NARRATIVE",owner:"split",aiLbl:"AI numbers",hLbl:"Human story",time:"~2 hr"}
+];
+function draw(){
+  const c=document.getElementById('chart');
+  d3.select(c).selectAll('*').remove();
+  const W=c.clientWidth||900,H=480;
+  const svg=d3.select(c).append('svg').attr('viewBox',`0 0 ${W} ${H}`).attr('role','img').attr('aria-labelledby','t d');
+  svg.append('title').attr('id','t').text('Campaign cycle: handoffs and time estimates');
+  svg.append('desc').attr('id','d').text('Seven-stage campaign cycle with handoffs between AI drafting and human judgment, with shortlist review highlighted as the load-bearing repair point.');
+  const defs=svg.append('defs');
+  defs.append('marker').attr('id','arrow').attr('markerWidth',8).attr('markerHeight',6).attr('refX',7).attr('refY',3).attr('orient','auto')
+    .append('polygon').attr('points','0 0, 8 3, 0 6').attr('fill','var(--color-ink)');
+
+  svg.append('text').attr('class','title').attr('x',32).attr('y',32).text('Campaign cycle: handoffs and time estimates');
+  svg.append('text').attr('class','subtitle').attr('x',32).attr('y',52).text('Red = human · gray = AI · split = AI drafts, human edits · ringed = load-bearing');
+
+  // Legend
+  const lg=svg.append('g').attr('transform','translate(32,72)');
+  lg.append('rect').attr('width',14).attr('height',14).attr('fill','var(--color-red)');
+  lg.append('text').attr('class','legend').attr('x',20).attr('y',11).text('Human (Guard)');
+  lg.append('rect').attr('x',128).attr('width',14).attr('height',14).attr('fill','var(--color-secondary)');
+  lg.append('text').attr('class','legend').attr('x',148).attr('y',11).text('AI (Delegate)');
+  lg.append('rect').attr('x',238).attr('width',14).attr('height',14).attr('fill','var(--color-secondary)');
+  lg.append('rect').attr('x',245).attr('width',7).attr('height',14).attr('fill','var(--color-ochre)');
+  lg.append('text').attr('class','legend').attr('x',258).attr('y',11).text('Delegate-with-Review');
+
+  // 7 boxes across width
+  const margin=32, gap=14, available=W-margin*2-gap*6;
+  const bw=available/7, by=120, bh=110;
+  stages.forEach((s,i)=>{
+    const x=margin+i*(bw+gap);
+    const g=svg.append('g').attr('transform',`translate(${x},${by})`);
+    if(s.owner==='human'||s.owner==='human-ring'){
+      g.append('rect').attr('width',bw).attr('height',bh).attr('fill','var(--color-red)').attr('stroke','var(--color-ink)').attr('stroke-width',0.75);
+    } else if(s.owner==='ai'){
+      g.append('rect').attr('width',bw).attr('height',bh).attr('fill','var(--color-secondary)').attr('stroke','var(--color-ink)').attr('stroke-width',0.75);
+    } else if(s.owner==='split'){
+      g.append('rect').attr('width',bw/2).attr('height',bh).attr('fill','var(--color-secondary)').attr('stroke','var(--color-ink)').attr('stroke-width',0.75);
+      g.append('rect').attr('x',bw/2).attr('width',bw/2).attr('height',bh).attr('fill','var(--color-red)').attr('stroke','var(--color-ink)').attr('stroke-width',0.75);
+    } else if(s.owner==='split-dwr'){
+      g.append('rect').attr('width',bw/2).attr('height',bh).attr('fill','var(--color-secondary)').attr('stroke','var(--color-ink)').attr('stroke-width',0.75);
+      g.append('rect').attr('x',bw/2).attr('width',bw/2).attr('height',bh).attr('fill','var(--color-ochre)').attr('stroke','var(--color-ink)').attr('stroke-width',0.75);
+    }
+    if(s.owner==='human-ring'){
+      g.append('rect').attr('x',-5).attr('y',-5).attr('width',bw+10).attr('height',bh+10).attr('fill','none').attr('stroke','var(--color-ochre)').attr('stroke-width',2).attr('stroke-dasharray','3 2');
+    }
+    g.append('text').attr('class','stage-lbl').attr('x',6).attr('y',18).text(`${s.n}. ${s.name}`);
+    if(s.owner==='split'||s.owner==='split-dwr'){
+      g.append('text').attr('class','stage-body').attr('x',6).attr('y',50).text(s.aiLbl);
+      g.append('text').attr('class','stage-body').attr('x',bw/2+6).attr('y',50).text(s.hLbl);
+    } else {
+      g.append('text').attr('class','stage-body').attr('x',6).attr('y',50).text(s.owner==='ai'?'AI':'Human');
+      g.append('text').attr('class','stage-body').attr('x',6).attr('y',66).text(s.detail);
+      if(s.sub) g.append('text').attr('class','stage-body').attr('x',6).attr('y',82).text(s.sub);
+    }
+    g.append('text').attr('class','stage-body').attr('x',6).attr('y',bh-6).style('font-family',"'JetBrains Mono', monospace").text(s.time);
+    if(i<stages.length-1){
+      svg.append('line').attr('x1',x+bw).attr('y1',by+bh/2).attr('x2',x+bw+gap-2).attr('y2',by+bh/2).attr('stroke','var(--color-ink)').attr('stroke-width',1).attr('marker-end','url(#arrow)');
+    }
+  });
+
+  // Timeline below
+  svg.append('line').attr('x1',32).attr('y1',290).attr('x2',W-30).attr('y2',290).attr('stroke','var(--color-secondary)').attr('stroke-width',1).attr('marker-end','url(#arrow)');
+  svg.append('text').attr('class','axis-tick').attr('x',32).attr('y',310).text('campaign start');
+  svg.append('text').attr('class','axis-tick').attr('x',W*0.42).attr('y',310).text('handoff at shortlist');
+  svg.append('text').attr('class','axis-tick').attr('x',W-130).attr('y',310).text('campaign close');
+
+  svg.append('text').attr('class','pull').attr('x',32).attr('y',360).text('The tools shorten the path to the decision.');
+  svg.append('text').attr('class','pull').attr('x',32).attr('y',380).text('The decision still requires a person.');
+}
+draw();
+new ResizeObserver(draw).observe(document.getElementById('chart'));
+</script></body></html>

@@ -18,6 +18,10 @@ Fit, in influencer marketing, is not demographic overlap. It is whether this cre
 
 The aphorism the chapter is built around: AI shortens the shortlist. It does not shorten the decision.
 
+![Two-stage funnel showing AI delegate tasks on the left and human guard tasks on the right, with the shortlist-review handoff sitting on the decision boundary](../images/07-influencer-and-partnership-fig-01.png)
+
+*Figure 7.1 — Two-stage funnel: AI discovery, human decision.*
+
 <!-- → [INFOGRAPHIC: two-stage funnel — AI stage: discovery, audience overlap calculation, fraud audit, outreach first drafts, contract scaffolding, disclosure presence check, campaign reporting; Human stage: fit reading, reputational forward-look, tier-and-mix strategy, negotiation, gray-zone disclosure calls, crisis decisions, relationship escalation; label the boundary between stages "the decision point AI cannot cross"] -->
 
 ---
@@ -47,6 +51,18 @@ Brand-safety classifiers surface documented past behavior. A creator who has pub
 But the forward-look is not about past behavior at all. It is about trajectory. A creator who has been producing consistent wellness content for three years is one kind of bet. A creator who is six months into a visible drift toward political commentary, or whose personal life has become the content, or who is quietly building toward a category pivot, is a different kind of bet — and the difference is not in the historical data. It is in your read of where the creator is going. That read requires watching enough content, in enough context, to form a view about direction rather than position.
 
 No classifier produces a trajectory score because trajectory is not a function of past posts. It is an inference about the gap between where the creator is and where they are heading, which requires a kind of judgment that is not computable from the training data the tools have access to. This is not a temporary limitation of current classifiers. It is a structural feature of what trajectory means.
+
+| Judgment category | What AI provides | What AI cannot provide | Cost of skipping the human step |
+|---|---|---|---|
+| Fit read | Demographic overlap, topical-content cluster, engagement rate, fraud signal | Audience life-stage and intent at the moment of encounter; whether the creator's audience treats them as a trusted source or entertainment | Booked partners whose audiences will not act — the prenatal 11-of-14 mis-fit |
+| Reputational forward-look | Documented past behavior, posts indexed in training data, surfaced controversies | Trajectory — where the creator is heading versus where they are; quiet drifts and category pivots not yet posted | Becoming the flashpoint for a category controversy you did not see building |
+| Outreach signal | Competent first-draft email, references to topical cluster, value-prop language | The first-sentence evidence of discretion — that a specific person looked at this specific creator | 6 percent reply rate against an 18–25 percent benchmark, and zero relational capital |
+| Negotiation | Contract skeleton (deliverables, usage, exclusivity, kill fee, disclosure) | Reading what an unusual ask signals about the creator's priorities and adjacent deals | Getting the deal that was available to anyone who showed up, not the deal you wanted |
+| Disclosure gray zones | Pattern check for visible disclosure above the fold on paid posts | The gifted-no-contract / employee-personal / longstanding-relationship calls under FTC 16 CFR Part 255 (2023) | Advertiser-side liability under tightened 2023 rules, plus reputational cost |
+| Crisis call | Sentiment volume, anomaly flagging, escalation routing on the partner's account | The decision to pause, comment, or escalate when a partnered creator becomes a flashpoint | A campaign-into-controversy spillover the brand has no infrastructure to handle |
+| Relationship escalation | CRM reminders, contract anniversaries, performance summaries | The judgment of who deserves ambassador status and who gets quietly retired | A program that pays creators transactionally and accumulates no compounding asset |
+
+*Table 7.1 — Seven judgment categories that survive the discovery platform.*
 
 <!-- → [TABLE: four-column table — judgment category / what AI can provide / what AI cannot provide / cost of skipping the human step; rows: fit read, reputational forward-look, outreach signal, negotiation, disclosure gray zones, crisis call, relationship escalation] -->
 
@@ -82,6 +98,10 @@ The prenatal campaign's deepest failure was not the shortlist or the outreach or
 
 The corrected workflow is not more sophisticated tooling. It is the same tools, followed by two to four hours of human shortlist review, followed by first-sentence rewrites on every outreach email. The repair is structural. The tools shorten the path to the decision. The decision still requires a person.
 
+![Seven-stage campaign cycle showing red human stages, gray AI stages, and split stages where AI drafts and humans review, with the shortlist-review stage highlighted as load-bearing](../images/07-influencer-and-partnership-fig-02.png)
+
+*Figure 7.2 — Campaign cycle: handoffs and time estimates.*
+
 <!-- → [IMAGE: campaign cycle diagram — brief (human) → discovery and audit (AI) → shortlist review (human, load-bearing) → outreach with first-sentence rule (AI draft + human rewrite) → contract negotiation (AI skeleton + human) → content review (AI checks + human judgment) → reporting (AI) + narrative (human); label each stage with time estimate] -->
 
 ---
@@ -103,3 +123,13 @@ The chapter claims that the first sentence of an outreach email is where the cre
 **Exercise 4 — Draft or audit a professional deliverable**
 
 Using the Chapter 7 protocol, produce a one-page influencer brief for a real or hypothetical campaign. The brief should specify: product, target buyer with life-stage and intent (not just demographic), campaign goal, anti-target, budget, timeline, deliverables, disclosure requirements by jurisdiction, and the criteria for the human shortlist review step. Draft a first version using a language model, then audit it against what you would actually need in the room during the shortlist review. Mark every place where the brief's framing would lead the discovery tool to surface the wrong candidates.
+
+---
+
+## Prompts
+
+**Figure 7.1 — Two-stage funnel: AI discovery, human decision.**
+A horizontal two-stage funnel in the brutalist palette. Left stage is a wide trapezoid labeled Delegate / AI stage, holding seven small secondary-gray task circles stacked vertically (discovery, audience overlap, fraud audit, outreach drafts, contract scaffolding, disclosure check, reporting). Right stage is a narrower trapezoid labeled Guard / Human stage, holding seven small red task markers (fit read, reputational forward-look, tier-and-mix, negotiation, gray-zone disclosure, crisis call, relationship escalation). Between the two trapezoids sits a vertical ochre line — the decision point AI cannot cross — with a single red ringed circle on the boundary at mid-height marking the load-bearing shortlist-review handoff. A black flow arrow runs underneath both stages from longlist to booked partners. White canvas, ink text, hairlines for trapezoid edges. No gradients, no shadows, no rounded corners on shapes.
+
+**Figure 7.2 — Campaign cycle: handoffs and time estimates.**
+A seven-stage horizontal campaign workflow. Stage 1 (brief) and Stage 3 (shortlist review) are solid red — human work; Stage 3 has a dashed ochre ring marking it as the load-bearing repair point. Stage 2 (discovery and audit) is solid secondary gray — fully AI. Stages 4 through 7 are split rectangles: the left half secondary gray (AI), the right half either ochre (Delegate-with-Review on outreach) or red (human judgment on negotiation, content review, narrative). Black directional arrows connect stages; each box carries a brief label, ownership tag, and JetBrains Mono time estimate. A horizontal timeline runs beneath the row from campaign start through handoff at shortlist to campaign close, with an italic Garamond closing line on the lower-left.

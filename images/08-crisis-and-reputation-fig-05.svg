@@ -1,0 +1,108 @@
+<!--
+  Synthetic-media verification chain of custody
+  Book: Social Media Marketing plus One
+  Chapter: 08-crisis-and-reputation
+  Figure: 05
+  Type: PROCESS
+  Generated: 2026-05-27
+  Source: pantry/08-crisis-and-reputation-cajal.md
+-->
+<svg viewBox="0 0 700 480" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="fig-title-05 fig-desc-05">
+  <title id="fig-title-05">Synthetic-media verification chain of custody</title>
+  <desc id="fig-desc-05">Five-stage pipeline for verifying suspect synthetic media. Incoming asset to AI detector score to C2PA provenance check to human chain-of-custody verification (highlighted, decisive) to a published response. A warning marker over the detector flags that score alone is inadequate; a dashed loop shows that published evidence is itself part of the verification record.</desc>
+  <metadata><cajal:figure xmlns:cajal="https://bearbrown.ai/cajal/1.0" book="Social Media Marketing plus One" book-slug="social-media-marketing-plus-one" chapter="08-crisis-and-reputation" figure-number="05" figure-title="Synthetic-media verification chain of custody" figure-slug="synthetic-media-verification-chain" figure-type="PROCESS" priority="Recommended" author="Nik Bear Brown Milivoje Davidovic" date-generated="2026-05-27" source-file="pantry/08-crisis-and-reputation-cajal.md"/></metadata>
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#2a1a0e"/></marker>
+    <marker id="arrow-red" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#C8102E"/></marker>
+  </defs>
+  <rect x="0" y="0" width="700" height="480" fill="#FFFFFF"/>
+  <text x="32" y="36" font-family="'EB Garamond', 'Garamond', Georgia, serif" font-size="14" fill="#2a1a0e">Synthetic media verification — a denial without chain of custody is just an assertion</text>
+  <text x="32" y="56" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="11" fill="#545454">Detector scores plus C2PA plus human verification through the named subject and the production environment.</text>
+
+  <!-- Five nodes horizontal pipeline -->
+  <!-- Node positions: 50, 175, 300, 425, 555 -->
+  <!-- Each node 110 wide, 100 tall, y=150 -->
+
+  <!-- Node 1: Incoming asset -->
+  <rect x="40" y="160" width="110" height="100" fill="#F5F5F5" stroke="#2a1a0e" stroke-width="1"/>
+  <text x="95" y="190" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="10" fill="#545454">step 1 · T+0</text>
+  <text x="95" y="212" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" font-weight="700" fill="#2a1a0e">Incoming</text>
+  <text x="95" y="226" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" font-weight="700" fill="#2a1a0e">asset</text>
+  <text x="95" y="246" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10" fill="#545454">video / audio / image</text>
+
+  <line x1="150" y1="210" x2="174" y2="210" stroke="#2a1a0e" stroke-width="1" marker-end="url(#arrow)"/>
+
+  <!-- Node 2: Detector score (AI) -->
+  <rect x="175" y="160" width="110" height="100" fill="#545454" stroke="#2a1a0e" stroke-width="1"/>
+  <text x="230" y="190" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="10" fill="#D4D4D4">step 2 · ~5 min</text>
+  <text x="230" y="212" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" font-weight="700" fill="#FFFFFF">Detector</text>
+  <text x="230" y="226" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" font-weight="700" fill="#FFFFFF">score</text>
+  <text x="230" y="246" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10" fill="#FFFFFF">AI confidence value</text>
+
+  <!-- Warning marker above Node 2 -->
+  <polygon points="230,130 218,150 242,150" fill="#C8860E" stroke="#2a1a0e" stroke-width="0.75"/>
+  <text x="230" y="146" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" font-weight="700" fill="#FFFFFF">!</text>
+  <text x="295" y="135" font-family="'EB Garamond', Georgia, serif" font-style="italic" font-size="11" fill="#C8860E">a denial based on detector score alone</text>
+  <text x="295" y="148" font-family="'EB Garamond', Georgia, serif" font-style="italic" font-size="11" fill="#C8860E">reads as defensive · insufficient</text>
+
+  <line x1="285" y1="210" x2="299" y2="210" stroke="#2a1a0e" stroke-width="1" marker-end="url(#arrow)"/>
+
+  <!-- Node 3: C2PA check (AI) -->
+  <rect x="300" y="160" width="110" height="100" fill="#545454" stroke="#2a1a0e" stroke-width="1"/>
+  <text x="355" y="190" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="10" fill="#D4D4D4">step 3 · ~5 min</text>
+  <text x="355" y="212" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" font-weight="700" fill="#FFFFFF">C2PA</text>
+  <text x="355" y="226" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" font-weight="700" fill="#FFFFFF">provenance check</text>
+  <text x="355" y="246" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10" fill="#FFFFFF">cryptographic signal</text>
+
+  <line x1="410" y1="210" x2="424" y2="210" stroke="#2a1a0e" stroke-width="1" marker-end="url(#arrow)"/>
+
+  <!-- Node 4: Chain-of-custody verification (HUMAN, highlighted) -->
+  <rect x="425" y="160" width="110" height="100" fill="#C8102E" stroke="#2a1a0e" stroke-width="1"/>
+  <rect x="420" y="155" width="120" height="110" fill="none" stroke="#C8102E" stroke-width="1" stroke-dasharray="3 2"/>
+  <text x="480" y="190" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="10" fill="#FFFFFF">step 4 · 30–60 min</text>
+  <text x="480" y="210" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" font-weight="700" fill="#FFFFFF">Chain of</text>
+  <text x="480" y="224" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" font-weight="700" fill="#FFFFFF">custody</text>
+  <text x="480" y="242" text-anchor="middle" font-family="'Inter', sans-serif" font-size="9.5" fill="#FFFFFF">named exec confirms,</text>
+  <text x="480" y="254" text-anchor="middle" font-family="'Inter', sans-serif" font-size="9.5" fill="#FFFFFF">env + internal logs</text>
+
+  <line x1="535" y1="210" x2="549" y2="210" stroke="#2a1a0e" stroke-width="1" marker-end="url(#arrow)"/>
+
+  <!-- Node 5: Public response -->
+  <rect x="550" y="160" width="110" height="100" fill="#C8102E" stroke="#2a1a0e" stroke-width="1"/>
+  <text x="605" y="190" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="10" fill="#FFFFFF">step 5 · &lt; 4 hr</text>
+  <text x="605" y="212" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" font-weight="700" fill="#FFFFFF">Public</text>
+  <text x="605" y="226" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" font-weight="700" fill="#FFFFFF">response</text>
+  <text x="605" y="246" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10" fill="#FFFFFF">evidence, not assertion</text>
+
+  <!-- Bottom labels: Delegate vs Guard rows -->
+  <line x1="40" y1="290" x2="660" y2="290" stroke="#D4D4D4" stroke-width="0.75"/>
+  <text x="40" y="306" font-family="'EB Garamond', Georgia, serif" font-size="12" fill="#2a1a0e">Tool category at each step</text>
+
+  <text x="95" y="328" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="10" fill="#545454">intake queue</text>
+  <text x="230" y="328" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="10" fill="#545454">deepfake detector</text>
+  <text x="355" y="328" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="10" fill="#545454">C2PA verifier</text>
+  <text x="480" y="328" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="10" fill="#545454">human + comms log</text>
+  <text x="605" y="328" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="10" fill="#545454">posted with receipts</text>
+
+  <text x="95" y="346" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10" font-style="italic" fill="#545454">log</text>
+  <text x="230" y="346" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10" font-style="italic" fill="#545454">Delegate</text>
+  <text x="355" y="346" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10" font-style="italic" fill="#545454">Delegate</text>
+  <text x="480" y="346" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10" font-style="italic" fill="#C8102E">Guard — decisive</text>
+  <text x="605" y="346" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10" font-style="italic" fill="#C8102E">Guard</text>
+
+  <!-- Loop arrow from Node 5 back to Node 4 (published evidence is part of the chain) -->
+  <path d="M 605 260 C 605 380, 480 380, 480 268" fill="none" stroke="#C8102E" stroke-width="1.25" stroke-dasharray="4 3" marker-end="url(#arrow-red)"/>
+  <text x="540" y="404" text-anchor="middle" font-family="'EB Garamond', Georgia, serif" font-style="italic" font-size="12" fill="#C8102E">the published evidence is itself part</text>
+  <text x="540" y="418" text-anchor="middle" font-family="'EB Garamond', Georgia, serif" font-style="italic" font-size="12" fill="#C8102E">of the chain of custody</text>
+
+  <!-- Legend -->
+  <g transform="translate(32,438)">
+    <rect x="0" y="0" width="14" height="12" fill="#545454"/>
+    <text x="20" y="10" font-family="'Inter', sans-serif" font-size="11" fill="#2a1a0e">AI / Delegate</text>
+    <rect x="130" y="0" width="14" height="12" fill="#C8102E"/>
+    <text x="150" y="10" font-family="'Inter', sans-serif" font-size="11" fill="#2a1a0e">Human / Guard</text>
+    <polygon points="280,3 270,15 290,15" fill="#C8860E"/>
+    <text x="296" y="13" font-family="'Inter', sans-serif" font-size="11" fill="#2a1a0e">Insufficient-without-step-4 warning</text>
+  </g>
+  <text x="32" y="468" font-family="'Inter', sans-serif" font-size="10" fill="#545454">NIST AI RMF Generative AI Profile 2024 · C2PA · EU AI Act Articles 50 &amp; 52 phasing 2026 [verify]</text>
+</svg>

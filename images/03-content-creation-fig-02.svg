@@ -1,0 +1,115 @@
+<!--
+  Decomposition of a CEO LinkedIn Essay — 13 Steps, 8 Delegate, 5 Guard
+  Book: Social Media Marketing plus One · Chapter: 03-content-creation · Figure: 02
+  Type: infographic · Generated: 2026-05-27 · Source: chapters/03-content-creation.md
+-->
+<svg viewBox="0 0 700 600" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="fig-title-02">
+  <title id="fig-title-02">Decomposition of a CEO LinkedIn Essay — 13 Steps</title>
+  <desc>Vertical workflow of thirteen numbered steps for drafting a CEO LinkedIn essay. Five steps are Guard (red): topic, angle, voice pass, hook, close, decision to publish. Eight steps are Delegate (gray): research, outline, draft, hashtags, timing, pre-publication check, comment sorting. Step 13 is split — sorting delegated, responding guarded. Tally at the bottom: 8 Delegate, 5 Guard.</desc>
+  <metadata><cajal:figure xmlns:cajal="https://bearbrown.ai/cajal/1.0" book="Social Media Marketing plus One" chapter="03-content-creation" figure-number="02" figure-title="Decomposition of a CEO LinkedIn Essay" figure-type="infographic" author="Nik Bear Brown Milivoje Davidovic" date-generated="2026-05-27" source-file="chapters/03-content-creation.md"/></metadata>
+  <defs><marker id="arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#2a1a0e"/></marker></defs>
+  <rect x="0" y="0" width="700" height="600" fill="#FFFFFF"/>
+  <text x="32" y="36" font-family="'EB Garamond', 'Garamond', Georgia, serif" font-size="14" fill="#2a1a0e">One essay. Thirteen steps. Eight Delegate. Five Guard.</text>
+  <text x="32" y="56" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="11" fill="#545454">A B2B SaaS social manager publishing a 1,200-word LinkedIn essay under the CEO's byline.</text>
+
+  <!-- Step rectangles: x=160, w=260, h=28, spacing=8 -->
+  <!-- Step 1 — Topic selection — Guard -->
+  <rect x="160" y="80" width="260" height="28" fill="#C8102E" rx="0"/>
+  <text x="170" y="98" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="11" fill="#FFFFFF">1 · Topic selection</text>
+  <text x="412" y="98" text-anchor="end" font-family="'JetBrains Mono', 'Fira Code', 'Courier New', monospace" font-size="9" fill="#FFFFFF">GUARD</text>
+
+  <!-- Step 2 — Angle — Guard -->
+  <rect x="160" y="116" width="260" height="28" fill="#C8102E"/>
+  <text x="170" y="134" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="11" fill="#FFFFFF">2 · Angle on the topic</text>
+  <text x="412" y="134" text-anchor="end" font-family="'JetBrains Mono', 'Fira Code', 'Courier New', monospace" font-size="9" fill="#FFFFFF">GUARD</text>
+
+  <!-- Step 3 — Research — Delegate -->
+  <rect x="160" y="152" width="260" height="28" fill="#545454"/>
+  <text x="170" y="170" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="11" fill="#FFFFFF">3 · Research synthesis</text>
+  <text x="412" y="170" text-anchor="end" font-family="'JetBrains Mono', 'Fira Code', 'Courier New', monospace" font-size="9" fill="#FFFFFF">DELEGATE</text>
+
+  <!-- Step 4 — Outline — Delegate -->
+  <rect x="160" y="188" width="260" height="28" fill="#545454"/>
+  <text x="170" y="206" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="11" fill="#FFFFFF">4 · Outline</text>
+  <text x="412" y="206" text-anchor="end" font-family="'JetBrains Mono', 'Fira Code', 'Courier New', monospace" font-size="9" fill="#FFFFFF">DELEGATE</text>
+
+  <!-- Step 5 — First draft prose — Delegate -->
+  <rect x="160" y="224" width="260" height="28" fill="#545454"/>
+  <text x="170" y="242" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="11" fill="#FFFFFF">5 · First-draft prose</text>
+  <text x="412" y="242" text-anchor="end" font-family="'JetBrains Mono', 'Fira Code', 'Courier New', monospace" font-size="9" fill="#FFFFFF">DELEGATE</text>
+
+  <!-- Step 6 — Voice pass — Guard -->
+  <rect x="160" y="260" width="260" height="28" fill="#C8102E"/>
+  <text x="170" y="278" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="11" fill="#FFFFFF">6 · Voice pass</text>
+  <text x="412" y="278" text-anchor="end" font-family="'JetBrains Mono', 'Fira Code', 'Courier New', monospace" font-size="9" fill="#FFFFFF">GUARD</text>
+
+  <!-- Step 7 — Opening hook — Guard -->
+  <rect x="160" y="296" width="260" height="28" fill="#C8102E"/>
+  <text x="170" y="314" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="11" fill="#FFFFFF">7 · Opening hook</text>
+  <text x="412" y="314" text-anchor="end" font-family="'JetBrains Mono', 'Fira Code', 'Courier New', monospace" font-size="9" fill="#FFFFFF">GUARD</text>
+
+  <!-- Step 8 — Closing line — Guard -->
+  <rect x="160" y="332" width="260" height="28" fill="#C8102E"/>
+  <text x="170" y="350" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="11" fill="#FFFFFF">8 · Closing line</text>
+  <text x="412" y="350" text-anchor="end" font-family="'JetBrains Mono', 'Fira Code', 'Courier New', monospace" font-size="9" fill="#FFFFFF">GUARD</text>
+
+  <!-- Step 9 — Hashtags and tags — Delegate -->
+  <rect x="160" y="368" width="260" height="28" fill="#545454"/>
+  <text x="170" y="386" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="11" fill="#FFFFFF">9 · Hashtags and tags</text>
+  <text x="412" y="386" text-anchor="end" font-family="'JetBrains Mono', 'Fira Code', 'Courier New', monospace" font-size="9" fill="#FFFFFF">DELEGATE</text>
+
+  <!-- Step 10 — Posting time / format — Delegate -->
+  <rect x="160" y="404" width="260" height="28" fill="#545454"/>
+  <text x="170" y="422" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="11" fill="#FFFFFF">10 · Posting time and format tuning</text>
+  <text x="412" y="422" text-anchor="end" font-family="'JetBrains Mono', 'Fira Code', 'Courier New', monospace" font-size="9" fill="#FFFFFF">DELEGATE</text>
+
+  <!-- Step 11 — Pre-publication check — Delegate with ochre flag -->
+  <rect x="160" y="440" width="260" height="28" fill="#545454"/>
+  <text x="170" y="458" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="11" fill="#FFFFFF">11 · Pre-publication legal / brand check</text>
+  <text x="412" y="458" text-anchor="end" font-family="'JetBrains Mono', 'Fira Code', 'Courier New', monospace" font-size="9" fill="#FFFFFF">DELEGATE</text>
+  <circle cx="424" cy="454" r="4" fill="#C8860E"/>
+
+  <!-- Step 12 — Decision to publish — Guard -->
+  <rect x="160" y="476" width="260" height="28" fill="#C8102E"/>
+  <text x="170" y="494" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="11" fill="#FFFFFF">12 · Decision to publish</text>
+  <text x="412" y="494" text-anchor="end" font-family="'JetBrains Mono', 'Fira Code', 'Courier New', monospace" font-size="9" fill="#FFFFFF">GUARD</text>
+
+  <!-- Step 13 — Comment monitoring (split) — Delegate / Guard -->
+  <rect x="160" y="512" width="130" height="28" fill="#545454"/>
+  <rect x="290" y="512" width="130" height="28" fill="#C8102E"/>
+  <text x="170" y="530" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="11" fill="#FFFFFF">13 · Sort comments</text>
+  <text x="300" y="530" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="11" fill="#FFFFFF">respond</text>
+
+  <!-- Right-side callouts for Guard steps -->
+  <text x="436" y="98" font-family="'EB Garamond', Georgia, serif" font-size="10" fill="#545454" font-style="italic">strategic positioning</text>
+  <text x="436" y="134" font-family="'EB Garamond', Georgia, serif" font-size="10" fill="#545454" font-style="italic">requires knowing CEO</text>
+  <text x="436" y="278" font-family="'EB Garamond', Georgia, serif" font-size="10" fill="#545454" font-style="italic">surface easy, depth hard</text>
+  <text x="436" y="314" font-family="'EB Garamond', Georgia, serif" font-size="10" fill="#545454" font-style="italic">voice most exposed</text>
+  <text x="436" y="350" font-family="'EB Garamond', Georgia, serif" font-size="10" fill="#545454" font-style="italic">take-home line</text>
+  <text x="436" y="494" font-family="'EB Garamond', Georgia, serif" font-size="10" fill="#545454" font-style="italic">the shipping decision</text>
+
+  <!-- Left-side step indicators -->
+  <line x1="290" y1="108" x2="290" y2="116" stroke="#2a1a0e" stroke-width="0.75" marker-end="url(#arrow)"/>
+  <line x1="290" y1="144" x2="290" y2="152" stroke="#2a1a0e" stroke-width="0.75" marker-end="url(#arrow)"/>
+  <line x1="290" y1="180" x2="290" y2="188" stroke="#2a1a0e" stroke-width="0.75" marker-end="url(#arrow)"/>
+  <line x1="290" y1="216" x2="290" y2="224" stroke="#2a1a0e" stroke-width="0.75" marker-end="url(#arrow)"/>
+  <line x1="290" y1="252" x2="290" y2="260" stroke="#2a1a0e" stroke-width="0.75" marker-end="url(#arrow)"/>
+  <line x1="290" y1="288" x2="290" y2="296" stroke="#2a1a0e" stroke-width="0.75" marker-end="url(#arrow)"/>
+  <line x1="290" y1="324" x2="290" y2="332" stroke="#2a1a0e" stroke-width="0.75" marker-end="url(#arrow)"/>
+  <line x1="290" y1="360" x2="290" y2="368" stroke="#2a1a0e" stroke-width="0.75" marker-end="url(#arrow)"/>
+  <line x1="290" y1="396" x2="290" y2="404" stroke="#2a1a0e" stroke-width="0.75" marker-end="url(#arrow)"/>
+  <line x1="290" y1="432" x2="290" y2="440" stroke="#2a1a0e" stroke-width="0.75" marker-end="url(#arrow)"/>
+  <line x1="290" y1="468" x2="290" y2="476" stroke="#2a1a0e" stroke-width="0.75" marker-end="url(#arrow)"/>
+  <line x1="290" y1="504" x2="290" y2="512" stroke="#2a1a0e" stroke-width="0.75" marker-end="url(#arrow)"/>
+
+  <!-- Tally tiles -->
+  <rect x="160" y="556" width="125" height="32" fill="#545454"/>
+  <text x="222" y="572" text-anchor="middle" font-family="'EB Garamond', Georgia, serif" font-size="16" fill="#FFFFFF">8</text>
+  <text x="222" y="585" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="9" fill="#FFFFFF">DELEGATE</text>
+  <rect x="295" y="556" width="125" height="32" fill="#C8102E"/>
+  <text x="357" y="572" text-anchor="middle" font-family="'EB Garamond', Georgia, serif" font-size="16" fill="#FFFFFF">5</text>
+  <text x="357" y="585" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="9" fill="#FFFFFF">GUARD</text>
+
+  <!-- Footnote -->
+  <text x="32" y="588" font-family="'EB Garamond', Georgia, serif" font-size="10" fill="#C8860E" font-style="italic">step 11: ochre dot = human review on flagged hits</text>
+</svg>

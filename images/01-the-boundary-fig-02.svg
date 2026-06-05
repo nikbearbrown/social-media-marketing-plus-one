@@ -1,0 +1,62 @@
+<!--
+  Delegate vs Guard at a Glance with Temporal Migration
+  Book: Social Media Marketing plus One · Chapter: 01-the-boundary · Figure: 02
+-->
+<svg viewBox="0 0 700 480" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="fig-title fig-desc">
+  <title id="fig-title">Delegate vs Guard at a Glance</title>
+  <desc id="fig-desc">A two-column comparison. Left column (Delegate, pattern-shaped) lists four example task categories. Right column (Guard, judgment-shaped) lists four. A bottom arrow indicates that items currently on Guard may migrate to Delegate as model capability evolves — the dashed segment marks the boundary case in motion.</desc>
+  <metadata><cajal:figure xmlns:cajal="https://bearbrown.ai/cajal/1.0" book="Social Media Marketing plus One" book-slug="social-media-marketing-plus-one" chapter="01-the-boundary" figure-number="02" figure-title="Delegate vs Guard at a Glance" figure-slug="delegate-vs-guard-glance" figure-type="comparison" priority="Important" author="Humanitarians AI" date-generated="2026-05-27" source-file="pantry/01-the-boundary-cajal.md"/></metadata>
+  <rect x="0" y="0" width="700" height="480" fill="#FFFFFF"/>
+  <text x="32" y="36" font-family="'EB Garamond', Georgia, serif" font-size="14" fill="#2a1a0e">Delegate vs Guard — Where 2026 Items Currently Sit</text>
+  <text x="32" y="56" font-family="'Inter', sans-serif" font-size="11" fill="#545454">Pattern-shaped work goes left. Judgment-shaped work goes right. The arrow at the bottom is the part that moves.</text>
+
+  <!-- Header bands -->
+  <rect x="60" y="90" width="280" height="36" fill="#545454"/>
+  <rect x="360" y="90" width="280" height="36" fill="#C8102E"/>
+  <text x="200" y="113" text-anchor="middle" font-family="'Inter', sans-serif" font-size="13" fill="#FFFFFF" font-weight="600">DELEGATE — pattern-shaped</text>
+  <text x="500" y="113" text-anchor="middle" font-family="'Inter', sans-serif" font-size="13" fill="#FFFFFF" font-weight="600">GUARD — judgment-shaped</text>
+
+  <!-- Divider rule -->
+  <line x1="350" y1="80" x2="350" y2="380" stroke="#2a1a0e" stroke-width="1.5"/>
+
+  <!-- Left column tiles (Delegate) -->
+  <rect x="80" y="146" width="240" height="40" fill="#545454" opacity="0.18" stroke="#545454" stroke-width="1"/>
+  <text x="200" y="171" text-anchor="middle" font-family="'Inter', sans-serif" font-size="12" fill="#2a1a0e">Caption drafting from approved brief</text>
+
+  <rect x="80" y="196" width="240" height="40" fill="#545454" opacity="0.18" stroke="#545454" stroke-width="1"/>
+  <text x="200" y="221" text-anchor="middle" font-family="'Inter', sans-serif" font-size="12" fill="#2a1a0e">Post scheduling and reposting</text>
+
+  <rect x="80" y="246" width="240" height="40" fill="#545454" opacity="0.18" stroke="#545454" stroke-width="1"/>
+  <text x="200" y="271" text-anchor="middle" font-family="'Inter', sans-serif" font-size="12" fill="#2a1a0e">Hashtag and tag research</text>
+
+  <rect x="80" y="296" width="240" height="40" fill="#545454" opacity="0.18" stroke="#545454" stroke-width="1"/>
+  <text x="200" y="321" text-anchor="middle" font-family="'Inter', sans-serif" font-size="12" fill="#2a1a0e">Weekly analytics summary recap</text>
+
+  <!-- Right column tiles (Guard) -->
+  <rect x="380" y="146" width="240" height="40" fill="#C8102E" opacity="0.15" stroke="#C8102E" stroke-width="1"/>
+  <text x="500" y="171" text-anchor="middle" font-family="'Inter', sans-serif" font-size="12" fill="#2a1a0e">Brand voice for new launches</text>
+
+  <rect x="380" y="196" width="240" height="40" fill="#C8102E" opacity="0.15" stroke="#C8102E" stroke-width="1"/>
+  <text x="500" y="221" text-anchor="middle" font-family="'Inter', sans-serif" font-size="12" fill="#2a1a0e">Crisis posting and statements</text>
+
+  <rect x="380" y="246" width="240" height="40" fill="#C8102E" opacity="0.15" stroke="#C8102E" stroke-width="1"/>
+  <text x="500" y="271" text-anchor="middle" font-family="'Inter', sans-serif" font-size="12" fill="#2a1a0e">Named-byline thought leadership</text>
+
+  <rect x="380" y="296" width="240" height="40" fill="#C8102E" opacity="0.15" stroke="#C8102E" stroke-width="1"/>
+  <text x="500" y="321" text-anchor="middle" font-family="'Inter', sans-serif" font-size="12" fill="#2a1a0e">Public escalation responses</text>
+
+  <!-- Time-migration arrow at bottom -->
+  <text x="350" y="400" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" fill="#545454">items can migrate as capability matures</text>
+
+  <!-- Composed arrow: solid segment left + dashed middle + solid right with arrowhead -->
+  <line x1="80" y1="425" x2="280" y2="425" stroke="#2a1a0e" stroke-width="1"/>
+  <line x1="280" y1="425" x2="420" y2="425" stroke="#545454" stroke-width="1" stroke-dasharray="5 4"/>
+  <line x1="420" y1="425" x2="620" y2="425" stroke="#2a1a0e" stroke-width="1"/>
+  <polygon points="620,425 612,421 612,429" fill="#2a1a0e"/>
+  <!-- arrow tick "t" -->
+  <line x1="80" y1="421" x2="80" y2="429" stroke="#2a1a0e" stroke-width="1"/>
+  <text x="80" y="442" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="9" fill="#545454">t = today</text>
+  <text x="620" y="442" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="9" fill="#545454">t = later</text>
+
+  <text x="350" y="468" text-anchor="middle" font-family="'EB Garamond', Georgia, serif" font-size="11" fill="#C8102E" font-style="italic">Currently requires a human — and "currently" is doing real work in that sentence.</text>
+</svg>

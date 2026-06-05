@@ -1,0 +1,94 @@
+<!--
+  The Doshi-Hauser Divergence — Individual Quality vs Collective Distinctiveness
+  Book: Social Media Marketing plus One · Chapter: 03-content-creation · Figure: 01
+  Type: chart · Generated: 2026-05-27 · Source: chapters/03-content-creation.md
+-->
+<svg viewBox="0 0 700 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="fig-title-01">
+  <title id="fig-title-01">The Doshi-Hauser Divergence — Two Metrics That Move in Opposite Directions</title>
+  <desc>Two-line chart. Horizontal axis: AI assistance intensity. Vertical axis: relative index 0 to 100. One line rises as AI use increases — individual output quality. The other falls — collective distinctiveness across writers. The lines cross near the middle; a shaded zone past the crossing marks the structural homogenization region.</desc>
+  <metadata><cajal:figure xmlns:cajal="https://bearbrown.ai/cajal/1.0" book="Social Media Marketing plus One" chapter="03-content-creation" figure-number="01" figure-title="The Doshi-Hauser Divergence" figure-type="chart" author="Nik Bear Brown Milivoje Davidovic" date-generated="2026-05-27" source-file="chapters/03-content-creation.md"/></metadata>
+  <defs><marker id="arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#2a1a0e"/></marker></defs>
+  <rect x="0" y="0" width="700" height="420" fill="#FFFFFF"/>
+  <text x="32" y="36" font-family="'EB Garamond', 'Garamond', Georgia, serif" font-size="14" fill="#2a1a0e">Individual quality rises. Collective distinctiveness falls.</text>
+  <text x="32" y="56" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="11" fill="#545454">Two metrics moving in opposite directions as AI assistance increases — the homogenization effect Doshi and Hauser (2024) documented.</text>
+
+  <!-- Plot region -->
+  <rect x="80" y="90" width="560" height="260" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="0.75"/>
+
+  <!-- Homogenization zone (after crossing) -->
+  <rect x="360" y="90" width="280" height="260" fill="#D4D4D4" opacity="0.35"/>
+
+  <!-- Gridlines -->
+  <line x1="80" y1="155" x2="640" y2="155" stroke="#D4D4D4" stroke-width="0.5"/>
+  <line x1="80" y1="220" x2="640" y2="220" stroke="#D4D4D4" stroke-width="0.5"/>
+  <line x1="80" y1="285" x2="640" y2="285" stroke="#D4D4D4" stroke-width="0.5"/>
+
+  <!-- Y-axis -->
+  <line x1="80" y1="90" x2="80" y2="350" stroke="#2a1a0e" stroke-width="1"/>
+  <!-- X-axis -->
+  <line x1="80" y1="350" x2="640" y2="350" stroke="#2a1a0e" stroke-width="1"/>
+
+  <!-- Y-axis ticks and labels -->
+  <line x1="78" y1="350" x2="82" y2="350" stroke="#2a1a0e" stroke-width="1"/>
+  <text x="72" y="354" text-anchor="end" font-family="'JetBrains Mono', 'Fira Code', 'Courier New', monospace" font-size="11" fill="#545454">0</text>
+  <line x1="78" y1="285" x2="82" y2="285" stroke="#2a1a0e" stroke-width="1"/>
+  <text x="72" y="289" text-anchor="end" font-family="'JetBrains Mono', 'Fira Code', 'Courier New', monospace" font-size="11" fill="#545454">25</text>
+  <line x1="78" y1="220" x2="82" y2="220" stroke="#2a1a0e" stroke-width="1"/>
+  <text x="72" y="224" text-anchor="end" font-family="'JetBrains Mono', 'Fira Code', 'Courier New', monospace" font-size="11" fill="#545454">50</text>
+  <line x1="78" y1="155" x2="82" y2="155" stroke="#2a1a0e" stroke-width="1"/>
+  <text x="72" y="159" text-anchor="end" font-family="'JetBrains Mono', 'Fira Code', 'Courier New', monospace" font-size="11" fill="#545454">75</text>
+  <line x1="78" y1="90" x2="82" y2="90" stroke="#2a1a0e" stroke-width="1"/>
+  <text x="72" y="94" text-anchor="end" font-family="'JetBrains Mono', 'Fira Code', 'Courier New', monospace" font-size="11" fill="#545454">100</text>
+
+  <!-- X-axis ticks and labels -->
+  <line x1="80" y1="348" x2="80" y2="352" stroke="#2a1a0e" stroke-width="1"/>
+  <text x="80" y="368" text-anchor="middle" font-family="'JetBrains Mono', 'Fira Code', 'Courier New', monospace" font-size="11" fill="#545454">no AI</text>
+  <line x1="220" y1="348" x2="220" y2="352" stroke="#2a1a0e" stroke-width="1"/>
+  <text x="220" y="368" text-anchor="middle" font-family="'JetBrains Mono', 'Fira Code', 'Courier New', monospace" font-size="11" fill="#545454">light</text>
+  <line x1="360" y1="348" x2="360" y2="352" stroke="#2a1a0e" stroke-width="1"/>
+  <text x="360" y="368" text-anchor="middle" font-family="'JetBrains Mono', 'Fira Code', 'Courier New', monospace" font-size="11" fill="#545454">moderate</text>
+  <line x1="500" y1="348" x2="500" y2="352" stroke="#2a1a0e" stroke-width="1"/>
+  <text x="500" y="368" text-anchor="middle" font-family="'JetBrains Mono', 'Fira Code', 'Courier New', monospace" font-size="11" fill="#545454">heavy</text>
+  <line x1="640" y1="348" x2="640" y2="352" stroke="#2a1a0e" stroke-width="1"/>
+  <text x="640" y="368" text-anchor="middle" font-family="'JetBrains Mono', 'Fira Code', 'Courier New', monospace" font-size="11" fill="#545454">total</text>
+
+  <!-- Axis titles -->
+  <text x="360" y="392" text-anchor="middle" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="12" fill="#545454">AI assistance intensity</text>
+  <text x="32" y="220" text-anchor="middle" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="12" fill="#545454" transform="rotate(-90 32 220)">relative index (0–100)</text>
+
+  <!-- Individual quality line (rising) — Delegate gray #545454 -->
+  <!-- 60 at no AI (y=246), 70 at light (y=220), 78 at moderate (y=199), 83 at heavy (y=186), 85 at total (y=181) -->
+  <polyline points="80,246 220,220 360,199 500,186 640,181" fill="none" stroke="#545454" stroke-width="2"/>
+  <circle cx="80" cy="246" r="3.5" fill="#545454"/>
+  <circle cx="220" cy="220" r="3.5" fill="#545454"/>
+  <circle cx="360" cy="199" r="3.5" fill="#545454"/>
+  <circle cx="500" cy="186" r="3.5" fill="#545454"/>
+  <circle cx="640" cy="181" r="3.5" fill="#545454"/>
+
+  <!-- Collective distinctiveness line (falling) — Guard red #C8102E -->
+  <!-- 80 at no AI (y=142), 70 at light (y=168), 58 at moderate (y=199), 50 at heavy (y=220), 45 at total (y=233) -->
+  <polyline points="80,142 220,168 360,199 500,220 640,233" fill="none" stroke="#C8102E" stroke-width="2"/>
+  <circle cx="80" cy="142" r="3.5" fill="#C8102E"/>
+  <circle cx="220" cy="168" r="3.5" fill="#C8102E"/>
+  <circle cx="360" cy="199" r="3.5" fill="#C8102E"/>
+  <circle cx="500" cy="220" r="3.5" fill="#C8102E"/>
+  <circle cx="640" cy="233" r="3.5" fill="#C8102E"/>
+
+  <!-- Crossing point marker -->
+  <circle cx="360" cy="199" r="5.5" fill="none" stroke="#2a1a0e" stroke-width="1.25"/>
+
+  <!-- Line labels -->
+  <text x="650" y="178" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="11" fill="#545454">individual</text>
+  <text x="650" y="190" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="11" fill="#545454">quality</text>
+  <text x="650" y="236" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="11" fill="#C8102E">collective</text>
+  <text x="650" y="248" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="11" fill="#C8102E">distinctiveness</text>
+
+  <!-- Crossing annotation -->
+  <line x1="360" y1="199" x2="430" y2="120" stroke="#2a1a0e" stroke-width="0.5"/>
+  <text x="434" y="116" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="11" fill="#2a1a0e">crossing</text>
+  <text x="434" y="128" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="10" fill="#545454">homogenization begins</text>
+
+  <text x="500" y="108" text-anchor="middle" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="10" fill="#545454" font-style="italic">structural homogenization zone</text>
+
+  <text x="360" y="412" text-anchor="middle" font-family="'EB Garamond', 'Garamond', Georgia, serif" font-size="11" fill="#C8102E" font-style="italic">The single practitioner gains. The pool of voices flattens.</text>
+</svg>

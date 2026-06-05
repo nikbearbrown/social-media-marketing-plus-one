@@ -1,0 +1,112 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Two summaries, same month — annotated divergence</title>
+<style>
+:root{--color-white:#FFFFFF;--color-ink:#2a1a0e;--color-red:#C8102E;--color-secondary:#545454;--color-border:#D4D4D4;--color-ochre:#C8860E;--color-fill:#F5F5F5;}
+@media (prefers-color-scheme: dark){:root{--color-white:#111111;--color-ink:#F0EBE3;--color-red:#E8243A;--color-secondary:#A0978C;--color-border:#2E2E2E;--color-ochre:#D49A30;--color-fill:#1A1A1A;}}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--color-white);color:var(--color-ink);font-family:'Inter',-apple-system,'Helvetica Neue',sans-serif;padding:24px;}
+#chart{width:100%;min-height:480px;}
+.tooltip{position:absolute;pointer-events:none;opacity:0;background:var(--color-ink);color:var(--color-white);padding:6px 10px;font-size:12px;max-width:280px;}
+.title{font-family:'EB Garamond','Garamond',Georgia,serif;font-size:16px;fill:var(--color-ink);}
+.subtitle{font-family:'Inter',sans-serif;font-size:12px;fill:var(--color-secondary);}
+.panel-label{font-family:'Inter',sans-serif;font-size:11px;font-weight:700;fill:var(--color-secondary);letter-spacing:0.04em;}
+.body-text{font-family:'Inter',sans-serif;font-size:11px;fill:var(--color-ink);}
+.mono{font-family:'JetBrains Mono','Fira Code','Courier New',monospace;font-size:11px;}
+@media (prefers-reduced-motion: reduce){*{transition:none !important;animation:none !important;}}
+</style></head><body>
+<div id="chart" role="main"></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+<script>
+const aiSummary = {
+  title:'AI-generated summary',
+  body:[
+    'Engagement was up 12% month-over-month,',
+    'driven by strong performance from Reels',
+    'and short-form video. Top categories include',
+    'behind-the-scenes content and product launches.'
+  ],
+  rec:[
+    'Recommend increasing Reels frequency',
+    'and continuing to invest in short-form video',
+    'to maintain momentum into next quarter.'
+  ],
+  evidence:'rung 1 — association',
+  language:'rung 2 — intervention',
+  note:'unjustified ramp recommendation'
+};
+const pracSummary = {
+  title:'Practitioner summary',
+  body:[
+    'Engagement rose 12% but the rise is concentrated',
+    'in a single viral Reel from week two — a CEO interview',
+    'clip organically resurfaced by an industry account.',
+    'Strip that post and engagement was flat.',
+    'The Reels-as-format story is not supported.'
+  ],
+  rec:[
+    'Do not staff up on Reels production this month.',
+    'Investigate what made the CEO clip travel.'
+  ],
+  evidence:'rung 1 — association',
+  language:'rung 1 — association',
+  note:'awkward and right · outlier named and removed'
+};
+
+function draw(){
+  const c=document.getElementById('chart');
+  d3.select(c).selectAll('*').remove();
+  const W=c.clientWidth||900,H=500;
+  const svg=d3.select(c).append('svg').attr('viewBox',`0 0 ${W} ${H}`).attr('role','img').attr('aria-labelledby','t d');
+  svg.append('title').attr('id','t').text('Two summaries, same month — annotated divergence');
+  svg.append('desc').attr('id','d').text('Side-by-side: AI summary reads rung-one evidence in rung-two language; practitioner summary strips outlier, names flat baseline, recommends investigation.');
+
+  svg.append('text').attr('class','title').attr('x',32).attr('y',32).text('Same data, two summaries — where rung-one becomes rung-two');
+  svg.append('text').attr('class','subtitle').attr('x',32).attr('y',52).text('Left: AI-generated. Right: practitioner-written. Annotations mark the load-bearing moves.');
+
+  svg.append('line').attr('x1',W/2).attr('x2',W/2).attr('y1',80).attr('y2',420).attr('stroke','var(--color-border)').attr('stroke-width',1);
+
+  const tooltip = d3.select('body').append('div').attr('class','tooltip');
+  function show(event, html){ tooltip.html(html).style('left',(event.pageX+12)+'px').style('top',(event.pageY-28)+'px').transition().duration(150).style('opacity',1); }
+  function move(event){ tooltip.style('left',(event.pageX+12)+'px').style('top',(event.pageY-28)+'px'); }
+  function hide(){ tooltip.transition().duration(100).style('opacity',0); }
+
+  function drawPanel(x, w, data, isAI){
+    const g = svg.append('g').attr('transform',`translate(${x},80)`);
+    g.append('rect').attr('x',0).attr('y',10).attr('width',w).attr('height',230)
+      .attr('fill', isAI ? 'var(--color-fill)' : 'var(--color-white)')
+      .attr('stroke', isAI ? 'var(--color-border)' : 'var(--color-ink)')
+      .attr('stroke-width', isAI ? 0.75 : 1);
+    g.append('text').attr('class','panel-label').attr('x',12).attr('y',28).text(data.title.toUpperCase());
+
+    data.body.forEach((line,i)=>{
+      g.append('text').attr('class','body-text').attr('x',12).attr('y',54+i*16).text(line);
+    });
+    const recStart = 54 + data.body.length*16 + 14;
+    data.rec.forEach((line,i)=>{
+      g.append('text').attr('class','body-text').attr('x',12).attr('y',recStart+i*16)
+        .attr('fill', isAI ? 'var(--color-red)' : 'var(--color-ink)').text(line);
+    });
+
+    // rung annotation
+    const annY = 270;
+    g.append('text').attr('class','body-text').attr('fill','var(--color-secondary)').attr('x',12).attr('y',annY).text('Evidence:');
+    g.append('text').attr('class','mono').attr('fill','var(--color-ink)').attr('x',80).attr('y',annY).text(data.evidence);
+    g.append('text').attr('class','body-text').attr('fill','var(--color-secondary)').attr('x',12).attr('y',annY+18).text('Language:');
+    g.append('text').attr('class','mono').attr('fill', isAI ? 'var(--color-red)' : 'var(--color-ink)').attr('x',80).attr('y',annY+18).text(data.language);
+    g.append('text').attr('class','body-text').attr('fill','var(--color-secondary)').attr('font-style','italic').attr('x',12).attr('y',annY+46).text(data.note);
+
+    g.append('rect').attr('x',0).attr('y',0).attr('width',w).attr('height',330).attr('fill','transparent')
+      .attr('tabindex',0).attr('aria-label',`${data.title}: evidence ${data.evidence}, language ${data.language}`)
+      .on('mouseover',(e)=>show(e,`<strong>${data.title}</strong><br/>Evidence: ${data.evidence}<br/>Language: ${data.language}`))
+      .on('mousemove',move).on('mouseout',hide);
+  }
+  drawPanel(32, W/2-48, aiSummary, true);
+  drawPanel(W/2+16, W/2-48, pracSummary, false);
+
+  // Shared data footer
+  svg.append('rect').attr('x',32).attr('y',430).attr('width',W-64).attr('height',50).attr('fill','var(--color-fill)').attr('stroke','var(--color-border)').attr('stroke-width',0.75);
+  svg.append('text').attr('class','panel-label').attr('x',44).attr('y',450).text('SHARED DATA');
+  svg.append('text').attr('class','body-text').attr('x',44).attr('y',468).text('Engagement +12% MoM · driver concentrated in one week-two Reel · CEO interview resurfaced organically');
+}
+draw();
+new ResizeObserver(draw).observe(document.getElementById('chart'));
+</script></body></html>

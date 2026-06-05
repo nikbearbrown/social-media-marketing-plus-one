@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How the delegation log compounds across time</title>
+<style>
+:root{--color-white:#FFFFFF;--color-ink:#2a1a0e;--color-red:#C8102E;--color-secondary:#545454;--color-border:#D4D4D4;--color-ochre:#C8860E;--color-fill:#F5F5F5;}
+@media (prefers-color-scheme: dark){:root{--color-white:#111111;--color-ink:#F0EBE3;--color-red:#E8243A;--color-secondary:#A0978C;--color-border:#2E2E2E;--color-ochre:#D49A30;--color-fill:#1A1A1A;}}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--color-white);color:var(--color-ink);font-family:'Inter',-apple-system,'Helvetica Neue',sans-serif;padding:24px;}
+#chart{width:100%;min-height:420px;}
+.tooltip{position:absolute;pointer-events:none;opacity:0;background:var(--color-ink);color:var(--color-white);padding:6px 10px;font-size:12px;border-radius:0;}
+.title{font-family:'EB Garamond','Garamond',Georgia,serif;font-size:16px;fill:var(--color-ink);}
+.subtitle{font-family:'Inter',sans-serif;font-size:12px;fill:var(--color-secondary);}
+.stage-label{font-family:'Inter',sans-serif;font-size:12px;fill:var(--color-ink);font-weight:600;}
+.stage-sub{font-family:'Inter',sans-serif;font-size:11px;fill:var(--color-secondary);}
+.tick{font-family:'JetBrains Mono','Fira Code','Courier New',monospace;font-size:11px;fill:var(--color-secondary);}
+@media (prefers-reduced-motion: reduce){*{transition:none !important;animation:none !important;}}
+</style>
+</head>
+<body>
+<div id="chart" role="main"></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+<script>
+const styles = getComputedStyle(document.documentElement);
+const C = {
+  ink: styles.getPropertyValue('--color-ink').trim(),
+  red: styles.getPropertyValue('--color-red').trim(),
+  sec: styles.getPropertyValue('--color-secondary').trim(),
+  border: styles.getPropertyValue('--color-border').trim(),
+  ochre: styles.getPropertyValue('--color-ochre').trim(),
+  fill: styles.getPropertyValue('--color-fill').trim(),
+};
+const tooltip = d3.select('body').append('div').attr('class','tooltip');
+function showTip(event, html){ tooltip.html(html).style('left',(event.pageX+12)+'px').style('top',(event.pageY-28)+'px').transition().duration(150).style('opacity',1); }
+function moveTip(event){ tooltip.style('left',(event.pageX+12)+'px').style('top',(event.pageY-28)+'px'); }
+function hideTip(){ tooltip.transition().duration(100).style('opacity',0); }
+
+const stages = [
+  { t: 'Month 1', label: 'Pattern detection', sub: 'Same mistakes surface', detail: 'You catch the same kind of mis-delegation twice. One Guard item, one over-delegation. Specific, repeated.' },
+  { t: 'Month 6', label: 'Map revision', sub: 'Categories shift', detail: 'Three or four items migrate Delegate↔Guard with reason. Your Delegate/Guard map gets its first real update.' },
+  { t: 'Year 1', label: 'Professional artifact', sub: 'Portable evidence of judgment', detail: 'The log becomes a portfolio piece. Concrete examples of when you delegated and when you held — better than any résumé claim.' },
+  { t: 'Year 3', label: 'Calibration record', sub: 'Longitudinal honesty check', detail: 'Patterns visible only over years: which Guard items stayed durable, which migrated, where your instincts were wrong.' },
+];
+
+function draw(){
+  const container = document.getElementById('chart');
+  d3.select(container).selectAll('svg').remove();
+  const W = container.clientWidth || 800, H = 420;
+  const svg = d3.select(container).append('svg')
+    .attr('viewBox', `0 0 ${W} ${H}`)
+    .attr('width', W).attr('height', H)
+    .attr('role','img').attr('aria-labelledby','t d');
+  svg.append('title').attr('id','t').text('How the delegation log compounds across time');
+  svg.append('desc').attr('id','d').text('Four-stage timeline of what the log reveals at month one, month six, year one, and year three.');
+
+  svg.append('text').attr('x', 32).attr('y', 36).attr('class','title').text('What the log shows you — compounding over time');
+  svg.append('text').attr('x', 32).attr('y', 56).attr('class','subtitle').text('A dashboard tells you what happened. A log tells you what you were thinking when it happened.');
+
+  // Define arrow marker
+  svg.append('defs').append('marker').attr('id','arrow').attr('markerWidth',8).attr('markerHeight',6)
+    .attr('refX',7).attr('refY',3).attr('orient','auto')
+    .append('polygon').attr('points','0 0, 8 3, 0 6').attr('fill', C.ink);
+
+  // Timeline axis
+  const yAxis = 230;
+  const padX = 80;
+  svg.append('line').attr('x1', padX).attr('y1', yAxis).attr('x2', W - padX).attr('y2', yAxis)
+    .attr('stroke', C.ink).attr('stroke-width', 1).attr('marker-end','url(#arrow)');
+
+  // Stage markers
+  const xScale = d3.scaleLinear().domain([0, stages.length - 1]).range([padX + 30, W - padX - 30]);
+  stages.forEach((s, i) => {
+    const x = xScale(i);
+    // Bigger marker for milestones year 1 and year 3
+    const isMilestone = (i >= 2);
+    const color = isMilestone ? C.red : C.sec;
+    const r = isMilestone ? 11 : 8;
+    const circle = svg.append('circle').attr('cx', x).attr('cy', yAxis).attr('r', r)
+      .attr('fill', color).attr('stroke', C.ink).attr('stroke-width', 1)
+      .attr('tabindex', 0).attr('aria-label', `${s.t}: ${s.label}. ${s.detail}`);
+    circle.on('mouseover', (event) => showTip(event, `<strong>${s.t} — ${s.label}</strong><br>${s.detail}`))
+          .on('mousemove', moveTip).on('mouseout', hideTip);
+
+    // Time tick below
+    svg.append('text').attr('x', x).attr('y', yAxis + 30).attr('text-anchor','middle').attr('class','tick').text(s.t);
+
+    // Label above, alternating heights to avoid collision
+    const labelY = (i % 2 === 0) ? yAxis - 56 : yAxis - 90;
+    const connY = (i % 2 === 0) ? yAxis - r - 4 : yAxis - r - 4;
+    const subY = labelY + 16;
+    svg.append('line').attr('x1', x).attr('y1', connY).attr('x2', x).attr('y2', labelY + 2)
+      .attr('stroke', C.border).attr('stroke-width', 0.75).attr('stroke-dasharray','3 2');
+    svg.append('text').attr('x', x).attr('y', labelY).attr('text-anchor','middle').attr('class','stage-label').attr('fill', color).text(s.label);
+    svg.append('text').attr('x', x).attr('y', subY).attr('text-anchor','middle').attr('class','stage-sub').text(s.sub);
+  });
+
+  // Compounding annotation
+  svg.append('text').attr('x', W/2).attr('y', H - 32).attr('text-anchor','middle').attr('class','subtitle').attr('font-style','italic')
+    .text('Each entry takes 90 seconds. The compounding artifact takes years.');
+}
+draw();
+new ResizeObserver(draw).observe(document.getElementById('chart'));
+</script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!--
+  Surface vs Signal — The Two Layers of Community Management
+  Book: Social Media Marketing plus One · Chapter: 04-community-management · Figure: 01
+  Type: infographic · Generated: 2026-05-27 · Source: chapters/04-community-management.md
+-->
+<svg viewBox="0 0 700 480" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="fig-title-01">
+  <title id="fig-title-01">Surface vs Signal — Where AI Operates and Where the Human Operates</title>
+  <desc>A two-layer architecture diagram. The lower surface layer holds four pattern-shaped tasks where AI operates. The upper signal layer holds four judgment-shaped tasks where the human operates. Four arrows rise from the surface tiles into the signal layer to show that surface feeds signal but does not replace it.</desc>
+  <metadata><cajal:figure xmlns:cajal="https://bearbrown.ai/cajal/1.0" book="Social Media Marketing plus One" chapter="04-community-management" figure-number="01" figure-title="Surface vs Signal" figure-type="infographic" author="Nik Bear Brown Milivoje Davidovic" date-generated="2026-05-27" source-file="chapters/04-community-management.md"/></metadata>
+  <defs><marker id="arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#2a1a0e"/></marker></defs>
+  <rect x="0" y="0" width="700" height="480" fill="#FFFFFF"/>
+  <text x="32" y="36" font-family="'EB Garamond', 'Garamond', Georgia, serif" font-size="14" fill="#2a1a0e">Automate the surface. Never automate the signal.</text>
+  <text x="32" y="56" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="11" fill="#545454">The chapter's working principle, visualized as the two layers it names.</text>
+
+  <!-- Signal layer (upper) — Guard zone, red tint -->
+  <rect x="120" y="90" width="540" height="140" fill="#C8102E" opacity="0.08"/>
+  <text x="140" y="112" font-family="'EB Garamond', Georgia, serif" font-size="13" fill="#2a1a0e">SIGNAL · judgment-shaped</text>
+  <text x="140" y="128" font-family="'Inter', sans-serif" font-size="10" fill="#545454" font-style="italic">what any of it means for this brand, in this moment, in this relationship</text>
+
+  <!-- Signal tiles -->
+  <rect x="140" y="146" width="120" height="60" fill="#C8102E"/>
+  <text x="200" y="172" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" fill="#FFFFFF">crisis</text>
+  <text x="200" y="188" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" fill="#FFFFFF">reading</text>
+
+  <rect x="270" y="146" width="120" height="60" fill="#C8102E"/>
+  <text x="330" y="172" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" fill="#FFFFFF">tone</text>
+  <text x="330" y="188" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" fill="#FFFFFF">calibration</text>
+
+  <rect x="400" y="146" width="120" height="60" fill="#C8102E"/>
+  <text x="460" y="172" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" fill="#FFFFFF">relationship</text>
+  <text x="460" y="188" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" fill="#FFFFFF">decisions</text>
+
+  <rect x="530" y="146" width="120" height="60" fill="#C8102E"/>
+  <text x="590" y="172" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" fill="#FFFFFF">political-stance</text>
+  <text x="590" y="188" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" fill="#FFFFFF">calls</text>
+
+  <!-- Layer actor marker -->
+  <text x="56" y="180" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="10" fill="#C8102E">HUMAN</text>
+  <text x="56" y="194" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="10" fill="#C8102E">operates</text>
+  <text x="56" y="208" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="10" fill="#C8102E">here</text>
+  <circle cx="100" cy="176" r="5" fill="#C8102E"/>
+
+  <!-- Layer divider -->
+  <line x1="32" y1="260" x2="668" y2="260" stroke="#2a1a0e" stroke-width="1"/>
+  <text x="350" y="252" text-anchor="middle" font-family="'EB Garamond', Georgia, serif" font-size="10" fill="#545454" font-style="italic">surface feeds signal — the read is what cannot be automated</text>
+
+  <!-- Surface layer (lower) — Delegate zone, gray tint -->
+  <rect x="120" y="290" width="540" height="140" fill="#545454" opacity="0.08"/>
+  <text x="140" y="312" font-family="'EB Garamond', Georgia, serif" font-size="13" fill="#2a1a0e">SURFACE · pattern-shaped</text>
+  <text x="140" y="328" font-family="'Inter', sans-serif" font-size="10" fill="#545454" font-style="italic">what can be counted, classified, routed, and acknowledged</text>
+
+  <!-- Surface tiles -->
+  <rect x="140" y="346" width="120" height="60" fill="#545454"/>
+  <text x="200" y="372" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" fill="#FFFFFF">volume</text>
+  <text x="200" y="388" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" fill="#FFFFFF">monitoring</text>
+
+  <rect x="270" y="346" width="120" height="60" fill="#545454"/>
+  <text x="330" y="372" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" fill="#FFFFFF">classification</text>
+  <text x="330" y="388" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" fill="#FFFFFF">+ sentiment</text>
+
+  <rect x="400" y="346" width="120" height="60" fill="#545454"/>
+  <text x="460" y="372" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" fill="#FFFFFF">routing</text>
+  <text x="460" y="388" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" fill="#FFFFFF">+ triage</text>
+
+  <rect x="530" y="346" width="120" height="60" fill="#545454"/>
+  <text x="590" y="372" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" fill="#FFFFFF">first-touch</text>
+  <text x="590" y="388" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" fill="#FFFFFF">acknowledgment</text>
+
+  <text x="56" y="368" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="10" fill="#545454">AI</text>
+  <text x="56" y="382" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="10" fill="#545454">operates</text>
+  <text x="56" y="396" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="10" fill="#545454">here</text>
+  <circle cx="100" cy="376" r="5" fill="#545454"/>
+
+  <!-- Arrows from surface to signal -->
+  <line x1="200" y1="346" x2="200" y2="210" stroke="#2a1a0e" stroke-width="0.75" marker-end="url(#arrow)"/>
+  <line x1="330" y1="346" x2="330" y2="210" stroke="#2a1a0e" stroke-width="0.75" marker-end="url(#arrow)"/>
+  <line x1="460" y1="346" x2="460" y2="210" stroke="#2a1a0e" stroke-width="0.75" marker-end="url(#arrow)"/>
+  <line x1="590" y1="346" x2="590" y2="210" stroke="#2a1a0e" stroke-width="0.75" marker-end="url(#arrow)"/>
+
+  <text x="350" y="460" text-anchor="middle" font-family="'EB Garamond', Georgia, serif" font-size="11" fill="#C8102E" font-style="italic">United saw the surface. The signal was downstream — and human.</text>
+</svg>

@@ -1,0 +1,111 @@
+<!--
+  Map Lifecycle — Nine-Station Audit Cycle
+  Book: Social Media Marketing plus One · Chapter: 10-building-your-own-map · Figure: 02
+  Type: infographic · Generated: 2026-05-27 · Source: chapters/10-building-your-own-map.md
+-->
+<svg viewBox="0 0 700 600" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="fig-title-10-02 fig-desc-10-02">
+  <title id="fig-title-10-02">Map Lifecycle — Nine-Station Audit Cycle</title>
+  <desc id="fig-desc-10-02">A clockwise nine-station cycle. Stations: inventory, classify, tool audit, draft lists, boundary cases, trial, revise, socialize, quarterly re-audit. The quarterly re-audit arrow closes the loop. Center holds the cycle outputs: Delegate, Guard, and the boundary backlog.</desc>
+  <metadata><cajal:figure xmlns:cajal="https://bearbrown.ai/cajal/1.0" book="Social Media Marketing plus One" chapter="10-building-your-own-map" figure-number="02" figure-title="Map Lifecycle" figure-type="infographic" author="Nik Bear Brown Milivoje Davidovic" date-generated="2026-05-27" source-file="chapters/10-building-your-own-map.md"/></metadata>
+  <defs>
+    <marker id="arrowL" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#2a1a0e"/>
+    </marker>
+    <marker id="arrowR" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#C8102E"/>
+    </marker>
+  </defs>
+  <rect x="0" y="0" width="700" height="600" fill="#FFFFFF"/>
+  <text x="32" y="36" font-family="'EB Garamond', Georgia, serif" font-size="14" fill="#2a1a0e">Map lifecycle — the map is a living document</text>
+  <text x="32" y="56" font-family="'Inter', sans-serif" font-size="11" fill="#545454">Nine stations clockwise. Quarterly re-audit closes the loop and re-opens the cycle.</text>
+
+  <!-- Circle parameters: center (350, 320), radius 200 -->
+  <!-- Nine stations at evenly distributed angles starting from top (-90deg) -->
+  <!-- station positions (cx, cy, label1, label2) -->
+
+  <!-- Station 1 — inventory (top) -->
+  <circle cx="350" cy="120" r="22" fill="#F5F5F5" stroke="#2a1a0e" stroke-width="1"/>
+  <text x="350" y="120" font-family="'Inter', sans-serif" font-size="10" font-weight="700" fill="#2a1a0e" text-anchor="middle">1</text>
+  <text x="350" y="98" font-family="'Inter', sans-serif" font-size="11" fill="#2a1a0e" text-anchor="middle">inventory</text>
+  <text x="350" y="86" font-family="'Inter', sans-serif" font-size="9" fill="#545454" text-anchor="middle">two weeks of actual tasks</text>
+
+  <!-- Station 2 — classify -->
+  <circle cx="503" cy="172" r="22" fill="#F5F5F5" stroke="#2a1a0e" stroke-width="1"/>
+  <text x="503" y="172" font-family="'Inter', sans-serif" font-size="10" font-weight="700" fill="#2a1a0e" text-anchor="middle">2</text>
+  <text x="558" y="158" font-family="'Inter', sans-serif" font-size="11" fill="#2a1a0e">classify</text>
+  <text x="558" y="172" font-family="'Inter', sans-serif" font-size="9" fill="#545454">three axes</text>
+
+  <!-- Station 3 — tool audit -->
+  <circle cx="568" cy="289" r="22" fill="#F5F5F5" stroke="#2a1a0e" stroke-width="1"/>
+  <text x="568" y="289" font-family="'Inter', sans-serif" font-size="10" font-weight="700" fill="#2a1a0e" text-anchor="middle">3</text>
+  <text x="600" y="285" font-family="'Inter', sans-serif" font-size="11" fill="#2a1a0e">tool audit</text>
+  <text x="600" y="299" font-family="'Inter', sans-serif" font-size="9" fill="#545454">incl. shadow AI</text>
+
+  <!-- Station 4 — draft lists -->
+  <circle cx="528" cy="423" r="22" fill="#F5F5F5" stroke="#2a1a0e" stroke-width="1"/>
+  <text x="528" y="423" font-family="'Inter', sans-serif" font-size="10" font-weight="700" fill="#2a1a0e" text-anchor="middle">4</text>
+  <text x="560" y="420" font-family="'Inter', sans-serif" font-size="11" fill="#2a1a0e">draft lists</text>
+  <text x="560" y="434" font-family="'Inter', sans-serif" font-size="9" fill="#545454">Delegate / Guard</text>
+
+  <!-- Station 5 — boundary cases -->
+  <circle cx="416" cy="503" r="22" fill="#F5F5F5" stroke="#2a1a0e" stroke-width="1"/>
+  <text x="416" y="503" font-family="'Inter', sans-serif" font-size="10" font-weight="700" fill="#2a1a0e" text-anchor="middle">5</text>
+  <text x="416" y="540" font-family="'Inter', sans-serif" font-size="11" fill="#2a1a0e" text-anchor="middle">boundary cases</text>
+
+  <!-- Station 6 — trial -->
+  <circle cx="284" cy="503" r="22" fill="#F5F5F5" stroke="#2a1a0e" stroke-width="1"/>
+  <text x="284" y="503" font-family="'Inter', sans-serif" font-size="10" font-weight="700" fill="#2a1a0e" text-anchor="middle">6</text>
+  <text x="284" y="540" font-family="'Inter', sans-serif" font-size="11" fill="#2a1a0e" text-anchor="middle">trial — one week</text>
+
+  <!-- Station 7 — revise -->
+  <circle cx="172" cy="423" r="22" fill="#F5F5F5" stroke="#2a1a0e" stroke-width="1"/>
+  <text x="172" y="423" font-family="'Inter', sans-serif" font-size="10" font-weight="700" fill="#2a1a0e" text-anchor="middle">7</text>
+  <text x="138" y="420" font-family="'Inter', sans-serif" font-size="11" fill="#2a1a0e" text-anchor="end">revise</text>
+
+  <!-- Station 8 — socialize -->
+  <circle cx="132" cy="289" r="22" fill="#F5F5F5" stroke="#2a1a0e" stroke-width="1"/>
+  <text x="132" y="289" font-family="'Inter', sans-serif" font-size="10" font-weight="700" fill="#2a1a0e" text-anchor="middle">8</text>
+  <text x="100" y="285" font-family="'Inter', sans-serif" font-size="11" fill="#2a1a0e" text-anchor="end">socialize</text>
+  <text x="100" y="299" font-family="'Inter', sans-serif" font-size="9" fill="#545454" text-anchor="end">with compliance</text>
+
+  <!-- Station 9 — quarterly re-audit -->
+  <circle cx="197" cy="172" r="22" fill="#F5F5F5" stroke="#C8102E" stroke-width="1.25"/>
+  <text x="197" y="172" font-family="'Inter', sans-serif" font-size="10" font-weight="700" fill="#C8102E" text-anchor="middle">9</text>
+  <text x="142" y="158" font-family="'Inter', sans-serif" font-size="11" fill="#C8102E" text-anchor="end">quarterly</text>
+  <text x="142" y="172" font-family="'Inter', sans-serif" font-size="9" fill="#545454" text-anchor="end">re-audit</text>
+
+  <!-- Clockwise arcs between stations -->
+  <!-- 1 -> 2 -->
+  <path d="M 370 130 A 200 200 0 0 1 487 158" fill="none" stroke="#2a1a0e" stroke-width="1" marker-end="url(#arrowL)"/>
+  <!-- 2 -> 3 -->
+  <path d="M 516 191 A 200 200 0 0 1 564 268" fill="none" stroke="#2a1a0e" stroke-width="1" marker-end="url(#arrowL)"/>
+  <!-- 3 -> 4 -->
+  <path d="M 565 310 A 200 200 0 0 1 537 403" fill="none" stroke="#2a1a0e" stroke-width="1" marker-end="url(#arrowL)"/>
+  <!-- 4 -> 5 -->
+  <path d="M 511 440 A 200 200 0 0 1 437 495" fill="none" stroke="#2a1a0e" stroke-width="1" marker-end="url(#arrowL)"/>
+  <!-- 5 -> 6 -->
+  <path d="M 394 503 A 200 200 0 0 1 306 503" fill="none" stroke="#2a1a0e" stroke-width="1" marker-end="url(#arrowL)"/>
+  <!-- 6 -> 7 -->
+  <path d="M 263 495 A 200 200 0 0 1 189 440" fill="none" stroke="#2a1a0e" stroke-width="1" marker-end="url(#arrowL)"/>
+  <!-- 7 -> 8 -->
+  <path d="M 163 403 A 200 200 0 0 1 135 310" fill="none" stroke="#2a1a0e" stroke-width="1" marker-end="url(#arrowL)"/>
+  <!-- 8 -> 9 -->
+  <path d="M 136 268 A 200 200 0 0 1 184 191" fill="none" stroke="#2a1a0e" stroke-width="1" marker-end="url(#arrowL)"/>
+  <!-- 9 -> 1 — Vermillion return arrow closing the loop -->
+  <path d="M 213 158 A 200 200 0 0 1 330 130" fill="none" stroke="#C8102E" stroke-width="1.25" marker-end="url(#arrowR)"/>
+
+  <!-- Center output circles -->
+  <text x="350" y="290" font-family="'Inter', sans-serif" font-size="11" font-weight="700" fill="#545454" text-anchor="middle">outputs</text>
+
+  <circle cx="318" cy="320" r="14" fill="#545454"/>
+  <text x="318" y="354" font-family="'Inter', sans-serif" font-size="10" fill="#2a1a0e" text-anchor="middle">Delegate</text>
+
+  <circle cx="382" cy="320" r="14" fill="#C8102E"/>
+  <text x="382" y="354" font-family="'Inter', sans-serif" font-size="10" fill="#2a1a0e" text-anchor="middle">Guard</text>
+
+  <circle cx="350" cy="370" r="10" fill="#C8860E"/>
+  <text x="350" y="394" font-family="'Inter', sans-serif" font-size="10" fill="#2a1a0e" text-anchor="middle">boundary backlog</text>
+
+  <!-- Footer caption -->
+  <text x="350" y="580" font-family="'Inter', sans-serif" font-size="11" font-style="italic" fill="#545454" text-anchor="middle">The red return arrow is the discipline — quarterly re-audit, never optional.</text>
+</svg>

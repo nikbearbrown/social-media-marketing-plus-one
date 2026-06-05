@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lattice Case — Cross-Posted vs Corrected</title>
+<style>
+:root{--color-white:#FFFFFF;--color-ink:#2a1a0e;--color-red:#C8102E;--color-secondary:#545454;--color-border:#D4D4D4;--color-ochre:#C8860E;--color-fill:#F5F5F5;}
+@media (prefers-color-scheme: dark){:root{--color-white:#111111;--color-ink:#F0EBE3;--color-red:#E8243A;--color-secondary:#A0978C;--color-border:#2E2E2E;--color-ochre:#D49A30;--color-fill:#1A1A1A;}}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--color-white);color:var(--color-ink);font-family:'Inter',sans-serif;padding:24px;}
+#chart{width:100%;min-height:540px;}
+.tooltip{position:absolute;pointer-events:none;opacity:0;background:var(--color-ink);color:var(--color-white);padding:6px 10px;font-size:12px;}
+.title{font-family:'EB Garamond',Georgia,serif;font-size:16px;fill:var(--color-ink);}
+.subtitle{font-family:'Inter',sans-serif;font-size:12px;fill:var(--color-secondary);}
+.panel-title{font-family:'Inter',sans-serif;font-size:12px;font-weight:700;fill:var(--color-ink);}
+.cell-label{font-family:'Inter',sans-serif;font-size:10px;fill:var(--color-ink);}
+.cell-sub{font-family:'Inter',sans-serif;font-size:9px;fill:var(--color-secondary);}
+.refuse-title{font-family:'Inter',sans-serif;font-size:11px;font-weight:700;fill:var(--color-red);}
+.note{font-family:'Inter',sans-serif;font-size:10px;font-style:italic;fill:var(--color-secondary);}
+.legend{font-family:'Inter',sans-serif;font-size:10px;fill:var(--color-ink);}
+@media (prefers-reduced-motion: reduce){*{transition:none !important;animation:none !important;}}
+</style></head><body>
+<div id="chart" role="main"></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+<script>
+function draw(){
+  const c=document.getElementById('chart');
+  d3.select(c).selectAll('*').remove();
+  const W=c.clientWidth||800,H=540;
+  const svg=d3.select(c).append('svg')
+    .attr('viewBox',`0 0 ${W} ${H}`)
+    .attr('role','img')
+    .attr('aria-labelledby','t d');
+  svg.append('title').attr('id','t').text('Lattice Case — Cross-Posted vs Corrected Approach');
+  svg.append('desc').attr('id','d').text('Two-panel comparison. Left: cross-post fans to four platforms, three underperform. Right: corrected approach uses three platforms with two explicit refusals.');
+
+  const defs=svg.append('defs');
+  function mk(id,fill){defs.append('marker').attr('id',id).attr('markerWidth',8).attr('markerHeight',6).attr('refX',7).attr('refY',3).attr('orient','auto').append('polygon').attr('points','0 0, 8 3, 0 6').attr('fill',fill);}
+  mk('arrowGrayD3','var(--color-secondary)');
+  mk('arrowOchreD3','var(--color-ochre)');
+
+  svg.append('text').attr('class','title').attr('x',32).attr('y',36).text('Lattice case — cross-posted (left) vs corrected (right)');
+  svg.append('text').attr('class','subtitle').attr('x',32).attr('y',56).text('Same source content. Different campaign. The refusal call is load-bearing.');
+
+  const mid = W/2;
+  svg.append('line').attr('x1',mid).attr('y1',80).attr('x2',mid).attr('y2',500).attr('stroke','var(--color-border)').attr('stroke-width',1);
+
+  // ===== Left panel
+  const LX = mid/2;
+  svg.append('text').attr('class','panel-title').attr('x',LX).attr('y',100).attr('text-anchor','middle').text('Original — cross-post, no re-voicing');
+  svg.append('rect').attr('x',LX-65).attr('y',120).attr('width',130).attr('height',44).attr('fill','var(--color-fill)').attr('stroke','var(--color-ink)').attr('stroke-width',1);
+  svg.append('text').attr('class','cell-label').attr('x',LX).attr('y',138).attr('text-anchor','middle').text('12-min panel');
+  svg.append('text').attr('class','cell-sub').attr('x',LX).attr('y',154).attr('text-anchor','middle').text('source content');
+
+  const lOutX = [LX-110, LX-32, LX+32, LX+110];
+  const lOutLabels = [['TikTok','<400 views',true],['Reels','flat',true],['LinkedIn','benchmark',false],['X','hostile replies',true]];
+
+  lOutX.forEach((x,i)=>{
+    svg.append('line').attr('x1',LX).attr('y1',164).attr('x2',x).attr('y2',240)
+      .attr('stroke','var(--color-secondary)').attr('stroke-width',1)
+      .attr('marker-end','url(#arrowGrayD3)');
+    const [name,sub,under] = lOutLabels[i];
+    svg.append('rect').attr('x',x-29).attr('y',250).attr('width',58).attr('height',44)
+      .attr('fill',under?'var(--color-red)':'var(--color-fill)')
+      .attr('opacity',under?0.3:1)
+      .attr('stroke',under?'var(--color-red)':'var(--color-ink)').attr('stroke-width',1);
+    svg.append('text').attr('class','cell-label').attr('x',x).attr('y',270).attr('text-anchor','middle').text(name);
+    svg.append('text').attr('class','cell-sub').attr('x',x).attr('y',284).attr('text-anchor','middle').text(sub);
+    if(under){svg.append('circle').attr('cx',x).attr('cy',308).attr('r',4).attr('fill','var(--color-red)');}
+  });
+
+  svg.append('text').attr('class','note').attr('x',LX).attr('y',350).attr('text-anchor','middle').text('Format compliant. Fit absent.');
+  svg.append('text').attr('class','note').attr('x',LX).attr('y',368).attr('text-anchor','middle').text('Three of four under-perform.');
+
+  // ===== Right panel
+  const RX = mid + mid/2;
+  svg.append('text').attr('class','panel-title').attr('x',RX).attr('y',100).attr('text-anchor','middle').text('Corrected — re-voiced + refusal');
+  svg.append('rect').attr('x',RX-65).attr('y',120).attr('width',130).attr('height',44).attr('fill','var(--color-fill)').attr('stroke','var(--color-ink)').attr('stroke-width',1);
+  svg.append('text').attr('class','cell-label').attr('x',RX).attr('y',138).attr('text-anchor','middle').text('12-min panel');
+  svg.append('text').attr('class','cell-sub').attr('x',RX).attr('y',154).attr('text-anchor','middle').text('source content');
+
+  const rOutX = [RX-90, RX, RX+90];
+  const rOutLabels = [['LinkedIn','long-form'],['YouTube','full panel'],['X (research)','personal acct']];
+  rOutX.forEach((x,i)=>{
+    svg.append('line').attr('x1',RX + (x>RX?25:(x<RX?-25:0))).attr('y1',164).attr('x2',x).attr('y2',240)
+      .attr('stroke','var(--color-ochre)').attr('stroke-width',1.25)
+      .attr('marker-end','url(#arrowOchreD3)');
+    svg.append('rect').attr('x',x-29).attr('y',250).attr('width',58).attr('height',44)
+      .attr('fill','var(--color-fill)').attr('stroke','var(--color-ink)').attr('stroke-width',1);
+    svg.append('text').attr('class','cell-label').attr('x',x).attr('y',270).attr('text-anchor','middle').text(rOutLabels[i][0]);
+    svg.append('text').attr('class','cell-sub').attr('x',x).attr('y',284).attr('text-anchor','middle').text(rOutLabels[i][1]);
+  });
+
+  svg.append('text').attr('class','refuse-title').attr('x',RX).attr('y',340).attr('text-anchor','middle').text('Explicitly refused');
+  const refused = [{x:RX-50,name:'TikTok'},{x:RX+50,name:'Reels'}];
+  refused.forEach(r=>{
+    svg.append('rect').attr('x',r.x-40).attr('y',350).attr('width',80).attr('height',40).attr('fill','none').attr('stroke','var(--color-red)').attr('stroke-width',1.25);
+    svg.append('line').attr('x1',r.x-40).attr('y1',350).attr('x2',r.x+40).attr('y2',390).attr('stroke','var(--color-red)').attr('stroke-width',1.25);
+    svg.append('line').attr('x1',r.x+40).attr('y1',350).attr('x2',r.x-40).attr('y2',390).attr('stroke','var(--color-red)').attr('stroke-width',1.25);
+    svg.append('text').attr('class','cell-label').attr('x',r.x).attr('y',375).attr('text-anchor','middle').text(r.name);
+  });
+
+  svg.append('text').attr('class','note').attr('x',RX).attr('y',420).attr('text-anchor','middle').text('Refusal documented.');
+  svg.append('text').attr('class','note').attr('x',RX).attr('y',438).attr('text-anchor','middle').text('Capacity spent where fit exists.');
+
+  // Legend
+  svg.append('rect').attr('x',56).attr('y',468).attr('width',14).attr('height',14).attr('fill','var(--color-secondary)');
+  svg.append('text').attr('class','legend').attr('x',76).attr('y',479).text('unguarded delegation');
+  svg.append('rect').attr('x',220).attr('y',468).attr('width',14).attr('height',14).attr('fill','var(--color-ochre)');
+  svg.append('text').attr('class','legend').attr('x',240).attr('y',479).text('delegate-with-review');
+  svg.append('rect').attr('x',386).attr('y',468).attr('width',14).attr('height',14).attr('fill','var(--color-red)');
+  svg.append('text').attr('class','legend').attr('x',406).attr('y',479).text('underperformance / refusal');
+}
+draw();
+new ResizeObserver(draw).observe(document.getElementById('chart'));
+</script></body></html>

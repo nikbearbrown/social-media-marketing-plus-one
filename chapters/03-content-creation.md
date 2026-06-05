@@ -14,6 +14,10 @@ Content creation is the task most social media practitioners default to delegati
 
 But content creation is also the task where the over-delegation failure mode is most visible — at the byline level, at the voice level, and over time at the feed level. Doshi and Hauser, writing in *Science Advances* in 2024, found something that complicates the Noy-Zhang result: AI-assisted writers individually produced more creative outputs on average, but the *collective set* of outputs converged. Fewer distinct ideas across writers using the same model. The individual output gets better. The pool of outputs gets blander. For a single practitioner, the productivity gain is real. For a brand publishing across months, the homogenization effect is structural — and quiet. It does not announce itself. It accumulates.
 
+![Two-line chart with AI assistance intensity on the horizontal axis and a 0–100 relative index on the vertical axis. A gray line for individual writing quality rises monotonically from about 60 to 85. A red line for collective distinctiveness across writers falls monotonically from about 80 to 45. The two lines cross at moderate AI use and a shaded zone to the right marks the structural homogenization region.](../images/03-content-creation-fig-01.png)
+
+*Figure 3.1 — Individual quality rises; collective distinctiveness falls. The chapter's load-bearing empirical claim.*
+
 <!-- → [CHART: Two-line chart illustrating the Doshi-Hauser divergence — x-axis: individual writer output quality; y-axis: collective distinctiveness of the output set; one line trends up (individual quality), one trends down (collective originality) as AI assistance increases — student should see that the two metrics move in opposite directions] -->
 
 The job of this chapter is to draw the boundary inside content creation. Not across it — not "delegate content creation" or "guard content creation." Inside it. Some of the work is pattern-shaped. Some of it is judgment-shaped. The chapter is about which is which, and why confusing them costs you something specific.
@@ -26,6 +30,17 @@ The pattern-shaped work in content creation is any task where the output can be 
 
 First-draft prose from a brief. Given audience, format, length, angle, and tone, current models produce captions, threads, carousel scripts, and short-form video scripts at draft quality that an editing human can finish fast. The brief has to constrain enough that the output is close to publishable on the first pass. Generic prompts produce generic output; specific prompts produce drafts that need voice review only. The constraint is in the brief, not in the model.
 
+| Brief element | What it constrains | What goes wrong if it is missing |
+|---|---|---|
+| Audience | Reading level, prior knowledge, register, jargon tolerance | Output pitched at a generic mid-funnel reader nobody actually is |
+| Format | Caption vs thread vs carousel script vs short-form video script | Model defaults to a paragraph-shaped blob that fits no platform |
+| Length | Word or character ceiling and floor | Drafts run long, lose the hook, or compress past the angle |
+| Angle | The specific take the post advances | Generic-fluent restatement of consensus; nothing to defend |
+| Tone | Voice-worksheet anchored register and cadence | Surface register approximately right, brand depth missing |
+| Explicit "do not" | The taboos derived from voice worksheet | Banned phrases ("unlock," "leverage," "game-changer") leak through |
+
+*Figure 3.2 — Anatomy of a drafting brief: six constraints, what each one does, and the predictable failure when it is left implicit.*
+
 <!-- → [TABLE: Sample drafting brief anatomy — columns: brief element (audience / format / length / angle / tone / explicit "do not"), what it constrains, what goes wrong if it's missing] -->
 
 Variation generation. Given an approved core message, producing ten or twenty rephrasings for A/B testing or platform-specific adaptation is what these systems are built for. Variation is the model's strongest move. The combinatorial output that made "Even AI knows ketchup is Heinz" a campaign is the same capability that makes caption A/B testing cheap. The work is selecting among variants, not generating them.
@@ -35,6 +50,18 @@ Format adaptation. Taking a long-form piece and compressing it into a thread. Ta
 Bounded ideation brainstorms. Given a campaign theme or content pillar, producing twenty candidate angles for a human to select among. The selection is judgment; the production of candidates is pattern work. The risk of mis-labeling this is the risk of letting the model select the angle, which is not what bounded ideation means.
 
 Format-level production tasks. Hashtag and tag research. Alt-text generation. Repost and quote-post copy. Pre-publication checks — reading level, banned phrases, legal-risk flagging against a maintained list of trigger phrases. These are pattern tasks that humans drift on under deadline. The cost of drifting is not catastrophic on any single post, but it compounds across a feed.
+
+| Task | Why pattern-shaped | Time saved per week | Quality risk if skipped |
+|---|---|---|---|
+| First-draft prose from a constrained brief | Output specifiable in brief; model hits draft quality reliably | 3–4 hours | Low; editor finishes fast on the first pass |
+| Variation generation for A/B testing | Combinatorial rephrasing is the model's strongest move | 45–60 minutes | Low; selection is still human |
+| Format adaptation (long → thread, thread → essay) | Conversion rules are learnable and learned | 45–60 minutes | Low; conversions follow stable rules |
+| Bounded ideation (20 candidate angles for selection) | Production of candidates is pattern work | 30–45 minutes | Low if selection stays human |
+| Hashtag and tag research for a campaign theme | Discoverability follows platform conventions the model has | 20–30 minutes | Low; reach drift, not voice drift |
+| Alt-text generation for image carousels | Description against image is straightforward retrieval | 15–20 minutes | Low; accessibility floor easier to hit |
+| Pre-publication legal and brand-trigger scan | Pattern check against a maintained trigger list | 20–30 minutes | Medium if the trigger list is stale; review on hits |
+
+*Figure 3.3 — Delegate List for a B2B SaaS social manager: where the five-to-seven-hour weekly recovery comes from.*
 
 <!-- → [TABLE: Delegate List for a B2B SaaS social manager — tasks, why pattern-shaped, time saved, quality risk if skipped — drawn from chapter source] -->
 
@@ -55,6 +82,18 @@ Angle selection. The take, position, or argument a post advances. Angle is upstr
 Cultural-moment response. Whether to react at all to a moment in the broader culture. What tone the brand can credibly take given what it has said before. Which moments are the brand's to comment on and which are not. The failure mode is AI-fluent reactive copy that reads as opportunistic because the model has no access to the implicit rules that govern which moments the brand enters. The fluency makes it worse. The post sounds confident. It reads as tone-deaf.
 
 Founder or named-executive voice. A post in the CEO's name that the CEO would never have written erodes the trust that made the CEO worth following. This is not a surface problem. The Sports Illustrated failure was a byline failure. The contract the reader had was: a person with this name stands behind these words. When the named person has not read the words, the contract is void before the post goes up. The detection is accidental and public. The cost is not proportional to the magnitude of the deception. It is proportional to the distance between what the reader trusted and what was actually true.
+
+| Judgment-shaped task | What goes wrong if delegated | Required human role | Escalation trigger |
+|---|---|---|---|
+| Brand voice (depth, not surface) | Surface markers match; decisions that never made the corpus do not — voice drifts toward generic-fluent | Practitioner who has been writing for the brand long enough to know what it would never publish | Voice pass on every AI-drafted post before any other edit |
+| Angle selection on a topic | Model picks the consensus angle; brand publishes what it doesn't actually believe | Brand strategist or lead writer who knows the positioning | Any post taking a public position |
+| Cultural-moment response | AI-fluent reactive copy reads as opportunistic; brand has no real stake in the moment | Senior practitioner reading what the brand can credibly say | Any reactive post within 24 hours of a cultural event |
+| Founder / named-executive voice | Byline contract voids; named person did not stand behind the words | The named individual reads and approves before publication | Every post under a named byline |
+| Feed-level originality | Doshi-Hauser convergence flattens the feed over weeks; no single post fails | Practitioner sampling 5–10 posts weekly as the audience reads | Weekly feed-level audit on the calendar |
+| Decision to publish (timing, context) | Post lands during news event, live complaint thread, or after internal angle change | Practitioner with current-context awareness at shipping time | Every publish action |
+
+*Figure 3.4 — Guard List for content creation: tasks where the +1 is the work.*
+
 
 <!-- → [TABLE: Guard List — judgment-shaped tasks, what goes wrong if delegated, required human role, escalation trigger] -->
 
@@ -95,6 +134,10 @@ Decision to publish. Guard. The shipping decision.
 First-hour comment monitoring and prioritized response. Sorting is Delegate; responding is Guard.
 
 Thirteen steps. Eight Delegate, five Guard. Without decomposition, the practitioner either delegates the whole essay — voice failure on the voice pass, the hook, and the close — or hand-writes the whole thing and wastes time on research, the outline, the first draft, the tags, and the timing check. The decomposition is what produces the right boundary.
+
+![Vertical workflow of thirteen numbered steps for drafting a CEO LinkedIn essay, color-coded Delegate (gray) and Guard (red). Five Guard steps — topic, angle, voice pass, hook, close, publish decision — carry italic annotations on the right naming what fails if delegated. Step 11 has an ochre flag-approval dot. Step 13 is a split rectangle showing sorting delegated and responding guarded. Bottom tally tiles read 8 Delegate, 5 Guard.](../images/03-content-creation-fig-02.png)
+
+*Figure 3.5 — Thirteen steps in one CEO essay: eight Delegate, five Guard. Decomposition is what produces the right boundary.*
 
 <!-- → [INFOGRAPHIC: Visual decomposition of the 13-step LinkedIn essay workflow — color-coded Delegate vs Guard at each step, with the five Guard steps highlighted and annotated with what fails if delegated] -->
 
@@ -142,6 +185,19 @@ Never react to a cultural moment without judgment review. AI-fluent reactive con
 
 Never let AI write content involving a named customer, partner, or competitor without legal and brand review. The model does not know the consent status, the relationship history, or the legal exposure. The cost of an avoidable mention is far higher than the cost of the review.
 
+| Failure mode | Why it fails | Specific cost |
+|---|---|---|
+| AI picks which variant publishes | Selection is voice work; the model averages across the generated set | Voice erosion across the feed; reader cannot say why, but stops following |
+| AI writes the opening hook of a thought-leadership post | The hook is where voice is most exposed and where engagement is decided | Generic-fluent first line; lost engagement; reader scrolls past |
+| AI-drafted post under a named byline ships without that individual's read | The byline is a contract; the named person did not stand behind the words | Sports Illustrated-shaped reputational damage; trust collapses retroactively |
+| AI used to fabricate identity (bylines, headshots, attributed quotes) | The contract with the reader is synthetic from the start | Brand-ending; the licensing or distribution arrangement may not survive |
+| Angle delegated to the model | The model decides what the brand believes | Brand publishes positions it cannot defend when challenged |
+| Weekly feed-level audit skipped | Doshi-Hauser convergence is structural and quiet; per-post audits miss it | Feed flattens; audience loses the property that made them follow |
+| Reaction to a cultural moment without judgment review | Brand has no real stake; the post reads as opportunistic | Tone-deafness amplified by AI fluency; reactive backlash |
+| AI writes about a named customer, partner, or competitor without legal and brand review | Model does not know consent, relationship history, or legal exposure | Avoidable mention; legal cost far higher than the review |
+
+*Figure 3.6 — The eight avoidable failures: a pre-publication checklist.*
+
 <!-- → [TABLE: The eight avoidable failures as a quick-reference table — columns: failure mode, why it fails, the specific cost — one row per failure, for use as a pre-publication checklist] -->
 
 ---
@@ -173,3 +229,13 @@ Write two drafting prompts for the same post: one generic (audience, format, top
 
 **Exercise 4 — Feed-Level Audit**
 Sample ten posts from your brand's most recent two weeks of publishing. Read them as the audience — not as the author. List any words, phrases, or sentence structures that appear in three or more posts in a way that suggests default-model phrasing rather than brand-specific phrasing. Now check whether those phrases appear in the voice worksheet's taboos list. If they do not, update the taboos list.
+
+---
+
+## Prompts
+
+### Figure 3.1 — The Doshi-Hauser divergence
+Build a two-line chart on a single Cartesian plane. Horizontal axis: AI assistance intensity in five discrete steps — no AI, light, moderate, heavy, total. Vertical axis: relative index 0 to 100, zero-baseline. Series A is individual writing quality, rising monotonically from approximately 60 at no AI to 85 at total. Series B is collective distinctiveness across writers, falling monotonically from approximately 80 to 45. Mark each data point with a small filled circle. Render Series A in secondary gray and Series B in brand red — red encodes the chapter's load-bearing claim. Add a single open circle at the crossing point near the moderate step. Shade the area to the right of the crossing with a low-opacity neutral fill labeled "structural homogenization zone." Right-side labels for each line. No legend. Plot region fill F5F5F5 with hairline border. Axes ink 1pt. Tick labels JetBrains Mono 11px. Deliverables: brutalist SVG and a single-file D3 v7 HTML with ResizeObserver, dark-mode CSS variables, and a tooltip per data point.
+
+### Figure 3.5 — Decomposition of a CEO LinkedIn essay
+Build a vertical workflow infographic of 13 numbered steps for drafting a 1,200-word CEO LinkedIn essay. Each step is a constant-width filled rectangle stacked top to bottom with small vertical arrow connectors between them. Color-code by role: Delegate (secondary gray) for steps 3, 4, 5, 9, 10, 11; Guard (brand red) for steps 1, 2, 6, 7, 8, 12. Step 13 is a single rectangle split into two halves — left half gray (sort comments), right half red (respond). Step 11 carries a small ochre dot in the corner indicating human approval on flags. Step labels left-aligned inside each rectangle; role label (DELEGATE or GUARD) right-aligned. To the right of each Guard step, add a short italic Garamond callout naming what fails if delegated (e.g., "voice most exposed," "the shipping decision"). Bottom tally: two tiles reading "8 DELEGATE" and "5 GUARD." No icons. Deliverables: brutalist SVG and a single-file D3 v7 HTML with ResizeObserver, dark-mode variables, and a tooltip per step describing its role and callout.

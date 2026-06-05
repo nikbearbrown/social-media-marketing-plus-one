@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<!--
+  Three Nested Framework Levels — Conceptual / Operational / Execution
+  Book: Social Media Marketing plus One · Chapter: 02-the-framework · Figure: 01
+  Type: nested-rings · Generated: 2026-05-27 · Source: chapters/02-the-framework.md
+-->
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Three Nested Framework Levels</title>
+<style>
+:root{--color-white:#FFFFFF;--color-ink:#2a1a0e;--color-red:#C8102E;--color-secondary:#545454;--color-border:#D4D4D4;--color-ochre:#C8860E;--color-fill:#F5F5F5;}
+@media (prefers-color-scheme: dark){:root{--color-white:#111111;--color-ink:#F0EBE3;--color-red:#E8243A;--color-secondary:#A0978C;--color-border:#2E2E2E;--color-ochre:#D49A30;--color-fill:#1A1A1A;}}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--color-white);color:var(--color-ink);font-family:'Inter',-apple-system,'Helvetica Neue',sans-serif;padding:24px;}
+#chart{width:100%;min-height:480px;}
+.tooltip{position:absolute;pointer-events:none;opacity:0;background:var(--color-ink);color:var(--color-white);padding:6px 10px;font-size:12px;transition:opacity 150ms;}
+.title{font-family:'EB Garamond','Garamond',Georgia,serif;font-size:16px;fill:var(--color-ink);}
+.subtitle{font-family:'Inter',sans-serif;font-size:12px;fill:var(--color-secondary);}
+.ring-label{font-family:'Inter',sans-serif;font-size:12px;font-weight:600;}
+.ring-sub{font-family:'Inter',sans-serif;font-size:10px;fill:var(--color-secondary);}
+.callout-label{font-family:'Inter',sans-serif;font-size:11px;font-weight:600;}
+.callout-sub{font-family:'Inter',sans-serif;font-size:10px;fill:var(--color-secondary);}
+.tag-italic{font-family:'EB Garamond',Georgia,serif;font-size:11px;font-style:italic;fill:var(--color-red);}
+@media (prefers-reduced-motion: reduce){*{transition:none !important;animation:none !important;}}
+</style></head><body>
+<div id="chart" role="main"></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+<script>
+const RINGS=[
+  {id:'conceptual',r:160,fill:'var(--color-secondary)',opacity:0.18,label:'CONCEPTUAL',sub:'pattern vs. judgment',color:'var(--color-ink)',produces:'produces vocabulary',producesSub:'the philosophical foundation'},
+  {id:'operational',r:105,fill:'var(--color-red)',opacity:0.15,label:'OPERATIONAL',sub:'Delegate vs. Guard',color:'var(--color-red)',produces:'produces lists',producesSub:'five-column Delegate & Guard'},
+  {id:'execution',r:55,fill:'var(--color-ink)',opacity:0.25,label:'EXECUTION',sub:'Do / Never',color:'var(--color-white)',produces:'produces actions',producesSub:'Do This / Never Do This pairs'}
+];
+const tooltip=d3.select('body').append('div').attr('class','tooltip').style('position','absolute').style('opacity',0);
+function showTooltip(event,html){tooltip.html(html).style('left',(event.pageX+12)+'px').style('top',(event.pageY-28)+'px').transition().duration(150).style('opacity',1);}
+function moveTooltip(event){tooltip.style('left',(event.pageX+12)+'px').style('top',(event.pageY-28)+'px');}
+function hideTooltip(){tooltip.transition().duration(100).style('opacity',0);}
+function draw(){
+  const container=document.getElementById('chart');
+  d3.select(container).selectAll('*').remove();
+  const W=container.clientWidth||800,H=Math.max(480,W*0.6);
+  const svg=d3.select(container).append('svg').attr('viewBox',`0 0 ${W} ${H}`).attr('role','img').attr('aria-labelledby','t d');
+  svg.append('title').attr('id','t').text('Three Nested Framework Levels');
+  svg.append('desc').attr('id','d').text('Three concentric rings: outer Conceptual (pattern-shaped vs. judgment-shaped), middle Operational (Delegate List vs. Guard List), inner Execution (Do This vs. Never Do This). Each ring callout names what that level produces.');
+  svg.append('text').attr('class','title').attr('x',32).attr('y',32).text('Three Nested Framework Levels — Conceptual, Operational, Execution');
+  svg.append('text').attr('class','subtitle').attr('x',32).attr('y',52).text('A stack, not synonyms. Confusing the levels is the most common adoption failure.');
+  const cx=Math.min(W*0.35,260),cy=H/2+10;
+  // rings
+  RINGS.forEach(r=>{
+    svg.append('circle').attr('cx',cx).attr('cy',cy).attr('r',r.r).attr('fill',r.fill).attr('opacity',r.opacity).attr('stroke','var(--color-ink)').attr('stroke-width',1)
+      .attr('tabindex',0).attr('aria-label',`${r.label}: ${r.sub} — ${r.produces}`)
+      .on('mouseover',(event)=>showTooltip(event,`<strong>${r.label}</strong><br>${r.sub}<br><em>${r.produces}</em>`)).on('mousemove',moveTooltip).on('mouseout',hideTooltip);
+  });
+  // ring labels — placed near the top of each ring
+  RINGS.forEach((r,i)=>{
+    if(i===2){
+      // inner — center label
+      svg.append('text').attr('class','ring-label').attr('x',cx).attr('y',cy-2).attr('text-anchor','middle').attr('fill',r.color).text(r.label);
+      svg.append('text').attr('x',cx).attr('y',cy+13).attr('text-anchor','middle').attr('font-family',"'Inter', sans-serif").attr('font-size',9).attr('fill',r.color).text(r.sub);
+    }else{
+      const yOffset=i===0?-(r.r-25):-(r.r-30);
+      svg.append('text').attr('class','ring-label').attr('x',cx).attr('y',cy+yOffset).attr('text-anchor','middle').attr('fill',r.color).text(r.label);
+      svg.append('text').attr('class','ring-sub').attr('x',cx).attr('y',cy+yOffset+14).attr('text-anchor','middle').text(r.sub);
+    }
+  });
+  // right-side callouts
+  const calloutX=cx+200;
+  const yPositions=[cy-65,cy,cy+65];
+  RINGS.forEach((r,i)=>{
+    const ringEdge=cx+r.r;
+    svg.append('line').attr('x1',ringEdge).attr('y1',yPositions[i]).attr('x2',calloutX).attr('y2',yPositions[i]).attr('stroke','var(--color-ink)').attr('stroke-width',0.5);
+    svg.append('circle').attr('cx',calloutX).attr('cy',yPositions[i]).attr('r',3).attr('fill','var(--color-ink)');
+    svg.append('text').attr('class','callout-label').attr('x',calloutX+10).attr('y',yPositions[i]-4).attr('fill',i===1?'var(--color-red)':'var(--color-ink)').text(r.produces);
+    svg.append('text').attr('class','callout-sub').attr('x',calloutX+10).attr('y',yPositions[i]+10).text(r.producesSub);
+  });
+  svg.append('text').attr('class','tag-italic').attr('x',W/2).attr('y',H-16).attr('text-anchor','middle').text('Conceptual → Operational → Execution: the levels are a stack, not synonyms.');
+}
+draw();
+new ResizeObserver(draw).observe(document.getElementById('chart'));
+</script></body></html>

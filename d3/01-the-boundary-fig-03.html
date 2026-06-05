@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<!--
+  The +1 Decision Node — Three Structural Inputs Before Publish
+  Book: Social Media Marketing plus One · Chapter: 01-the-boundary · Figure: 03
+  Type: flow · Generated: 2026-05-27 · Source: chapters/01-the-boundary.md
+-->
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>The +1 Decision Node</title>
+<style>
+:root{--color-white:#FFFFFF;--color-ink:#2a1a0e;--color-red:#C8102E;--color-secondary:#545454;--color-border:#D4D4D4;--color-ochre:#C8860E;--color-fill:#F5F5F5;}
+@media (prefers-color-scheme: dark){:root{--color-white:#111111;--color-ink:#F0EBE3;--color-red:#E8243A;--color-secondary:#A0978C;--color-border:#2E2E2E;--color-ochre:#D49A30;--color-fill:#1A1A1A;}}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--color-white);color:var(--color-ink);font-family:'Inter',-apple-system,'Helvetica Neue',sans-serif;padding:24px;}
+#chart{width:100%;min-height:420px;}
+.tooltip{position:absolute;pointer-events:none;opacity:0;background:var(--color-ink);color:var(--color-white);padding:6px 10px;font-size:12px;transition:opacity 150ms;}
+.title{font-family:'EB Garamond','Garamond',Georgia,serif;font-size:16px;fill:var(--color-ink);}
+.subtitle{font-family:'Inter',sans-serif;font-size:12px;fill:var(--color-secondary);}
+.tile-label{font-family:'Inter',sans-serif;font-size:12px;fill:var(--color-ink);}
+.tile-sub{font-family:'Inter',sans-serif;font-size:10px;fill:var(--color-secondary);}
+.gate-label{font-family:'EB Garamond',Georgia,serif;font-size:13px;fill:var(--color-ink);}
+.input-label{font-family:'Inter',sans-serif;font-size:11px;fill:var(--color-ochre);}
+.tag-italic{font-family:'EB Garamond',Georgia,serif;font-size:11px;font-style:italic;fill:var(--color-red);}
+@media (prefers-reduced-motion: reduce){*{transition:none !important;animation:none !important;}}
+</style></head><body>
+<div id="chart" role="main"></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+<script>
+const tooltip=d3.select('body').append('div').attr('class','tooltip').style('position','absolute').style('opacity',0);
+function showTooltip(event,html){tooltip.html(html).style('left',(event.pageX+12)+'px').style('top',(event.pageY-28)+'px').transition().duration(150).style('opacity',1);}
+function moveTooltip(event){tooltip.style('left',(event.pageX+12)+'px').style('top',(event.pageY-28)+'px');}
+function hideTooltip(){tooltip.transition().duration(100).style('opacity',0);}
+function draw(){
+  const container=document.getElementById('chart');
+  d3.select(container).selectAll('*').remove();
+  const W=container.clientWidth||800,H=Math.max(420,W*0.55);
+  const svg=d3.select(container).append('svg').attr('viewBox',`0 0 ${W} ${H}`).attr('role','img').attr('aria-labelledby','t d');
+  svg.append('title').attr('id','t').text('The +1 Decision Node');
+  svg.append('desc').attr('id','d').text('AI output flows into a central human decision hexagon. Three ochre input arrows (accountability, relationship, context) feed the hexagon. One outflow exits to a publish tile on the right.');
+  svg.append('text').attr('class','title').attr('x',32).attr('y',32).text('The +1 Decision Node — What the Human Brings That the Model Cannot');
+  svg.append('text').attr('class','subtitle').attr('x',32).attr('y',52).text('Accountability, relationship, and context enter the gate. Only one outflow.');
+  const cx=W/2,cy=H/2;
+  // AI output tile
+  const aiX=cx-220,aiY=cy-30,aiW=130,aiH=60;
+  svg.append('rect').attr('x',aiX).attr('y',aiY).attr('width',aiW).attr('height',aiH)
+    .attr('fill','var(--color-secondary)').attr('opacity',0.25).attr('stroke','var(--color-secondary)').attr('stroke-width',1)
+    .attr('tabindex',0).attr('aria-label','AI output: draft, caption, or reply')
+    .on('mouseover',(event)=>showTooltip(event,'<strong>AI output</strong><br>caption / draft / reply')).on('mousemove',moveTooltip).on('mouseout',hideTooltip);
+  svg.append('text').attr('class','tile-label').attr('x',aiX+aiW/2).attr('y',aiY+aiH/2-4).attr('text-anchor','middle').text('AI output');
+  svg.append('text').attr('class','tile-sub').attr('x',aiX+aiW/2).attr('y',aiY+aiH/2+12).attr('text-anchor','middle').text('draft / caption / reply');
+  // arrow from AI to gate
+  svg.append('line').attr('x1',aiX+aiW).attr('y1',cy).attr('x2',cx-50).attr('y2',cy).attr('stroke','var(--color-ink)').attr('stroke-width',1);
+  svg.append('polygon').attr('points',`${cx-50},${cy} ${cx-58},${cy-4} ${cx-58},${cy+4}`).attr('fill','var(--color-ink)');
+  // hexagon gate
+  const hexR=60;
+  const hex=[[cx-40,cy-60],[cx+40,cy-60],[cx+hexR,cy],[cx+40,cy+60],[cx-40,cy+60],[cx-hexR,cy]];
+  svg.append('polygon').attr('points',hex.map(p=>p.join(',')).join(' '))
+    .attr('fill','var(--color-white)').attr('stroke','var(--color-ink)').attr('stroke-width',1.5)
+    .attr('tabindex',0).attr('aria-label','+1 human gate')
+    .on('mouseover',(event)=>showTooltip(event,'<strong>+1 human gate</strong><br>accountability · relationship · context')).on('mousemove',moveTooltip).on('mouseout',hideTooltip);
+  svg.append('text').attr('class','gate-label').attr('x',cx).attr('y',cy-4).attr('text-anchor','middle').text('+1');
+  svg.append('text').attr('class','tile-sub').attr('x',cx).attr('y',cy+14).attr('text-anchor','middle').text('human gate');
+  // accountability (top)
+  svg.append('line').attr('x1',cx).attr('y1',cy-130).attr('x2',cx).attr('y2',cy-63).attr('stroke','var(--color-ochre)').attr('stroke-width',1);
+  svg.append('polygon').attr('points',`${cx},${cy-60} ${cx-4},${cy-68} ${cx+4},${cy-68}`).attr('fill','var(--color-ochre)');
+  svg.append('circle').attr('cx',cx).attr('cy',cy-60).attr('r',3).attr('fill','var(--color-ochre)');
+  svg.append('text').attr('class','input-label').attr('x',cx).attr('y',cy-138).attr('text-anchor','middle').text('accountability');
+  // relationship (bottom-left)
+  svg.append('line').attr('x1',cx-80).attr('y1',cy+120).attr('x2',cx-45).attr('y2',cy+63).attr('stroke','var(--color-ochre)').attr('stroke-width',1);
+  svg.append('polygon').attr('points',`${cx-43},${cy+60} ${cx-51},${cy+60} ${cx-47},${cy+67}`).attr('fill','var(--color-ochre)');
+  svg.append('circle').attr('cx',cx-45).attr('cy',cy+60).attr('r',3).attr('fill','var(--color-ochre)');
+  svg.append('text').attr('class','input-label').attr('x',cx-95).attr('y',cy+138).attr('text-anchor','middle').text('relationship');
+  // context (bottom-right)
+  svg.append('line').attr('x1',cx+80).attr('y1',cy+120).attr('x2',cx+45).attr('y2',cy+63).attr('stroke','var(--color-ochre)').attr('stroke-width',1);
+  svg.append('polygon').attr('points',`${cx+43},${cy+60} ${cx+47},${cy+67} ${cx+51},${cy+60}`).attr('fill','var(--color-ochre)');
+  svg.append('circle').attr('cx',cx+45).attr('cy',cy+60).attr('r',3).attr('fill','var(--color-ochre)');
+  svg.append('text').attr('class','input-label').attr('x',cx+95).attr('y',cy+138).attr('text-anchor','middle').text('context');
+  // output to publish
+  const pubX=cx+150,pubW=100,pubH=60,pubY=cy-30;
+  svg.append('line').attr('x1',cx+hexR).attr('y1',cy).attr('x2',pubX-5).attr('y2',cy).attr('stroke','var(--color-ink)').attr('stroke-width',1.5);
+  svg.append('polygon').attr('points',`${pubX-5},${cy} ${pubX-13},${cy-4} ${pubX-13},${cy+4}`).attr('fill','var(--color-ink)');
+  svg.append('rect').attr('x',pubX).attr('y',pubY).attr('width',pubW).attr('height',pubH)
+    .attr('fill','var(--color-red)').attr('opacity',0.15).attr('stroke','var(--color-red)').attr('stroke-width',1.5)
+    .attr('tabindex',0).attr('aria-label','publish: a named human ships')
+    .on('mouseover',(event)=>showTooltip(event,'<strong>publish</strong><br>a named human ships')).on('mousemove',moveTooltip).on('mouseout',hideTooltip);
+  svg.append('text').attr('class','tile-label').attr('x',pubX+pubW/2).attr('y',pubY+pubH/2-4).attr('text-anchor','middle').attr('font-weight','600').text('publish');
+  svg.append('text').attr('class','tile-sub').attr('x',pubX+pubW/2).attr('y',pubY+pubH/2+12).attr('text-anchor','middle').text('named human ships');
+  svg.append('text').attr('class','tag-italic').attr('x',W/2).attr('y',H-12).attr('text-anchor','middle').text('"Who decided to publish this?" The answer cannot be "the model."');
+}
+draw();
+new ResizeObserver(draw).observe(document.getElementById('chart'));
+</script></body></html>

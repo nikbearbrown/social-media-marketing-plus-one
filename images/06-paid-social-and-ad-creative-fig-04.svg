@@ -1,0 +1,78 @@
+<!--
+  Measured lift vs incrementality — the Lewis-Rao gap
+  Book: Social Media Marketing plus One
+  Chapter: 06-paid-social-and-ad-creative
+  Figure: 04
+  Type: COMPARISON
+  Generated: 2026-05-27
+  Source: pantry/06-paid-social-and-ad-creative-cajal.md
+-->
+<svg viewBox="0 0 700 480" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="fig-title-04 fig-desc-04">
+  <title id="fig-title-04">Measured lift vs incrementality — the Lewis-Rao gap</title>
+  <desc id="fig-desc-04">A side-by-side comparison. The left bar shows the large "measured lift" the platform reports; the right bar shows the smaller "incremental lift" recovered by an RCT. The gap between them is what attribution models miss and where human judgment lives.</desc>
+  <metadata><cajal:figure xmlns:cajal="https://bearbrown.ai/cajal/1.0" book="Social Media Marketing plus One" book-slug="social-media-marketing-plus-one" chapter="06-paid-social-and-ad-creative" figure-number="04" figure-title="Measured lift vs incrementality — the Lewis-Rao gap" figure-slug="lewis-rao-incrementality-gap" figure-type="COMPARISON" priority="Important" author="Nik Bear Brown Milivoje Davidovic" date-generated="2026-05-27" source-file="pantry/06-paid-social-and-ad-creative-cajal.md"/></metadata>
+  <defs><marker id="arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#2a1a0e"/></marker></defs>
+  <rect x="0" y="0" width="700" height="480" fill="#FFFFFF"/>
+  <text x="32" y="36" font-family="'EB Garamond', 'Garamond', Georgia, serif" font-size="14" fill="#2a1a0e">The Lewis-Rao gap — what the platform claims vs what the campaign actually caused</text>
+  <text x="32" y="56" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="11" fill="#545454">Lewis-Rao (2015) and Blake-Nosko-Tadelis (2015): attribution often counts conversions that would have happened anyway.</text>
+
+  <!-- Plot region -->
+  <rect x="80" y="100" width="540" height="260" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="0.75"/>
+
+  <!-- Y axis -->
+  <line x1="80" y1="100" x2="80" y2="360" stroke="#2a1a0e" stroke-width="1"/>
+  <line x1="80" y1="360" x2="620" y2="360" stroke="#2a1a0e" stroke-width="1"/>
+
+  <!-- Y tick labels -->
+  <g font-family="'JetBrains Mono', monospace" font-size="11" fill="#545454">
+    <text x="74" y="364" text-anchor="end">0</text>
+    <text x="74" y="299" text-anchor="end">25</text>
+    <text x="74" y="234" text-anchor="end">50</text>
+    <text x="74" y="169" text-anchor="end">75</text>
+    <text x="74" y="104" text-anchor="end">100</text>
+  </g>
+  <line x1="80" y1="295" x2="620" y2="295" stroke="#D4D4D4" stroke-width="0.5"/>
+  <line x1="80" y1="230" x2="620" y2="230" stroke="#D4D4D4" stroke-width="0.5"/>
+  <line x1="80" y1="165" x2="620" y2="165" stroke="#D4D4D4" stroke-width="0.5"/>
+
+  <!-- Y axis title -->
+  <text x="32" y="230" font-family="'Inter', sans-serif" font-size="11" fill="#545454" transform="rotate(-90 32 230)" text-anchor="middle">conversions claimed (index, true incremental = 100)</text>
+
+  <!-- Bar 1: Measured lift (red, tall) -->
+  <!-- value = 340 (i.e. platform reports 3.4x the true causal lift) -->
+  <rect x="170" y="118" width="140" height="242" fill="#C8102E" stroke="#2a1a0e" stroke-width="0.75"/>
+  <text x="240" y="380" text-anchor="middle" font-family="'Inter', sans-serif" font-size="12" font-weight="700" fill="#2a1a0e">Measured lift</text>
+  <text x="240" y="396" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" fill="#545454">platform-reported via last-click / MTA</text>
+  <text x="240" y="412" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="11" fill="#545454">~340 (index)</text>
+
+  <!-- Bar 2: Incremental lift (gray, short) -->
+  <rect x="390" y="295" width="140" height="65" fill="#787878" stroke="#2a1a0e" stroke-width="0.75"/>
+  <text x="460" y="380" text-anchor="middle" font-family="'Inter', sans-serif" font-size="12" font-weight="700" fill="#2a1a0e">Incremental lift</text>
+  <text x="460" y="396" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" fill="#545454">recovered from a holdout RCT</text>
+  <text x="460" y="412" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="11" fill="#545454">100 (index)</text>
+
+  <!-- Gap bracket between top of bar1 and top of bar2 -->
+  <line x1="315" y1="118" x2="345" y2="118" stroke="#2a1a0e" stroke-width="1"/>
+  <line x1="345" y1="118" x2="345" y2="295" stroke="#2a1a0e" stroke-width="1"/>
+  <line x1="345" y1="295" x2="385" y2="295" stroke="#2a1a0e" stroke-width="1"/>
+
+  <!-- Gap label -->
+  <text x="355" y="200" font-family="'EB Garamond', Georgia, serif" font-style="italic" font-size="14" fill="#2a1a0e">the gap</text>
+  <text x="355" y="218" font-family="'Inter', sans-serif" font-size="11" fill="#545454">cannibalized organic +</text>
+  <text x="355" y="232" font-family="'Inter', sans-serif" font-size="11" fill="#545454">would-have-bought-anyway</text>
+  <text x="355" y="252" font-family="'EB Garamond', Georgia, serif" font-style="italic" font-size="12" fill="#C8860E">where human judgment lives</text>
+
+  <!-- Annotation arrow at top of red bar pointing to "platform claim" -->
+  <text x="240" y="112" text-anchor="middle" font-family="'EB Garamond', Georgia, serif" font-style="italic" font-size="12" fill="#C8102E">what the dashboard reports</text>
+
+  <text x="460" y="289" text-anchor="middle" font-family="'EB Garamond', Georgia, serif" font-style="italic" font-size="12" fill="#2a1a0e">what the campaign actually caused</text>
+
+  <!-- Legend -->
+  <g transform="translate(32,438)">
+    <rect x="0" y="0" width="14" height="12" fill="#C8102E"/>
+    <text x="20" y="10" font-family="'Inter', sans-serif" font-size="11" fill="#2a1a0e">Measured lift (potentially over-claimed)</text>
+    <rect x="280" y="0" width="14" height="12" fill="#787878"/>
+    <text x="300" y="10" font-family="'Inter', sans-serif" font-size="11" fill="#2a1a0e">True incremental causal effect</text>
+  </g>
+  <text x="32" y="468" font-family="'Inter', sans-serif" font-size="10" fill="#545454">Lewis &amp; Rao 2015 QJE · Blake, Nosko &amp; Tadelis 2015 Econometrica · Pritchard P&amp;G walk-back 2017/2019 [verify]</text>
+</svg>

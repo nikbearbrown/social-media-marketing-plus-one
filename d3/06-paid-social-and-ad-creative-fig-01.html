@@ -1,0 +1,120 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>The AI-vs-AI loop</title>
+<style>
+:root{--color-white:#FFFFFF;--color-ink:#2a1a0e;--color-red:#C8102E;--color-secondary:#545454;--color-border:#D4D4D4;--color-ochre:#C8860E;--color-fill:#F5F5F5;}
+@media (prefers-color-scheme: dark){:root{--color-white:#111111;--color-ink:#F0EBE3;--color-red:#E8243A;--color-secondary:#A0978C;--color-border:#2E2E2E;--color-ochre:#D49A30;--color-fill:#1A1A1A;}}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--color-white);color:var(--color-ink);font-family:'Inter',-apple-system,'Helvetica Neue',sans-serif;padding:24px;}
+#chart{width:100%;min-height:600px;}
+.tooltip{position:absolute;pointer-events:none;opacity:0;background:var(--color-ink);color:var(--color-white);padding:6px 10px;font-size:12px;max-width:260px;}
+.title{font-family:'EB Garamond','Garamond',Georgia,serif;font-size:16px;fill:var(--color-ink);}
+.subtitle{font-family:'Inter',sans-serif;font-size:12px;fill:var(--color-secondary);}
+.node-label{font-family:'Inter',sans-serif;font-size:12px;fill:var(--color-ink);}
+.dropout{font-family:'Inter',sans-serif;font-size:11px;fill:var(--color-secondary);}
+.brief-label{font-family:'EB Garamond',Georgia,serif;font-size:14px;fill:var(--color-white);}
+@media (prefers-reduced-motion: reduce){*{transition:none !important;animation:none !important;}}
+</style></head><body>
+<div id="chart" role="main"></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+<script>
+const nodes = [
+  {pos:'N', label:['Generative','creative'], detail:'Multiplexes variants; converges to median of training data.'},
+  {pos:'E', label:['AI media','buying'],     detail:'Optimizes specified metric; existing-converter bias.'},
+  {pos:'S', label:['AI-modeled','audiences'],detail:'Lookalike of who already buys; underspends on reach.'},
+  {pos:'W', label:['AI','attribution'],      detail:'Counts touched conversions; cannot see incrementality.'}
+];
+const dropouts = [
+  {pos:'NE', text:'concept drops out'},
+  {pos:'SE', text:'incrementality drops out'},
+  {pos:'SW', text:'brand signal drops out'},
+  {pos:'NW', text:'new-audience reach drops out'}
+];
+
+function draw(){
+  const c=document.getElementById('chart');
+  d3.select(c).selectAll('*').remove();
+  const W=c.clientWidth||900,H=620;
+  const svg=d3.select(c).append('svg').attr('viewBox',`0 0 ${W} ${H}`).attr('role','img').attr('aria-labelledby','t d');
+  svg.append('title').attr('id','t').text('The AI-vs-AI loop');
+  svg.append('desc').attr('id','d').text('Four AI layers in a circular flow with drop-out annotations at each transition. The brief is the central human intervention point.');
+
+  svg.append('text').attr('class','title').attr('x',32).attr('y',32).text('The AI-vs-AI loop — competent at each step, brand-shallow as a whole');
+  svg.append('text').attr('class','subtitle').attr('x',32).attr('y',52).text('Each transition loses something the dashboard does not measure. The brief is the only intervention point.');
+
+  // arrow markers
+  const defs = svg.append('defs');
+  defs.append('marker').attr('id','arrow-ink').attr('markerWidth',9).attr('markerHeight',7).attr('refX',8).attr('refY',3.5).attr('orient','auto')
+      .append('polygon').attr('points','0 0, 9 3.5, 0 7').attr('fill','var(--color-ink)');
+  defs.append('marker').attr('id','arrow-red').attr('markerWidth',9).attr('markerHeight',7).attr('refX',8).attr('refY',3.5).attr('orient','auto')
+      .append('polygon').attr('points','0 0, 9 3.5, 0 7').attr('fill','var(--color-red)');
+
+  const cx = W/2, cy = 340, R = 170;
+  const pos = {
+    N: [cx, cy-R],
+    E: [cx+R, cy],
+    S: [cx, cy+R],
+    W: [cx-R, cy]
+  };
+
+  // Clockwise arcs N->E, E->S, S->W, W->N
+  const arc = (a,b) => `M ${a[0]+30} ${a[1]+30} A ${R} ${R} 0 0 1 ${b[0]-30} ${b[1]-30}`;
+  // We use simple arcs from each node toward next; offsets so arrows don't overlap boxes
+  svg.append('path').attr('d',`M ${cx+40} ${cy-R+10} A ${R} ${R} 0 0 1 ${cx+R-10} ${cy-30}`).attr('fill','none').attr('stroke','var(--color-ink)').attr('stroke-width',1.25).attr('marker-end','url(#arrow-ink)');
+  svg.append('path').attr('d',`M ${cx+R-10} ${cy+30} A ${R} ${R} 0 0 1 ${cx+40} ${cy+R-10}`).attr('fill','none').attr('stroke','var(--color-ink)').attr('stroke-width',1.25).attr('marker-end','url(#arrow-ink)');
+  svg.append('path').attr('d',`M ${cx-40} ${cy+R-10} A ${R} ${R} 0 0 1 ${cx-R+10} ${cy+30}`).attr('fill','none').attr('stroke','var(--color-ink)').attr('stroke-width',1.25).attr('marker-end','url(#arrow-ink)');
+  svg.append('path').attr('d',`M ${cx-R+10} ${cy-30} A ${R} ${R} 0 0 1 ${cx-40} ${cy-R+10}`).attr('fill','none').attr('stroke','var(--color-ink)').attr('stroke-width',1.25).attr('marker-end','url(#arrow-ink)');
+
+  const tooltip = d3.select('body').append('div').attr('class','tooltip');
+  function show(event, d){ tooltip.html(`<strong>${d.label.join(' ')}</strong><br/>${d.detail}`).style('left',(event.pageX+12)+'px').style('top',(event.pageY-28)+'px').transition().duration(150).style('opacity',1); }
+  function move(event){ tooltip.style('left',(event.pageX+12)+'px').style('top',(event.pageY-28)+'px'); }
+  function hide(){ tooltip.transition().duration(100).style('opacity',0); }
+
+  // Nodes
+  const nodeData = nodes.map(n => ({...n, x: pos[n.pos][0], y: pos[n.pos][1]}));
+  const g = svg.selectAll('.node').data(nodeData).join('g').attr('class','node')
+      .attr('tabindex',0).attr('aria-label', d => `${d.label.join(' ')}: ${d.detail}`)
+      .on('mouseover',show).on('mousemove',move).on('mouseout',hide);
+  g.append('rect').attr('x', d=>d.x-65).attr('y', d=>d.y-30).attr('width',130).attr('height',60)
+      .attr('fill','var(--color-fill)').attr('stroke','var(--color-secondary)').attr('stroke-width',1);
+  g.append('text').attr('class','node-label').attr('x', d=>d.x).attr('y', d=>d.y-4).attr('text-anchor','middle').text(d=>d.label[0]);
+  g.append('text').attr('class','node-label').attr('x', d=>d.x).attr('y', d=>d.y+14).attr('text-anchor','middle').text(d=>d.label[1]);
+
+  // Drop-out markers
+  const dpos = {
+    NE: [cx + R*0.71, cy - R*0.71],
+    SE: [cx + R*0.71, cy + R*0.71],
+    SW: [cx - R*0.71, cy + R*0.71],
+    NW: [cx - R*0.71, cy - R*0.71]
+  };
+  dropouts.forEach(d=>{
+    const [x,y] = dpos[d.pos];
+    svg.append('circle').attr('cx',x).attr('cy',y).attr('r',6).attr('fill','var(--color-ochre)');
+    const tx = (d.pos==='NE'||d.pos==='SE') ? x+14 : x-14;
+    const anchor = (d.pos==='NE'||d.pos==='SE') ? 'start' : 'end';
+    svg.append('text').attr('class','dropout').attr('x',tx).attr('y',y+4).attr('text-anchor',anchor).text(d.text);
+  });
+
+  // Central brief
+  svg.append('rect').attr('x',cx-50).attr('y',cy-26).attr('width',100).attr('height',52)
+     .attr('fill','var(--color-red)').attr('stroke','var(--color-ink)').attr('stroke-width',1);
+  svg.append('text').attr('class','brief-label').attr('x',cx).attr('y',cy-2).attr('text-anchor','middle').text('The brief');
+  svg.append('text').attr('x',cx).attr('y',cy+16).attr('text-anchor','middle').attr('font-family',"'Inter',sans-serif").attr('font-size',10).attr('fill','var(--color-white)').text('(human)');
+
+  // Radial intervention arrows
+  const radials = [[cx, cy-26, cx, cy-R+30+1], [cx+50, cy, cx+R-65, cy], [cx, cy+26, cx, cy+R-30-1], [cx-50, cy, cx-R+65, cy]];
+  radials.forEach(r=>{
+    svg.append('line').attr('x1',r[0]).attr('y1',r[1]).attr('x2',r[2]).attr('y2',r[3])
+       .attr('stroke','var(--color-red)').attr('stroke-width',1).attr('stroke-dasharray','3,2').attr('marker-end','url(#arrow-red)');
+  });
+
+  // Legend
+  const ly = H-44;
+  svg.append('rect').attr('x',32).attr('y',ly).attr('width',16).attr('height',12).attr('fill','var(--color-fill)').attr('stroke','var(--color-secondary)').attr('stroke-width',1);
+  svg.append('text').attr('class','dropout').attr('fill','var(--color-ink)').attr('x',54).attr('y',ly+10).text('AI layer (Delegate)');
+  svg.append('rect').attr('x',210).attr('y',ly).attr('width',16).attr('height',12).attr('fill','var(--color-red)');
+  svg.append('text').attr('class','dropout').attr('fill','var(--color-ink)').attr('x',232).attr('y',ly+10).text('Human intervention (Guard)');
+  svg.append('circle').attr('cx',446).attr('cy',ly+6).attr('r',5).attr('fill','var(--color-ochre)');
+  svg.append('text').attr('class','dropout').attr('x',458).attr('y',ly+10).text('What drops out at each transition');
+}
+draw();
+new ResizeObserver(draw).observe(document.getElementById('chart'));
+</script></body></html>

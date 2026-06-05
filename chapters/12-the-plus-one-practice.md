@@ -42,6 +42,15 @@ The practice has four cadences. The minimum viable version is the first one. Eve
 
 The minimum viable version, if nothing else will actually happen: end-of-day delegation log, five sentences, five days a week. Monthly fifteen-minute map check on the last Friday of the month. That is the practice. Everything above is the practice scaled up. The scaled-up version is worth having; the minimum viable version is worth having more, because it will still exist in month four.
 
+| Cadence | Time | Core activity | What AI helps with | What must be human | Failure mode if skipped |
+|---|---|---|---|---|---|
+| Daily | 5–10 min | Classify each task (Delegate / Guard / boundary); end-of-day five-sentence log | Drafting log scaffolds, surfacing yesterday's pattern | The classification call; the honest entry | Drift — defaulting to whatever is fastest in the moment |
+| Weekly | 15–30 min | Read the week's log; sample 5–10 outputs; note voice drift; revise one or two prompts | Pattern detection across entries; weekly summary draft | Reading content as the audience would; judging voice drift | Voice drift compounds; the audit AI cannot do honestly |
+| Monthly | 45–60 min | Move items between Delegate and Guard with documented reasoning; re-score Ch. 11 forecasts approaching horizon | Pulling outputs; surfacing candidate moves | The move decision; the honest ROI read | Map ossifies; forecasts age without scoring |
+| Quarterly | 3–4 hrs | Re-run the Ch. 10 audit; three honest questions; design one delegation experiment | Aggregating quarter-level data; drafting experiment scaffolds | The three honest questions; the experiment design | Practice drifts from the work; performative entries accumulate |
+
+*Table 12.1 — The four-cadence practice. The daily and monthly rows together form the minimum viable practice.*
+
 <!-- → [TABLE: Four-cadence practice summary — rows: Daily / Weekly / Monthly / Quarterly — columns: Time required / Core activity / What AI helps with / What must be human / Failure mode if skipped] -->
 
 ---
@@ -55,6 +64,10 @@ In the moment, a log entry feels like paperwork. Across a month, the log reveals
 Across a year, the log becomes a professional artifact. It is evidence of calibrated judgment, documented adaptation, and intellectual honesty about failure. AI cannot produce this artifact on the practitioner's behalf because the artifact is the record of a specific human's specific calls, made over time, with a track record attached. The practitioner who walks into a performance review with a year of delegation logs is showing something different from the practitioner who says they use AI thoughtfully. The log is the evidence.
 
 Across several years, the log compounds. The practitioner reviews her entries from eighteen months ago and notices she was systematically over-delegating on analytical tasks because she did not yet trust her own read of the numbers. She corrects. This is calibration that no tool produces automatically, because the tool does not have the practitioner's history or accountability. The model has a context window. The practitioner has a career.
+
+![Timeline showing how the delegation log compounds across Month 1, Month 6, Year 1, and Year 3 milestones](../images/12-the-plus-one-practice-fig-01.png)
+
+*Figure 12.1 — How the delegation log compounds. The model has a context window; the practitioner has a career.*
 
 <!-- → [INFOGRAPHIC: Timeline diagram showing how the delegation log compounds — Month 1: pattern detection; Month 6: map revision driven by log data; Year 1: professional artifact; Year 3: longitudinal calibration record — with the mechanism labeled at each stage: what the log reveals that the dashboard does not] -->
 
@@ -99,6 +112,10 @@ The practice is not a productivity multiplier in the short term. The delegation 
 The practice is not insulation from the changes coming in the field. Chapter 11 made falsifiable forecasts about those changes. The practice is the answer to those changes in the sense that a practitioner with calibrated judgment and a longitudinal record of her own delegation calls will be more adaptable than a practitioner without one. But adaptability is not insulation. The field will change in ways this book did not predict. The practice is what makes you a practitioner who can re-calibrate when that happens.
 
 The practice is not something that can be outsourced, automated, or skipped while achieving the same outcome. The chapter is willing to be didactic on this point because the alternatives are tempting and clearly available. AI can format the log, draft the weekly review, surface patterns in the entries. Every one of those things is worth doing. None of them is the reflection. The reflection is yours.
+
+![Two-column diagram listing what AI handles in the practice on the left and what must be human on the right, with an arrow indicating the left column derives its value from the right](../images/12-the-plus-one-practice-fig-02.png)
+
+*Figure 12.2 — The two columns of the practice. The column on the right is why the column on the left is worth building.*
 
 <!-- → [INFOGRAPHIC: Two-column diagram — "What AI handles in the practice" vs. "What must be human" — left column: log formatting, pattern detection across entries, weekly summary drafts, voice-drift comparisons, prompt-library maintenance, capability-watch summaries; right column: the reflection itself, the honest log entry, the voice-drift judgment, the boundary-case call, the recovery from failure, the decision to sustain — with the caption: "The column on the right is why the column on the left is worth building"] -->
 
@@ -147,3 +164,11 @@ Florence Nightingale's daily mortality logs in the Crimean military hospitals we
 **Recovery protocol.** The documented sequence for what to do when an AI-touched output damages the brand: acknowledge specifically, correct at equivalent visibility, escalate internally, root-cause within seventy-two hours, revise the map within one week. Pre-written so it can be executed under pressure.
 
 **Longitudinal record.** The delegation log accumulated across years. A professional artifact — evidence of calibration, adaptation, and judgment — that AI cannot produce on the practitioner's behalf because it requires the practitioner's accountability and history.
+
+---
+
+## Prompts
+
+**Figure 12.1 — How the delegation log compounds.** Horizontal timeline with four milestone markers along an ink baseline (left-to-right arrow): Month 1, Month 6, Year 1, Year 3. Marker size scales up across the timeline; final marker red, third ochre, first two secondary. Bold stage labels above each marker (pattern detection / map revision / professional artifact / calibration record), three-line italicized stage descriptions below. JetBrains Mono tick labels. Hairline divider under the plot frame. Footer line in red: "The practitioner has a career." Margins 32px; viewBox 700×420; plot region filled chart-fill with 0.75pt border hairline.
+
+**Figure 12.2 — Two columns of the practice.** Two-column composition split by a center ink divider. Left header "AI handles" with six secondary circles + ink labels (log formatting, pattern detection across entries, weekly summary drafts, voice-drift comparisons, prompt-library maintenance, capability-watch summaries). Right header "Must be human" with six red circles + ink labels (the reflection itself, the honest log entry, the voice-drift judgment, the boundary-case call, the recovery from failure, the decision to sustain). Beneath both columns, an ochre arrow runs left to right with the italic label "the left column derives its value from the right." Bottom caption in secondary text. D3 version is responsive with hover tooltips, keyboard-reachable items, and dark-mode variables. Margins 32px; viewBox 700×540; no rounded corners; no shadows.

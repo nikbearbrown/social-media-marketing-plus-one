@@ -1,0 +1,92 @@
+<!--
+  The eight-question pre-interpretation checklist
+  Book: Social Media Marketing plus One · Chapter: 05-analytics-and-reporting · Figure: 01
+  Type: INFOGRAPHIC · Generated: 2026-05-27 · Source: chapters/05-analytics-and-reporting.md
+-->
+<svg viewBox="0 0 700 540" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="fig-title-01">
+  <title id="fig-title-01">The eight-question pre-interpretation checklist</title>
+  <desc>Funnel composition: raw dashboard data enters at the top, eight gating questions filter it, verified-for-interpretation output emerges at the bottom. A parallel bypass arrow shows the WYSIATI shortcut that skips the checkpoints.</desc>
+  <metadata><cajal:figure xmlns:cajal="https://bearbrown.ai/cajal/1.0" book="Social Media Marketing plus One" chapter="05-analytics-and-reporting" figure-number="01" figure-title="The eight-question pre-interpretation checklist" figure-type="INFOGRAPHIC" author="Nik Bear Brown Milivoje Davidovic" date-generated="2026-05-27" source-file="chapters/05-analytics-and-reporting.md"/></metadata>
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#2a1a0e"/></marker>
+    <marker id="arrow-red" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#C8102E"/></marker>
+  </defs>
+  <rect x="0" y="0" width="700" height="540" fill="#FFFFFF"/>
+  <text x="32" y="36" font-family="'EB Garamond', 'Garamond', Georgia, serif" font-size="14" fill="#2a1a0e">The eight-question checklist sits between dashboard and interpretation</text>
+  <text x="32" y="56" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="11" fill="#545454">Each gating question prevents a specific failure mode. The bypass route is WYSIATI.</text>
+
+  <!-- Funnel: dashboard inflow trapezoid -->
+  <polygon points="180,90 480,90 460,130 200,130" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="0.75"/>
+  <text x="330" y="115" text-anchor="middle" font-family="'Inter', sans-serif" font-size="12" fill="#2a1a0e">Raw dashboard data</text>
+
+  <!-- Eight checkpoint cross-bars -->
+  <!-- Each bar: horizontal black 1pt rule, secondary circle (Delegate role) on left, red circle (Guard role) on right, plus question label -->
+  <g font-family="'Inter', sans-serif" font-size="11" fill="#2a1a0e">
+    <!-- Q1 -->
+    <line x1="205" y1="155" x2="455" y2="155" stroke="#2a1a0e" stroke-width="1"/>
+    <circle cx="200" cy="155" r="5" fill="#C8102E"/>
+    <circle cx="460" cy="155" r="5" fill="#545454"/>
+    <text x="220" y="151" font-size="10.5">1. What is the API coverage this month?</text>
+
+    <!-- Q2 -->
+    <line x1="210" y1="190" x2="450" y2="190" stroke="#2a1a0e" stroke-width="1"/>
+    <circle cx="205" cy="190" r="5" fill="#C8102E"/>
+    <circle cx="455" cy="190" r="5" fill="#545454"/>
+    <text x="225" y="186" font-size="10.5">2. What did the platform restrict?</text>
+
+    <!-- Q3 -->
+    <line x1="215" y1="225" x2="445" y2="225" stroke="#2a1a0e" stroke-width="1"/>
+    <circle cx="210" cy="225" r="5" fill="#C8102E"/>
+    <circle cx="450" cy="225" r="5" fill="#545454"/>
+    <text x="230" y="221" font-size="10.5">3. Where is privacy attrition eating attribution?</text>
+
+    <!-- Q4 -->
+    <line x1="220" y1="260" x2="440" y2="260" stroke="#2a1a0e" stroke-width="1"/>
+    <circle cx="215" cy="260" r="5" fill="#C8102E"/>
+    <circle cx="445" cy="260" r="5" fill="#545454"/>
+    <text x="235" y="256" font-size="10.5">4. What posts did not run that would have shown up?</text>
+
+    <!-- Q5 -->
+    <line x1="225" y1="295" x2="435" y2="295" stroke="#2a1a0e" stroke-width="1"/>
+    <circle cx="220" cy="295" r="5" fill="#C8102E"/>
+    <circle cx="440" cy="295" r="5" fill="#545454"/>
+    <text x="240" y="291" font-size="10.5">5. Which audiences are under-represented?</text>
+
+    <!-- Q6 -->
+    <line x1="230" y1="330" x2="430" y2="330" stroke="#2a1a0e" stroke-width="1"/>
+    <circle cx="225" cy="330" r="5" fill="#C8102E"/>
+    <circle cx="435" cy="330" r="5" fill="#545454"/>
+    <text x="245" y="326" font-size="10.5">6. What competitor activity might confound this?</text>
+
+    <!-- Q7 -->
+    <line x1="235" y1="365" x2="425" y2="365" stroke="#2a1a0e" stroke-width="1"/>
+    <circle cx="230" cy="365" r="5" fill="#C8102E"/>
+    <circle cx="430" cy="365" r="5" fill="#545454"/>
+    <text x="250" y="361" font-size="10.5">7. Is any spike correlated with a news-cycle event?</text>
+
+    <!-- Q8 -->
+    <line x1="240" y1="400" x2="420" y2="400" stroke="#2a1a0e" stroke-width="1"/>
+    <circle cx="235" cy="400" r="5" fill="#C8102E"/>
+    <circle cx="425" cy="400" r="5" fill="#545454"/>
+    <text x="255" y="396" font-size="10.5">8. Is the sub-segment sample adequate?</text>
+  </g>
+
+  <!-- Verified output rectangle -->
+  <rect x="265" y="430" width="130" height="40" fill="#F5F5F5" stroke="#2a1a0e" stroke-width="1"/>
+  <text x="330" y="455" text-anchor="middle" font-family="'Inter', sans-serif" font-size="12" fill="#2a1a0e">Verified for interpretation</text>
+
+  <!-- Bypass arrow (WYSIATI shortcut) to right of funnel -->
+  <line x1="560" y1="115" x2="560" y2="445" stroke="#C8860E" stroke-width="1.25" marker-end="url(#arrow)"/>
+  <text x="575" y="270" font-family="'Inter', sans-serif" font-size="11" fill="#C8860E">WYSIATI shortcut</text>
+  <text x="575" y="285" font-family="'Inter', sans-serif" font-size="10.5" fill="#545454">(what you see is</text>
+  <text x="575" y="300" font-family="'Inter', sans-serif" font-size="10.5" fill="#545454">all there is)</text>
+
+  <!-- Legend -->
+  <g transform="translate(32,490)">
+    <circle cx="6" cy="6" r="5" fill="#C8102E"/>
+    <text x="18" y="10" font-family="'Inter', sans-serif" font-size="11" fill="#2a1a0e">Guard role — practitioner asks</text>
+    <circle cx="290" cy="6" r="5" fill="#545454"/>
+    <text x="302" y="10" font-family="'Inter', sans-serif" font-size="11" fill="#2a1a0e">Delegate role — failure mode prevented</text>
+  </g>
+  <text x="32" y="520" font-family="'Inter', sans-serif" font-size="10.5" fill="#545454">Kahneman 2011 · WYSIATI = "What You See Is All There Is"</text>
+</svg>

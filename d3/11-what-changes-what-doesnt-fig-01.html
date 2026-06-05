@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The two-question test — capability vs structural reason</title>
+<style>
+:root{--color-white:#FFFFFF;--color-ink:#2a1a0e;--color-red:#C8102E;--color-secondary:#545454;--color-border:#D4D4D4;--color-ochre:#C8860E;--color-fill:#F5F5F5;}
+@media (prefers-color-scheme: dark){:root{--color-white:#111111;--color-ink:#F0EBE3;--color-red:#E8243A;--color-secondary:#A0978C;--color-border:#2E2E2E;--color-ochre:#D49A30;--color-fill:#1A1A1A;}}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--color-white);color:var(--color-ink);font-family:'Inter',-apple-system,'Helvetica Neue',sans-serif;padding:24px;}
+#chart{width:100%;min-height:540px;}
+.tooltip{position:absolute;pointer-events:none;opacity:0;background:var(--color-ink);color:var(--color-white);padding:6px 10px;font-size:12px;border-radius:0;}
+.title{font-family:'EB Garamond','Garamond',Georgia,serif;font-size:16px;fill:var(--color-ink);}
+.subtitle{font-family:'Inter',sans-serif;font-size:12px;fill:var(--color-secondary);}
+.node-label{font-family:'Inter',sans-serif;font-size:12px;fill:var(--color-ink);}
+.leaf-label{font-family:'EB Garamond','Garamond',Georgia,serif;font-size:13px;}
+.q-text{font-family:'Inter',sans-serif;font-size:11px;fill:var(--color-secondary);}
+@media (prefers-reduced-motion: reduce){*{transition:none !important;animation:none !important;}}
+</style>
+</head>
+<body>
+<div id="chart" role="main"></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+<script>
+const styles = getComputedStyle(document.documentElement);
+const C = {
+  ink: styles.getPropertyValue('--color-ink').trim(),
+  red: styles.getPropertyValue('--color-red').trim(),
+  sec: styles.getPropertyValue('--color-secondary').trim(),
+  border: styles.getPropertyValue('--color-border').trim(),
+  ochre: styles.getPropertyValue('--color-ochre').trim(),
+  fill: styles.getPropertyValue('--color-fill').trim(),
+};
+const tooltip = d3.select('body').append('div').attr('class','tooltip');
+function showTip(event, html){ tooltip.html(html).style('left',(event.pageX+12)+'px').style('top',(event.pageY-28)+'px').transition().duration(150).style('opacity',1); }
+function moveTip(event){ tooltip.style('left',(event.pageX+12)+'px').style('top',(event.pageY-28)+'px'); }
+function hideTip(){ tooltip.transition().duration(100).style('opacity',0); }
+
+const leaves = [
+  { x: 0.18, label: 'On-a-clock', sub: 'Capability gap exists', detail: 'Closes when models improve — caption variation, draft routing, alt-text generation.', color: 'sec' },
+  { x: 0.40, label: 'Mis-placed', sub: 'No real reason to guard', detail: 'Should already be delegated. Habit is the only thing keeping it on Guard.', color: 'sec' },
+  { x: 0.62, label: 'Durable Guard', sub: 'Structural reason', detail: 'Stays human even at AGI — accountability, relationship, judged context.', color: 'red' },
+  { x: 0.84, label: 'Durable Guard', sub: 'Both reasons hold', detail: 'Hardest to delegate — capability gap and structural reason both apply.', color: 'red' },
+];
+
+function draw(){
+  const container = document.getElementById('chart');
+  d3.select(container).selectAll('svg').remove();
+  const W = container.clientWidth || 800, H = 540;
+  const svg = d3.select(container).append('svg')
+    .attr('viewBox', `0 0 ${W} ${H}`)
+    .attr('width', W).attr('height', H)
+    .attr('role','img').attr('aria-labelledby','t d');
+  svg.append('title').attr('id','t').text('The two-question test');
+  svg.append('desc').attr('id','d').text('Two-question decision tree classifying Guard items as on-a-clock, mis-placed, or durable.');
+
+  svg.append('text').attr('x', 32).attr('y', 36).attr('class','title').text('The two-question test — is this Guard item durable?');
+  svg.append('text').attr('x', 32).attr('y', 56).attr('class','subtitle').text('Q1: Capability gap?  Q2: Structural reason (accountability, relationship, context)?');
+
+  // Root node
+  const rootY = 110;
+  svg.append('rect').attr('x', W/2 - 110).attr('y', rootY - 28).attr('width', 220).attr('height', 56)
+    .attr('fill', C.fill).attr('stroke', C.ink).attr('stroke-width', 1.5);
+  svg.append('text').attr('x', W/2).attr('y', rootY - 6).attr('text-anchor','middle').attr('class','node-label').text('Guard item under review');
+  svg.append('text').attr('x', W/2).attr('y', rootY + 12).attr('text-anchor','middle').attr('class','q-text').text('Q1 — Is there a capability gap right now?');
+
+  // Branches to two Q2 nodes
+  const q2Y = 240;
+  const noX = W * 0.30, yesX = W * 0.70;
+  // Lines
+  [['NO', noX],['YES', yesX]].forEach(([lbl, x]) => {
+    svg.append('line').attr('x1', W/2).attr('y1', rootY + 28).attr('x2', x).attr('y2', q2Y - 28).attr('stroke', C.ink).attr('stroke-width', 1);
+    svg.append('rect').attr('x', (W/2 + x)/2 - 18).attr('y', (rootY + q2Y)/2 - 12).attr('width', 36).attr('height', 18).attr('fill', C.white || '#FFFFFF').attr('stroke', C.border);
+    svg.append('text').attr('x', (W/2 + x)/2).attr('y', (rootY + q2Y)/2 + 2).attr('text-anchor','middle').attr('class','q-text').attr('fill', C.ink).text(lbl);
+    // Q2 box
+    svg.append('rect').attr('x', x - 100).attr('y', q2Y - 28).attr('width', 200).attr('height', 56)
+      .attr('fill', C.fill).attr('stroke', C.ink).attr('stroke-width', 1.5);
+    svg.append('text').attr('x', x).attr('y', q2Y - 6).attr('text-anchor','middle').attr('class','node-label').text(lbl === 'NO' ? 'No capability gap' : 'Capability gap exists');
+    svg.append('text').attr('x', x).attr('y', q2Y + 12).attr('text-anchor','middle').attr('class','q-text').text('Q2 — Structural reason?');
+  });
+
+  // Leaves
+  const leafY = 380, leafW = 130, leafH = 110;
+  leaves.forEach((leaf, i) => {
+    const x = W * leaf.x;
+    const parentX = (i < 2) ? noX : yesX;
+    const subLabel = (i % 2 === 0) ? 'NO' : 'YES';
+    svg.append('line').attr('x1', parentX).attr('y1', q2Y + 28).attr('x2', x).attr('y2', leafY - 4).attr('stroke', C.ink).attr('stroke-width', 1);
+    svg.append('text').attr('x', (parentX + x)/2).attr('y', (q2Y + leafY)/2).attr('text-anchor','middle').attr('class','q-text').text(subLabel);
+
+    const color = leaf.color === 'red' ? C.red : C.sec;
+    const rect = svg.append('rect').attr('x', x - leafW/2).attr('y', leafY).attr('width', leafW).attr('height', leafH)
+      .attr('fill', color).attr('fill-opacity', 0.12).attr('stroke', color).attr('stroke-width', 1.5)
+      .attr('tabindex', 0).attr('aria-label', `${leaf.label}: ${leaf.detail}`);
+    rect.on('mouseover', (event) => showTip(event, `<strong>${leaf.label}</strong><br>${leaf.detail}`))
+        .on('mousemove', moveTip).on('mouseout', hideTip);
+    svg.append('text').attr('x', x).attr('y', leafY + 30).attr('text-anchor','middle').attr('class','leaf-label').attr('fill', color).text(leaf.label);
+    svg.append('text').attr('x', x).attr('y', leafY + 50).attr('text-anchor','middle').attr('class','q-text').text(leaf.sub);
+  });
+
+  // Footer
+  svg.append('text').attr('x', 32).attr('y', H - 24).attr('class','subtitle').attr('font-style','italic')
+    .text('Red leaves are durable — they stay human regardless of capability gains. Gray leaves migrate or were never Guard.');
+}
+draw();
+new ResizeObserver(draw).observe(document.getElementById('chart'));
+</script>
+</body>
+</html>

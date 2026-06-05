@@ -1,0 +1,100 @@
+<!--
+  The two-question test — capability vs structural reason
+  Book: Social Media Marketing plus One · Chapter: 11-what-changes-what-doesnt · Figure: 01
+  Type: decision-tree · Generated: 2026-05-27 · Source: chapters/11-what-changes-what-doesnt.md
+-->
+<svg viewBox="0 0 700 540" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="fig-title-01 fig-desc-01">
+  <title id="fig-title-01">The two-question test — capability vs structural reason</title>
+  <desc id="fig-desc-01">A two-stage decision tree. The first question asks whether a capability gap is present; the second whether a structural reason (accountability, relationship, or context) applies. The four terminal quadrants classify Guard items as durable, on-a-clock, or mis-placed.</desc>
+  <metadata><cajal:figure xmlns:cajal="https://bearbrown.ai/cajal/1.0" book="Social Media Marketing plus One" chapter="11-what-changes-what-doesnt" figure-number="01" figure-title="The two-question test" figure-type="decision-tree" author="Nik Bear Brown Milivoje Davidovic" date-generated="2026-05-27" source-file="chapters/11-what-changes-what-doesnt.md"/></metadata>
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#2a1a0e"/></marker>
+  </defs>
+  <rect x="0" y="0" width="700" height="540" fill="#FFFFFF"/>
+
+  <text x="32" y="36" font-family="'EB Garamond', 'Garamond', Georgia, serif" font-size="16" fill="#2a1a0e">The two-question test</text>
+  <text x="32" y="56" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="11" fill="#545454">Capability gap and structural reason → four classifications for any Guard item</text>
+
+  <!-- Root: Guard item -->
+  <g>
+    <polygon points="350,90 430,130 350,170 270,130" fill="#F5F5F5" stroke="#2a1a0e" stroke-width="1"/>
+    <text x="350" y="125" text-anchor="middle" font-family="'Inter', sans-serif" font-size="12" fill="#2a1a0e">Guard item</text>
+    <text x="350" y="142" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" fill="#545454">capability gap?</text>
+  </g>
+
+  <!-- Branches from root -->
+  <line x1="310" y1="160" x2="180" y2="215" stroke="#2a1a0e" stroke-width="1" marker-end="url(#arrow)"/>
+  <line x1="390" y1="160" x2="520" y2="215" stroke="#2a1a0e" stroke-width="1" marker-end="url(#arrow)"/>
+  <text x="232" y="190" font-family="'Inter', sans-serif" font-size="11" fill="#545454">yes</text>
+  <text x="458" y="190" font-family="'Inter', sans-serif" font-size="11" fill="#545454">no</text>
+
+  <!-- Left mid: structural reason? -->
+  <g>
+    <polygon points="180,225 250,260 180,295 110,260" fill="#F5F5F5" stroke="#2a1a0e" stroke-width="1"/>
+    <text x="180" y="256" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" fill="#2a1a0e">structural</text>
+    <text x="180" y="272" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" fill="#545454">reason?</text>
+  </g>
+
+  <!-- Right mid: structural reason? -->
+  <g>
+    <polygon points="520,225 590,260 520,295 450,260" fill="#F5F5F5" stroke="#2a1a0e" stroke-width="1"/>
+    <text x="520" y="256" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" fill="#2a1a0e">structural</text>
+    <text x="520" y="272" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" fill="#545454">reason?</text>
+  </g>
+
+  <!-- Branches to terminals -->
+  <line x1="140" y1="285" x2="90" y2="340" stroke="#2a1a0e" stroke-width="1" marker-end="url(#arrow)"/>
+  <line x1="220" y1="285" x2="265" y2="340" stroke="#2a1a0e" stroke-width="1" marker-end="url(#arrow)"/>
+  <line x1="480" y1="285" x2="435" y2="340" stroke="#2a1a0e" stroke-width="1" marker-end="url(#arrow)"/>
+  <line x1="560" y1="285" x2="610" y2="340" stroke="#2a1a0e" stroke-width="1" marker-end="url(#arrow)"/>
+
+  <text x="105" y="316" font-family="'Inter', sans-serif" font-size="10" fill="#545454">yes</text>
+  <text x="248" y="316" font-family="'Inter', sans-serif" font-size="10" fill="#545454">no</text>
+  <text x="445" y="316" font-family="'Inter', sans-serif" font-size="10" fill="#545454">yes</text>
+  <text x="588" y="316" font-family="'Inter', sans-serif" font-size="10" fill="#545454">no</text>
+
+  <!-- Quadrant 1: cap + structural — Guard (durable) -->
+  <rect x="32" y="345" width="148" height="120" fill="#F5F5F5" stroke="#C8102E" stroke-width="2"/>
+  <text x="106" y="368" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" font-weight="700" fill="#C8102E">Guard — durable</text>
+  <text x="106" y="390" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10" fill="#2a1a0e">capability + structural</text>
+  <text x="106" y="408" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10" fill="#545454">both barriers present;</text>
+  <text x="106" y="422" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10" fill="#545454">structural reason</text>
+  <text x="106" y="436" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10" fill="#545454">persists if capability</text>
+  <text x="106" y="450" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10" fill="#545454">closes</text>
+
+  <!-- Quadrant 2: cap only — Delegate-with-Review -->
+  <rect x="192" y="345" width="148" height="120" fill="#F5F5F5" stroke="#C8860E" stroke-width="2"/>
+  <text x="266" y="368" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" font-weight="700" fill="#C8860E">On a clock</text>
+  <text x="266" y="390" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10" fill="#2a1a0e">capability only</text>
+  <text x="266" y="408" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10" fill="#545454">watch for the gap</text>
+  <text x="266" y="422" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10" fill="#545454">to close; schedule</text>
+  <text x="266" y="436" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10" fill="#545454">Delegate-with-Review</text>
+  <text x="266" y="450" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10" fill="#545454">when it does</text>
+
+  <!-- Quadrant 3: structural only — attribution-bound -->
+  <rect x="360" y="345" width="148" height="120" fill="#F5F5F5" stroke="#C8102E" stroke-width="2"/>
+  <text x="434" y="368" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" font-weight="700" fill="#C8102E">Guard — stable</text>
+  <text x="434" y="390" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10" fill="#2a1a0e">structural only</text>
+  <text x="434" y="408" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10" fill="#545454">attribution-bound;</text>
+  <text x="434" y="422" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10" fill="#545454">moves on social-fact</text>
+  <text x="434" y="436" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10" fill="#545454">timescale, not</text>
+  <text x="434" y="450" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10" fill="#545454">model-release</text>
+
+  <!-- Quadrant 4: neither — surface -->
+  <rect x="520" y="345" width="148" height="120" fill="#F5F5F5" stroke="#545454" stroke-width="2"/>
+  <text x="594" y="368" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" font-weight="700" fill="#2a1a0e">Surface it</text>
+  <text x="594" y="390" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10" fill="#2a1a0e">neither</text>
+  <text x="594" y="408" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10" fill="#545454">why is this on</text>
+  <text x="594" y="422" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10" fill="#545454">Guard at all?</text>
+  <text x="594" y="436" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10" fill="#545454">Likely a candidate</text>
+  <text x="594" y="450" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10" fill="#545454">to Delegate</text>
+
+  <!-- Grouping bracket: two Guard quadrants -->
+  <path d="M 28 478 L 28 488 L 180 488 L 180 478" fill="none" stroke="#C8102E" stroke-width="0.75"/>
+  <path d="M 360 478 L 360 488 L 508 488 L 508 478" fill="none" stroke="#C8102E" stroke-width="0.75"/>
+  <text x="104" y="506" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10" fill="#C8102E">two of four remain Guard</text>
+  <text x="434" y="506" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10" fill="#C8102E">durable on social-fact timescale</text>
+
+  <!-- Footer note -->
+  <text x="32" y="530" font-family="'Inter', sans-serif" font-size="10" fill="#545454">Structural reason = accountability, relationship, or context that a human is required for regardless of capability.</text>
+</svg>

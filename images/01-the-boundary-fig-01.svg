@@ -1,0 +1,66 @@
+<!--
+  The Boundary Quadrant — Pattern vs Judgment × AI Use
+  Book: Social Media Marketing plus One · Chapter: 01-the-boundary · Figure: 01
+-->
+<svg viewBox="0 0 700 480" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="fig-title fig-desc">
+  <title id="fig-title">The Boundary Quadrant — Symmetric Failures of Over- and Under-Delegation</title>
+  <desc id="fig-desc">A two-axis diagram. Horizontal axis runs from pattern-shaped to judgment-shaped work; vertical axis runs from AI not used to AI used. The top-right (AI used on judgment-shaped) is the over-delegation failure where Sports Illustrated and CNET sit. The bottom-left (AI not used on pattern-shaped) is the under-delegation failure where the solo manager sits. The other two quadrants are correctly placed.</desc>
+  <metadata><cajal:figure xmlns:cajal="https://bearbrown.ai/cajal/1.0" book="Social Media Marketing plus One" book-slug="social-media-marketing-plus-one" chapter="01-the-boundary" figure-number="01" figure-title="The Boundary Quadrant" figure-slug="boundary-quadrant" figure-type="quadrant" priority="Critical" author="Humanitarians AI" date-generated="2026-05-27" source-file="pantry/01-the-boundary-cajal.md"/></metadata>
+  <rect x="0" y="0" width="700" height="480" fill="#FFFFFF"/>
+  <text x="32" y="36" font-family="'EB Garamond', Georgia, serif" font-size="14" fill="#2a1a0e">The Boundary Quadrant — Where the Line Sits Decides the Cost</text>
+  <text x="32" y="56" font-family="'Inter', sans-serif" font-size="11" fill="#545454">Both over-delegation and under-delegation are expensive. Two correct quadrants. Two failure quadrants.</text>
+
+  <!-- Quadrant rectangles (15% opacity tint) -->
+  <!-- Top-left: AI used on pattern-shaped (correct) -->
+  <rect x="100" y="100" width="260" height="160" fill="#545454" opacity="0.15"/>
+  <!-- Top-right: AI used on judgment-shaped (over-delegation) -->
+  <rect x="360" y="100" width="260" height="160" fill="#C8102E" opacity="0.15"/>
+  <!-- Bottom-left: AI not used on pattern-shaped (under-delegation) -->
+  <rect x="100" y="260" width="260" height="160" fill="#C8860E" opacity="0.18"/>
+  <!-- Bottom-right: AI not used on judgment-shaped (correct) -->
+  <rect x="360" y="260" width="260" height="160" fill="#545454" opacity="0.15"/>
+
+  <!-- Axes -->
+  <line x1="100" y1="420" x2="620" y2="420" stroke="#2a1a0e" stroke-width="1"/>
+  <line x1="100" y1="100" x2="100" y2="420" stroke="#2a1a0e" stroke-width="1"/>
+  <!-- Midpoint axes (cross) -->
+  <line x1="360" y1="100" x2="360" y2="420" stroke="#2a1a0e" stroke-width="0.75"/>
+  <line x1="100" y1="260" x2="620" y2="260" stroke="#2a1a0e" stroke-width="0.75"/>
+
+  <!-- Axis arrowheads -->
+  <polygon points="620,420 614,417 614,423" fill="#2a1a0e"/>
+  <polygon points="100,100 97,106 103,106" fill="#2a1a0e"/>
+
+  <!-- Axis tick marks -->
+  <line x1="360" y1="418" x2="360" y2="422" stroke="#2a1a0e" stroke-width="1"/>
+  <line x1="98" y1="260" x2="102" y2="260" stroke="#2a1a0e" stroke-width="1"/>
+
+  <!-- Axis labels -->
+  <text x="360" y="448" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" fill="#545454">pattern-shaped     ←      task character      →     judgment-shaped</text>
+  <text x="60" y="260" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" fill="#545454" transform="rotate(-90 60 260)">AI not used    ←    use of model    →    AI used</text>
+
+  <!-- Quadrant labels -->
+  <text x="230" y="130" text-anchor="middle" font-family="'Inter', sans-serif" font-size="12" fill="#2a1a0e" font-weight="600">Correctly delegated</text>
+  <text x="230" y="148" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10" fill="#545454">pattern work to the model</text>
+
+  <text x="490" y="130" text-anchor="middle" font-family="'Inter', sans-serif" font-size="12" fill="#C8102E" font-weight="600">Over-delegation</text>
+  <text x="490" y="148" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10" fill="#545454">judgment handed to the model</text>
+
+  <text x="230" y="290" text-anchor="middle" font-family="'Inter', sans-serif" font-size="12" fill="#C8860E" font-weight="600">Under-delegation</text>
+  <text x="230" y="308" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10" fill="#545454">pattern work by hand</text>
+
+  <text x="490" y="290" text-anchor="middle" font-family="'Inter', sans-serif" font-size="12" fill="#2a1a0e" font-weight="600">Correctly retained</text>
+  <text x="490" y="308" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10" fill="#545454">judgment with the human</text>
+
+  <!-- Case markers in over-delegation -->
+  <circle cx="430" cy="195" r="5" fill="#C8102E"/>
+  <text x="441" y="199" font-family="'JetBrains Mono', monospace" font-size="9" fill="#C8102E">Sports Illustrated</text>
+  <circle cx="430" cy="225" r="5" fill="#C8102E"/>
+  <text x="441" y="229" font-family="'JetBrains Mono', monospace" font-size="9" fill="#C8102E">CNET</text>
+
+  <!-- Case marker in under-delegation -->
+  <circle cx="180" cy="370" r="5" fill="#C8860E"/>
+  <text x="191" y="374" font-family="'JetBrains Mono', monospace" font-size="9" fill="#C8860E">solo manager — 46 lost days / yr</text>
+
+  <text x="350" y="472" text-anchor="middle" font-family="'EB Garamond', Georgia, serif" font-size="11" fill="#C8102E" font-style="italic">The line moves. The discipline of drawing it doesn't.</text>
+</svg>

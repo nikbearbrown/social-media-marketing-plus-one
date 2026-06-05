@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<!--
+  Delegate vs Guard at a Glance with Temporal Migration
+  Book: Social Media Marketing plus One · Chapter: 01-the-boundary · Figure: 02
+  Type: comparison · Generated: 2026-05-27 · Source: chapters/01-the-boundary.md
+-->
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Delegate vs Guard at a Glance</title>
+<style>
+:root{--color-white:#FFFFFF;--color-ink:#2a1a0e;--color-red:#C8102E;--color-secondary:#545454;--color-border:#D4D4D4;--color-ochre:#C8860E;--color-fill:#F5F5F5;}
+@media (prefers-color-scheme: dark){:root{--color-white:#111111;--color-ink:#F0EBE3;--color-red:#E8243A;--color-secondary:#A0978C;--color-border:#2E2E2E;--color-ochre:#D49A30;--color-fill:#1A1A1A;}}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--color-white);color:var(--color-ink);font-family:'Inter',-apple-system,'Helvetica Neue',sans-serif;padding:24px;}
+#chart{width:100%;min-height:480px;}
+.tooltip{position:absolute;pointer-events:none;opacity:0;background:var(--color-ink);color:var(--color-white);padding:6px 10px;font-size:12px;transition:opacity 150ms;}
+.title{font-family:'EB Garamond','Garamond',Georgia,serif;font-size:16px;fill:var(--color-ink);}
+.subtitle{font-family:'Inter',sans-serif;font-size:12px;fill:var(--color-secondary);}
+.header-band{font-family:'Inter',sans-serif;font-size:13px;font-weight:600;fill:var(--color-white);}
+.tile-label{font-family:'Inter',sans-serif;font-size:12px;fill:var(--color-ink);}
+.arrow-label{font-family:'Inter',sans-serif;font-size:11px;fill:var(--color-secondary);}
+.arrow-tick{font-family:'JetBrains Mono','Fira Code','Courier New',monospace;font-size:9px;fill:var(--color-secondary);}
+.tag-italic{font-family:'EB Garamond',Georgia,serif;font-size:11px;font-style:italic;fill:var(--color-red);}
+@media (prefers-reduced-motion: reduce){*{transition:none !important;animation:none !important;}}
+</style></head><body>
+<div id="chart" role="main"></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+<script>
+const DELEGATE=['Caption drafting from approved brief','Post scheduling and reposting','Hashtag and tag research','Weekly analytics summary recap'];
+const GUARD=['Brand voice for new launches','Crisis posting and statements','Named-byline thought leadership','Public escalation responses'];
+const tooltip=d3.select('body').append('div').attr('class','tooltip').style('position','absolute').style('opacity',0);
+function showTooltip(event,html){tooltip.html(html).style('left',(event.pageX+12)+'px').style('top',(event.pageY-28)+'px').transition().duration(150).style('opacity',1);}
+function moveTooltip(event){tooltip.style('left',(event.pageX+12)+'px').style('top',(event.pageY-28)+'px');}
+function hideTooltip(){tooltip.transition().duration(100).style('opacity',0);}
+function draw(){
+  const container=document.getElementById('chart');
+  d3.select(container).selectAll('*').remove();
+  const W=container.clientWidth||800,H=Math.max(480,W*0.6);
+  const svg=d3.select(container).append('svg').attr('viewBox',`0 0 ${W} ${H}`).attr('role','img').attr('aria-labelledby','t d');
+  svg.append('title').attr('id','t').text('Delegate vs Guard at a Glance');
+  svg.append('desc').attr('id','d').text('Two-column comparison of pattern-shaped Delegate items and judgment-shaped Guard items, with a time arrow at the bottom indicating items may migrate from Guard toward Delegate as capability matures.');
+  svg.append('text').attr('class','title').attr('x',32).attr('y',32).text('Delegate vs Guard — Where 2026 Items Currently Sit');
+  svg.append('text').attr('class','subtitle').attr('x',32).attr('y',52).text('Pattern-shaped goes left. Judgment-shaped goes right. The arrow at the bottom is the part that moves.');
+  const colW=(W-2*60-20)/2;
+  const leftX=60,rightX=60+colW+20;
+  // header bands
+  svg.append('rect').attr('x',leftX).attr('y',86).attr('width',colW).attr('height',36).attr('fill','var(--color-secondary)');
+  svg.append('rect').attr('x',rightX).attr('y',86).attr('width',colW).attr('height',36).attr('fill','var(--color-red)');
+  svg.append('text').attr('class','header-band').attr('x',leftX+colW/2).attr('y',109).attr('text-anchor','middle').text('DELEGATE — pattern-shaped');
+  svg.append('text').attr('class','header-band').attr('x',rightX+colW/2).attr('y',109).attr('text-anchor','middle').text('GUARD — judgment-shaped');
+  // center divider
+  svg.append('line').attr('x1',W/2).attr('y1',76).attr('x2',W/2).attr('y2',H-100).attr('stroke','var(--color-ink)').attr('stroke-width',1.5).attr('aria-hidden','true');
+  // tiles
+  const tileH=40,tileGap=10,startY=142;
+  DELEGATE.forEach((label,i)=>{
+    const y=startY+i*(tileH+tileGap);
+    svg.append('rect').attr('x',leftX+20).attr('y',y).attr('width',colW-40).attr('height',tileH)
+      .attr('fill','var(--color-secondary)').attr('opacity',0.18).attr('stroke','var(--color-secondary)').attr('stroke-width',1)
+      .attr('tabindex',0).attr('aria-label',`Delegate: ${label}`)
+      .on('mouseover',(event)=>showTooltip(event,`<strong>Delegate</strong><br>${label}`)).on('mousemove',moveTooltip).on('mouseout',hideTooltip);
+    svg.append('text').attr('class','tile-label').attr('x',leftX+colW/2).attr('y',y+tileH/2+4).attr('text-anchor','middle').text(label);
+  });
+  GUARD.forEach((label,i)=>{
+    const y=startY+i*(tileH+tileGap);
+    svg.append('rect').attr('x',rightX+20).attr('y',y).attr('width',colW-40).attr('height',tileH)
+      .attr('fill','var(--color-red)').attr('opacity',0.15).attr('stroke','var(--color-red)').attr('stroke-width',1)
+      .attr('tabindex',0).attr('aria-label',`Guard: ${label}`)
+      .on('mouseover',(event)=>showTooltip(event,`<strong>Guard</strong><br>${label}`)).on('mousemove',moveTooltip).on('mouseout',hideTooltip);
+    svg.append('text').attr('class','tile-label').attr('x',rightX+colW/2).attr('y',y+tileH/2+4).attr('text-anchor','middle').text(label);
+  });
+  // bottom time arrow
+  const arrowY=H-70;
+  svg.append('text').attr('class','arrow-label').attr('x',W/2).attr('y',arrowY-12).attr('text-anchor','middle').text('items can migrate as capability matures');
+  const ax1=60,ax4=W-60,seg=(ax4-ax1)/3;
+  svg.append('line').attr('x1',ax1).attr('y1',arrowY).attr('x2',ax1+seg).attr('y2',arrowY).attr('stroke','var(--color-ink)').attr('stroke-width',1);
+  svg.append('line').attr('x1',ax1+seg).attr('y1',arrowY).attr('x2',ax1+2*seg).attr('y2',arrowY).attr('stroke','var(--color-secondary)').attr('stroke-width',1).attr('stroke-dasharray','5 4');
+  svg.append('line').attr('x1',ax1+2*seg).attr('y1',arrowY).attr('x2',ax4).attr('y2',arrowY).attr('stroke','var(--color-ink)').attr('stroke-width',1);
+  svg.append('polygon').attr('points',`${ax4},${arrowY} ${ax4-8},${arrowY-4} ${ax4-8},${arrowY+4}`).attr('fill','var(--color-ink)');
+  svg.append('line').attr('x1',ax1).attr('y1',arrowY-4).attr('x2',ax1).attr('y2',arrowY+4).attr('stroke','var(--color-ink)').attr('stroke-width',1);
+  svg.append('text').attr('class','arrow-tick').attr('x',ax1).attr('y',arrowY+16).attr('text-anchor','middle').text('t = today');
+  svg.append('text').attr('class','arrow-tick').attr('x',ax4).attr('y',arrowY+16).attr('text-anchor','middle').text('t = later');
+  svg.append('text').attr('class','tag-italic').attr('x',W/2).attr('y',H-16).attr('text-anchor','middle').text('Currently requires a human — and "currently" is doing real work in that sentence.');
+}
+draw();
+new ResizeObserver(draw).observe(document.getElementById('chart'));
+</script></body></html>

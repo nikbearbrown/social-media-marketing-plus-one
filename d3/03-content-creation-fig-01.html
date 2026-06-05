@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Doshi-Hauser Divergence</title>
+<style>
+:root{--color-white:#FFFFFF;--color-ink:#2a1a0e;--color-red:#C8102E;--color-secondary:#545454;--color-border:#D4D4D4;--color-ochre:#C8860E;--color-fill:#F5F5F5;}
+@media (prefers-color-scheme: dark){:root{--color-white:#111111;--color-ink:#F0EBE3;--color-red:#E8243A;--color-secondary:#A0978C;--color-border:#2E2E2E;--color-ochre:#D49A30;--color-fill:#1A1A1A;}}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--color-white);color:var(--color-ink);font-family:'Inter',-apple-system,'Helvetica Neue',sans-serif;padding:24px;}
+#chart{width:100%;min-height:480px;}
+.tooltip{position:absolute;pointer-events:none;opacity:0;background:var(--color-ink);color:var(--color-white);padding:6px 10px;font-size:12px;}
+.title{font-family:'EB Garamond','Garamond',Georgia,serif;font-size:16px;fill:var(--color-ink);}
+.subtitle{font-family:'Inter',sans-serif;font-size:12px;fill:var(--color-secondary);}
+.axis-tick{font-family:'JetBrains Mono','Fira Code','Courier New',monospace;font-size:11px;fill:var(--color-secondary);}
+.axis-label{font-family:'Inter',sans-serif;font-size:12px;fill:var(--color-secondary);}
+.line-label{font-family:'Inter',sans-serif;font-size:11px;}
+.annotation{font-family:'Inter',sans-serif;font-size:11px;fill:var(--color-ink);}
+@media (prefers-reduced-motion: reduce){*{transition:none !important;animation:none !important;}}
+</style>
+</head>
+<body>
+<div id="chart" role="main"></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+<script>
+const DATA = {
+  individual: [
+    {x:'no AI', value:60}, {x:'light', value:70}, {x:'moderate', value:78},
+    {x:'heavy', value:83}, {x:'total', value:85}
+  ],
+  collective: [
+    {x:'no AI', value:80}, {x:'light', value:70}, {x:'moderate', value:58},
+    {x:'heavy', value:50}, {x:'total', value:45}
+  ]
+};
+const STEPS = ['no AI','light','moderate','heavy','total'];
+
+const tooltip = d3.select('body').append('div').attr('class','tooltip');
+
+function draw(){
+  const container = document.getElementById('chart');
+  d3.select(container).selectAll('*').remove();
+  const W = container.clientWidth || 800;
+  const H = 480;
+  const margin = { top: 72, right: 140, bottom: 72, left: 72 };
+  const chartWidth = W - margin.left - margin.right;
+  const chartHeight = H - margin.top - margin.bottom;
+
+  const svg = d3.select(container).append('svg')
+    .attr('viewBox', `0 0 ${W} ${H}`)
+    .attr('role','img')
+    .attr('aria-labelledby','t d');
+  svg.append('title').attr('id','t').text('The Doshi-Hauser Divergence');
+  svg.append('desc').attr('id','d').text('Two lines: individual writing quality rises with AI use while collective distinctiveness across writers falls.');
+
+  svg.append('text').attr('class','title').attr('x', margin.left).attr('y', 32)
+    .text('Individual quality rises. Collective distinctiveness falls.');
+  svg.append('text').attr('class','subtitle').attr('x', margin.left).attr('y', 52)
+    .text('Two metrics moving in opposite directions as AI assistance increases.');
+
+  const g = svg.append('g').attr('transform', `translate(${margin.left},${margin.top})`);
+
+  const xScalePoint = d3.scalePoint().domain(STEPS).range([0, chartWidth]).padding(0);
+  const yScaleLinear = d3.scaleLinear().domain([0, 100]).range([chartHeight, 0]);
+
+  // Plot region
+  g.append('rect').attr('x',0).attr('y',0).attr('width',chartWidth).attr('height',chartHeight)
+    .attr('fill','var(--color-fill)').attr('stroke','var(--color-border)').attr('stroke-width',0.75);
+
+  // Homogenization zone (right of crossing at "moderate")
+  const xCross = xScalePoint('moderate');
+  g.append('rect').attr('x', xCross).attr('y',0)
+    .attr('width', chartWidth - xCross).attr('height', chartHeight)
+    .attr('fill','var(--color-border)').attr('opacity', 0.35);
+
+  // Gridlines
+  [25,50,75].forEach(v => {
+    g.append('line').attr('x1',0).attr('x2',chartWidth)
+      .attr('y1', yScaleLinear(v)).attr('y2', yScaleLinear(v))
+      .attr('stroke','var(--color-border)').attr('stroke-width',0.5).attr('aria-hidden','true');
+  });
+
+  // Axes
+  g.append('line').attr('x1',0).attr('y1',0).attr('x2',0).attr('y2',chartHeight)
+    .attr('stroke','var(--color-ink)').attr('stroke-width',1);
+  g.append('line').attr('x1',0).attr('y1',chartHeight).attr('x2',chartWidth).attr('y2',chartHeight)
+    .attr('stroke','var(--color-ink)').attr('stroke-width',1);
+
+  // Y ticks
+  [0,25,50,75,100].forEach(v => {
+    g.append('line').attr('x1',-3).attr('x2',3).attr('y1',yScaleLinear(v)).attr('y2',yScaleLinear(v))
+      .attr('stroke','var(--color-ink)').attr('stroke-width',1);
+    g.append('text').attr('class','axis-tick').attr('x',-8).attr('y',yScaleLinear(v)+4)
+      .attr('text-anchor','end').text(v);
+  });
+  // X ticks
+  STEPS.forEach(s => {
+    const x = xScalePoint(s);
+    g.append('line').attr('x1',x).attr('x2',x).attr('y1',chartHeight-3).attr('y2',chartHeight+3)
+      .attr('stroke','var(--color-ink)').attr('stroke-width',1);
+    g.append('text').attr('class','axis-tick').attr('x',x).attr('y',chartHeight+20)
+      .attr('text-anchor','middle').text(s);
+  });
+
+  // Axis labels
+  g.append('text').attr('class','axis-label').attr('x', chartWidth/2).attr('y', chartHeight+44)
+    .attr('text-anchor','middle').text('AI assistance intensity');
+  g.append('text').attr('class','axis-label')
+    .attr('transform', `translate(-48,${chartHeight/2}) rotate(-90)`)
+    .attr('text-anchor','middle').text('relative index (0–100)');
+
+  // Line generator
+  const lineGen = d3.line().x(d => xScalePoint(d.x)).y(d => yScaleLinear(d.value));
+
+  // Collective (red — primary brand series, Guard signal)
+  g.append('path').datum(DATA.collective).attr('fill','none')
+    .attr('stroke','var(--color-red)').attr('stroke-width',2).attr('d', lineGen);
+  g.selectAll('.dot-collective').data(DATA.collective).join('circle')
+    .attr('class','dot-collective')
+    .attr('cx', d => xScalePoint(d.x)).attr('cy', d => yScaleLinear(d.value))
+    .attr('r', 3.5).attr('fill','var(--color-red)')
+    .attr('tabindex',0).attr('aria-label', d => `Collective distinctiveness at ${d.x}: ${d.value}`)
+    .on('mouseover',(event,d)=>{tooltip.html(`<strong>collective distinctiveness</strong><br>${d.x}: ${d.value}`).style('opacity',1).style('left',(event.pageX+12)+'px').style('top',(event.pageY-28)+'px');})
+    .on('mousemove',(event)=>tooltip.style('left',(event.pageX+12)+'px').style('top',(event.pageY-28)+'px'))
+    .on('mouseout',()=>tooltip.style('opacity',0));
+
+  // Individual (secondary gray)
+  g.append('path').datum(DATA.individual).attr('fill','none')
+    .attr('stroke','var(--color-secondary)').attr('stroke-width',2).attr('d', lineGen);
+  g.selectAll('.dot-individual').data(DATA.individual).join('circle')
+    .attr('class','dot-individual')
+    .attr('cx', d => xScalePoint(d.x)).attr('cy', d => yScaleLinear(d.value))
+    .attr('r', 3.5).attr('fill','var(--color-secondary)')
+    .attr('tabindex',0).attr('aria-label', d => `Individual quality at ${d.x}: ${d.value}`)
+    .on('mouseover',(event,d)=>{tooltip.html(`<strong>individual quality</strong><br>${d.x}: ${d.value}`).style('opacity',1).style('left',(event.pageX+12)+'px').style('top',(event.pageY-28)+'px');})
+    .on('mousemove',(event)=>tooltip.style('left',(event.pageX+12)+'px').style('top',(event.pageY-28)+'px'))
+    .on('mouseout',()=>tooltip.style('opacity',0));
+
+  // Crossing marker
+  g.append('circle').attr('cx', xScalePoint('moderate')).attr('cy', yScaleLinear(58))
+    .attr('r', 5.5).attr('fill','none').attr('stroke','var(--color-ink)').attr('stroke-width',1.25);
+
+  // Line labels (right side)
+  g.append('text').attr('class','line-label').attr('x', chartWidth + 6).attr('y', yScaleLinear(85))
+    .attr('fill','var(--color-secondary)').text('individual quality');
+  g.append('text').attr('class','line-label').attr('x', chartWidth + 6).attr('y', yScaleLinear(45))
+    .attr('fill','var(--color-red)').text('collective distinctiveness');
+
+  // Annotation for homogenization zone
+  g.append('text').attr('class','annotation')
+    .attr('x', xCross + (chartWidth - xCross)/2)
+    .attr('y', 14)
+    .attr('text-anchor','middle')
+    .attr('font-style','italic')
+    .attr('fill','var(--color-secondary)')
+    .text('structural homogenization zone');
+}
+
+draw();
+new ResizeObserver(draw).observe(document.getElementById('chart'));
+</script>
+</body>
+</html>

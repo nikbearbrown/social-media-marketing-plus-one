@@ -20,6 +20,21 @@ The Delegate List in paid social is large and, unlike some task families, the ga
 
 The full-stack auto-campaign tier — Meta Advantage+, Google Performance Max, TikTok Smart Performance Campaigns, their equivalents — is worth treating seriously rather than dismissively. These tools genuinely produce better measured cost-per-result for direct-response goals than manually-tuned campaigns. Meta has published joint research with NielsenIQ through 2023–2024 supporting this [verify]. The practitioner reflex to resist platform automation is, in most cases, a defense of the time they used to spend on work that the automation does better.
 
+| Task | Why pattern-shaped | Recommended AI tool category | Time saved | Quality risk if skipped |
+| --- | --- | --- | --- | --- |
+| Creative variation (headline, hook, body, crop) | Combinatorial expansion of a fixed concept | Generative creative inside ad platform suite | Hours per campaign | None — variation without a concept is the failure mode |
+| A/B and multivariate test execution | Statistical bookkeeping over many cells | Native platform experiment tool | Days per cycle | Underpowered tests still possible — set MDE manually |
+| Audience expansion (lookalikes, retargeting pools) | Similarity modeling at scale | Platform audience tools | Days per quarter | Erosion of new-audience reach if left unattended |
+| Automated bidding (direct-response goals) | Real-time optimization at clock speed humans cannot match | Platform bid manager (Advantage+, PMax) | Weeks of analyst time | None below saturation; brand effects invisible |
+| Full-stack auto-campaign tier | Bundled targeting + creative + placement + bidding | Meta Advantage+, Google PMax, TikTok SPC | Setup time, ongoing tuning | Opaque incrementality; brand drift |
+| Placement optimization across formats | Per-impression decisioning | Native cross-placement engine | Continuous | Minor — frequency capping still required |
+| Budget pacing and frequency capping | Mechanical pacing math | Platform pacing tools | Hours per week | Burnouts and audience fatigue if absent |
+| Performance reporting and dashboarding | Aggregation and visualization over a fixed schema | Reporting/BI tool of choice | Days per month | Spot-check denominators monthly |
+| AI-generated creative from approved brief | Constrained text/image generation from a brief | Adobe Firefly, Meta/Google generative ad tools | Hours per variant | High if no concept upstream — see Guard list |
+| Policy-error triage and rejection appeals | Pattern-matching rule violations to remedies | Platform policy assistants | Hours per incident | Minor — appeal escalations still need a human voice |
+
+*Figure 6.1 — Delegate list for paid social: ten pattern-shaped tasks, the tool category, the cost saved, and the quality risk if delegated without spot-check.*
+
 <!-- → [TABLE: Delegate List for paid social — rows covering creative variation, A/B test execution, audience expansion, automated bidding, full-stack auto-campaigns, placement optimization, budget pacing, performance reporting, AI-generated creative from brief, policy-error triage — five columns: Task / Why pattern-shaped / Recommended AI tool category / Time saved / Quality risk if skipped] -->
 
 But there are three qualifications that matter, and none of them show up in the dashboard.
@@ -37,6 +52,21 @@ Third, the auto-campaign commoditizes the optimization layer. Every competitor w
 The concept is the bet. Ogilvy's claim in *Ogilvy on Advertising* — that the headline is roughly 80% of the work — points at the same thing Bernbach understood when he wrote "Think Small" for Volkswagen in the late 1950s. The headline has to be guessed into existence and then tested. AI multiplexes variations of a concept; the concept itself is a human call about what to say and whether to say it in this moment. Apple "1984," Dove "Real Beauty Sketches" (2013), Old Spice "The Man Your Man Could Smell Like" (2010) — each was a creative decision no scoring system would have surfaced. The role of the practitioner is to recognize the bet, sponsor it, and accept the downside if it fails.
 
 Brand safety on cultural-political dimensions is a different kind of Guard item than most. AI flags slurs, profanity, and obvious unsafe placements. AI does not flag the ad that is technically clean but reads tone-deaf because of something that happened in the news cycle yesterday afternoon. Pepsi/Kendall Jenner was not blocked by any safety system. The Balenciaga campaign incident in late 2022 cleared multiple review steps and still produced a brand-equity collapse. What needed to be caught in both cases was not a content violation but a contextual read — and that read requires someone who knows what the audience has been through recently.
+
+| Task | Why judgment-shaped | What goes wrong if delegated | Required human role | Escalation trigger |
+| --- | --- | --- | --- | --- |
+| Creative concept (the bet) | A guess about what to say at this moment | Convergence to category median | Senior creative + brand lead | Always — concept is never auto-served |
+| Choice of which creative bet to sponsor | Backing one direction against alternatives | Risk-averse, regression-to-the-mean choices | Brand lead with authority to accept downside | Before production starts |
+| Cultural-political brand safety | Contextual read of audience moment | Pepsi/Jenner, Balenciaga-class failures | Practitioner with cultural fluency in target audience | Within 72 hours of any news event in adjacent territory |
+| Audience-context call | Relationship state matters: aware vs. cold | Aggressive lookalikes dilute a deepening strategy | Brand lead + media planner | When auto-campaign proposes audience expansion |
+| Long-term vs. short-term allocation (60/40) | Mental availability is built across years | Activation-only spend erodes brand growth | CMO / brand owner | At budget cycle and quarterly review |
+| "What crosses a line" for this brand | Brand-specific lines no model knows | Compliance-grade safety, brand-grade harm | Brand lead | Pre-production and at any new creative direction |
+| Creator-relationship judgment | Trust, voice, drift over time | Creators treated as media inventory | Relationship owner | Before contracting, at renewal |
+| Metric selection upstream of optimization | What "winning" means for the business | Optimization against the wrong target | Marketing leadership | At campaign planning |
+| Incrementality assessment | Touched is not caused | Over-credit to platform; cannibalized organic | Analyst with stats training | Quarterly and at any major spend reallocation |
+| Pause-during-crisis decision | A pre-scheduled ad lands inside a news cycle | Cheapest brand-equity loss available | On-call brand lead | Any unplanned news event |
+
+*Figure 6.2 — Guard list for paid social: ten judgment-shaped tasks, the failure mode if delegated, and the escalation trigger.*
 
 <!-- → [TABLE: Guard List for paid social — rows covering creative concept, choice of creative bet, cultural-political brand safety, audience-context call, long-term vs. short-term allocation, "what crosses a line" for this brand, creator relationship judgment, metric selection upstream of optimization, incrementality assessment, pause-during-crisis decision — five columns: Task / Why judgment-shaped / What goes wrong if delegated / Required human role / Escalation trigger] -->
 
@@ -64,6 +94,17 @@ Here is what the same brief looks like when a practitioner has done the upstream
 
 The second brief names a bet. It contains constraints that could not have been inferred from category best practices. It will produce a different campaign than any other brief the auto-campaign tier has processed, because it contains context the auto-campaign cannot generate.
 
+| Brief element | AI-generated version | Practitioner version |
+| --- | --- | --- |
+| Objective | Drive consideration and conversion for the Spring product line. | Protect the Spring launch from cannibalizing the brand position we built in 2024 around "slow beauty, not fast routines." |
+| Target audience | Women 25–44 with interest in skincare and wellness. | Brand-aware audience first, expansion second — aggressive lookalikes are off the table this quarter; we want to deepen, not dilute. |
+| Key tension | (None named.) | Spring line has a higher AOV; current creative cues quietness. We need ads that earn attention without shouting. |
+| Creative direction | Bright, inviting, social-proof-forward. | Editorial register; do not use the bright/inviting performance template our competitors are flooding the feed with. |
+| Lines not to cross | (Not specified.) | No before-after skin-condition imagery; no influencer language approaching medical claims; no ads served within 48h of any wellness-industry news event. |
+| Success metric | Cost per acquisition under $X. | Blended view: CPA, brand-search-volume, share-of-voice. We will not optimize for CPA alone this quarter. |
+
+*Figure 6.3 — AI-generated brief vs. practitioner brief: where the strategic content lives, and where the auto-generated version is empty.*
+
 <!-- → [TABLE: Side-by-side comparison — AI-generated brief vs. practitioner-written brief — columns: Brief element / AI-generated version / Practitioner version — rows covering objective, audience, creative direction, lines not to cross, success metric — student should see where the strategic content lives and where the auto-generated version is empty] -->
 
 The campaign log is the other piece. When a concept works — or fails — the reasoning that went into the bet should be documented. Not the metrics. The reasoning. The metrics are in the dashboard. The reasoning is what makes the next bet better.
@@ -75,6 +116,10 @@ The campaign log is the other piece. When a concept works — or fails — the r
 There is a failure mode in paid social that is harder to name than the obvious ones. Call it the AI-vs-AI loop: generative creative, optimized by AI media buying, served to AI-modeled audiences, measured by AI attribution. Each layer is competent. The loop produces fluent, optimized, brand-shallow output that performs on the dashboard and erodes the brand on the time horizon the dashboard does not cover.
 
 The way the loop produces this outcome is not through error. It is through the absence of constraint. The generative creative converges toward the median of the training data, which is the median of every other brand's advertising. The media buying optimizes against whoever converts most reliably, which is the existing customer base, which is the audience the brand already has. The attribution system counts the conversions it touches and reports a winner. The entire cycle is technically correct and strategically circular.
+
+![Circular diagram showing four AI layers — generative creative, AI media buying, AI-modeled audiences, AI attribution — connected by clockwise arrows, with ochre markers at each transition labelling what drops out (concept, new-audience reach, brand signal, incrementality). A central red brief node connects to all four layers with dashed radial arrows, marking the only human intervention points.](../images/06-paid-social-and-ad-creative-fig-01.png)
+
+*Figure 6.4 — The AI-vs-AI loop: competent at each step, brand-shallow as a whole.*
 
 <!-- → [INFOGRAPHIC: The AI-vs-AI loop — circular diagram showing generative creative → AI media buying → AI-modeled audiences → AI attribution → back to creative brief — with four annotation points showing what drops out at each step: concept/bet, new audience acquisition, brand-building signal, incrementality] -->
 
@@ -99,6 +144,10 @@ Run the brand-safety review as a list of questions, not rules. The questions are
 Delegate the bid management and let it run. The auto-campaign is the right tool for the direct-response slice once the upstream judgment work is done. Check daily for anomalies; do not micromanage the bidding.
 
 Check brand metrics on a quarterly cadence. Brand-search-volume, share-of-search, prompted and unprompted awareness if a tracker is funded. The platform dashboard will not show the drift before it shows up in revenue eighteen months later. Only the brand-side review catches it early.
+
+![Seven-stage horizontal flow diagram of the campaign cycle: brief, competitive scan, concept, variant generation, brand-safety review, bid management, and quarterly brand-metric check. Stages alternate red (Guard) and secondary (Delegate). The brief and brand-safety review carry ochre stars marking them as the consequential-judgment stages where all human work sits.](../images/06-paid-social-and-ad-creative-fig-02.png)
+
+*Figure 6.5 — The campaign cycle: alternating Delegate and Guard, with the brief and brand-safety review carrying all the consequential judgment.*
 
 <!-- → [INFOGRAPHIC: Campaign cycle diagram — seven stages from brief through quarterly brand review, color-coded Delegate vs. Guard at each stage, with the brief and brand-safety review highlighted as the two stages where all the consequential judgment sits] -->
 
@@ -161,3 +210,11 @@ The accountability is the other thing. When the bet fails, a person is answerabl
 **The AI-vs-AI loop.** Generative creative optimized by AI media buying against AI-modeled audiences and measured by AI attribution. Competent at each layer; produces fluent, brand-shallow output that performs on the dashboard and erodes the brand on a longer horizon. The brief and the concept are the only intervention points.
 
 **Targeting precision reflex.** The assumption that narrower targeting outperforms broader targeting. Byron Sharp's *How Brands Grow* (2010) argued for broad reach years before privacy changes forced the issue. P&G's Marc Pritchard walked back precision targeting in 2017 and 2019 on similar grounds [verify].
+
+---
+
+## Prompts
+
+**Figure 6.4 — The AI-vs-AI loop (INFOGRAPHIC).** Render a circular flow with four cardinal nodes — generative creative (north), AI media buying (east), AI-modeled audiences (south), AI attribution (west) — each as a `#F5F5F5` rounded-zero rectangle outlined in secondary `#545454`. Connect the nodes clockwise with ink arrows. Place an ochre `#C8860E` circle at each of the four transition midpoints (NE, SE, SW, NW), annotated in secondary with what drops out: "concept drops out," "incrementality drops out," "brand signal drops out," "new-audience reach drops out." Centre the loop on a red `#C8102E` rectangle labelled "The brief" in EB Garamond with the subtitle "(human)" in Inter. Run four dashed red radial arrows from the brief to each loop node. Footer legend distinguishes Delegate (fill) / Guard (red) / drop-out (ochre). Cite Byron Sharp 2010, Binet &amp; Field 2013, Lewis-Rao 2015 in the source line.
+
+**Figure 6.5 — Campaign cycle, where the judgment sits (INFOGRAPHIC).** Render a horizontal seven-stage flow: 1. Brief (Guard), 2. Competitive scan + benchmarks (Delegate), 3. Concept (Guard), 4. Variant generation (Delegate), 5. Brand-safety review (Guard), 6. Bid management (Delegate), 7. Quarterly brand-metric check (Guard). Guard stages fill red `#C8102E`; Delegate stages fill secondary `#545454`. Each stage box carries its number, label, and one-line subtitle in white. Highlight stages 1 and 5 with ochre `#C8860E` 3px stroke and a small ochre star above the box. Above the two highlighted stages, set the phrase "consequential judgment" in EB Garamond italic in ochre. Place stage 7 below the row, connected from stage 6 with a curved ink arrow. Below the row of stages 1-2, draw a dashed secondary timeline labelled "campaign duration." Legend distinguishes Guard / Delegate / consequential-judgment stage. Cite Binet &amp; Field 2013, Byron Sharp 2010, Lewis-Rao 2015, Pritchard P&amp;G 2017/2019 [verify] in the source line.

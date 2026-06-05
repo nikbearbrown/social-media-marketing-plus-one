@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What AI handles in the practice vs. what must be human</title>
+<style>
+:root{
+  --color-white:#FFFFFF;
+  --color-ink:#2a1a0e;
+  --color-red:#C8102E;
+  --color-secondary:#545454;
+  --color-border:#D4D4D4;
+  --color-ochre:#C8860E;
+  --color-fill:#F5F5F5;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --color-white:#111111;
+    --color-ink:#F0EBE3;
+    --color-red:#E8243A;
+    --color-secondary:#A0978C;
+    --color-border:#2E2E2E;
+    --color-ochre:#D49A30;
+    --color-fill:#1A1A1A;
+  }
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--color-white);color:var(--color-ink);font-family:'Inter',-apple-system,'Helvetica Neue',sans-serif;padding:24px;}
+#chart{width:100%;min-height:520px;}
+.tooltip{position:absolute;pointer-events:none;opacity:0;background:var(--color-ink);color:var(--color-white);padding:6px 10px;font-size:12px;border-radius:0;}
+.title{font-family:'EB Garamond','Garamond',Georgia,serif;font-size:16px;fill:var(--color-ink);}
+.subtitle{font-family:'Inter',sans-serif;font-size:12px;fill:var(--color-secondary);}
+.col-header{font-family:'Inter',sans-serif;font-size:13px;font-weight:700;fill:var(--color-ink);}
+.item-label{font-family:'Inter',sans-serif;font-size:12px;fill:var(--color-ink);}
+.arrow-label{font-family:'Inter',sans-serif;font-size:11px;font-style:italic;fill:var(--color-secondary);}
+.caption{font-family:'Inter',sans-serif;font-size:11px;fill:var(--color-secondary);}
+@media (prefers-reduced-motion: reduce){*{transition:none !important;animation:none !important;}}
+</style>
+</head>
+<body>
+<div id="chart" role="main"></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+<script>
+const AI_HANDLES = [
+  "log formatting",
+  "pattern detection across entries",
+  "weekly summary drafts",
+  "voice-drift comparisons",
+  "prompt-library maintenance",
+  "capability-watch summaries"
+];
+const MUST_BE_HUMAN = [
+  "the reflection itself",
+  "the honest log entry",
+  "the voice-drift judgment",
+  "the boundary-case call",
+  "the recovery from failure",
+  "the decision to sustain"
+];
+
+function draw(){
+  const container = document.getElementById('chart');
+  d3.select(container).selectAll('*').remove();
+  const totalWidth = container.clientWidth || 800;
+  const totalHeight = 520;
+
+  const svg = d3.select(container)
+    .append('svg')
+      .attr('viewBox', `0 0 ${totalWidth} ${totalHeight}`)
+      .attr('role','img')
+      .attr('aria-labelledby','chart-title chart-desc');
+
+  svg.append('title').attr('id','chart-title').text('What AI handles in the practice vs. what must be human');
+  svg.append('desc').attr('id','chart-desc').text('Two columns showing the division of labor in the +1 practice. Left: six tasks AI handles. Right: six tasks that must be human. An arrow points from left to right indicating that the left column derives its value from the right.');
+
+  // Title
+  svg.append('text').attr('class','title').attr('x',32).attr('y',36).text('The two columns of the practice');
+  svg.append('text').attr('class','subtitle').attr('x',32).attr('y',56).text('What AI handles, and what must be human — the right column gives the left its value');
+
+  const margin = { top: 90, right: 32, bottom: 96, left: 32 };
+  const innerW = totalWidth - margin.left - margin.right;
+  const innerH = totalHeight - margin.top - margin.bottom;
+  const colW = innerW / 2;
+  const dividerX = margin.left + colW;
+
+  // Plot frame
+  svg.append('rect')
+    .attr('x', margin.left).attr('y', margin.top)
+    .attr('width', innerW).attr('height', innerH)
+    .attr('fill','var(--color-fill)')
+    .attr('stroke','var(--color-border)')
+    .attr('stroke-width', 0.75);
+
+  // Center divider
+  svg.append('line')
+    .attr('x1', dividerX).attr('x2', dividerX)
+    .attr('y1', margin.top).attr('y2', margin.top + innerH)
+    .attr('stroke','var(--color-ink)').attr('stroke-width', 1);
+
+  // Column headers
+  svg.append('text').attr('class','col-header')
+    .attr('x', margin.left + colW/2).attr('y', margin.top + 24)
+    .attr('text-anchor','middle')
+    .text('AI handles');
+  svg.append('text').attr('class','col-header')
+    .attr('x', dividerX + colW/2).attr('y', margin.top + 24)
+    .attr('text-anchor','middle')
+    .text('Must be human');
+
+  // Header underlines
+  svg.append('line')
+    .attr('x1', margin.left + 24).attr('x2', margin.left + colW - 24)
+    .attr('y1', margin.top + 36).attr('y2', margin.top + 36)
+    .attr('stroke','var(--color-border)').attr('stroke-width', 0.75);
+  svg.append('line')
+    .attr('x1', dividerX + 24).attr('x2', dividerX + colW - 24)
+    .attr('y1', margin.top + 36).attr('y2', margin.top + 36)
+    .attr('stroke','var(--color-border)').attr('stroke-width', 0.75);
+
+  const itemSpacing = (innerH - 60) / AI_HANDLES.length;
+  const itemStartY = margin.top + 60;
+
+  // Tooltip
+  const tooltip = d3.select('body').append('div').attr('class','tooltip');
+
+  // Left column items
+  const gLeft = svg.append('g').attr('class','g-left');
+  gLeft.selectAll('.item-left')
+    .data(AI_HANDLES)
+    .join('g')
+      .attr('class','item-left')
+      .attr('tabindex', 0)
+      .attr('aria-label', d => `AI handles: ${d}`)
+      .each(function(d, i){
+        const g = d3.select(this);
+        const cy = itemStartY + i * itemSpacing;
+        g.append('circle')
+          .attr('cx', margin.left + 36)
+          .attr('cy', cy)
+          .attr('r', 6)
+          .attr('fill','var(--color-secondary)');
+        g.append('text')
+          .attr('class','item-label')
+          .attr('x', margin.left + 52)
+          .attr('y', cy + 4)
+          .text(d);
+      })
+      .on('mouseover', function(event, d){
+        tooltip.html(`<strong>AI handles</strong><br>${d}`)
+          .style('left', (event.pageX + 12) + 'px')
+          .style('top', (event.pageY - 28) + 'px')
+          .transition().duration(150).style('opacity', 1);
+      })
+      .on('mousemove', function(event){
+        tooltip.style('left', (event.pageX + 12) + 'px').style('top', (event.pageY - 28) + 'px');
+      })
+      .on('mouseout', function(){ tooltip.transition().duration(100).style('opacity', 0); });
+
+  // Right column items
+  const gRight = svg.append('g').attr('class','g-right');
+  gRight.selectAll('.item-right')
+    .data(MUST_BE_HUMAN)
+    .join('g')
+      .attr('class','item-right')
+      .attr('tabindex', 0)
+      .attr('aria-label', d => `Must be human: ${d}`)
+      .each(function(d, i){
+        const g = d3.select(this);
+        const cy = itemStartY + i * itemSpacing;
+        g.append('circle')
+          .attr('cx', dividerX + 36)
+          .attr('cy', cy)
+          .attr('r', 6)
+          .attr('fill','var(--color-red)');
+        g.append('text')
+          .attr('class','item-label')
+          .attr('x', dividerX + 52)
+          .attr('y', cy + 4)
+          .text(d);
+      })
+      .on('mouseover', function(event, d){
+        tooltip.html(`<strong>Must be human</strong><br>${d}`)
+          .style('left', (event.pageX + 12) + 'px')
+          .style('top', (event.pageY - 28) + 'px')
+          .transition().duration(150).style('opacity', 1);
+      })
+      .on('mousemove', function(event){
+        tooltip.style('left', (event.pageX + 12) + 'px').style('top', (event.pageY - 28) + 'px');
+      })
+      .on('mouseout', function(){ tooltip.transition().duration(100).style('opacity', 0); });
+
+  // Bottom arrow: left → right
+  const defs = svg.append('defs');
+  defs.append('marker')
+    .attr('id','arrow-end')
+    .attr('markerWidth', 10).attr('markerHeight', 8)
+    .attr('refX', 8).attr('refY', 4)
+    .attr('orient','auto')
+    .append('polygon')
+      .attr('points','0 0, 10 4, 0 8')
+      .attr('fill','var(--color-ochre)');
+
+  const arrowY = totalHeight - 56;
+  svg.append('line')
+    .attr('x1', margin.left + colW * 0.5)
+    .attr('x2', dividerX + colW * 0.5)
+    .attr('y1', arrowY).attr('y2', arrowY)
+    .attr('stroke','var(--color-ochre)')
+    .attr('stroke-width', 1)
+    .attr('marker-end','url(#arrow-end)');
+
+  svg.append('text').attr('class','arrow-label')
+    .attr('x', totalWidth / 2).attr('y', arrowY - 8)
+    .attr('text-anchor','middle')
+    .text('the left column derives its value from the right');
+
+  svg.append('text').attr('class','caption')
+    .attr('x', totalWidth / 2).attr('y', arrowY + 24)
+    .attr('text-anchor','middle')
+    .text('The column on the right is why the column on the left is worth building.');
+}
+
+draw();
+new ResizeObserver(draw).observe(document.getElementById('chart'));
+</script>
+</body>
+</html>

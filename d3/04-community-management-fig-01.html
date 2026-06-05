@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Surface vs Signal</title>
+<style>
+:root{--color-white:#FFFFFF;--color-ink:#2a1a0e;--color-red:#C8102E;--color-secondary:#545454;--color-border:#D4D4D4;--color-ochre:#C8860E;--color-fill:#F5F5F5;}
+@media (prefers-color-scheme: dark){:root{--color-white:#111111;--color-ink:#F0EBE3;--color-red:#E8243A;--color-secondary:#A0978C;--color-border:#2E2E2E;--color-ochre:#D49A30;--color-fill:#1A1A1A;}}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--color-white);color:var(--color-ink);font-family:'Inter',-apple-system,'Helvetica Neue',sans-serif;padding:24px;}
+#chart{width:100%;min-height:520px;}
+.tooltip{position:absolute;pointer-events:none;opacity:0;background:var(--color-ink);color:var(--color-white);padding:6px 10px;font-size:12px;max-width:240px;}
+.title{font-family:'EB Garamond','Garamond',Georgia,serif;font-size:16px;fill:var(--color-ink);}
+.subtitle{font-family:'Inter',sans-serif;font-size:12px;fill:var(--color-secondary);}
+.layer-title{font-family:'EB Garamond','Garamond',Georgia,serif;font-size:14px;fill:var(--color-ink);}
+.layer-desc{font-family:'Inter',sans-serif;font-size:11px;fill:var(--color-secondary);font-style:italic;}
+.tile-label{font-family:'Inter',sans-serif;font-size:12px;fill:var(--color-white);}
+.actor-label{font-family:'JetBrains Mono','Fira Code','Courier New',monospace;font-size:10px;}
+.divider-note{font-family:'EB Garamond','Garamond',Georgia,serif;font-size:11px;fill:var(--color-secondary);font-style:italic;}
+@media (prefers-reduced-motion: reduce){*{transition:none !important;animation:none !important;}}
+</style>
+</head>
+<body>
+<div id="chart" role="main"></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+<script>
+const SIGNAL_TILES = [
+  {key:'crisis', l1:'crisis', l2:'reading', desc:'Reading what kind of moment this is. Tuesday problem vs brand-survival event.'},
+  {key:'tone', l1:'tone', l2:'calibration', desc:'Whether the joke lands or damages on any given Tuesday.'},
+  {key:'relationship', l1:'relationship', l2:'decisions', desc:'Whether to engage personally, with whom, when to stay silent.'},
+  {key:'political', l1:'political-stance', l2:'calls', desc:'Whether to react to a cultural moment at all.'}
+];
+const SURFACE_TILES = [
+  {key:'volume', l1:'volume', l2:'monitoring', desc:'Spike detection, mention counts, accelerating curves.'},
+  {key:'classification', l1:'classification', l2:'+ sentiment', desc:'Bucketing inbound messages by type and sentiment ratio.'},
+  {key:'routing', l1:'routing', l2:'+ triage', desc:'Sending the right item to the right human or automated handler.'},
+  {key:'acknowledgment', l1:'first-touch', l2:'acknowledgment', desc:'Fast factual replies and templated acknowledgments.'}
+];
+
+const tooltip = d3.select('body').append('div').attr('class','tooltip');
+
+function draw(){
+  const container = document.getElementById('chart');
+  d3.select(container).selectAll('*').remove();
+  const W = container.clientWidth || 900;
+  const H = 540;
+  const svg = d3.select(container).append('svg')
+    .attr('viewBox', `0 0 ${W} ${H}`).attr('role','img').attr('aria-labelledby','t d');
+  svg.append('title').attr('id','t').text('Surface vs Signal — two layers of community management');
+  svg.append('desc').attr('id','d').text('Lower layer surface (pattern-shaped, AI operates), upper layer signal (judgment-shaped, human operates). Four arrows feed surface into signal.');
+
+  svg.append('text').attr('class','title').attr('x', 32).attr('y', 36)
+    .text('Automate the surface. Never automate the signal.');
+  svg.append('text').attr('class','subtitle').attr('x', 32).attr('y', 56)
+    .text('The chapter’s working principle, visualized as the two layers it names.');
+
+  const layerLeft = 140, layerW = W - 180;
+  const tileW = (layerW - 60) / 4;
+  const tileGap = 12;
+
+  // Signal layer
+  svg.append('rect').attr('x', layerLeft).attr('y', 90).attr('width', layerW).attr('height', 150)
+    .attr('fill','var(--color-red)').attr('opacity', 0.08);
+  svg.append('text').attr('class','layer-title').attr('x', layerLeft + 20).attr('y', 112)
+    .text('SIGNAL · judgment-shaped');
+  svg.append('text').attr('class','layer-desc').attr('x', layerLeft + 20).attr('y', 128)
+    .text('what any of it means for this brand, in this moment, in this relationship');
+
+  SIGNAL_TILES.forEach((t, i) => {
+    const x = layerLeft + 20 + i * (tileW + tileGap);
+    svg.append('rect').attr('x', x).attr('y', 152).attr('width', tileW).attr('height', 70)
+      .attr('fill','var(--color-red)').attr('tabindex',0)
+      .attr('aria-label', `Signal layer: ${t.l1} ${t.l2}`)
+      .on('mouseover',(event)=>{tooltip.html(`<strong>${t.l1} ${t.l2}</strong><br>${t.desc}`).style('opacity',1).style('left',(event.pageX+12)+'px').style('top',(event.pageY-28)+'px');})
+      .on('mousemove',(event)=>tooltip.style('left',(event.pageX+12)+'px').style('top',(event.pageY-28)+'px'))
+      .on('mouseout',()=>tooltip.style('opacity',0));
+    svg.append('text').attr('class','tile-label').attr('x', x + tileW/2).attr('y', 184)
+      .attr('text-anchor','middle').text(t.l1);
+    svg.append('text').attr('class','tile-label').attr('x', x + tileW/2).attr('y', 200)
+      .attr('text-anchor','middle').text(t.l2);
+  });
+
+  // Human actor marker
+  svg.append('text').attr('class','actor-label').attr('x', 70).attr('y', 184)
+    .attr('text-anchor','middle').attr('fill','var(--color-red)').text('HUMAN');
+  svg.append('text').attr('class','actor-label').attr('x', 70).attr('y', 198)
+    .attr('text-anchor','middle').attr('fill','var(--color-red)').text('operates');
+  svg.append('text').attr('class','actor-label').attr('x', 70).attr('y', 212)
+    .attr('text-anchor','middle').attr('fill','var(--color-red)').text('here');
+  svg.append('circle').attr('cx', 116).attr('cy', 180).attr('r', 5).attr('fill','var(--color-red)');
+
+  // Divider
+  svg.append('line').attr('x1', 32).attr('y1', 270).attr('x2', W - 32).attr('y2', 270)
+    .attr('stroke','var(--color-ink)').attr('stroke-width', 1);
+  svg.append('text').attr('class','divider-note').attr('x', W/2).attr('y', 262)
+    .attr('text-anchor','middle').text('surface feeds signal — the read is what cannot be automated');
+
+  // Surface layer
+  svg.append('rect').attr('x', layerLeft).attr('y', 300).attr('width', layerW).attr('height', 150)
+    .attr('fill','var(--color-secondary)').attr('opacity', 0.08);
+  svg.append('text').attr('class','layer-title').attr('x', layerLeft + 20).attr('y', 322)
+    .text('SURFACE · pattern-shaped');
+  svg.append('text').attr('class','layer-desc').attr('x', layerLeft + 20).attr('y', 338)
+    .text('what can be counted, classified, routed, and acknowledged');
+
+  SURFACE_TILES.forEach((t, i) => {
+    const x = layerLeft + 20 + i * (tileW + tileGap);
+    svg.append('rect').attr('x', x).attr('y', 362).attr('width', tileW).attr('height', 70)
+      .attr('fill','var(--color-secondary)').attr('tabindex',0)
+      .attr('aria-label', `Surface layer: ${t.l1} ${t.l2}`)
+      .on('mouseover',(event)=>{tooltip.html(`<strong>${t.l1} ${t.l2}</strong><br>${t.desc}`).style('opacity',1).style('left',(event.pageX+12)+'px').style('top',(event.pageY-28)+'px');})
+      .on('mousemove',(event)=>tooltip.style('left',(event.pageX+12)+'px').style('top',(event.pageY-28)+'px'))
+      .on('mouseout',()=>tooltip.style('opacity',0));
+    svg.append('text').attr('class','tile-label').attr('x', x + tileW/2).attr('y', 394)
+      .attr('text-anchor','middle').text(t.l1);
+    svg.append('text').attr('class','tile-label').attr('x', x + tileW/2).attr('y', 410)
+      .attr('text-anchor','middle').text(t.l2);
+    // Arrow from surface tile up to signal
+    svg.append('defs').append('marker').attr('id', `arr-${i}`).attr('markerWidth',8).attr('markerHeight',6)
+      .attr('refX',7).attr('refY',3).attr('orient','auto')
+      .append('polygon').attr('points','0 0, 8 3, 0 6').attr('fill','var(--color-ink)');
+    svg.append('line').attr('x1', x + tileW/2).attr('y1', 362).attr('x2', x + tileW/2).attr('y2', 224)
+      .attr('stroke','var(--color-ink)').attr('stroke-width', 0.75).attr('marker-end', `url(#arr-${i})`)
+      .attr('aria-hidden','true');
+  });
+
+  // AI actor marker
+  svg.append('text').attr('class','actor-label').attr('x', 70).attr('y', 384)
+    .attr('text-anchor','middle').attr('fill','var(--color-secondary)').text('AI');
+  svg.append('text').attr('class','actor-label').attr('x', 70).attr('y', 398)
+    .attr('text-anchor','middle').attr('fill','var(--color-secondary)').text('operates');
+  svg.append('text').attr('class','actor-label').attr('x', 70).attr('y', 412)
+    .attr('text-anchor','middle').attr('fill','var(--color-secondary)').text('here');
+  svg.append('circle').attr('cx', 116).attr('cy', 392).attr('r', 5).attr('fill','var(--color-secondary)');
+
+  svg.append('text').attr('x', W/2).attr('y', 500).attr('text-anchor','middle')
+    .attr('font-family',"'EB Garamond', Georgia, serif").attr('font-size', 12)
+    .attr('font-style','italic').attr('fill','var(--color-red)')
+    .text('United saw the surface. The signal was downstream — and human.');
+}
+
+draw();
+new ResizeObserver(draw).observe(document.getElementById('chart'));
+</script>
+</body>
+</html>

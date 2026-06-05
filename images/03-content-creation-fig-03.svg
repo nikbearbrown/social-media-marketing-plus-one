@@ -1,0 +1,100 @@
+<!--
+  Brief Specificity Anatomy
+  Book: Social Media Marketing plus One
+  Chapter: 03-content-creation
+  Figure: 03
+  Type: mechanism
+  Generated: 2026-05-27
+  Source: pantry/03-content-creation-cajal.md
+-->
+<svg viewBox="0 0 700 540" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="fig-title-03">
+  <title id="fig-title-03">Brief Specificity Anatomy</title>
+  <desc>Vertical funnel showing six additive constraints narrowing the output space of a creative brief. Each band stacks an additional constraint — audience, format, length, angle, tone, an explicit do-not list. A parallel axis on the right names the failure mode prevented when each constraint is in place.</desc>
+  <metadata><cajal:figure xmlns:cajal="https://bearbrown.ai/cajal/1.0" book="Social Media Marketing plus One" book-slug="social-media-marketing-plus-one" chapter="03-content-creation" figure-number="03" figure-title="Brief Specificity Anatomy" figure-slug="brief-specificity-anatomy" figure-type="mechanism" priority="Important" author="Nik Bear Brown Milivoje Davidovic" date-generated="2026-05-27" source-file="pantry/03-content-creation-cajal.md"/></metadata>
+  <defs><marker id="arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#2a1a0e"/></marker><marker id="arrowRed" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#C8102E"/></marker></defs>
+  <rect x="0" y="0" width="700" height="540" fill="#FFFFFF"/>
+  <text x="32" y="36" font-family="'EB Garamond', 'Garamond', Georgia, serif" font-size="14" fill="#2a1a0e">Brief specificity anatomy — six constraints narrow the output to publishable</text>
+  <text x="32" y="56" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="11" fill="#545454">Each constraint cuts a dimension of variance. Skip any one and the failure on the right shows up in the draft.</text>
+
+  <!-- Header band: unconstrained output -->
+  <polygon points="180,90 480,90 460,124 200,124" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="0.75"/>
+  <text x="330" y="111" text-anchor="middle" font-family="'Inter', sans-serif" font-size="12" fill="#2a1a0e" font-weight="600">Unconstrained output space — generic-fluent</text>
+
+  <!-- Six narrowing constraint bands; each progressively darker (more constrained) -->
+  <!-- Band 1: Audience -->
+  <polygon points="200,124 460,124 444,164 216,164" fill="#545454" opacity="0.15" stroke="#545454" stroke-width="0.5"/>
+  <text x="330" y="148" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" fill="#2a1a0e" font-weight="600">1. Audience</text>
+  <text x="330" y="160" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="9" fill="#545454">who reads this — role, level, context</text>
+  <circle cx="475" cy="144" r="4" fill="#545454"/>
+
+  <!-- Band 2: Format -->
+  <polygon points="216,164 444,164 430,201 230,201" fill="#545454" opacity="0.25" stroke="#545454" stroke-width="0.5"/>
+  <text x="330" y="185" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" fill="#2a1a0e" font-weight="600">2. Format</text>
+  <text x="330" y="197" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="9" fill="#545454">thread, essay, caption, carousel</text>
+  <circle cx="475" cy="182" r="4" fill="#545454"/>
+
+  <!-- Band 3: Length -->
+  <polygon points="230,201 430,201 418,237 242,237" fill="#545454" opacity="0.35" stroke="#545454" stroke-width="0.5"/>
+  <text x="330" y="220" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" fill="#2a1a0e" font-weight="600">3. Length</text>
+  <text x="330" y="232" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="9" fill="#545454">target word or character count</text>
+  <circle cx="475" cy="218" r="4" fill="#545454"/>
+
+  <!-- Band 4: Angle -->
+  <polygon points="242,237 418,237 404,273 256,273" fill="#545454" opacity="0.45" stroke="#545454" stroke-width="0.5"/>
+  <text x="330" y="256" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" fill="#FFFFFF" font-weight="600">4. Angle</text>
+  <text x="330" y="268" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="9" fill="#F5F5F5">the take you defend, not the topic</text>
+  <circle cx="475" cy="254" r="4" fill="#545454"/>
+
+  <!-- Band 5: Tone -->
+  <polygon points="256,273 404,273 390,309 270,309" fill="#545454" opacity="0.55" stroke="#545454" stroke-width="0.5"/>
+  <text x="330" y="292" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" fill="#FFFFFF" font-weight="600">5. Tone</text>
+  <text x="330" y="304" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="9" fill="#F5F5F5">register, cadence, three voice anchors</text>
+  <circle cx="475" cy="290" r="4" fill="#545454"/>
+
+  <!-- Band 6: Explicit do-not -->
+  <polygon points="270,309 390,309 374,345 286,345" fill="#545454" opacity="0.70" stroke="#545454" stroke-width="0.5"/>
+  <text x="330" y="328" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" fill="#FFFFFF" font-weight="600">6. Explicit do-not</text>
+  <text x="330" y="340" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="9" fill="#F5F5F5">forbidden phrases, framings, cliches</text>
+  <circle cx="475" cy="326" r="4" fill="#545454"/>
+
+  <!-- Publishable-quality output -->
+  <rect x="286" y="358" width="88" height="44" fill="#FFFFFF" stroke="#2a1a0e" stroke-width="1.5"/>
+  <text x="330" y="378" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" font-weight="700" fill="#2a1a0e">Publishable</text>
+  <text x="330" y="392" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="9" fill="#545454">90 min, not 4-6 hrs</text>
+
+  <!-- Left axis: input -->
+  <text x="120" y="105" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10" font-weight="700" fill="#2a1a0e">INPUT</text>
+  <line x1="120" y1="115" x2="120" y2="345" stroke="#2a1a0e" stroke-width="1"/>
+  <text x="120" y="358" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="9" fill="#545454">brief</text>
+  <text x="120" y="370" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="9" fill="#545454">→ draft</text>
+
+  <!-- Right axis: failure modes axis (Vermillion / red — the one data category) -->
+  <text x="600" y="105" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10" font-weight="700" fill="#C8102E">FAILURE IF MISSING</text>
+  <line x1="600" y1="115" x2="600" y2="345" stroke="#C8102E" stroke-width="1" marker-end="url(#arrowRed)"/>
+
+  <!-- Three failure markers on right axis with annotations -->
+  <circle cx="600" cy="148" r="4.5" fill="#C8102E"/>
+  <text x="610" y="145" font-family="'Inter', sans-serif" font-size="10" fill="#C8102E" font-weight="600">wrong register</text>
+  <text x="610" y="157" font-family="'Inter', sans-serif" font-size="9" fill="#545454">talking past the reader</text>
+
+  <circle cx="600" cy="256" r="4.5" fill="#C8102E"/>
+  <text x="610" y="253" font-family="'Inter', sans-serif" font-size="10" fill="#C8102E" font-weight="600">off-brand framing</text>
+  <text x="610" y="265" font-family="'Inter', sans-serif" font-size="9" fill="#545454">topic without a take</text>
+
+  <circle cx="600" cy="326" r="4.5" fill="#C8102E"/>
+  <text x="610" y="323" font-family="'Inter', sans-serif" font-size="10" fill="#C8102E" font-weight="600">generic-fluent</text>
+  <text x="610" y="335" font-family="'Inter', sans-serif" font-size="9" fill="#545454">Doshi-Hauser convergence</text>
+
+  <!-- Bottom caption / arrow indicating narrowing -->
+  <text x="32" y="442" font-family="'Inter', sans-serif" font-size="10" font-weight="700" fill="#2a1a0e">Each constraint is additive</text>
+  <text x="32" y="456" font-family="'Inter', sans-serif" font-size="10" fill="#545454">Skipping one widens the output and lets the failure on the right re-emerge.</text>
+
+  <text x="32" y="486" font-family="'Inter', sans-serif" font-size="10" font-weight="700" fill="#2a1a0e">The brief is the contract</text>
+  <text x="32" y="500" font-family="'Inter', sans-serif" font-size="10" fill="#545454">Vague brief in, generic-fluent out. Specific brief in, voice-bearing out.</text>
+
+  <!-- Legend -->
+  <rect x="430" y="478" width="14" height="14" fill="#545454" opacity="0.35"/>
+  <text x="450" y="489" font-family="'Inter', sans-serif" font-size="10" fill="#2a1a0e">constraint added — narrows space</text>
+  <circle cx="437" cy="510" r="5" fill="#C8102E"/>
+  <text x="450" y="514" font-family="'Inter', sans-serif" font-size="10" fill="#2a1a0e">failure mode that constraint prevents</text>
+</svg>

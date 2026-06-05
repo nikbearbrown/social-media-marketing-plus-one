@@ -32,6 +32,10 @@ The second level is operational. The Delegate List is the subset of pattern-shap
 
 The third level is execution. Each chapter in this book ends with two paired sections: *Do This with AI* and *Never Do This with AI*. These convert the lists into action. They are always paired. A Do without a corresponding Never is permission without a guardrail. The pairing is the mechanism.
 
+![A concentric ring diagram. The outermost ring represents the conceptual level (pattern-shaped versus judgment-shaped). The middle ring represents the operational level (Delegate List versus Guard List). The innermost disc represents the execution level (Do This versus Never Do This). Each ring connects via a callout bracket to a short statement of what it produces.](../images/02-the-framework-fig-01.png)
+
+*Figure 2.1 — Three nested framework levels. The outer ring produces vocabulary, the middle produces lists, the inner produces actions.*
+
 <!-- → [INFOGRAPHIC: Three nested levels — Conceptual (pattern vs. judgment), Operational (Delegate List vs. Guard List), Execution (Do This / Never Do This) — shown as concentric rings or a stack, with a one-sentence description of what each level does and what it produces] -->
 
 A Delegate List without a defended Guard List is what the early-twentieth-century scientific management movement produced — Taylorism stripped judgment out of workflows so thoroughly it eventually broke the systems it was supposed to optimize. A Guard List without a defended Delegate List is the under-delegation failure from Chapter 1: the manager doing pattern work by hand because nobody authorized anything different. Both lists, with reasoning, are the framework. Neither list alone is.
@@ -41,6 +45,12 @@ A Delegate List without a defended Guard List is what the early-twentieth-centur
 ## The Delegate List
 
 The template has five columns.
+
+| Task | Why pattern-shaped | Recommended AI tool category | Time saved (estimate) | Quality risk if skipped |
+|---|---|---|---|---|
+| The specific action, granular enough to be a discrete decision — e.g. "Draft LinkedIn caption from approved core message." | One sentence naming the structural reason this task follows a recipe. If you can't write it, the item is probably a boundary case. | The category, not the product — e.g. "general LLM with brand prompt." Products change; categories age more slowly. | Honest hours per week or per task. Used to prioritize which Delegate items to operationalize first. | What happens if the human review pass is dropped after the AI does the draft. Calibrates how much oversight the item requires. |
+
+*Figure 2.2 — The Delegate List template: five columns; the second column does the work.*
 
 <!-- → [TABLE: Delegate List five-column template — Task / Why pattern-shaped / Recommended AI tool category / Time saved (estimate) / Quality risk if skipped — with one row of instructional placeholder text per column explaining what belongs there] -->
 
@@ -56,6 +66,15 @@ The template has five columns.
 
 A worked example for a B2B SaaS social manager:
 
+| Task | Why pattern-shaped | Recommended AI tool category | Time saved | Quality risk if skipped |
+|---|---|---|---|---|
+| Draft LinkedIn caption variants from approved core message | Structure is fixed; voice fits within a documented register | General LLM with brand prompt | 30 min / week | Low — variants are pre-bounded by approved core |
+| Summarize weekly platform analytics into 5-bullet recap | Numbers + summary template; no judgment in pull stage | LLM with structured analytics input | 1 hr / week | Low — recap is internal |
+| Generate 20 hashtag candidates for a campaign theme | Combinatorial discovery; ranking is human | LLM with platform-trend access | 20 min / week | Medium — risk is dated or off-brand hashtags |
+| Draft alt-text for image carousels | Description pattern; accessibility standard is teachable | LLM with vision input | 15 min / week | Low — review pass is fast |
+
+*Figure 2.3 — Worked Delegate List for a B2B SaaS social manager. The "why pattern-shaped" column is the load-bearing one.*
+
 <!-- → [TABLE: Worked Delegate List — four rows: (1) Draft LinkedIn caption variants from approved core message / Structure is fixed; voice fits within a documented register / General LLM with brand prompt / 30 min/week / Low — variants are pre-bounded by approved core; (2) Summarize weekly platform analytics into 5-bullet recap / Numbers + summary template; no judgment in pull stage / LLM with structured analytics input / 1 hr/week / Low — recap is internal; (3) Generate 20 hashtag candidates for a campaign theme / Combinatorial discovery; ranking is human / LLM with platform-trend access / 20 min/week / Medium — risk is dated or off-brand hashtags; (4) Draft alt-text for image carousels / Description pattern; accessibility standard is teachable / LLM with vision input / 15 min/week / Low — review pass is fast] -->
 
 The column worth dwelling on is *why pattern-shaped*. The discipline of writing it — not just listing the task, but naming the structural reason it belongs on this side — is what makes the list defensible later. A list without reasoning is a guess. The reasoning is what holds when someone in a meeting asks why this item is here.
@@ -65,6 +84,12 @@ The column worth dwelling on is *why pattern-shaped*. The discipline of writing 
 ## The Guard List
 
 The template has five columns.
+
+| Task | Why judgment-shaped | What goes wrong if delegated | Required human role | Escalation trigger |
+|---|---|---|---|---|
+| The specific action — e.g. "Respond to a customer in a public service complaint thread." | One sentence naming the accountability, relationship, or context the model lacks. | A specific, named failure mode — not "bad output." E.g. "sounds corporate to an angry user; damage compounds." | Whose judgment is binding — community manager, brand lead, founder, compliance officer. | The exact condition that activates the Guard — comment type, content category, time window. Without it, the item gets ignored under deadline pressure. |
+
+*Figure 2.4 — The Guard List template: five columns; the fifth turns a prohibition into a working system.*
 
 <!-- → [TABLE: Guard List five-column template — Task / Why judgment-shaped / What goes wrong if delegated / Required human role / Escalation trigger — with one row of instructional placeholder text per column] -->
 
@@ -77,6 +102,15 @@ The template has five columns.
 **Required human role** names whose judgment is binding — community manager, brand lead, founder, compliance officer. This column locates the accountability. Without it, the Guard item is a prohibition looking for an owner.
 
 **Escalation trigger** is the condition that activates the Guard. This is the column that separates a working Guard List from a list that gets ignored under deadline pressure. Without the trigger, the Guard item reads as an absolute prohibition. With it, the Guard item becomes operational: *this* comment, *this* situation, *this* moment is when the human takes over.
+
+| Task | Why judgment-shaped | What goes wrong if delegated | Required human role | Escalation trigger |
+|---|---|---|---|---|
+| Respond to a customer in a public escalation on LinkedIn | Relational; brand-voice + service-recovery + context-sensitive | Sounds corporate to an angry customer; damage compounds | Community manager + CSM | Any public comment flagged as service-related |
+| Approve thought-leadership post in the CEO's voice | Voice is the CEO's, not a stylesheet's | Post says something the CEO would not say; trust erodes | CEO or designated proxy | Any post under a named-executive byline |
+| Post during a competitor's PR crisis | Tone judgment; opportunism risk; legal exposure | Brand reads as exploiting; reputational damage | Brand lead + legal | Any breaking news involving a named competitor |
+| Comment on a cultural moment | Whether the brand can credibly take the angle | Brand reads as opportunistic; community pushback | Brand lead | Any unplanned reactive content |
+
+*Figure 2.5 — Worked Guard List. The escalation trigger column is the operational difference between a working list and one that gets ignored.*
 
 <!-- → [TABLE: Worked Guard List — four rows: (1) Respond to customer in public escalation on LinkedIn / Relational; brand-voice + service-recovery + context-sensitive / Sounds corporate to an angry customer; damage compounds / Community manager + CSM / Any public comment flagged as service-related; (2) Approve thought-leadership post in CEO's voice / Voice is the CEO's, not a stylesheet's / Post says something the CEO would not say; trust erodes / CEO or designated proxy / Any post under named-executive byline; (3) Post during a competitor's PR crisis / Tone judgment; opportunism risk; legal exposure / Brand reads as exploiting; reputational damage / Brand lead + legal / Any breaking news involving a named competitor; (4) Comment on a cultural moment / Whether the brand can credibly take the angle / Brand reads as opportunistic; community pushback / Brand lead / Any unplanned reactive content] -->
 
@@ -109,6 +143,10 @@ Publishing time and platform tuning is Delegate. Pattern-shaped, well-tooled.
 First-hour comment monitoring and prioritized response is Guard. Whoever replies in the comments is the same voice that wrote the thread.
 
 Nine steps. Six Delegate, three Guard. Without decomposition, the practitioner either hands over the whole thread — over-delegation, with CEO-voice failure at the voice pass and hook — or drafts the whole thing by hand, wasting significant time on the steps that were never judgment work in the first place.
+
+![A vertical nine-step workflow diagram for a LinkedIn CEO thought-leadership thread. Six steps are color-coded as Delegate (secondary gray) and three as Guard (red). Callouts on the three Guard steps name their reason: angle selection requires knowing what the CEO believes; voice pass requires sustained proximity; hook is where voice is most exposed. A tally at the bottom shows six Delegate and three Guard.](../images/02-the-framework-fig-02.png)
+
+*Figure 2.6 — Decomposition of a LinkedIn CEO thread: six Delegate steps, three Guard steps. Whole-task delegation hides the structure.*
 
 <!-- → [INFOGRAPHIC: Decomposition diagram for the LinkedIn CEO thread — nine labeled steps in sequence, color-coded Delegate vs. Guard, with the three Guard steps called out and their reason named: Angle selection (requires knowing what CEO believes), Voice pass (requires sustained proximity), Hook (voice most exposed here)] -->
 
@@ -181,3 +219,15 @@ The political work of adoption. Lists are operative when the people accountable 
 **Boundary case.** A task that genuinely sits between Delegate and Guard given current capability and context. Boundary cases are re-audit candidates — scheduled, revisited deliberately, not decided in the moment.
 
 **Accountability locus.** Whether consequential brand decisions run to a named individual or diffuse across a team. Determines how much voice-shaped work can be delegated and who must sign for Guard items.
+
+---
+
+## Prompts
+
+### Figure 2.1 — Three Nested Framework Levels
+
+Build a concentric ring diagram in D3 v7. Three centered, nested rings: outermost = Conceptual (pattern-shaped vs. judgment-shaped), middle = Operational (Delegate List vs. Guard List), innermost = Execution (Do This vs. Never Do This). Fill the outer ring with the secondary color at 18% opacity, the middle ring with red at 15% opacity, and the inner disc with ink at 25% opacity. Draw ring boundaries with 1pt ink strokes. To the right of the rings, place three small horizontal callout brackets (0.5pt ink with filled terminator dots) connecting each ring to a short label naming what that level *produces*: outer produces "vocabulary," middle produces "lists," inner produces "actions." Add an italic subtitle at the bottom: "Conceptual → Operational → Execution: the levels are a stack, not synonyms." Deliver as a standalone responsive HTML file with ResizeObserver, prefers-reduced-motion guard, role="img" and aria-labelledby on the SVG root.
+
+### Figure 2.6 — Decomposition of a LinkedIn CEO Thread
+
+Build a vertical nine-step workflow diagram in D3 v7. Each step is a rounded rectangle of consistent width, stacked top to bottom with a 1pt ink down-arrow connector between consecutive steps. Color-code: Delegate steps fill secondary gray at 25% opacity with secondary border; Guard steps fill red at 18% opacity with red border. The sequence: (1) Ideation — Guard; (2) Angle selection — Guard; (3) Outline drafting — Delegate; (4) First-draft prose — Delegate; (5) Voice pass — Guard; (6) Hook refinement — Guard; (7) Hashtag and tag generation — Delegate; (8) Publishing time and platform tuning — Delegate; (9) First-hour comment monitoring — Guard. On the right of steps 2, 5, and 6, draw a small ochre callout bracket terminating in a short ochre label naming the reason: "requires knowing what CEO believes," "requires sustained proximity," "voice most exposed here." At the bottom, draw two small tally tiles — a secondary tile with "6 Delegate" and a red tile with "3 Guard." Deliver as a standalone responsive HTML file.

@@ -1,0 +1,107 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>The eight-question pre-interpretation checklist</title>
+<style>
+:root{--color-white:#FFFFFF;--color-ink:#2a1a0e;--color-red:#C8102E;--color-secondary:#545454;--color-border:#D4D4D4;--color-ochre:#C8860E;--color-fill:#F5F5F5;}
+@media (prefers-color-scheme: dark){:root{--color-white:#111111;--color-ink:#F0EBE3;--color-red:#E8243A;--color-secondary:#A0978C;--color-border:#2E2E2E;--color-ochre:#D49A30;--color-fill:#1A1A1A;}}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--color-white);color:var(--color-ink);font-family:'Inter',-apple-system,'Helvetica Neue',sans-serif;padding:24px;}
+#chart{width:100%;min-height:540px;}
+.tooltip{position:absolute;pointer-events:none;opacity:0;background:var(--color-ink);color:var(--color-white);padding:6px 10px;font-size:12px;}
+.title{font-family:'EB Garamond','Garamond',Georgia,serif;font-size:16px;fill:var(--color-ink);}
+.subtitle{font-family:'Inter',sans-serif;font-size:12px;fill:var(--color-secondary);}
+.q-label{font-family:'Inter',sans-serif;font-size:11px;fill:var(--color-ink);}
+.axis-label{font-family:'Inter',sans-serif;font-size:12px;fill:var(--color-secondary);}
+.bypass{font-family:'Inter',sans-serif;font-size:11px;fill:var(--color-ochre);}
+@media (prefers-reduced-motion: reduce){*{transition:none !important;animation:none !important;}}
+</style></head><body>
+<div id="chart" role="main"></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+<script>
+const questions = [
+  {n:1, q:'What is the API coverage this month?',                   mode:'field-mapping breakage'},
+  {n:2, q:'What did the platform restrict?',                        mode:'silent data omission'},
+  {n:3, q:'Where is privacy attrition eating attribution?',         mode:'smoothed attribution gap'},
+  {n:4, q:'What posts did not run that would have shown up?',       mode:'survivorship bias'},
+  {n:5, q:'Which audience segments are under-represented?',         mode:'platform under-counting'},
+  {n:6, q:'What competitor activity could confound this?',          mode:'misread share-of-voice'},
+  {n:7, q:'Is any spike correlated with a news-cycle event?',       mode:'contagion mistaken for interest'},
+  {n:8, q:'Is the sub-segment sample adequate?',                    mode:'noise read as signal'}
+];
+
+function draw(){
+  const c=document.getElementById('chart');
+  d3.select(c).selectAll('*').remove();
+  const W=c.clientWidth||800,H=560;
+  const svg=d3.select(c).append('svg')
+    .attr('viewBox',`0 0 ${W} ${H}`)
+    .attr('role','img')
+    .attr('aria-labelledby','t d');
+  svg.append('title').attr('id','t').text('The eight-question pre-interpretation checklist');
+  svg.append('desc').attr('id','d').text('Funnel composition: raw dashboard data enters at top, eight gating questions filter it, verified output emerges at bottom, with a parallel WYSIATI bypass arrow.');
+
+  svg.append('text').attr('class','title').attr('x',32).attr('y',32)
+     .text('The eight-question checklist sits between dashboard and interpretation');
+  svg.append('text').attr('class','subtitle').attr('x',32).attr('y',52)
+     .text('Each gating question prevents a specific failure mode. The bypass route is WYSIATI.');
+
+  // funnel inflow
+  const fx1 = W*0.25, fx2 = W*0.75;
+  const top = 80, bottom = 440;
+  svg.append('polygon')
+     .attr('points',`${fx1},${top} ${fx2},${top} ${fx2-30},${top+40} ${fx1+30},${top+40}`)
+     .attr('fill','var(--color-fill)').attr('stroke','var(--color-border)').attr('stroke-width',0.75);
+  svg.append('text').attr('x',W/2).attr('y',top+25).attr('text-anchor','middle')
+     .attr('class','q-label').text('Raw dashboard data');
+
+  // checkpoint cross-bars
+  const startY = top+65, endY = bottom-30;
+  const step = (endY - startY) / (questions.length - 1);
+
+  const tooltip = d3.select('body').append('div').attr('class','tooltip');
+  function show(event, d){ tooltip.html(`<strong>Q${d.n}.</strong> ${d.q}<br/><em>Prevents:</em> ${d.mode}`).style('left',(event.pageX+12)+'px').style('top',(event.pageY-28)+'px').transition().duration(150).style('opacity',1); }
+  function move(event){ tooltip.style('left',(event.pageX+12)+'px').style('top',(event.pageY-28)+'px'); }
+  function hide(){ tooltip.transition().duration(100).style('opacity',0); }
+
+  const g = svg.selectAll('.q-row').data(questions).join('g').attr('class','q-row')
+     .attr('tabindex',0)
+     .attr('aria-label', d => `Question ${d.n}: ${d.q}. Prevents ${d.mode}.`)
+     .on('mouseover',show).on('mousemove',move).on('mouseout',hide)
+     .on('focus',function(e,d){show({pageX:W/2,pageY:startY+ (d.n-1)*step},d);})
+     .on('blur',hide);
+
+  // narrowing
+  const lerp = (a,b,t)=>a+(b-a)*t;
+  g.each(function(d,i){
+    const t = i/(questions.length-1);
+    const left  = lerp(fx1+30, W*0.42, t);
+    const right = lerp(fx2-30, W*0.58, t);
+    const y = startY + i*step;
+    d3.select(this).append('line').attr('x1',left).attr('x2',right).attr('y1',y).attr('y2',y).attr('stroke','var(--color-ink)').attr('stroke-width',1);
+    d3.select(this).append('circle').attr('cx',left).attr('cy',y).attr('r',5).attr('fill','var(--color-red)');
+    d3.select(this).append('circle').attr('cx',right).attr('cy',y).attr('r',5).attr('fill','var(--color-secondary)');
+    d3.select(this).append('text').attr('class','q-label').attr('x',left+12).attr('y',y-6).text(`${d.n}. ${d.q}`);
+  });
+
+  // verified output rect
+  svg.append('rect').attr('x',W/2-80).attr('y',endY+10).attr('width',160).attr('height',36)
+     .attr('fill','var(--color-fill)').attr('stroke','var(--color-ink)').attr('stroke-width',1);
+  svg.append('text').attr('x',W/2).attr('y',endY+34).attr('text-anchor','middle').attr('class','q-label')
+     .text('Verified for interpretation');
+
+  // bypass arrow
+  const bx = W*0.88;
+  svg.append('defs').append('marker').attr('id','arrow-ochre').attr('markerWidth',8).attr('markerHeight',6).attr('refX',7).attr('refY',3).attr('orient','auto')
+     .append('polygon').attr('points','0 0, 8 3, 0 6').attr('fill','var(--color-ochre)');
+  svg.append('line').attr('x1',bx).attr('x2',bx).attr('y1',top+30).attr('y2',endY+5)
+     .attr('stroke','var(--color-ochre)').attr('stroke-width',1.25).attr('marker-end','url(#arrow-ochre)');
+  svg.append('text').attr('class','bypass').attr('x',bx-8).attr('y',(top+endY)/2).attr('text-anchor','end').text('WYSIATI shortcut');
+
+  // legend
+  const ly = H-28;
+  svg.append('circle').attr('cx',40).attr('cy',ly).attr('r',5).attr('fill','var(--color-red)');
+  svg.append('text').attr('class','q-label').attr('x',54).attr('y',ly+4).text('Guard role — practitioner asks');
+  svg.append('circle').attr('cx',290).attr('cy',ly).attr('r',5).attr('fill','var(--color-secondary)');
+  svg.append('text').attr('class','q-label').attr('x',304).attr('y',ly+4).text('Delegate role — failure mode prevented');
+}
+draw();
+new ResizeObserver(draw).observe(document.getElementById('chart'));
+</script></body></html>

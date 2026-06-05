@@ -1,0 +1,107 @@
+<!--
+  Campaign cycle — where the judgment sits
+  Book: Social Media Marketing plus One · Chapter: 06-paid-social-and-ad-creative · Figure: 02
+  Type: INFOGRAPHIC · Generated: 2026-05-27 · Source: chapters/06-paid-social-and-ad-creative.md
+-->
+<svg viewBox="0 0 700 480" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="fig-title-02">
+  <title id="fig-title-02">Campaign cycle — where the judgment sits</title>
+  <desc>Seven-stage horizontal campaign cycle alternating Guard (red) and Delegate (secondary) stages. The brief and the brand-safety review are highlighted as the two consequential-judgment stages where all the human work sits.</desc>
+  <metadata><cajal:figure xmlns:cajal="https://bearbrown.ai/cajal/1.0" book="Social Media Marketing plus One" chapter="06-paid-social-and-ad-creative" figure-number="02" figure-title="Campaign cycle — where the judgment sits" figure-type="INFOGRAPHIC" author="Nik Bear Brown Milivoje Davidovic" date-generated="2026-05-27" source-file="chapters/06-paid-social-and-ad-creative.md"/></metadata>
+  <defs>
+    <marker id="arrow" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto"><polygon points="0 0, 9 3.5, 0 7" fill="#2a1a0e"/></marker>
+  </defs>
+  <rect x="0" y="0" width="700" height="480" fill="#FFFFFF"/>
+  <text x="32" y="36" font-family="'EB Garamond', 'Garamond', Georgia, serif" font-size="14" fill="#2a1a0e">The campaign cycle — alternating Delegate and Guard, two stages do all the consequential work</text>
+  <text x="32" y="56" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="11" fill="#545454">The brief upstream and the brand-safety review downstream are where the human judgment sits.</text>
+
+  <!-- Seven stages — boxes 75x70 with 12px gap between. Total = 7*75 + 6*12 = 597, centered around 350 -> start at 32 + (700-64-597)/2 ≈ 51. We'll use 7 boxes with 75 wide and gap 13. -->
+  <!-- Stage definitions: 1 Brief (Guard, star), 2 Competitive scan (Delegate), 3 Concept (Guard), 4 Variant gen (Delegate), 5 Brand-safety review (Guard, star, ring), 6 Bid management (Delegate), 7 Quarterly brand check (Guard) -->
+  <!-- Box y = 160 height = 90 -->
+
+  <g font-family="'Inter', sans-serif" font-size="11">
+    <!-- 1 brief -->
+    <rect x="40" y="160" width="80" height="90" fill="#C8102E" stroke="#2a1a0e" stroke-width="1"/>
+    <text x="80" y="190" text-anchor="middle" fill="#FFFFFF" font-weight="700">1</text>
+    <text x="80" y="212" text-anchor="middle" fill="#FFFFFF">Brief</text>
+    <text x="80" y="228" text-anchor="middle" fill="#FFFFFF" font-size="9.5">(human, page-1)</text>
+    <polygon points="80,148 84,156 92,156 86,161 89,168 80,164 71,168 74,161 68,156 76,156" fill="#C8860E"/>
+
+    <!-- arrow -->
+    <line x1="124" y1="205" x2="138" y2="205" stroke="#2a1a0e" stroke-width="1" marker-end="url(#arrow)"/>
+
+    <!-- 2 competitive scan -->
+    <rect x="142" y="160" width="80" height="90" fill="#545454" stroke="#2a1a0e" stroke-width="1"/>
+    <text x="182" y="190" text-anchor="middle" fill="#FFFFFF" font-weight="700">2</text>
+    <text x="182" y="208" text-anchor="middle" fill="#FFFFFF">Competitive</text>
+    <text x="182" y="222" text-anchor="middle" fill="#FFFFFF">scan +</text>
+    <text x="182" y="236" text-anchor="middle" fill="#FFFFFF">benchmarks</text>
+
+    <line x1="226" y1="205" x2="240" y2="205" stroke="#2a1a0e" stroke-width="1" marker-end="url(#arrow)"/>
+
+    <!-- 3 concept -->
+    <rect x="244" y="160" width="80" height="90" fill="#C8102E" stroke="#2a1a0e" stroke-width="1"/>
+    <text x="284" y="190" text-anchor="middle" fill="#FFFFFF" font-weight="700">3</text>
+    <text x="284" y="212" text-anchor="middle" fill="#FFFFFF">Concept</text>
+    <text x="284" y="228" text-anchor="middle" fill="#FFFFFF" font-size="9.5">(the bet)</text>
+
+    <line x1="328" y1="205" x2="342" y2="205" stroke="#2a1a0e" stroke-width="1" marker-end="url(#arrow)"/>
+
+    <!-- 4 variant generation -->
+    <rect x="346" y="160" width="80" height="90" fill="#545454" stroke="#2a1a0e" stroke-width="1"/>
+    <text x="386" y="190" text-anchor="middle" fill="#FFFFFF" font-weight="700">4</text>
+    <text x="386" y="208" text-anchor="middle" fill="#FFFFFF">Variant</text>
+    <text x="386" y="222" text-anchor="middle" fill="#FFFFFF">generation</text>
+    <text x="386" y="236" text-anchor="middle" fill="#FFFFFF" font-size="9.5">(200×)</text>
+
+    <line x1="430" y1="205" x2="444" y2="205" stroke="#2a1a0e" stroke-width="1" marker-end="url(#arrow)"/>
+
+    <!-- 5 brand-safety review (highlighted with ring + star) -->
+    <rect x="445" y="155" width="85" height="100" fill="#C8102E" stroke="#C8860E" stroke-width="3"/>
+    <text x="487" y="185" text-anchor="middle" fill="#FFFFFF" font-weight="700">5</text>
+    <text x="487" y="207" text-anchor="middle" fill="#FFFFFF">Brand-safety</text>
+    <text x="487" y="222" text-anchor="middle" fill="#FFFFFF">review</text>
+    <text x="487" y="238" text-anchor="middle" fill="#FFFFFF" font-size="9.5">(questions, not rules)</text>
+    <polygon points="487,143 491,151 499,151 493,156 496,163 487,159 478,163 481,156 475,151 483,151" fill="#C8860E"/>
+
+    <line x1="534" y1="205" x2="548" y2="205" stroke="#2a1a0e" stroke-width="1" marker-end="url(#arrow)"/>
+
+    <!-- 6 bid management -->
+    <rect x="550" y="160" width="80" height="90" fill="#545454" stroke="#2a1a0e" stroke-width="1"/>
+    <text x="590" y="190" text-anchor="middle" fill="#FFFFFF" font-weight="700">6</text>
+    <text x="590" y="208" text-anchor="middle" fill="#FFFFFF">Bid</text>
+    <text x="590" y="222" text-anchor="middle" fill="#FFFFFF">management</text>
+    <text x="590" y="236" text-anchor="middle" fill="#FFFFFF" font-size="9.5">(auto-campaign)</text>
+
+    <!-- arrow downward into stage 7 (place beneath, single-row layout: continue right) -->
+  </g>
+
+  <!-- Stage 7 placed below row, connected via curved arrow from 6 -->
+  <path d="M 590 250 Q 590 280, 540 300" fill="none" stroke="#2a1a0e" stroke-width="1" marker-end="url(#arrow)"/>
+
+  <rect x="200" y="298" width="320" height="60" fill="#C8102E" stroke="#2a1a0e" stroke-width="1"/>
+  <text x="360" y="320" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" font-weight="700" fill="#FFFFFF">7</text>
+  <text x="360" y="338" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" fill="#FFFFFF">Quarterly brand-metric check</text>
+  <text x="360" y="352" text-anchor="middle" font-family="'Inter', sans-serif" font-size="9.5" fill="#FFFFFF">brand-search-volume · share-of-search · awareness tracker</text>
+
+  <!-- Timeline arrow below row of stages indicating campaign duration -->
+  <line x1="40" y1="280" x2="190" y2="280" stroke="#545454" stroke-width="0.75" stroke-dasharray="3,2"/>
+  <text x="115" y="273" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10.5" fill="#545454">campaign duration</text>
+
+  <!-- Annotation under stages 1 and 5 -->
+  <text x="80" y="118" text-anchor="middle" font-family="'EB Garamond', Georgia, serif" font-size="13" font-style="italic" fill="#C8860E">consequential</text>
+  <text x="80" y="134" text-anchor="middle" font-family="'EB Garamond', Georgia, serif" font-size="13" font-style="italic" fill="#C8860E">judgment</text>
+
+  <text x="487" y="118" text-anchor="middle" font-family="'EB Garamond', Georgia, serif" font-size="13" font-style="italic" fill="#C8860E">consequential</text>
+  <text x="487" y="134" text-anchor="middle" font-family="'EB Garamond', Georgia, serif" font-size="13" font-style="italic" fill="#C8860E">judgment</text>
+
+  <!-- Legend -->
+  <g transform="translate(32,410)">
+    <rect x="0" y="0" width="16" height="12" fill="#C8102E"/>
+    <text x="22" y="10" font-family="'Inter', sans-serif" font-size="11" fill="#2a1a0e">Guard — human judgment</text>
+    <rect x="200" y="0" width="16" height="12" fill="#545454"/>
+    <text x="222" y="10" font-family="'Inter', sans-serif" font-size="11" fill="#2a1a0e">Delegate — AI-handled</text>
+    <polygon points="400,4 404,12 412,12 406,17 409,24 400,20 391,24 394,17 388,12 396,12" fill="#C8860E"/>
+    <text x="420" y="14" font-family="'Inter', sans-serif" font-size="11" fill="#2a1a0e">Consequential-judgment stage</text>
+  </g>
+  <text x="32" y="450" font-family="'Inter', sans-serif" font-size="10.5" fill="#545454">Binet &amp; Field 2013 · Byron Sharp 2010 · Lewis-Rao 2015 · Pritchard P&amp;G 2017/2019 [verify]</text>
+</svg>

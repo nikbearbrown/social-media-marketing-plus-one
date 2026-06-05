@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Two-Layer Execution Model — Format vs Fit</title>
+<style>
+:root{--color-white:#FFFFFF;--color-ink:#2a1a0e;--color-red:#C8102E;--color-secondary:#545454;--color-border:#D4D4D4;--color-ochre:#C8860E;--color-fill:#F5F5F5;}
+@media (prefers-color-scheme: dark){:root{--color-white:#111111;--color-ink:#F0EBE3;--color-red:#E8243A;--color-secondary:#A0978C;--color-border:#2E2E2E;--color-ochre:#D49A30;--color-fill:#1A1A1A;}}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--color-white);color:var(--color-ink);font-family:'Inter',sans-serif;padding:24px;}
+#chart{width:100%;min-height:480px;}
+.tooltip{position:absolute;pointer-events:none;opacity:0;background:var(--color-ink);color:var(--color-white);padding:6px 10px;font-size:12px;}
+.title{font-family:'EB Garamond',Georgia,serif;font-size:16px;fill:var(--color-ink);}
+.subtitle{font-family:'Inter',sans-serif;font-size:12px;fill:var(--color-secondary);}
+.axis-tick{font-family:'JetBrains Mono',monospace;font-size:11px;fill:var(--color-secondary);}
+.axis-label{font-family:'Inter',sans-serif;font-size:12px;fill:var(--color-secondary);}
+.tier-label{font-family:'EB Garamond',Georgia,serif;font-size:14px;fill:var(--color-ink);}
+.tier-sub{font-family:'Inter',sans-serif;font-size:11px;fill:var(--color-secondary);}
+.task-label{font-family:'Inter',sans-serif;font-size:10px;fill:var(--color-ink);}
+.marker-text{font-family:'Inter',sans-serif;font-size:11px;font-weight:700;fill:var(--color-white);}
+.failure-text{font-family:'Inter',sans-serif;font-size:11px;font-style:italic;fill:var(--color-secondary);}
+@media (prefers-reduced-motion: reduce){*{transition:none !important;animation:none !important;}}
+</style></head><body>
+<div id="chart" role="main"></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+<script>
+const LAYER1 = [
+  {label:'aspect ratio'},{label:'length'},{label:'caption length'},
+  {label:'hashtags'},{label:'thumbnail'},{label:'scheduling'}
+];
+const LAYER2 = [
+  {label:'voice'},{label:'pacing'},{label:'hook selection'},
+  {label:'trend timing'},{label:'community norms'},{label:'comment policy'}
+];
+
+function draw(){
+  const c=document.getElementById('chart');
+  d3.select(c).selectAll('*').remove();
+  const W=c.clientWidth||800,H=480;
+  const svg=d3.select(c).append('svg')
+    .attr('viewBox',`0 0 ${W} ${H}`)
+    .attr('role','img')
+    .attr('aria-labelledby','t d');
+  svg.append('title').attr('id','t').text('Two-Layer Execution Model — Format (Delegate) vs Fit (Guard)');
+  svg.append('desc').attr('id','d').text('A two-tier diagram. Top tier — Layer 1 Format — lists six pattern-shaped tasks marked Delegate. Bottom tier — Layer 2 Fit — lists six judgment-shaped tasks marked Guard.');
+
+  // defs / marker
+  const defs=svg.append('defs');
+  defs.append('marker').attr('id','arrow').attr('markerWidth',8).attr('markerHeight',6)
+    .attr('refX',7).attr('refY',3).attr('orient','auto')
+    .append('polygon').attr('points','0 0, 8 3, 0 6').attr('fill','var(--color-ink)');
+
+  // titles
+  svg.append('text').attr('class','title').attr('x',32).attr('y',36)
+    .text('Two-layer execution — format is delegable, fit is not');
+  svg.append('text').attr('class','subtitle').attr('x',32).attr('y',56)
+    .text('The Lattice failure: treating Layer 1 compliance as a proxy for Layer 2 fit.');
+
+  // tier divider
+  svg.append('line').attr('x1',32).attr('y1',96).attr('x2',32).attr('y2',420)
+    .attr('stroke','var(--color-ink)').attr('stroke-width',1);
+
+  const tierWidth = W - 160;
+  const tierX = 56;
+
+  // Layer 1 band
+  svg.append('rect').attr('x',tierX).attr('y',100).attr('width',tierWidth).attr('height',120)
+    .attr('fill','var(--color-secondary)').attr('opacity',0.15)
+    .attr('stroke','var(--color-border)').attr('stroke-width',0.75);
+  svg.append('text').attr('class','tier-label').attr('x',tierX+16).attr('y',128).text('Layer 1 — Format');
+  svg.append('text').attr('class','tier-sub').attr('x',tierX+16).attr('y',146).text('Pattern-shaped, mechanical, hours saved');
+
+  // Layer 1 task circles
+  const xScale1 = d3.scaleLinear().domain([0,LAYER1.length-1]).range([tierX+44,tierX+tierWidth-44]);
+  svg.selectAll('.l1-circle').data(LAYER1).join('circle')
+    .attr('class','l1-circle')
+    .attr('cx',(d,i)=>xScale1(i)).attr('cy',190).attr('r',9)
+    .attr('fill','var(--color-secondary)')
+    .attr('tabindex',0)
+    .attr('aria-label',d=>`Layer 1 Format task: ${d.label}`);
+  svg.selectAll('.l1-label').data(LAYER1).join('text')
+    .attr('class','task-label')
+    .attr('x',(d,i)=>xScale1(i)).attr('y',212)
+    .attr('text-anchor','middle')
+    .text(d=>d.label);
+
+  // Delegate marker
+  svg.append('rect').attr('x',W-84).attr('y',148).attr('width',52).attr('height',40)
+    .attr('fill','var(--color-secondary)');
+  svg.append('text').attr('class','marker-text').attr('x',W-58).attr('y',172)
+    .attr('text-anchor','middle').text('Delegate');
+
+  // Layer 2 band
+  svg.append('rect').attr('x',tierX).attr('y',260).attr('width',tierWidth).attr('height',120)
+    .attr('fill','var(--color-red)').attr('opacity',0.15)
+    .attr('stroke','var(--color-border)').attr('stroke-width',0.75);
+  svg.append('text').attr('class','tier-label').attr('x',tierX+16).attr('y',288).text('Layer 2 — Fit');
+  svg.append('text').attr('class','tier-sub').attr('x',tierX+16).attr('y',306).text('Judgment-shaped, continuously refreshed, brand-load-bearing');
+
+  // Layer 2 task circles
+  const xScale2 = d3.scaleLinear().domain([0,LAYER2.length-1]).range([tierX+44,tierX+tierWidth-44]);
+  svg.selectAll('.l2-circle').data(LAYER2).join('circle')
+    .attr('class','l2-circle')
+    .attr('cx',(d,i)=>xScale2(i)).attr('cy',350).attr('r',9)
+    .attr('fill','var(--color-red)')
+    .attr('tabindex',0)
+    .attr('aria-label',d=>`Layer 2 Fit task: ${d.label}`);
+  svg.selectAll('.l2-label').data(LAYER2).join('text')
+    .attr('class','task-label')
+    .attr('x',(d,i)=>xScale2(i)).attr('y',372)
+    .attr('text-anchor','middle')
+    .text(d=>d.label);
+
+  // Guard marker
+  svg.append('rect').attr('x',W-84).attr('y',308).attr('width',52).attr('height',40)
+    .attr('fill','var(--color-red)');
+  svg.append('text').attr('class','marker-text').attr('x',W-58).attr('y',332)
+    .attr('text-anchor','middle').text('Guard');
+
+  // failure-mode curved arrow
+  svg.append('path')
+    .attr('d',`M ${W-104} 200 C ${W-30} 200, ${W-30} 280, ${W-104} 280`)
+    .attr('fill','none').attr('stroke','var(--color-ink)').attr('stroke-width',1)
+    .attr('marker-end','url(#arrow)');
+
+  svg.append('text').attr('class','failure-text').attr('x',tierX).attr('y',420)
+    .text('Lattice failure mode — Layer 1 compliance read as Layer 2 solved. Format: correct. Fit: absent.');
+}
+draw();
+new ResizeObserver(draw).observe(document.getElementById('chart'));
+</script></body></html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Three-Axis Classification Space</title>
+<style>
+:root{--color-white:#FFFFFF;--color-ink:#2a1a0e;--color-red:#C8102E;--color-secondary:#545454;--color-border:#D4D4D4;--color-ochre:#C8860E;--color-fill:#F5F5F5;}
+@media (prefers-color-scheme: dark){:root{--color-white:#111111;--color-ink:#F0EBE3;--color-red:#E8243A;--color-secondary:#A0978C;--color-border:#2E2E2E;--color-ochre:#D49A30;--color-fill:#1A1A1A;}}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--color-white);color:var(--color-ink);font-family:'Inter',sans-serif;padding:24px;}
+#chart{width:100%;min-height:540px;}
+.tooltip{position:absolute;pointer-events:none;opacity:0;background:var(--color-ink);color:var(--color-white);padding:6px 10px;font-size:12px;}
+.title{font-family:'EB Garamond',Georgia,serif;font-size:16px;fill:var(--color-ink);}
+.subtitle{font-family:'Inter',sans-serif;font-size:12px;fill:var(--color-secondary);}
+.axis-tick{font-family:'JetBrains Mono',monospace;font-size:11px;fill:var(--color-secondary);}
+.axis-label{font-family:'Inter',sans-serif;font-size:11px;fill:var(--color-secondary);}
+.axis-end{font-family:'Inter',sans-serif;font-size:10px;fill:var(--color-secondary);}
+.corner-label{font-family:'Inter',sans-serif;font-size:10px;font-weight:700;}
+.diag-label{font-family:'Inter',sans-serif;font-size:10px;font-style:italic;fill:var(--color-ink);}
+.legend{font-family:'Inter',sans-serif;font-size:11px;fill:var(--color-ink);}
+@media (prefers-reduced-motion: reduce){*{transition:none !important;animation:none !important;}}
+</style></head><body>
+<div id="chart" role="main"></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+<script>
+function draw(){
+  const c=document.getElementById('chart');
+  d3.select(c).selectAll('*').remove();
+  const W=c.clientWidth||800,H=540;
+  const svg=d3.select(c).append('svg')
+    .attr('viewBox',`0 0 ${W} ${H}`)
+    .attr('role','img')
+    .attr('aria-labelledby','t d');
+  svg.append('title').attr('id','t').text('Three-Axis Classification Space');
+  svg.append('desc').attr('id','d').text('Isometric cube. Three orthogonal axes: shape, regulatory weight, tail-risk. Delegate corner is the near origin; Guard corner is the far vertex. Diagonal shows the Guard List growing along the corner-to-corner axis.');
+
+  const defs=svg.append('defs');
+  defs.append('marker').attr('id','arrowMd3').attr('markerWidth',8).attr('markerHeight',6).attr('refX',7).attr('refY',3).attr('orient','auto')
+    .append('polygon').attr('points','0 0, 8 3, 0 6').attr('fill','var(--color-ink)');
+
+  svg.append('text').attr('class','title').attr('x',32).attr('y',36).text('Three-axis classification — where the Guard List grows');
+  svg.append('text').attr('class','subtitle').attr('x',32).attr('y',56).text('Shape × Regulatory weight × Reputational tail-risk. The corner you sit in decides the map.');
+
+  // Cube vertices
+  const V = {
+    A:[180,420], B:[560,420], C:[180,140], D:[560,140],
+    E:[300,340], F:[680,340], G:[300,60],  H:[680,60]
+  };
+
+  // Cube edges (dashed)
+  const edges = [
+    ['E','F'],['E','G'],['F','H'],['G','H'],
+    ['A','E'],['B','F'],['C','G'],['D','H'],
+    ['C','D']
+  ];
+  edges.forEach(([a,b])=>{
+    svg.append('line').attr('x1',V[a][0]).attr('y1',V[a][1]).attr('x2',V[b][0]).attr('y2',V[b][1])
+      .attr('stroke','#787878').attr('stroke-width',0.5).attr('stroke-dasharray','3,3')
+      .attr('aria-hidden','true');
+  });
+
+  // Axes
+  svg.append('line').attr('x1',180).attr('y1',420).attr('x2',588).attr('y2',420)
+    .attr('stroke','var(--color-ink)').attr('stroke-width',1).attr('marker-end','url(#arrowMd3)');
+  svg.append('line').attr('x1',180).attr('y1',420).attr('x2',180).attr('y2',120)
+    .attr('stroke','var(--color-ink)').attr('stroke-width',1).attr('marker-end','url(#arrowMd3)');
+  svg.append('line').attr('x1',180).attr('y1',420).attr('x2',310).attr('y2',334)
+    .attr('stroke','var(--color-ink)').attr('stroke-width',1).attr('marker-end','url(#arrowMd3)');
+
+  // Axis labels
+  svg.append('text').attr('class','axis-label').attr('x',600).attr('y',424).text('shape →');
+  svg.append('text').attr('class','axis-end').attr('x',600).attr('y',438).text('judgment');
+  svg.append('text').attr('class','axis-end').attr('x',135).attr('y',424).attr('text-anchor','end').text('pattern');
+
+  svg.append('text').attr('class','axis-label').attr('x',186).attr('y',116).text('regulatory weight ↑');
+  svg.append('text').attr('class','axis-end').attr('x',186).attr('y',130).text('heavy');
+  svg.append('text').attr('class','axis-end').attr('x',186).attr('y',412).text('light');
+
+  svg.append('text').attr('class','axis-label').attr('x',318).attr('y',326).text('tail-risk ↗');
+  svg.append('text').attr('class','axis-end').attr('x',318).attr('y',340).text('high');
+
+  // Vertex nodes
+  const nodes = [
+    {v:'A',r:10,fill:'var(--color-secondary)',label:'Delegate',labelX:160,labelY:450,color:'var(--color-secondary)'},
+    {v:'B',r:8,fill:'var(--color-ochre)'},
+    {v:'C',r:8,fill:'var(--color-ochre)'},
+    {v:'D',r:8,fill:'var(--color-ochre)'},
+    {v:'E',r:8,fill:'var(--color-ochre)'},
+    {v:'F',r:8,fill:'var(--color-ochre)'},
+    {v:'G',r:8,fill:'var(--color-ochre)'},
+    {v:'H',r:10,fill:'var(--color-red)',label:'Guard',labelX:618,labelY:50,color:'var(--color-red)'}
+  ];
+  nodes.forEach(n=>{
+    svg.append('circle').attr('cx',V[n.v][0]).attr('cy',V[n.v][1]).attr('r',n.r).attr('fill',n.fill);
+    if(n.label){
+      svg.append('text').attr('class','corner-label').attr('x',n.labelX).attr('y',n.labelY)
+        .attr('fill',n.color).text(n.label);
+    }
+  });
+
+  // Diagonal
+  svg.append('line').attr('x1',180).attr('y1',420).attr('x2',680).attr('y2',60)
+    .attr('stroke','var(--color-ink)').attr('stroke-width',1.25).attr('stroke-dasharray','6,4');
+  svg.append('text').attr('class','diag-label').attr('x',380).attr('y',240)
+    .attr('transform','rotate(-30, 380, 240)').text('Guard List grows along this diagonal');
+
+  // Legend
+  svg.append('rect').attr('x',56).attr('y',488).attr('width',W-112).attr('height',36)
+    .attr('fill','var(--color-fill)').attr('stroke','var(--color-border)').attr('stroke-width',0.75);
+  svg.append('circle').attr('cx',80).attr('cy',506).attr('r',6).attr('fill','var(--color-secondary)');
+  svg.append('text').attr('class','legend').attr('x',94).attr('y',510).text('Delegate corner — pattern, light reg, low tail-risk');
+  svg.append('circle').attr('cx',310).attr('cy',506).attr('r',6).attr('fill','var(--color-ochre)');
+  svg.append('text').attr('class','legend').attr('x',324).attr('y',510).text('Boundary vertex');
+  svg.append('circle').attr('cx',450).attr('cy',506).attr('r',6).attr('fill','var(--color-red)');
+  svg.append('text').attr('class','legend').attr('x',464).attr('y',510).text('Guard corner — judgment, heavy reg, high tail-risk');
+}
+draw();
+new ResizeObserver(draw).observe(document.getElementById('chart'));
+</script></body></html>

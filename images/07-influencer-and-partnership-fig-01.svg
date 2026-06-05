@@ -1,0 +1,64 @@
+<!--
+  Two-stage funnel: AI discovery, human decision
+  Book: Social Media Marketing plus One · Chapter: 07-influencer-and-partnership · Figure: 01
+  Type: INFOGRAPHIC · Generated: 2026-05-27 · Source: chapters/07-influencer-and-partnership.md
+-->
+<svg viewBox="0 0 700 480" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="fig-title-01 fig-desc-01">
+  <title id="fig-title-01">Two-stage funnel: AI discovery, human decision</title>
+  <desc id="fig-desc-01">A horizontal two-stage funnel. The wide left stage is AI work (discovery, audit, drafts); the narrower right stage is human judgment (fit, forward-look, negotiation, escalation). A vertical decision boundary between them marks the line AI cannot cross, with the load-bearing shortlist-review handoff sitting on the boundary.</desc>
+  <metadata><cajal:figure xmlns:cajal="https://bearbrown.ai/cajal/1.0" book="Social Media Marketing plus One" chapter="07-influencer-and-partnership" figure-number="01" figure-title="Two-stage funnel: AI discovery, human decision" figure-type="INFOGRAPHIC" author="Nik Bear Brown Milivoje Davidovic" date-generated="2026-05-27" source-file="chapters/07-influencer-and-partnership.md"/></metadata>
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#2a1a0e"/></marker>
+  </defs>
+  <rect x="0" y="0" width="700" height="480" fill="#FFFFFF"/>
+  <text x="32" y="36" font-family="'EB Garamond', 'Garamond', Georgia, serif" font-size="18" fill="#2a1a0e">AI shortens the shortlist. It does not shorten the decision.</text>
+  <text x="32" y="56" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="12" fill="#545454">Pattern-shaped work on the left. Judgment work on the right.</text>
+
+  <!-- AI stage (left wide trapezoid) -->
+  <polygon points="60,110 350,110 330,400 80,400" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="0.75"/>
+  <text x="80" y="135" font-family="'Inter', sans-serif" font-size="13" font-weight="700" fill="#2a1a0e">Delegate — AI stage</text>
+  <text x="80" y="151" font-family="'Inter', sans-serif" font-size="11" fill="#545454">Pattern-shaped tasks · minutes per longlist of 2,000</text>
+
+  <!-- AI task circles (Delegate = secondary gray) -->
+  <g font-family="'Inter', sans-serif" font-size="11" fill="#2a1a0e">
+    <circle cx="100" cy="180" r="6" fill="#545454"/><text x="115" y="184">Discovery and longlist filter</text>
+    <circle cx="100" cy="210" r="6" fill="#545454"/><text x="115" y="214">Audience-overlap calculation</text>
+    <circle cx="100" cy="240" r="6" fill="#545454"/><text x="115" y="244">Fraud and engagement-pod audit</text>
+    <circle cx="100" cy="270" r="6" fill="#545454"/><text x="115" y="274">Outreach first drafts</text>
+    <circle cx="100" cy="300" r="6" fill="#545454"/><text x="115" y="304">Contract scaffolding</text>
+    <circle cx="100" cy="330" r="6" fill="#545454"/><text x="115" y="334">Disclosure presence check</text>
+    <circle cx="100" cy="360" r="6" fill="#545454"/><text x="115" y="364">Campaign reporting</text>
+  </g>
+
+  <!-- Decision boundary (ochre vertical line — decorative accent) -->
+  <line x1="360" y1="100" x2="360" y2="410" stroke="#C8860E" stroke-width="2"/>
+  <text x="368" y="100" font-family="'EB Garamond', serif" font-style="italic" font-size="13" fill="#2a1a0e">The decision point AI cannot cross</text>
+
+  <!-- Load-bearing handoff marker (Guard = red) -->
+  <circle cx="360" cy="255" r="11" fill="#C8102E"/>
+  <circle cx="360" cy="255" r="16" fill="none" stroke="#C8102E" stroke-width="1" stroke-dasharray="2 2"/>
+  <text x="382" y="252" font-family="'Inter', sans-serif" font-size="11" font-weight="700" fill="#C8102E">Shortlist review</text>
+  <text x="382" y="266" font-family="'Inter', sans-serif" font-size="10" fill="#545454">2–4 hours · load-bearing handoff</text>
+
+  <!-- Human stage (right narrower trapezoid) -->
+  <polygon points="380,140 660,150 660,380 380,370" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="0.75"/>
+  <text x="400" y="172" font-family="'Inter', sans-serif" font-size="13" font-weight="700" fill="#2a1a0e">Guard — Human stage</text>
+  <text x="400" y="188" font-family="'Inter', sans-serif" font-size="11" fill="#545454">Judgment work · hours per twenty-five candidates</text>
+
+  <!-- Human task markers (Guard = red small squares) -->
+  <g font-family="'Inter', sans-serif" font-size="11" fill="#2a1a0e">
+    <rect x="404" y="210" width="10" height="10" fill="#C8102E"/><text x="420" y="219">Fit read (life-stage + intent)</text>
+    <rect x="404" y="232" width="10" height="10" fill="#C8102E"/><text x="420" y="241">Reputational forward-look</text>
+    <rect x="404" y="254" width="10" height="10" fill="#C8102E"/><text x="420" y="263">Tier-and-mix strategy</text>
+    <rect x="404" y="276" width="10" height="10" fill="#C8102E"/><text x="420" y="285">Negotiation read</text>
+    <rect x="404" y="298" width="10" height="10" fill="#C8102E"/><text x="420" y="307">Gray-zone disclosure call</text>
+    <rect x="404" y="320" width="10" height="10" fill="#C8102E"/><text x="420" y="329">Crisis decision on spillover</text>
+    <rect x="404" y="342" width="10" height="10" fill="#C8102E"/><text x="420" y="351">Relationship escalation</text>
+  </g>
+
+  <!-- Flow arrow under both stages -->
+  <line x1="80" y1="430" x2="650" y2="430" stroke="#2a1a0e" stroke-width="1" marker-end="url(#arrow)"/>
+  <text x="80" y="450" font-family="'JetBrains Mono', monospace" font-size="10" fill="#545454">longlist</text>
+  <text x="332" y="450" font-family="'JetBrains Mono', monospace" font-size="10" fill="#545454">shortlist</text>
+  <text x="585" y="450" font-family="'JetBrains Mono', monospace" font-size="10" fill="#545454">booked partners</text>
+</svg>

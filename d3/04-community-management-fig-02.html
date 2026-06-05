@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Parasocial Bond Accumulation and Retroactive Collapse</title>
+<style>
+:root{--color-white:#FFFFFF;--color-ink:#2a1a0e;--color-red:#C8102E;--color-secondary:#545454;--color-border:#D4D4D4;--color-ochre:#C8860E;--color-fill:#F5F5F5;}
+@media (prefers-color-scheme: dark){:root{--color-white:#111111;--color-ink:#F0EBE3;--color-red:#E8243A;--color-secondary:#A0978C;--color-border:#2E2E2E;--color-ochre:#D49A30;--color-fill:#1A1A1A;}}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--color-white);color:var(--color-ink);font-family:'Inter',-apple-system,'Helvetica Neue',sans-serif;padding:24px;}
+#chart{width:100%;min-height:520px;}
+.tooltip{position:absolute;pointer-events:none;opacity:0;background:var(--color-ink);color:var(--color-white);padding:6px 10px;font-size:12px;max-width:240px;}
+.title{font-family:'EB Garamond','Garamond',Georgia,serif;font-size:16px;fill:var(--color-ink);}
+.subtitle{font-family:'Inter',sans-serif;font-size:12px;fill:var(--color-secondary);}
+.panel-title{font-family:'Inter',sans-serif;font-size:13px;font-weight:600;}
+.axis-tick{font-family:'JetBrains Mono','Fira Code','Courier New',monospace;font-size:11px;fill:var(--color-secondary);}
+.axis-label{font-family:'Inter',sans-serif;font-size:11px;fill:var(--color-secondary);}
+.note{font-family:'EB Garamond','Garamond',Georgia,serif;font-size:11px;fill:var(--color-secondary);font-style:italic;}
+.note-red{font-family:'EB Garamond','Garamond',Georgia,serif;font-size:11px;fill:var(--color-red);font-style:italic;}
+.tag-detect{font-family:'JetBrains Mono','Fira Code','Courier New',monospace;font-size:10px;fill:var(--color-red);}
+.tag-broken{font-family:'JetBrains Mono','Fira Code','Courier New',monospace;font-size:10px;fill:var(--color-white);}
+@media (prefers-reduced-motion: reduce){*{transition:none !important;animation:none !important;}}
+</style>
+</head>
+<body>
+<div id="chart" role="main"></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+<script>
+const STEPS_X = [1, 2, 3, 4, 5, 6, 7];
+const STEPS_Y = [10, 22, 33, 46, 58, 70, 80];
+
+const tooltip = d3.select('body').append('div').attr('class','tooltip');
+
+function panel(svg, xOff, yOff, w, h, isCollapse){
+  const innerL = 56, innerB = 30, innerR = 16, innerT = 28;
+  const plotW = w - innerL - innerR, plotH = h - innerT - innerB;
+
+  const g = svg.append('g').attr('transform', `translate(${xOff},${yOff})`);
+  g.append('rect').attr('x', innerL).attr('y', innerT).attr('width', plotW).attr('height', plotH)
+    .attr('fill','var(--color-fill)').attr('stroke','var(--color-border)').attr('stroke-width', 0.75);
+  // Axes
+  g.append('line').attr('x1', innerL).attr('y1', innerT).attr('x2', innerL).attr('y2', innerT + plotH)
+    .attr('stroke','var(--color-ink)').attr('stroke-width', 1);
+  g.append('line').attr('x1', innerL).attr('y1', innerT + plotH).attr('x2', innerL + plotW).attr('y2', innerT + plotH)
+    .attr('stroke','var(--color-ink)').attr('stroke-width', 1);
+
+  // Y ticks 0, 100
+  g.append('text').attr('class','axis-tick').attr('x', innerL - 6).attr('y', innerT + plotH + 4)
+    .attr('text-anchor','end').text('0');
+  g.append('text').attr('class','axis-tick').attr('x', innerL - 6).attr('y', innerT + 8)
+    .attr('text-anchor','end').text('100');
+
+  // Labels
+  g.append('text').attr('class','axis-label')
+    .attr('transform', `translate(${innerL - 32},${innerT + plotH/2}) rotate(-90)`)
+    .attr('text-anchor','middle').text('bond strength');
+  g.append('text').attr('class','axis-label')
+    .attr('x', innerL + plotW/2).attr('y', innerT + plotH + 22)
+    .attr('text-anchor','middle').text('interactions over time');
+
+  // Scales
+  const xScaleLinear = d3.scaleLinear().domain([0, 8]).range([innerL, innerL + plotW]);
+  const yScaleLinear = d3.scaleLinear().domain([0, 100]).range([innerT + plotH, innerT]);
+
+  // Build step path
+  const pts = [];
+  pts.push([xScaleLinear(0), yScaleLinear(0)]);
+  STEPS_X.forEach((xv, i) => {
+    pts.push([xScaleLinear(xv), yScaleLinear(STEPS_Y[i-1] || 0)]);
+    pts.push([xScaleLinear(xv), yScaleLinear(STEPS_Y[i])]);
+  });
+  pts.push([xScaleLinear(8), yScaleLinear(STEPS_Y[STEPS_Y.length - 1])]);
+
+  const colorMain = isCollapse ? 'var(--color-red)' : 'var(--color-secondary)';
+  const opacityMain = isCollapse ? 0.5 : 1;
+  g.append('polyline')
+    .attr('points', pts.map(p => p.join(',')).join(' '))
+    .attr('fill','none').attr('stroke', colorMain).attr('stroke-width', 2).attr('opacity', opacityMain);
+
+  // Step dots
+  STEPS_X.forEach((xv, i) => {
+    g.append('circle')
+      .attr('cx', xScaleLinear(xv)).attr('cy', yScaleLinear(STEPS_Y[i]))
+      .attr('r', 3.5).attr('fill', colorMain).attr('opacity', opacityMain)
+      .attr('tabindex',0).attr('aria-label', `interaction ${xv}, bond ${STEPS_Y[i]}`)
+      .on('mouseover',(event)=>{tooltip.html(`<strong>interaction ${xv}</strong><br>bond strength: ${STEPS_Y[i]}`).style('opacity',1).style('left',(event.pageX+12)+'px').style('top',(event.pageY-28)+'px');})
+      .on('mousemove',(event)=>tooltip.style('left',(event.pageX+12)+'px').style('top',(event.pageY-28)+'px'))
+      .on('mouseout',()=>tooltip.style('opacity',0));
+  });
+
+  if (isCollapse) {
+    // Detection marker (solid red)
+    const lastX = xScaleLinear(7), lastY = yScaleLinear(80);
+    g.append('circle').attr('cx', lastX).attr('cy', lastY).attr('r', 6).attr('fill','var(--color-red)');
+    g.append('text').attr('class','tag-detect').attr('x', lastX).attr('y', lastY - 12)
+      .attr('text-anchor','middle').text('automation detected');
+
+    // Vertical drop arrow
+    g.append('defs').append('marker').attr('id','arrR').attr('markerWidth',8).attr('markerHeight',6)
+      .attr('refX',7).attr('refY',3).attr('orient','auto')
+      .append('polygon').attr('points','0 0, 8 3, 0 6').attr('fill','var(--color-red)');
+    g.append('line').attr('x1', lastX).attr('y1', lastY + 6).attr('x2', lastX).attr('y2', yScaleLinear(0) - 2)
+      .attr('stroke','var(--color-red)').attr('stroke-width', 2).attr('marker-end','url(#arrR)');
+
+    // Retroactive sweep
+    g.append('defs').append('marker').attr('id','arrSweep').attr('markerWidth',8).attr('markerHeight',6)
+      .attr('refX',7).attr('refY',3).attr('orient','auto')
+      .append('polygon').attr('points','0 0, 8 3, 0 6').attr('fill','var(--color-red)');
+    g.append('line').attr('x1', lastX - 8).attr('y1', innerT + 32).attr('x2', innerL + 8).attr('y2', innerT + 32)
+      .attr('stroke','var(--color-red)').attr('stroke-width', 1.25).attr('stroke-dasharray','4 3').attr('marker-end','url(#arrSweep)');
+    g.append('text').attr('class','note-red')
+      .attr('x', innerL + plotW/2).attr('y', innerT + 26).attr('text-anchor','middle')
+      .text('whole history reinterpreted');
+
+    // Non-recoverable tag below plot
+    const tagW = 180, tagH = 22;
+    g.append('rect').attr('x', innerL + plotW/2 - tagW/2).attr('y', innerT + plotH + 32)
+      .attr('width', tagW).attr('height', tagH).attr('fill','var(--color-red)');
+    g.append('text').attr('class','tag-broken').attr('x', innerL + plotW/2).attr('y', innerT + plotH + 47)
+      .attr('text-anchor','middle').text('NON-RECOVERABLE');
+  } else {
+    g.append('text').attr('class','note')
+      .attr('x', innerL + plotW/2).attr('y', innerT + plotH + 50).attr('text-anchor','middle')
+      .text('each step = perceived choice by a human');
+  }
+}
+
+function draw(){
+  const container = document.getElementById('chart');
+  d3.select(container).selectAll('*').remove();
+  const W = container.clientWidth || 900;
+  const H = 540;
+  const svg = d3.select(container).append('svg')
+    .attr('viewBox', `0 0 ${W} ${H}`).attr('role','img').attr('aria-labelledby','t d');
+  svg.append('title').attr('id','t').text('Parasocial bond accumulation and retroactive collapse');
+  svg.append('desc').attr('id','d').text('Left panel: linear accumulation of bond strength. Right panel: same accumulation, then automation detection causes vertical drop to zero and retroactive reinterpretation of the whole history.');
+
+  svg.append('text').attr('class','title').attr('x', 24).attr('y', 32)
+    .text('Bonds accumulate slowly. Detection reinterprets the whole history at once.');
+  svg.append('text').attr('class','subtitle').attr('x', 24).attr('y', 52)
+    .text('The parasocial mechanism Horton and Wohl named in 1956, applied to automated reply.');
+
+  // Panel titles
+  const panelW = (W - 80) / 2;
+  svg.append('text').attr('class','panel-title').attr('x', 24 + panelW/2).attr('y', 88)
+    .attr('text-anchor','middle').attr('fill','var(--color-ink)')
+    .text('Bond accumulates through perceived choice');
+  svg.append('text').attr('class','panel-title').attr('x', W - 24 - panelW/2).attr('y', 88)
+    .attr('text-anchor','middle').attr('fill','var(--color-red)')
+    .text('Detection collapses the entire history at once');
+
+  panel(svg, 24, 100, panelW, 360, false);
+  // vs divider
+  svg.append('text').attr('x', W/2).attr('y', 280).attr('text-anchor','middle')
+    .attr('font-family',"'EB Garamond', Georgia, serif").attr('font-size', 14).attr('fill','var(--color-ink)')
+    .text('vs');
+  panel(svg, W - 24 - panelW, 100, panelW, 360, true);
+
+  svg.append('text').attr('x', W/2).attr('y', H - 16).attr('text-anchor','middle')
+    .attr('font-family',"'EB Garamond', Georgia, serif").attr('font-size', 12)
+    .attr('font-style','italic').attr('fill','var(--color-red)')
+    .text("You don't lose one interaction. You lose the capital of all of them.");
+}
+
+draw();
+new ResizeObserver(draw).observe(document.getElementById('chart'));
+</script>
+</body>
+</html>

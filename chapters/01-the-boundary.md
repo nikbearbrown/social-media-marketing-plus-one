@@ -14,6 +14,10 @@ Now hold a different case in your other hand. A solo social media manager at a m
 
 These two failures are different in every surface detail. They share a single underlying structure: neither party drew an explicit boundary between what the machine should do and what currently requires a human. One drew the line too far into human territory and handed the model work it wasn't equipped to carry. The other drew the line too far the other way — or drew no line at all — and burned irreplaceable hours on mechanical tasks. Both failures were expensive. Both were entirely avoidable.
 
+![Two-axis diagram. Horizontal axis pattern-shaped to judgment-shaped; vertical axis AI not used to AI used. Top-right is over-delegation (Sports Illustrated, CNET). Bottom-left is under-delegation (the solo manager). The other two quadrants are correctly placed.](../images/01-the-boundary-fig-01.png)
+
+*Figure 1.1 — The boundary quadrant: both error modes occupy the same two-axis space.*
+
 <!-- → [INFOGRAPHIC: two-axis diagram — x-axis: pattern-shaped to judgment-shaped; y-axis: AI used to AI not used; four quadrants labeled: Over-delegation (top-left), Correct (top-right), Correct (bottom-right), Under-delegation (bottom-left)] -->
 
 ---
@@ -30,7 +34,23 @@ The word "currently" is doing real work in that sentence and I want to be honest
 
 What doesn't change is the practice of drawing the line deliberately. The practitioner who asks, every year, *where does the line sit now, and am I on the right side of it?* will make fewer expensive mistakes than the one who inherited their habits from 2022 and never revisited them. The line moves. The discipline of drawing it doesn't.
 
+| Delegate (pattern-shaped) — current 2026 candidates | Guard (currently requires a human) — current 2026 candidates |
+|---|---|
+| First-draft captions from an approved brief | Brand voice decisions for new product launches |
+| Twenty rephrasings of an approved message for A/B testing | Response to a named customer in a public escalation |
+| Post scheduling and reposting cadence | Crisis posting and reactive statements |
+| Hashtag and tag research for a campaign theme | Thought-leadership posts under a named-executive byline |
+| Cross-platform analytics summarization | Tonal calls on whether a post should ship today |
+| Comment-classification by type | Whether to comment on a cultural moment at all |
+| Alt-text drafts for image carousels | Final sign-off on anything with regulatory exposure |
+
+*Figure 1.2 — A 2026 snapshot. Items can migrate from Guard toward Delegate as capability matures; the "currently" caveat is doing real work.*
+
 <!-- → [TABLE: Delegate vs. Guard — two columns, listing current 2026 candidates for each; note "currently requires" framing in header] -->
+
+![A two-column comparison panel. Left column holds four Delegate (pattern-shaped) example task tiles. Right column holds four Guard (judgment-shaped) example task tiles. A bottom arrow with a dashed middle segment shows items migrating from Guard toward Delegate over time.](../images/01-the-boundary-fig-02.png)
+
+*Figure 1.3 — The Delegate / Guard contrast at a glance, with a time arrow underneath: items migrate as capability matures.*
 
 ---
 
@@ -53,6 +73,10 @@ Relationship is less obvious but equally important. Brand-audience trust is not 
 Context is the hardest to specify, which is why it is the hardest to delegate. What your audience can absorb today depends on what they've been through this week, what they know about your company, what they've seen from your competitors, and what they've been told by people they trust. None of this is in the model's training data. Some of it is not even in your head in an articulable form — it is the kind of knowing that comes from being in the field and paying attention. The +1 is that knowing, deployed at the moment of publication.
 
 A useful diagnostic: imagine the post going wrong. Imagine a journalist, a regulator, or an angry customer asking who decided to publish this. The answer cannot be "the model." If you cannot answer with a human's name and the reasoning behind the decision, the +1 is missing. This is not a rhetorical test — it is the literal situation you will face when the post goes wrong, and posts do go wrong.
+
+![A horizontal pipeline diagram. An AI output tile on the left flows into a central hexagonal human decision node. Three ochre input arrows feed the node from above and below labeled accountability, relationship, and context. A single arrow exits to the publish tile on the right.](../images/01-the-boundary-fig-03.png)
+
+*Figure 1.4 — The +1 decision node: AI output passes through a human gate that brings accountability, relationship, and context before publish.*
 
 <!-- → [IMAGE: simple diagram — AI output flowing into a human decision node labeled "accountability / relationship / context" before reaching "publish"] -->
 
@@ -85,3 +109,19 @@ The chapter claims that "brand voice calibration" currently requires a human bec
 **Exercise 4 — Draft or audit a professional deliverable**
 
 Using the audit results from Exercise 1, produce a one-page AI Use Policy for your team or project. The policy should specify: which tasks are currently on the Delegate List, which are on the Guard List, what the human-in-the-loop requirement is for judgment-shaped tasks, and when the policy will be reviewed and by whom. Draft a first version using a language model, then audit it against what you actually decided in Exercises 1–3. Mark every place where the model's policy draft differs from what you'd actually stand behind.
+
+---
+
+## Prompts
+
+### Figure 1.1 — The Boundary Quadrant
+
+Build a 2×2 categorical quadrant chart in D3 v7. Horizontal axis runs left (pattern-shaped) to right (judgment-shaped); vertical axis runs bottom (AI not used) to top (AI used). Tint the two correct quadrants (top-left, bottom-right) with the secondary color at 15% opacity, the over-delegation quadrant (top-right) with the red accent at 15% opacity, and the under-delegation quadrant (bottom-left) with ochre at 18% opacity. Plot three case-marker dots: two red dots inside top-right labeled "Sports Illustrated" and "CNET"; one ochre dot inside bottom-left labeled "solo manager — 46 lost days / yr". Use 1pt ink axis lines with arrowheads. Place quadrant labels at the top of each cell ("Correctly delegated", "Over-delegation", "Under-delegation", "Correctly retained"). Add a one-line italic subtitle: "The line moves. The discipline of drawing it doesn't." Deliver as a standalone responsive HTML file with ResizeObserver, prefers-reduced-motion guard, role="img" and aria-labelledby on the SVG root.
+
+### Figure 1.3 — Delegate vs Guard at a Glance
+
+Build a two-column comparison panel in D3 v7. Left column header band fills with secondary gray; right column header band fills with the red accent. Inside the left column stack four delegate task tiles (secondary fill at 18% opacity, secondary border): caption drafting, scheduling, hashtag research, weekly analytics summary. Inside the right column stack four guard task tiles (red fill at 15% opacity, red border): brand voice for new launches, crisis posting, named-byline content, public escalation responses. Draw a single 1.5pt vertical ink divider down the center. Below both columns, draw a horizontal time arrow that begins with a solid ink segment on the left, transitions to a dashed secondary segment in the middle, and ends with a solid ink segment terminating in an arrowhead on the right. Annotate "t = today" and "t = later" at the arrow endpoints. Add an italic subtitle: "Currently requires a human — and 'currently' is doing real work." Deliver as a standalone responsive HTML file.
+
+### Figure 1.4 — The +1 Decision Node
+
+Build a horizontal flow diagram in D3 v7. Left: an "AI output" tile (gray fill at 25% opacity). A 1pt ink arrow runs rightward into a central hexagon labeled "+1 / human gate" (white fill, ink stroke). Three ochre 1pt input arrows feed the hexagon — one entering vertically from above (accountability), one entering from the lower-left (relationship), one entering from the lower-right (context). Each input arrow terminates in a small ochre dot on the hexagon perimeter. A single 1.5pt ink arrow exits the hexagon to the right, terminating in a "publish" tile (red fill at 15% opacity, red border). Add an italic ink subtitle below the diagram: "Who decided to publish this? The answer cannot be 'the model.'" Deliver as a standalone responsive HTML file with ResizeObserver and accessibility attributes.

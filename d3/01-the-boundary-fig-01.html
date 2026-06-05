@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<!--
+  The Boundary Quadrant — Pattern vs Judgment × AI Use
+  Book: Social Media Marketing plus One · Chapter: 01-the-boundary · Figure: 01
+  Type: quadrant · Generated: 2026-05-27 · Source: chapters/01-the-boundary.md
+-->
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>The Boundary Quadrant</title>
+<style>
+:root{--color-white:#FFFFFF;--color-ink:#2a1a0e;--color-red:#C8102E;--color-secondary:#545454;--color-border:#D4D4D4;--color-ochre:#C8860E;--color-fill:#F5F5F5;}
+@media (prefers-color-scheme: dark){:root{--color-white:#111111;--color-ink:#F0EBE3;--color-red:#E8243A;--color-secondary:#A0978C;--color-border:#2E2E2E;--color-ochre:#D49A30;--color-fill:#1A1A1A;}}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--color-white);color:var(--color-ink);font-family:'Inter',-apple-system,'Helvetica Neue',sans-serif;padding:24px;}
+#chart{width:100%;min-height:480px;}
+.tooltip{position:absolute;pointer-events:none;opacity:0;background:var(--color-ink);color:var(--color-white);padding:6px 10px;font-size:12px;transition:opacity 150ms;}
+.title{font-family:'EB Garamond','Garamond',Georgia,serif;font-size:16px;fill:var(--color-ink);}
+.subtitle{font-family:'Inter',sans-serif;font-size:12px;fill:var(--color-secondary);}
+.axis-tick{font-family:'JetBrains Mono','Fira Code','Courier New',monospace;font-size:11px;fill:var(--color-secondary);}
+.axis-label{font-family:'Inter',sans-serif;font-size:11px;fill:var(--color-secondary);}
+.quadrant-label{font-family:'Inter',sans-serif;font-size:12px;font-weight:600;}
+.quadrant-sub{font-family:'Inter',sans-serif;font-size:10px;fill:var(--color-secondary);}
+.case-label{font-family:'JetBrains Mono','Fira Code','Courier New',monospace;font-size:9px;}
+.tag-italic{font-family:'EB Garamond',Georgia,serif;font-size:11px;font-style:italic;fill:var(--color-red);}
+@media (prefers-reduced-motion: reduce){*{transition:none !important;animation:none !important;}}
+</style></head><body>
+<div id="chart" role="main"></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+<script>
+const QUADRANTS=[
+  {id:'tl',label:'Correctly delegated',sub:'pattern work to the model',fill:'var(--color-secondary)',opacity:0.15,labelColor:'var(--color-ink)'},
+  {id:'tr',label:'Over-delegation',sub:'judgment handed to the model',fill:'var(--color-red)',opacity:0.15,labelColor:'var(--color-red)'},
+  {id:'bl',label:'Under-delegation',sub:'pattern work by hand',fill:'var(--color-ochre)',opacity:0.18,labelColor:'var(--color-ochre)'},
+  {id:'br',label:'Correctly retained',sub:'judgment with the human',fill:'var(--color-secondary)',opacity:0.15,labelColor:'var(--color-ink)'}
+];
+const CASES=[
+  {q:'tr',label:'Sports Illustrated',dx:-30,dy:-15,color:'var(--color-red)'},
+  {q:'tr',label:'CNET',dx:-30,dy:15,color:'var(--color-red)'},
+  {q:'bl',label:'solo manager — 46 lost days / yr',dx:-50,dy:30,color:'var(--color-ochre)'}
+];
+const tooltip=d3.select('body').append('div').attr('class','tooltip').style('position','absolute').style('opacity',0);
+function showTooltip(event,html){tooltip.html(html).style('left',(event.pageX+12)+'px').style('top',(event.pageY-28)+'px').transition().duration(150).style('opacity',1);}
+function moveTooltip(event){tooltip.style('left',(event.pageX+12)+'px').style('top',(event.pageY-28)+'px');}
+function hideTooltip(){tooltip.transition().duration(100).style('opacity',0);}
+function draw(){
+  const container=document.getElementById('chart');
+  d3.select(container).selectAll('*').remove();
+  const W=container.clientWidth||800,H=Math.max(480,W*0.6);
+  const margin={top:80,right:40,bottom:80,left:90};
+  const cw=W-margin.left-margin.right,ch=H-margin.top-margin.bottom;
+  const svg=d3.select(container).append('svg').attr('viewBox',`0 0 ${W} ${H}`).attr('role','img').attr('aria-labelledby','t d');
+  svg.append('title').attr('id','t').text('The Boundary Quadrant');
+  svg.append('desc').attr('id','d').text('Two-axis quadrant: horizontal pattern-shaped to judgment-shaped, vertical AI not used to AI used. Top-right is over-delegation (Sports Illustrated, CNET); bottom-left is under-delegation (the solo manager).');
+  svg.append('text').attr('class','title').attr('x',32).attr('y',32).text('The Boundary Quadrant — Where the Line Sits Decides the Cost');
+  svg.append('text').attr('class','subtitle').attr('x',32).attr('y',52).text('Both over-delegation and under-delegation are expensive. Two correct quadrants. Two failure quadrants.');
+  const g=svg.append('g').attr('transform',`translate(${margin.left},${margin.top})`);
+  const mx=cw/2,my=ch/2;
+  const positions={tl:{x:0,y:0,w:mx,h:my},tr:{x:mx,y:0,w:mx,h:my},bl:{x:0,y:my,w:mx,h:my},br:{x:mx,y:my,w:mx,h:my}};
+  g.selectAll('.quadrant').data(QUADRANTS).join('rect').attr('class','quadrant')
+    .attr('x',d=>positions[d.id].x).attr('y',d=>positions[d.id].y)
+    .attr('width',d=>positions[d.id].w).attr('height',d=>positions[d.id].h)
+    .attr('fill',d=>d.fill).attr('opacity',d=>d.opacity)
+    .attr('tabindex',0)
+    .attr('aria-label',d=>`${d.label}: ${d.sub}`)
+    .on('mouseover',(event,d)=>showTooltip(event,`<strong>${d.label}</strong><br>${d.sub}`))
+    .on('mousemove',moveTooltip).on('mouseout',hideTooltip);
+  // axes
+  g.append('line').attr('x1',0).attr('y1',ch).attr('x2',cw).attr('y2',ch).attr('stroke','var(--color-ink)').attr('stroke-width',1).attr('aria-hidden','true');
+  g.append('line').attr('x1',0).attr('y1',0).attr('x2',0).attr('y2',ch).attr('stroke','var(--color-ink)').attr('stroke-width',1).attr('aria-hidden','true');
+  g.append('line').attr('x1',mx).attr('y1',0).attr('x2',mx).attr('y2',ch).attr('stroke','var(--color-ink)').attr('stroke-width',0.75).attr('aria-hidden','true');
+  g.append('line').attr('x1',0).attr('y1',my).attr('x2',cw).attr('y2',my).attr('stroke','var(--color-ink)').attr('stroke-width',0.75).attr('aria-hidden','true');
+  g.append('polygon').attr('points',`${cw},${ch} ${cw-7},${ch-3} ${cw-7},${ch+3}`).attr('fill','var(--color-ink)').attr('aria-hidden','true');
+  g.append('polygon').attr('points',`0,0 -3,6 3,6`).attr('fill','var(--color-ink)').attr('aria-hidden','true');
+  // axis labels
+  g.append('text').attr('class','axis-label').attr('x',cw/2).attr('y',ch+28).attr('text-anchor','middle').text('pattern-shaped     ←     task character     →     judgment-shaped');
+  g.append('text').attr('class','axis-label').attr('text-anchor','middle').attr('transform',`translate(-44,${ch/2}) rotate(-90)`).text('AI not used    ←    use of model    →    AI used');
+  // quadrant labels
+  QUADRANTS.forEach(q=>{
+    const p=positions[q.id];
+    g.append('text').attr('class','quadrant-label').attr('x',p.x+p.w/2).attr('y',p.y+24).attr('text-anchor','middle').attr('fill',q.labelColor).text(q.label);
+    g.append('text').attr('class','quadrant-sub').attr('x',p.x+p.w/2).attr('y',p.y+40).attr('text-anchor','middle').text(q.sub);
+  });
+  // case markers
+  CASES.forEach(c=>{
+    const p=positions[c.q];
+    const cx=p.x+p.w/2+c.dx,cy=p.y+p.h/2+c.dy;
+    g.append('circle').attr('cx',cx).attr('cy',cy).attr('r',5).attr('fill',c.color)
+      .attr('tabindex',0).attr('aria-label',c.label)
+      .on('mouseover',(event)=>showTooltip(event,`<strong>${c.label}</strong>`)).on('mousemove',moveTooltip).on('mouseout',hideTooltip);
+    g.append('text').attr('class','case-label').attr('x',cx+9).attr('y',cy+4).attr('fill',c.color).text(c.label);
+  });
+  // italic tag
+  svg.append('text').attr('class','tag-italic').attr('x',W/2).attr('y',H-16).attr('text-anchor','middle').text('The line moves. The discipline of drawing it doesn\'t.');
+}
+draw();
+new ResizeObserver(draw).observe(document.getElementById('chart'));
+</script></body></html>

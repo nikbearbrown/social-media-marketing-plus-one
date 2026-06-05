@@ -1,0 +1,71 @@
+<!--
+  Binet-Field 60/40 — brand-building vs activation
+  Book: Social Media Marketing plus One
+  Chapter: 06-paid-social-and-ad-creative
+  Figure: 03
+  Type: BAR
+  Generated: 2026-05-27
+  Source: pantry/06-paid-social-and-ad-creative-cajal.md
+-->
+<svg viewBox="0 0 700 480" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="fig-title-03 fig-desc-03">
+  <title id="fig-title-03">Binet-Field 60/40 — brand-building vs activation</title>
+  <desc id="fig-desc-03">Two stacked horizontal bars contrast Binet and Field's 60/40 brand-vs-activation finding with the AI-optimized default that inverts the ratio. Brand-building shown in red, activation in gray. A dashed reference line marks the 60% threshold the inverted bar fails.</desc>
+  <metadata><cajal:figure xmlns:cajal="https://bearbrown.ai/cajal/1.0" book="Social Media Marketing plus One" book-slug="social-media-marketing-plus-one" chapter="06-paid-social-and-ad-creative" figure-number="03" figure-title="Binet-Field 60/40 — brand-building vs activation" figure-slug="binet-field-60-40-allocation" figure-type="BAR" priority="Critical" author="Nik Bear Brown Milivoje Davidovic" date-generated="2026-05-27" source-file="pantry/06-paid-social-and-ad-creative-cajal.md"/></metadata>
+  <defs><marker id="arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#2a1a0e"/></marker></defs>
+  <rect x="0" y="0" width="700" height="480" fill="#FFFFFF"/>
+  <text x="32" y="36" font-family="'EB Garamond', 'Garamond', Georgia, serif" font-size="14" fill="#2a1a0e">Binet-Field 60/40 — the allocation AI optimization quietly inverts</text>
+  <text x="32" y="56" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="11" fill="#545454">IPA effectiveness data (2013, 2017): 60% brand-building over time produces compounding returns; AI optimizes the 40%.</text>
+
+  <!-- Axis baseline labels -->
+  <text x="120" y="106" font-family="'Inter', sans-serif" font-size="12" font-weight="700" fill="#2a1a0e">Healthy brand allocation</text>
+  <text x="120" y="122" font-family="'Inter', sans-serif" font-size="10.5" fill="#545454">Binet &amp; Field recommendation</text>
+
+  <text x="120" y="232" font-family="'Inter', sans-serif" font-size="12" font-weight="700" fill="#2a1a0e">AI-optimized default</text>
+  <text x="120" y="248" font-family="'Inter', sans-serif" font-size="10.5" fill="#545454">platform-bidding equilibrium with no upstream brand brief</text>
+
+  <!-- Plot region scale: bar starts x=120, full width 480, ends x=600 -->
+  <!-- 60% mark at x = 120 + 0.6 * 480 = 408 -->
+
+  <!-- Bar 1: Healthy brand (60% brand red / 40% activation gray) -->
+  <rect x="120" y="132" width="288" height="60" fill="#C8102E" stroke="#2a1a0e" stroke-width="0.75"/>
+  <rect x="408" y="132" width="192" height="60" fill="#787878" stroke="#2a1a0e" stroke-width="0.75"/>
+  <text x="264" y="167" text-anchor="middle" font-family="'Inter', sans-serif" font-size="12" font-weight="700" fill="#FFFFFF">60% Brand-building</text>
+  <text x="264" y="183" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10" fill="#FFFFFF">long-term · compounding</text>
+  <text x="504" y="167" text-anchor="middle" font-family="'Inter', sans-serif" font-size="12" font-weight="700" fill="#FFFFFF">40% Activation</text>
+  <text x="504" y="183" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10" fill="#FFFFFF">short-term · direct response</text>
+
+  <!-- Bar 2: AI-optimized default (20% brand red / 80% activation gray) -->
+  <rect x="120" y="258" width="96" height="60" fill="#C8102E" stroke="#2a1a0e" stroke-width="0.75"/>
+  <rect x="216" y="258" width="384" height="60" fill="#787878" stroke="#2a1a0e" stroke-width="0.75"/>
+  <text x="168" y="293" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" font-weight="700" fill="#FFFFFF">20%</text>
+  <text x="408" y="293" text-anchor="middle" font-family="'Inter', sans-serif" font-size="12" font-weight="700" fill="#FFFFFF">80% Activation</text>
+  <text x="408" y="309" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10" fill="#FFFFFF">platform-default optimization toward measurable conversions</text>
+
+  <!-- 60% reference dashed line crossing bar 2 -->
+  <line x1="408" y1="252" x2="408" y2="324" stroke="#2a1a0e" stroke-width="1" stroke-dasharray="4 3"/>
+  <text x="412" y="252" font-family="'JetBrains Mono', monospace" font-size="10" fill="#2a1a0e">60% threshold</text>
+
+  <!-- Gap arrow showing the inversion drift -->
+  <path d="M 264 200 C 264 218, 168 240, 168 252" fill="none" stroke="#C8860E" stroke-width="1" marker-end="url(#arrow)"/>
+  <text x="220" y="232" font-family="'EB Garamond', Georgia, serif" font-style="italic" font-size="12" fill="#C8860E">drift under default</text>
+  <text x="220" y="246" font-family="'EB Garamond', Georgia, serif" font-style="italic" font-size="12" fill="#C8860E">platform behavior</text>
+
+  <!-- Lower panel: what AI does well in each half -->
+  <text x="32" y="370" font-family="'EB Garamond', Georgia, serif" font-size="13" fill="#2a1a0e">Where AI is actually competent</text>
+  <line x1="32" y1="378" x2="668" y2="378" stroke="#D4D4D4" stroke-width="0.75"/>
+
+  <rect x="120" y="392" width="288" height="22" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="0.75"/>
+  <text x="264" y="408" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" fill="#545454">brand half: AI weak — concept, point-of-view, memory</text>
+
+  <rect x="408" y="392" width="192" height="22" fill="#2a1a0e"/>
+  <text x="504" y="408" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" fill="#FFFFFF">activation half: AI strong</text>
+
+  <!-- Legend -->
+  <g transform="translate(32,438)">
+    <rect x="0" y="0" width="14" height="12" fill="#C8102E"/>
+    <text x="20" y="10" font-family="'Inter', sans-serif" font-size="11" fill="#2a1a0e">Brand-building (Guard zone)</text>
+    <rect x="220" y="0" width="14" height="12" fill="#787878"/>
+    <text x="240" y="10" font-family="'Inter', sans-serif" font-size="11" fill="#2a1a0e">Activation (Delegate zone)</text>
+  </g>
+  <text x="32" y="468" font-family="'Inter', sans-serif" font-size="10" fill="#545454">Binet &amp; Field 2013, IPA &amp; Marketing Week · Field 2019, Crisis in Creative Effectiveness</text>
+</svg>

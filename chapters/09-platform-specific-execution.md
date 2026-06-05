@@ -28,6 +28,10 @@ The second layer is fit. Whether the pacing of this cut reads as native to the p
 
 The mistake is treating the first layer as a proxy for the second. Format compliance is necessary but not sufficient. A post can be perfectly cropped and captioned to spec and still read as cross-posted because the voice is wrong, the pacing is wrong, or the hook is wrong for the first three seconds on a recommendation-first platform.
 
+![Two-tier diagram. Top tier — Layer 1 Format — shows six pattern-shaped tasks (aspect ratio, length, caption length, hashtags, thumbnail, scheduling) marked Delegate. Bottom tier — Layer 2 Fit — shows six judgment-shaped tasks (voice, pacing, hook selection, trend timing, community norms, comment policy) marked Guard. A curved arrow on the right shows the Lattice failure: treating Layer 1 compliance as if it solved Layer 2.](../images/09-platform-specific-execution-fig-01.png)
+
+*Figure 9.1 — Two-layer execution: format is delegable, fit is not. The failure mode is reading Layer 1 compliance as Layer 2 solved.*
+
 <!-- → [INFOGRAPHIC: Two-layer diagram for platform execution — Layer 1 (Format): aspect ratio, length, caption length, hashtags, scheduling — labeled Delegate; Layer 2 (Fit): voice, pacing, hook selection, trend timing, community norms — labeled Guard — with an arrow showing the Lattice failure as treating Layer 2 as solved by Layer 1] -->
 
 ---
@@ -44,6 +48,18 @@ LinkedIn is follower-first with what the platform calls knowledge-graph extensio
 
 X is follower-first with limited recommendation. The For You feed exists, but the open-source ranking release in March 2023 documented the factors at the time; subsequent changes under post-2022 ownership have materially shifted the platform's dynamics. [*Verify current state.*] What the platform rewards is short, opinionated text — the reply as content model the Wendy's account established in 2017 — though the platform's trajectory makes confident present-tense claims unreliable here.
 
+| Axis | TikTok | Instagram (Reels) | LinkedIn | X |
+|---|---|---|---|---|
+| Distribution model | Recommendation-first | Mixed (Reels rec, Feed follower) | Follower-first + knowledge-graph | Follower-first + limited For You |
+| First-class format | Short vertical video | Short vertical video (Reels) | Long-form text + document carousel | Short opinionated text |
+| Optimal length | 15–60s; hook in first 3s | 15–90s; share-bait close | 1,300–2,000 chars; carousel 6–10 cards | 1–4 short replies; thread of 5–10 |
+| Dominant voice | In-on-the-joke, low-production | Trend-fluent, polished but native | Analytical, named individual | Opinionated, terse, reply-as-content |
+| Engagement signal that compounds | Completion rate | Shares per reach | Comment depth + dwell | Reply velocity + quote-posts |
+| AI good at | Re-crop, caption variants, hook A/B | Re-crop, cover art, alt-text | Carousel layout, first-draft long-form | Length-fit variants, hashtag stripping |
+| AI bad at | Reading current trend half-life | Knowing which sound is already stale | Sounding like a named human | Tone-calibration to community-of-the-week |
+
+*Table 9.1 — Four-axis platform comparison. Snapshot as of late 2025; verify before campaign launch.*
+
 <!-- → [TABLE: Four-axis platform comparison — TikTok / Instagram / LinkedIn / X — rows: Distribution model / First-class format / Optimal length / Dominant voice / Engagement signal that compounds / AI good at / AI bad at] -->
 
 YouTube sits alongside as a fifth system in which Shorts and long-form are substantially different. Shorts are recommendation-first and functionally a direct competitor to TikTok. Long-form rewards watch-time depth, not just completion, and the content conventions are different enough that treating them as one platform is a mistake. Pinterest, Reddit, Threads, and the international platforms — Xiaohongshu, Douyin, KakaoTalk, WeChat — each have genuine distribution power and meaningfully different conventions. This chapter does not give them the treatment they deserve; brands operating into APAC markets are in a different landscape than the table above represents, and the omission is a choice driven by space, not by importance.
@@ -54,6 +70,21 @@ YouTube sits alongside as a fifth system in which Shorts and long-form are subst
 
 The Delegate List in platform execution is wide and genuinely useful. AI reliably handles format adaptation: re-cropping, length cutting, caption-length variants, hashtag research, thumbnail and cover generation, hook A/B variants, optimal-time scheduling, alt-text drafting, cross-platform performance reporting, first-pass translation. These are hours of mechanical work per campaign cycle. The savings are real and worth taking.
 
+| Task | Why pattern-shaped | Recommended AI tool category | Time saved | Quality risk if skipped |
+|---|---|---|---|---|
+| Aspect-ratio adaptation | Deterministic crop/reframe rules | Auto-reframe in video editor (Premiere, Descript) | 30–60 min / cut | Low — visible but not load-bearing |
+| Length cutting (60s → 15s → 6s) | Pacing templates well-trained | Multimodal video model + editor | 1–2 hrs / asset | Low if hook re-checked by human |
+| Caption format adaptation | Length and hashtag conventions are stable | LLM with platform-spec prompt | 15 min / platform | Low — reads as cross-posted if skipped |
+| Hashtag research | Frequency and adjacency are pattern-shaped | Platform-native tagging + LLM scrub | 20–30 min / campaign | Low — affects discovery, not core reach |
+| Thumbnail / cover variants | Composition heuristics transferable | Image model + brand-locked template | 30 min / variant | Medium on YouTube; low elsewhere |
+| Hook A/B generation | Variant production is bulk-shaped | LLM with hook-pattern library | 20 min / set of 5 | Medium — but human picks the winner |
+| Scheduling against engagement data | Time-series optimization | Native scheduler (Buffer, Sprout, Later) | 30 min / week | Low — modest reach uplift |
+| Alt-text drafting | Description templates are stable | Vision-language model | 5 min / image | Low for reach; high for accessibility compliance |
+| Cross-platform performance reporting | Aggregation and templating | Analytics tool + LLM narration | 2–3 hrs / week | Low |
+| First-pass translation | Token-shaped task | LLM with glossary lock | 1 hr / language | Medium — human edit still required for idiom |
+
+*Table 9.2 — Delegate List for platform-specific execution. Mechanical work AI handles reliably; human review remains on hook selection and final caption voice.*
+
 <!-- → [TABLE: Delegate List for platform-specific execution — rows covering aspect-ratio adaptation, length cutting, caption format adaptation, hashtag research, thumbnail variants, hook A/B generation, scheduling, alt-text, performance reporting, translation — five columns: Task / Why pattern-shaped / Recommended AI tool category / Time saved / Quality risk if skipped] -->
 
 The Guard List is where the Lattice failure lived. Platform-mix strategy — which platforms the brand commits to and which it does not — is a decision AI surfaces data for and humans make. The default of being everywhere is almost always wrong; concentration on two or three platforms the team can genuinely produce for outperforms thin coverage, but the strategic call about which two or three is brand judgment.
@@ -61,6 +92,20 @@ The Guard List is where the Lattice failure lived. Platform-mix strategy — whi
 Voice per platform is Guard, and it is a more demanding version of Guard than it first appears. The Duolingo voice on TikTok — documented through Duolingo's published case studies and social-team interviews in *Adweek* and *Modern Retail* — is not a template AI can apply. It is a continuously refreshed reading of platform culture by specific humans watching the platform daily. The Ryanair voice on TikTok, built from 2022 forward around deliberate low-production-value and in-on-the-joke self-awareness, is the same kind of thing: a real-time calibration to what the platform's community currently rewards, not a style guide.
 
 Trend participation is Guard. AI flags what is trending. The judgment — is this trend rising, peaking, or stale; does it fit the brand; can the team produce in the trend's idiom credibly; will participation read as opportunistic — is human. Late participation in a stale trend reads as exactly what it is.
+
+| Task | Why judgment-shaped | What goes wrong if delegated | Required human role | Escalation trigger |
+|---|---|---|---|---|
+| Platform-mix strategy | Audience, capacity, brand-fit are local | "Be everywhere" — thin coverage, wasted spend | Brand owner + head of social | Adding or removing a platform |
+| Format choice per message | Format-content match is contextual | Source content built for wrong first-class format | Content lead | Campaign brief sign-off |
+| Voice and tone per platform | Community culture changes weekly | Reads as imported; AI-caption signature | Daily platform-watcher | New persona or platform launch |
+| Trend participation | Rising / peaking / stale is human read | Late participation reads as opportunistic | Daily platform-watcher | Any trending audio or hashtag pick-up |
+| Community-norm reading | Norms not in docs; sub-by-sub variance | Silent distribution penalty | Practitioner with daily platform exposure | First post on new sub / community |
+| Hook selection (rec-first platforms) | 3-second distribution decision | Post does not leave follower base | Content lead + creative review | Every recommendation-first publish |
+| Comment-engagement policy | Tone, escalation, brand-safety calls | Flat AI replies; tone-deaf in live moment | Community manager | Live cultural moment or category incident |
+| Refusal (no presence on a platform) | Absence is a brand decision | Bad presence is worse than no presence | CMO or equivalent | Annual planning + crisis review |
+| Platform-political reading | Geopolitics, ownership, policy shifts | Brand caught on the wrong side of a platform shift | Brand owner + legal | Ownership change, policy reversal, regulatory action |
+
+*Table 9.3 — Guard List for platform-specific execution. Daily judgment work that does not survive delegation; AI may surface inputs, humans decide.*
 
 <!-- → [TABLE: Guard List for platform-specific execution — rows covering platform-mix strategy, format choice per message, voice and tone per platform, trend participation, community-norm reading, hook selection, comment-engagement policy, refusal, platform-political reading — five columns: Task / Why judgment-shaped / What goes wrong if delegated / Required human role / Escalation trigger] -->
 
@@ -93,6 +138,10 @@ For YouTube: the full twelve-minute panel with a researcher-led ninety-second in
 For X: a thread from the researcher's personal account, not the brand account, with quoted clips, in a tone calibrated to the research community rather than to brand communications standards.
 
 Same source content. Different campaign — because the platform-mix decision was made explicitly, the voice work was treated as load-bearing rather than as a finishing pass, and two platforms were refused rather than producing content for them that wouldn't have worked.
+
+![Two-panel comparison. Left panel — Lattice original cross-post — a single 12-minute panel fans out via unguarded delegation to four platforms; TikTok, Reels, and X are tinted as underperforming, LinkedIn alone hits its benchmark. Right panel — corrected approach — the same source flows via delegate-with-review to three platforms (LinkedIn long-form, YouTube full panel, X research-account thread) while TikTok and Reels are shown as explicitly refused with crossed-out boxes.](../images/09-platform-specific-execution-fig-02.png)
+
+*Figure 9.2 — Lattice corrected. Same source content; the refusal of TikTok and Reels is documented and the capacity is redirected to platforms where the fit work pays.*
 
 <!-- → [INFOGRAPHIC: Side-by-side showing Lattice original approach (four platforms, cross-posted, AI-captions) vs. corrected approach (three platforms, explicit refusal of two, voice work per platform) — with outcome notes: sub-400 views on TikTok/Reels vs. not attempted; LinkedIn benchmark performance vs. 6-8x improvement] -->
 
@@ -187,3 +236,16 @@ Platform-specific execution in 2026 rewards practitioners who understand that AI
 **Silent distribution penalty.** Reduced reach, suppressed comments, or reduced share rate applied by a platform without being announced as a penalty. Often the consequence of community-norm violation. Observable in reach data; not documented in platform-published policy.
 
 **The refusal call.** The judgment that the brand should not be on a particular platform at all. The hardest call in platform-specific execution because the default is presence and absence requires accepting accountability for the decision.
+
+---
+
+## Prompts
+
+### Figure 9.1 — Two-Layer Execution Model
+
+Build a two-tier horizontal stack diagram in D3 v7. Top tier is Layer 1 (Format) — a secondary-gray band at 15% opacity stretching the full width, with six evenly-spaced secondary-gray filled circles representing format tasks: aspect ratio, length, caption length, hashtags, thumbnail, scheduling. A secondary-gray filled square at the right edge labeled "Delegate" in white. Bottom tier is Layer 2 (Fit) — a red band at 15% opacity with six red filled circles representing fit tasks: voice, pacing, hook selection, trend timing, community norms, comment policy. A red filled square at the right edge labeled "Guard" in white. A 1pt ink curved arrow on the far right runs from the Layer 1 right end downward, curling back to the left toward Layer 2, marking the Lattice failure mode — Layer 1 compliance read as Layer 2 solved. Italic ink subtitle underneath. Deliver as a standalone responsive HTML file with ResizeObserver, prefers-reduced-motion guard, role="img" and aria-labelledby.
+
+### Figure 9.2 — Lattice Case (Cross-Posted vs Corrected)
+
+Build a side-by-side two-panel comparison in D3 v7 separated by a 1pt border-color vertical divider. Left panel ("Original — cross-post, no re-voicing"): one fill-color source rectangle labeled "12-min panel" at top, four secondary-gray 1pt arrows fanning down to four 58×44 output rectangles representing TikTok, Reels, LinkedIn, X. Tint TikTok/Reels/X red at 30% opacity with red border (under-performing) and add a small red marker dot below each. Leave LinkedIn fill-color (performing). Right panel ("Corrected — re-voiced + refusal"): identical source rectangle, three ochre 1.25pt delegate-with-review arrows fanning to three fill-color output rectangles labeled LinkedIn, YouTube, X (researcher). Below those, two red-outlined rectangles with diagonal X-marks labeled TikTok and Reels under a red "Explicitly refused" header. Italic notes at the foot of each panel and a three-swatch legend across the bottom. Deliver as a standalone responsive HTML file.
+

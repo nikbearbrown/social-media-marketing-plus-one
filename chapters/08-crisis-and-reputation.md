@@ -30,6 +30,16 @@ Before getting to the Delegate and Guard lists, the chapter's central practical 
 
 **Deliberate silence or refusal-to-engage.** The judgment that responding amplifies. Useful when the surfacing event is a bad-faith brigade with no real grievance, and the response would itself generate the second news cycle. Costly when the underlying claim is real and the audience reads silence as confirmation. The classification call between "bad-faith brigade" and "real grievance with brigade amplification" is the hardest call in this chapter, and the worse error — the one with the longer reputational tail — is misclassifying real grievance as brigade. When the call is genuinely unclear, escalate.
 
+| Posture | Coombs crisis type it fits | Audience / brand-voice prerequisite | Canonical example | Failure case |
+|---|---|---|---|---|
+| Corporate-legal-formal | Preventable with regulatory exposure | Publicly traded, SEC/FDA-regulated; audience expects institutional voice | Disclosure-bound earnings statements after a contained operational issue | Boeing 737 MAX, Oct 2018 → Jan 2021 DOJ DPA — defensive arc sustained past the facts |
+| Named-executive personal acknowledgment | Preventable, clear human cause | Audience expects accountability; named leader credible in the role | United, Apr 11, 2017 — second statement, mortification posture | United, Apr 10, 2017 — first statement; Bud Light spring 2023 — weeks of silence where this posture was the missing move |
+| Operational customer-service | Victim or escalated single-customer event | Brand account fluent in the platform; resolution is concrete | Comcast / Ryan Block (2014), Dave Carroll "United Breaks Guitars" (2009) | An operational reply that closes the ticket but ignores the wider pattern the audience is watching for |
+| Ironic-self-aware acknowledgment | Accidental, low harm | Pre-existing irreverent voice; the moment is genuinely absurd | KFC "FCK" chicken shortage, UK, Feb 2018 | A generic corporate account borrowing the posture without the prior voice — reads as opportunistic |
+| Deliberate silence | Bad-faith brigade with no real grievance | Confidence that the underlying claim is not factually real | A coordinated brigade run by a single bot ring with no journalist coverage | Misclassifying real grievance as brigade — the worst error in this chapter, with the longest reputational tail |
+
+*Table 8.1 — The five postures mapped to Coombs SCCT crisis types.*
+
 <!-- → [TABLE: The five postures mapped to Coombs crisis types — columns: posture, when it fits (crisis type, audience, brand-voice prerequisite), canonical example, failure case] -->
 
 The choice across the five is a judgment call. The drafting of any one, once chosen, is pattern work AI handles well.
@@ -45,6 +55,19 @@ Real-time mention monitoring across platforms: Meltwater, Brandwatch, Sprinklr, 
 Volume anomaly detection: flagging when mention rate substantially exceeds the brand's rolling baseline. Mechanical, reliable, the foundation of an alert system. The flag is the tool's job. What the flag means is not.
 
 Topic and entity extraction: what is being said, about whom, with what named products, executives, and events. Cluster topology from large volumes of posts is exactly what these systems are built for. Aggregate sentiment classification over thousands of posts is reliable. Individual-post sentiment is not — and the gap matters during a live crisis, because sarcasm, in-group language, multilingual posts, and statements that mention the brand while criticizing a competitor are exactly the categories most active in a brigade. The aggregate is delegable. The per-post read is judgment.
+
+| Delegated task | Failure mode if over-trusted | Spot-check that keeps it honest |
+|---|---|---|
+| Real-time mention monitoring across platforms | X / Twitter API restrictions imposed in 2023 produce silent coverage gaps that read as quiet | Verify platform coverage and latency against a known event each quarter; never trust any X-coverage claim as evergreen |
+| Volume anomaly detection vs rolling baseline | Baseline drift from a campaign launch masks a real spike; the dashboard reads flat while the room reads on fire | Recompute the baseline manually after every major launch; have a second human pull the 24-hour volume curve |
+| Topic and entity extraction | Misattribution to a competitor's named product; missed cluster on a misspelled brand variant | Read the top ten clusters by hand each morning during a live window; confirm the entity map matches your taxonomy |
+| Aggregate sentiment classification | Reliable in the aggregate, unreliable on sarcasm, in-group language, multilingual posts, and brand-mentioned-but-criticizing-a-competitor patterns | Pull a random sample of fifty posts and read them; if the human read differs from the aggregate score by more than ten points, halt |
+| Triage routing (ticket / reputation / brigade / noise) | A coordinated brigade routed as noise; a real grievance routed as ticket | Human confirms every reputation-lane and brigade-lane assignment within five minutes during a live alert |
+| First-draft response generation in a chosen posture | Pattern-clean output that drifts off the posture, especially on ironic and silence postures | Three variants, edited by hand for specificity; never publish a first draft unedited |
+| Disclosure presence check on AI-drafted text | Missing EU AI Act Article 50/52 disclosure on AI-generated content reaching EU audiences | Counsel review on any AI-drafted public statement during a live crisis |
+| Post-crisis sentiment tracking over 90 days | Recovery curve smoothed to look like progress when the operational follow-through has stalled | Cross-check sentiment recovery against the operational milestones promised in the response |
+
+*Table 8.2 — Delegate List for crisis monitoring: where AI carries weight, and what keeps it honest.*
 
 <!-- → [TABLE: Delegate List for crisis monitoring — tasks, the specific failure mode if each is over-trusted, the spot-check that keeps each honest] -->
 
@@ -69,6 +92,17 @@ The posture pick. Five distinct response shapes; one is right for this crisis. T
 The legal and regulatory call. SEC Regulation FD, established in 2000 and extended to social media by the 2013 Netflix guidance, treats social posts by executives as potentially material disclosure for publicly traded firms. The EU AI Act, with Articles 50 and 52 on transparency obligations for AI-generated content phasing through 2026, adds disclosure requirements specifically relevant to AI-drafted crisis responses. Decisions with regulatory exposure belong with counsel. The conservative move is human plus counsel review on anything that could be material.
 
 Verifying synthetic media. The judgment that a particular video of the CEO is or is not real, even after detection tooling has run, requires human verification through original sources: the executive themselves, the production environment metadata, the internal communications system. The C2PA specification gives a cryptographic backbone. The chain-of-custody decision is human, and it is the load-bearing element. A denial without published evidence reads as defensive even when correct. Publish the evidence, not only the assertion.
+
+| Guard judgment task | What AI provides instead | What the human must supply | Cost of delegation |
+|---|---|---|---|
+| The escalation call (crisis / brigade / ticket / noise) | Growth rate, reach delta, accounts involved, sentiment trend, journalist-account presence | The classification call; the read of whether the underlying claim is factually plausible | A missed escalation costs a news cycle; a fast-and-wrong escalation costs more — Vosoughi-Roy-Aral (2018) on rumor velocity |
+| The posture pick (one of the five) | Recommendations weighted by past brand voice and Coombs typology fit | The decision; the documented rationale in two sentences | The United 36-hour posture error; the Pepsi / Kendall Jenner pattern-driven failure |
+| The legal and regulatory call | Pattern-checkable disclosure language; flags on material content | Counsel review under SEC Reg FD (2000) + 2013 Netflix guidance; EU AI Act Articles 50/52 phasing through 2026 | Material misstatement liability; advertiser-side exposure under the 2023 FTC revisions |
+| Verifying synthetic media | Detector confidence score; C2PA cryptographic provenance signal | Chain-of-custody verification through the named executive, production-environment metadata, internal communications | A denial without published evidence reads defensive even when correct — Wells (1892, 1895) principle, NIST AI RMF GenAI Profile (2024) |
+| Reading the comment section around the response | Aggregate conversation volume and sentiment | Direct human read of the comments — tonal signal not in the algorithmic summary | The second story Hong-Cameron (2018) document empirically; the conversation around the response reshapes the response itself |
+| The second move | Tracked sentiment delta after publication | The amend / double-down / quiet decision in the 6–24 hour window | An extending crisis instead of an ending one; the 90-day rebuild becomes harder by an order of magnitude |
+
+*Table 8.3 — Guard List for crisis response: judgment tasks AI cannot cross.*
 
 <!-- → [TABLE: Guard List for crisis response — judgment tasks, what AI provides instead, what the human must supply, the cost of delegation] -->
 
@@ -106,6 +140,10 @@ Publish, then read the comments directly. AI monitors the conversation around th
 
 The second move. Within the first 6 to 24 hours: amend, double down, or go quiet. The second move is harder than the first. It is also often the one that determines whether the crisis ends or extends.
 
+![Seven-stage crisis response timeline with three load-bearing human decisions ringed — escalation read, posture pick, and second move — and the United 36-hour annotation strip below](../images/08-crisis-and-reputation-fig-01.png)
+
+*Figure 8.1 — Crisis response timeline: AI handles, human decides.*
+
 <!-- → [INFOGRAPHIC: The crisis response timeline — from alert fire to second move, annotated with which steps are AI-handled and which are human-judgment, with the posture-pick and second-move nodes highlighted as the two highest-stakes decision points] -->
 
 The 90-day program. The slow work where reputation actually rebuilds: operational follow-through, customer-service repair, deliberate positive programming, sometimes a slow public reckoning months later. The volume drops. The work does not.
@@ -141,3 +179,10 @@ Choose a documented brand crisis and write a response in each of the five postur
 
 **Exercise 4 — The Second Move**
 Find a case where a brand published a first response and then had to make a second-move decision within 24 hours. Document: what did the first response produce in the conversation? What were the options at the second-move decision point — amend, double down, or silence? What did the brand choose? What would you have chosen, and on what evidence?
+
+---
+
+## Prompts
+
+**Figure 8.1 — Crisis response timeline: AI handles, human decides.**
+A seven-stage horizontal crisis response workflow in the brutalist palette. Stages: 1 configure monitoring (red, human, quarterly), 2 alert fires (secondary gray, AI, t = 0), 3 escalation read (red with dashed ochre ring, human, 5 min), 4 posture pick (red with dashed ochre ring, human, 15 min), 5 draft (split: left gray AI / right ochre Delegate-with-Review, 30 min), 6 publish (split: left gray AI / right red human reads comments, 6 hr), 7 second move (red with dashed ochre ring, human, 6–24 hr). Black directional arrows connect stages. A horizontal time axis below the row marks pre-crisis, t = 0 alert, live window, 90-day program with JetBrains Mono ticks. Below the axis, a hairline-bordered chart-fill annotation block in italic Garamond names the United 36-hour posture error: stage 2 fired in minutes, stage 4 picked corporate-legal-formal when the crisis type was preventable, stage 7 corrected 36 hours later. The closing pull lines: "The dashboard tells you something is happening. Only you can tell the room what kind of thing it is." White canvas, ink text, hairlines, no gradients, no shadows.

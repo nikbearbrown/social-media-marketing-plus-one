@@ -1,0 +1,125 @@
+<!--
+  Adoption-Then-Abandonment Curve (Why Minimum Viable Survives)
+  Book: Social Media Marketing plus One
+  Chapter: 12-the-plus-one-practice
+  Figure: 04
+  Type: line-chart
+  Generated: 2026-05-27
+  Source: pantry/12-the-plus-one-practice-cajal.md
+-->
+<svg viewBox="0 0 700 480" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="fig-title-04">
+  <title id="fig-title-04">Adoption-Then-Abandonment Curve</title>
+  <desc>A line chart over twelve months shows two practice trajectories. The high-friction practice collapses from about eighty percent adherence to under twenty by month six. The minimum-viable practice holds near sixty percent because friction is low. Minimum viable wins.</desc>
+  <metadata><cajal:figure xmlns:cajal="https://bearbrown.ai/cajal/1.0" book="Social Media Marketing plus One" book-slug="social-media-marketing-plus-one" chapter="12-the-plus-one-practice" figure-number="04" figure-title="Adoption-Then-Abandonment Curve" figure-slug="adoption-abandonment-curve" figure-type="line-chart" priority="Critical" author="Nik Bear Brown Milivoje Davidovic" date-generated="2026-05-27" source-file="pantry/12-the-plus-one-practice-cajal.md"/></metadata>
+  <defs><marker id="arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#2a1a0e"/></marker></defs>
+  <rect x="0" y="0" width="700" height="480" fill="#FFFFFF"/>
+  <text x="32" y="36" font-family="'EB Garamond', 'Garamond', Georgia, serif" font-size="14" fill="#2a1a0e">Adoption-then-abandonment — why the minimum-viable practice is the one that survives</text>
+  <text x="32" y="56" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="11" fill="#545454">~70% of new practices are abandoned within 90 days (Norcross et al.). Friction predicts collapse better than ambition predicts success.</text>
+
+  <!-- Plot region: x 80–660 (580 wide), y 100–380 (280 tall) -->
+  <rect x="80" y="100" width="580" height="280" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="0.75"/>
+
+  <!-- Y-axis -->
+  <line x1="80" y1="100" x2="80" y2="380" stroke="#2a1a0e" stroke-width="1"/>
+  <!-- X-axis -->
+  <line x1="80" y1="380" x2="660" y2="380" stroke="#2a1a0e" stroke-width="1"/>
+
+  <!-- Y gridlines and ticks: 0, 20, 40, 60, 80, 100 -->
+  <!-- y maps: 100% = y100, 0% = y380 -> per-percent = 2.8 -->
+  <g stroke="#D4D4D4" stroke-width="0.5" opacity="0.7">
+    <line x1="80" y1="156" x2="660" y2="156"/>
+    <line x1="80" y1="212" x2="660" y2="212"/>
+    <line x1="80" y1="268" x2="660" y2="268"/>
+    <line x1="80" y1="324" x2="660" y2="324"/>
+  </g>
+
+  <g font-family="'JetBrains Mono', monospace" font-size="11" fill="#545454" text-anchor="end">
+    <text x="74" y="104">100</text>
+    <text x="74" y="160">80</text>
+    <text x="74" y="216">60</text>
+    <text x="74" y="272">40</text>
+    <text x="74" y="328">20</text>
+    <text x="74" y="384">0</text>
+  </g>
+
+  <!-- X-axis ticks: months 0, 2, 4, 6, 8, 10, 12 -->
+  <!-- x = 80 + (month/12)*580 -->
+  <g stroke="#2a1a0e" stroke-width="1">
+    <line x1="80" y1="380" x2="80" y2="385"/>
+    <line x1="177" y1="380" x2="177" y2="385"/>
+    <line x1="273" y1="380" x2="273" y2="385"/>
+    <line x1="370" y1="380" x2="370" y2="385"/>
+    <line x1="467" y1="380" x2="467" y2="385"/>
+    <line x1="563" y1="380" x2="563" y2="385"/>
+    <line x1="660" y1="380" x2="660" y2="385"/>
+  </g>
+  <g font-family="'JetBrains Mono', monospace" font-size="11" fill="#545454" text-anchor="middle">
+    <text x="80" y="400">0</text>
+    <text x="177" y="400">2</text>
+    <text x="273" y="400">4</text>
+    <text x="370" y="400">6</text>
+    <text x="467" y="400">8</text>
+    <text x="563" y="400">10</text>
+    <text x="660" y="400">12</text>
+  </g>
+
+  <!-- Axis titles -->
+  <text x="370" y="424" text-anchor="middle" font-family="'Inter', sans-serif" font-size="12" fill="#545454">months since adoption</text>
+  <text x="32" y="240" text-anchor="middle" font-family="'Inter', sans-serif" font-size="12" fill="#545454" transform="rotate(-90 32 240)">% of practitioners still using the practice</text>
+
+  <!-- 90-day vertical marker — at month 3 -->
+  <!-- x = 80 + (3/12)*580 = 225 -->
+  <line x1="225" y1="100" x2="225" y2="380" stroke="#2a1a0e" stroke-width="0.5" stroke-dasharray="4 3"/>
+  <text x="225" y="92" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10" font-style="italic" fill="#2a1a0e">90-day cliff</text>
+
+  <!-- HIGH-FRICTION PRACTICE (red): drops from ~80 at month 0 to ~15 by month 6, then ~10 to month 12 -->
+  <!-- Anchor points (month, %): (0,80), (1,72), (2,55), (3,38), (4,25), (5,18), (6,15), (8,12), (10,11), (12,10) -->
+  <!-- y_at(p%) = 380 - p * 2.8 -->
+  <!-- (0,80) -> (80, 156) -->
+  <!-- (1, 72) -> (128, 178.4) -->
+  <!-- (2, 55) -> (177, 226) -->
+  <!-- (3, 38) -> (225, 273.6) -->
+  <!-- (4, 25) -> (273, 310) -->
+  <!-- (5, 18) -> (322, 329.6) -->
+  <!-- (6, 15) -> (370, 338) -->
+  <!-- (8, 12) -> (467, 346.4) -->
+  <!-- (10, 11) -> (563, 349.2) -->
+  <!-- (12, 10) -> (660, 352) -->
+  <path d="M 80 156 L 128 178 L 177 226 L 225 274 L 273 310 L 322 330 L 370 338 L 467 346 L 563 349 L 660 352" fill="none" stroke="#C8102E" stroke-width="2"/>
+
+  <!-- MINIMUM-VIABLE PRACTICE (gray): holds at ~60 with small dip -->
+  <!-- (0, 65), (1, 63), (2, 62), (3, 60), (4, 60), (5, 59), (6, 59), (8, 58), (10, 58), (12, 57) -->
+  <path d="M 80 198 L 128 204 L 177 207 L 225 212 L 273 212 L 322 215 L 370 215 L 467 218 L 563 218 L 660 220" fill="none" stroke="#545454" stroke-width="2"/>
+
+  <!-- Data points on minimum-viable -->
+  <g fill="#545454">
+    <circle cx="80" cy="198" r="3"/>
+    <circle cx="225" cy="212" r="3"/>
+    <circle cx="370" cy="215" r="3"/>
+    <circle cx="563" cy="218" r="3"/>
+  </g>
+  <!-- Data points on high-friction -->
+  <g fill="#C8102E">
+    <circle cx="80" cy="156" r="3"/>
+    <circle cx="225" cy="274" r="3"/>
+    <circle cx="370" cy="338" r="3"/>
+    <circle cx="563" cy="349" r="3"/>
+  </g>
+
+  <!-- Inline labels at end of curves -->
+  <text x="668" y="220" font-family="'Inter', sans-serif" font-size="11" font-weight="700" fill="#545454">minimum</text>
+  <text x="668" y="234" font-family="'Inter', sans-serif" font-size="11" font-weight="700" fill="#545454">viable</text>
+
+  <text x="668" y="352" font-family="'Inter', sans-serif" font-size="11" font-weight="700" fill="#C8102E">high</text>
+  <text x="668" y="366" font-family="'Inter', sans-serif" font-size="11" font-weight="700" fill="#C8102E">friction</text>
+
+  <!-- Annotations on curves -->
+  <text x="160" y="142" font-family="'Inter', sans-serif" font-size="10" fill="#C8102E">high commitment,</text>
+  <text x="160" y="154" font-family="'Inter', sans-serif" font-size="10" fill="#C8102E">fast collapse</text>
+
+  <text x="260" y="190" font-family="'Inter', sans-serif" font-size="10" fill="#545454">low commitment,</text>
+  <text x="260" y="202" font-family="'Inter', sans-serif" font-size="10" fill="#545454">sustained</text>
+
+  <!-- Bottom annotation -->
+  <text x="32" y="456" font-family="'Inter', sans-serif" font-size="11" font-style="italic" fill="#2a1a0e">Adoption is not the goal — sustainable practice is. Minimum viable wins because friction is low enough to survive a bad week.</text>
+</svg>

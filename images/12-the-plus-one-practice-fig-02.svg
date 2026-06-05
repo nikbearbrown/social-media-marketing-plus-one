@@ -1,0 +1,58 @@
+<!--
+  The two columns of the practice — AI handles vs must be human
+  Book: Social Media Marketing plus One · Chapter: 12-the-plus-one-practice · Figure: 02
+  Type: two-column-split · Generated: 2026-05-27 · Source: chapters/12-the-plus-one-practice.md
+-->
+<svg viewBox="0 0 700 540" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="fig-title-02 fig-desc-02">
+  <title id="fig-title-02">The two columns of the practice — AI handles vs must be human</title>
+  <desc id="fig-desc-02">Two columns. Left: six tasks AI handles (log formatting, pattern detection, weekly summary drafts, voice-drift comparisons, prompt-library maintenance, capability-watch summaries). Right: six tasks that must be human (the reflection, the honest entry, the voice-drift judgment, the boundary-case call, the recovery, the decision to sustain). An ochre arrow runs left to right beneath them.</desc>
+  <metadata><cajal:figure xmlns:cajal="https://bearbrown.ai/cajal/1.0" book="Social Media Marketing plus One" chapter="12-the-plus-one-practice" figure-number="02" figure-title="The two columns of the practice" figure-type="two-column-split" author="Nik Bear Brown Milivoje Davidovic" date-generated="2026-05-27" source-file="chapters/12-the-plus-one-practice.md"/></metadata>
+  <defs>
+    <marker id="arrow-ochre" markerWidth="10" markerHeight="8" refX="8" refY="4" orient="auto">
+      <polygon points="0 0, 10 4, 0 8" fill="#C8860E"/>
+    </marker>
+  </defs>
+  <rect x="0" y="0" width="700" height="540" fill="#FFFFFF"/>
+
+  <text x="32" y="36" font-family="'EB Garamond', 'Garamond', Georgia, serif" font-size="16" fill="#2a1a0e">The two columns of the practice</text>
+  <text x="32" y="56" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="11" fill="#545454">What AI handles, and what must be human — the right column gives the left its value</text>
+
+  <!-- Plot frame -->
+  <rect x="32" y="90" width="636" height="356" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="0.75"/>
+
+  <!-- Center divider -->
+  <line x1="350" y1="90" x2="350" y2="446" stroke="#2a1a0e" stroke-width="1"/>
+
+  <!-- Headers -->
+  <text x="191" y="116" text-anchor="middle" font-family="'Inter', sans-serif" font-size="13" font-weight="700" fill="#2a1a0e">AI handles</text>
+  <text x="509" y="116" text-anchor="middle" font-family="'Inter', sans-serif" font-size="13" font-weight="700" fill="#2a1a0e">Must be human</text>
+  <line x1="56" y1="126" x2="326" y2="126" stroke="#D4D4D4" stroke-width="0.75"/>
+  <line x1="374" y1="126" x2="644" y2="126" stroke="#D4D4D4" stroke-width="0.75"/>
+
+  <!-- Left column items -->
+  <g font-family="'Inter', sans-serif" font-size="12" fill="#2a1a0e">
+    <circle cx="68" cy="160" r="6" fill="#545454"/><text x="84" y="164">log formatting</text>
+    <circle cx="68" cy="200" r="6" fill="#545454"/><text x="84" y="204">pattern detection across entries</text>
+    <circle cx="68" cy="240" r="6" fill="#545454"/><text x="84" y="244">weekly summary drafts</text>
+    <circle cx="68" cy="280" r="6" fill="#545454"/><text x="84" y="284">voice-drift comparisons</text>
+    <circle cx="68" cy="320" r="6" fill="#545454"/><text x="84" y="324">prompt-library maintenance</text>
+    <circle cx="68" cy="360" r="6" fill="#545454"/><text x="84" y="364">capability-watch summaries</text>
+  </g>
+
+  <!-- Right column items -->
+  <g font-family="'Inter', sans-serif" font-size="12" fill="#2a1a0e">
+    <circle cx="386" cy="160" r="6" fill="#C8102E"/><text x="402" y="164">the reflection itself</text>
+    <circle cx="386" cy="200" r="6" fill="#C8102E"/><text x="402" y="204">the honest log entry</text>
+    <circle cx="386" cy="240" r="6" fill="#C8102E"/><text x="402" y="244">the voice-drift judgment</text>
+    <circle cx="386" cy="280" r="6" fill="#C8102E"/><text x="402" y="284">the boundary-case call</text>
+    <circle cx="386" cy="320" r="6" fill="#C8102E"/><text x="402" y="324">the recovery from failure</text>
+    <circle cx="386" cy="360" r="6" fill="#C8102E"/><text x="402" y="364">the decision to sustain</text>
+  </g>
+
+  <!-- Bottom arrow left to right -->
+  <text x="350" y="478" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" font-style="italic" fill="#545454">the left column derives its value from the right</text>
+  <line x1="190" y1="494" x2="510" y2="494" stroke="#C8860E" stroke-width="1" marker-end="url(#arrow-ochre)"/>
+
+  <!-- Caption -->
+  <text x="32" y="524" font-family="'Inter', sans-serif" font-size="11" fill="#545454">The column on the right is why the column on the left is worth building.</text>
+</svg>

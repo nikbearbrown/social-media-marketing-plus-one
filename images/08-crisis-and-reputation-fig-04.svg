@@ -1,0 +1,103 @@
+<!--
+  The five-minute escalation read
+  Book: Social Media Marketing plus One
+  Chapter: 08-crisis-and-reputation
+  Figure: 04
+  Type: DECISION_TREE
+  Generated: 2026-05-27
+  Source: pantry/08-crisis-and-reputation-cajal.md
+-->
+<svg viewBox="0 0 700 540" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="fig-title-04 fig-desc-04">
+  <title id="fig-title-04">The five-minute escalation read</title>
+  <desc id="fig-desc-04">Five AI-supplied inputs feed a central decision diamond. Four terminals: Crisis (escalate to posture pick), Brigade (silence or watch), Ticket (operational route), Noise (no action). A misclassification-asymmetry arrow warns that calling a real grievance brigade is the costlier error direction.</desc>
+  <metadata><cajal:figure xmlns:cajal="https://bearbrown.ai/cajal/1.0" book="Social Media Marketing plus One" book-slug="social-media-marketing-plus-one" chapter="08-crisis-and-reputation" figure-number="04" figure-title="The five-minute escalation read" figure-slug="five-minute-escalation-read" figure-type="DECISION_TREE" priority="Important" author="Nik Bear Brown Milivoje Davidovic" date-generated="2026-05-27" source-file="pantry/08-crisis-and-reputation-cajal.md"/></metadata>
+  <defs><marker id="arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#2a1a0e"/></marker><marker id="arrow-red" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#C8102E"/></marker></defs>
+  <rect x="0" y="0" width="700" height="540" fill="#FFFFFF"/>
+  <text x="32" y="36" font-family="'EB Garamond', 'Garamond', Georgia, serif" font-size="14" fill="#2a1a0e">The five-minute escalation read — classify before you respond</text>
+  <text x="32" y="56" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="11" fill="#545454">AI supplies five signals in one minute. The human picks the bucket in the next four.</text>
+
+  <!-- Five AI inputs on left feeding the diamond -->
+  <g font-family="'Inter', sans-serif" font-size="11" fill="#2a1a0e">
+    <rect x="40" y="105" width="160" height="32" fill="#F5F5F5" stroke="#545454" stroke-width="0.75"/>
+    <text x="120" y="125" text-anchor="middle">rate of growth</text>
+
+    <rect x="40" y="145" width="160" height="32" fill="#F5F5F5" stroke="#545454" stroke-width="0.75"/>
+    <text x="120" y="165" text-anchor="middle">reach delta</text>
+
+    <rect x="40" y="185" width="160" height="32" fill="#F5F5F5" stroke="#545454" stroke-width="0.75"/>
+    <text x="120" y="205" text-anchor="middle">accounts involved</text>
+
+    <rect x="40" y="225" width="160" height="32" fill="#F5F5F5" stroke="#545454" stroke-width="0.75"/>
+    <text x="120" y="245" text-anchor="middle">sentiment trend</text>
+
+    <rect x="40" y="265" width="160" height="32" fill="#F5F5F5" stroke="#545454" stroke-width="0.75"/>
+    <text x="120" y="285" text-anchor="middle">journalist coverage</text>
+  </g>
+  <text x="40" y="98" font-family="'JetBrains Mono', monospace" font-size="10" fill="#545454">AI inputs — T+1 min</text>
+
+  <!-- Arrows from inputs to diamond -->
+  <g stroke="#545454" stroke-width="1">
+    <line x1="200" y1="121" x2="270" y2="190" marker-end="url(#arrow)"/>
+    <line x1="200" y1="161" x2="270" y2="195" marker-end="url(#arrow)"/>
+    <line x1="200" y1="201" x2="270" y2="200" marker-end="url(#arrow)"/>
+    <line x1="200" y1="241" x2="270" y2="205" marker-end="url(#arrow)"/>
+    <line x1="200" y1="281" x2="270" y2="210" marker-end="url(#arrow)"/>
+  </g>
+
+  <!-- Central decision diamond -->
+  <polygon points="430,140 540,200 430,260 320,200" fill="#F5F5F5" stroke="#2a1a0e" stroke-width="1"/>
+  <text x="430" y="192" text-anchor="middle" font-family="'Inter', sans-serif" font-size="12" font-weight="700" fill="#2a1a0e">Classify the surface</text>
+  <text x="430" y="210" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10" fill="#545454">human read · T+2 to T+4 min</text>
+
+  <!-- Four sub-branches to four terminals (arranged horizontally below) -->
+  <g stroke="#2a1a0e" stroke-width="1">
+    <line x1="380" y1="240" x2="120" y2="330" marker-end="url(#arrow)"/>
+    <line x1="410" y1="260" x2="285" y2="330" marker-end="url(#arrow)"/>
+    <line x1="450" y1="260" x2="455" y2="330" marker-end="url(#arrow)"/>
+    <line x1="480" y1="240" x2="620" y2="330" marker-end="url(#arrow)"/>
+  </g>
+
+  <!-- Four terminals -->
+  <!-- Crisis -->
+  <rect x="40" y="335" width="160" height="75" fill="#C8102E" stroke="#2a1a0e" stroke-width="1"/>
+  <rect x="35" y="330" width="170" height="85" fill="none" stroke="#C8102E" stroke-width="1" stroke-dasharray="3 2"/>
+  <text x="120" y="358" text-anchor="middle" font-family="'Inter', sans-serif" font-size="12" font-weight="700" fill="#FFFFFF">Crisis</text>
+  <text x="120" y="375" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10" fill="#FFFFFF">escalate to posture pick</text>
+  <text x="120" y="389" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10" fill="#FFFFFF">(see Fig 8.2)</text>
+  <text x="120" y="404" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="9" fill="#FFFFFF">Guard · T+5 min</text>
+
+  <!-- Brigade -->
+  <rect x="210" y="335" width="160" height="75" fill="#C8860E" stroke="#2a1a0e" stroke-width="1"/>
+  <text x="290" y="358" text-anchor="middle" font-family="'Inter', sans-serif" font-size="12" font-weight="700" fill="#FFFFFF">Brigade</text>
+  <text x="290" y="375" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10" fill="#FFFFFF">silence or watch-and-wait</text>
+  <text x="290" y="389" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10" fill="#FFFFFF">bad-faith pile-on</text>
+  <text x="290" y="404" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="9" fill="#FFFFFF">highest mis-class risk</text>
+
+  <!-- Ticket -->
+  <rect x="380" y="335" width="160" height="75" fill="#545454" stroke="#2a1a0e" stroke-width="1"/>
+  <text x="460" y="358" text-anchor="middle" font-family="'Inter', sans-serif" font-size="12" font-weight="700" fill="#FFFFFF">Ticket</text>
+  <text x="460" y="375" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10" fill="#FFFFFF">route to support queue</text>
+  <text x="460" y="389" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10" fill="#FFFFFF">individual operational issue</text>
+  <text x="460" y="404" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="9" fill="#FFFFFF">Delegate</text>
+
+  <!-- Noise -->
+  <rect x="550" y="335" width="110" height="75" fill="#FFFFFF" stroke="#787878" stroke-width="1" stroke-dasharray="3 2"/>
+  <text x="605" y="358" text-anchor="middle" font-family="'Inter', sans-serif" font-size="12" font-weight="700" fill="#2a1a0e">Noise</text>
+  <text x="605" y="375" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10" fill="#545454">no action</text>
+  <text x="605" y="389" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10" fill="#545454">false-positive alert</text>
+  <text x="605" y="404" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="9" fill="#545454">log and move on</text>
+
+  <!-- Misclassification asymmetry indicator -->
+  <line x1="40" y1="440" x2="660" y2="440" stroke="#C8102E" stroke-width="1" stroke-dasharray="4 3"/>
+  <text x="350" y="432" text-anchor="middle" font-family="'EB Garamond', Georgia, serif" font-style="italic" font-size="13" fill="#C8102E">misclassification cost is asymmetric</text>
+
+  <!-- Arrow from Brigade pointing back to Crisis -->
+  <path d="M 240 458 C 200 478, 160 478, 130 460" fill="none" stroke="#C8102E" stroke-width="1.25" marker-end="url(#arrow-red)"/>
+  <text x="185" y="498" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" font-weight="700" fill="#C8102E">calling real grievance "brigade"</text>
+  <text x="185" y="512" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" fill="#2a1a0e">is the costlier error direction</text>
+
+  <!-- Timing tick under the diamond -->
+  <text x="430" y="285" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="10" fill="#545454">T+0 alert → T+5 classification</text>
+
+  <text x="32" y="530" font-family="'Inter', sans-serif" font-size="10" fill="#545454">Coombs SCCT 2007 · Kim &amp; Atkinson 2014 · Hong &amp; Cameron 2018 [verify]</text>
+</svg>

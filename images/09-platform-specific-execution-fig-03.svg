@@ -1,0 +1,111 @@
+<!--
+  Distribution Model Spectrum
+  Book: Social Media Marketing plus One
+  Chapter: 09-platform-specific-execution
+  Figure: 03
+  Type: spectrum
+  Generated: 2026-05-27
+  Source: pantry/09-platform-specific-execution-cajal.md
+-->
+<svg viewBox="0 0 700 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="fig-title-03">
+  <title id="fig-title-03">Distribution Model Spectrum</title>
+  <desc>A horizontal spectrum positions five platforms from recommendation-first (left) to follower-first (right). Each platform is marked with a tick and a note about what AI does well — and where AI struggles — at that point on the spectrum.</desc>
+  <metadata><cajal:figure xmlns:cajal="https://bearbrown.ai/cajal/1.0" book="Social Media Marketing plus One" book-slug="social-media-marketing-plus-one" chapter="09-platform-specific-execution" figure-number="03" figure-title="Distribution Model Spectrum" figure-slug="distribution-model-spectrum" figure-type="spectrum" priority="Important" author="Nik Bear Brown Milivoje Davidovic" date-generated="2026-05-27" source-file="pantry/09-platform-specific-execution-cajal.md"/></metadata>
+  <defs><marker id="arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#2a1a0e"/></marker></defs>
+  <rect x="0" y="0" width="700" height="420" fill="#FFFFFF"/>
+  <text x="32" y="36" font-family="'EB Garamond', 'Garamond', Georgia, serif" font-size="14" fill="#2a1a0e">Distribution model spectrum — what AI can carry, and where it cannot</text>
+  <text x="32" y="56" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="11" fill="#545454">Recommendation-first surfaces reward cultural fit; follower-first surfaces reward professional discipline. Snapshot, late 2025.</text>
+
+  <!-- Endpoint labels -->
+  <text x="48" y="180" text-anchor="start" font-family="'Inter', sans-serif" font-size="11" font-weight="700" fill="#2a1a0e">Recommendation-first</text>
+  <text x="48" y="196" text-anchor="start" font-family="'Inter', sans-serif" font-size="10" fill="#545454">reaches non-followers by default</text>
+  <text x="652" y="180" text-anchor="end" font-family="'Inter', sans-serif" font-size="11" font-weight="700" fill="#2a1a0e">Follower-first</text>
+  <text x="652" y="196" text-anchor="end" font-family="'Inter', sans-serif" font-size="10" fill="#545454">reaches followers by default</text>
+
+  <!-- Main axis -->
+  <line x1="80" y1="220" x2="620" y2="220" stroke="#2a1a0e" stroke-width="1" marker-end="url(#arrow)"/>
+  <line x1="80" y1="220" x2="64" y2="220" stroke="#2a1a0e" stroke-width="1" marker-end="url(#arrow)"/>
+
+  <!-- Tick marks on axis -->
+  <line x1="120" y1="215" x2="120" y2="225" stroke="#2a1a0e" stroke-width="1"/>
+  <line x1="200" y1="215" x2="200" y2="225" stroke="#2a1a0e" stroke-width="1"/>
+  <line x1="350" y1="215" x2="350" y2="225" stroke="#2a1a0e" stroke-width="1"/>
+  <line x1="475" y1="215" x2="475" y2="225" stroke="#2a1a0e" stroke-width="1"/>
+  <line x1="560" y1="215" x2="560" y2="225" stroke="#2a1a0e" stroke-width="1"/>
+
+  <!-- Platform circles (sized by exposure, illustrative) -->
+  <!-- TikTok: leftmost, large -->
+  <circle cx="120" cy="220" r="14" fill="#787878"/>
+  <text x="120" y="252" text-anchor="middle" font-family="'Inter', sans-serif" font-size="12" font-weight="700" fill="#2a1a0e">TikTok</text>
+
+  <!-- Reels: next, large -->
+  <circle cx="200" cy="220" r="13" fill="#787878"/>
+  <text x="200" y="252" text-anchor="middle" font-family="'Inter', sans-serif" font-size="12" font-weight="700" fill="#2a1a0e">Reels</text>
+
+  <!-- YouTube: center, split node (Shorts + long-form) -->
+  <circle cx="350" cy="220" r="13" fill="#ADADAD"/>
+  <line x1="350" y1="207" x2="350" y2="233" stroke="#FFFFFF" stroke-width="1.5"/>
+  <text x="350" y="252" text-anchor="middle" font-family="'Inter', sans-serif" font-size="12" font-weight="700" fill="#2a1a0e">YouTube</text>
+  <text x="350" y="266" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="9" fill="#545454">Shorts | long-form</text>
+
+  <!-- X: closer to follower side but with For You bias -->
+  <circle cx="475" cy="220" r="11" fill="#ADADAD"/>
+  <text x="475" y="248" text-anchor="middle" font-family="'Inter', sans-serif" font-size="12" font-weight="700" fill="#2a1a0e">X</text>
+
+  <!-- LinkedIn: right -->
+  <circle cx="560" cy="220" r="12" fill="#ADADAD"/>
+  <text x="560" y="250" text-anchor="middle" font-family="'Inter', sans-serif" font-size="12" font-weight="700" fill="#2a1a0e">LinkedIn</text>
+
+  <!-- AI-does-well annotations above the spectrum (per platform) -->
+  <text x="120" y="120" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10" font-weight="600" fill="#C8102E">AI weak</text>
+  <text x="120" y="134" text-anchor="middle" font-family="'Inter', sans-serif" font-size="9" fill="#545454">cultural fit,</text>
+  <text x="120" y="146" text-anchor="middle" font-family="'Inter', sans-serif" font-size="9" fill="#545454">trend timing</text>
+  <line x1="120" y1="154" x2="120" y2="205" stroke="#D4D4D4" stroke-width="0.75"/>
+
+  <text x="200" y="120" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10" font-weight="600" fill="#C8102E">AI weak</text>
+  <text x="200" y="134" text-anchor="middle" font-family="'Inter', sans-serif" font-size="9" fill="#545454">hook craft,</text>
+  <text x="200" y="146" text-anchor="middle" font-family="'Inter', sans-serif" font-size="9" fill="#545454">voice match</text>
+  <line x1="200" y1="154" x2="200" y2="205" stroke="#D4D4D4" stroke-width="0.75"/>
+
+  <text x="350" y="120" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10" font-weight="600" fill="#545454">AI mixed</text>
+  <text x="350" y="134" text-anchor="middle" font-family="'Inter', sans-serif" font-size="9" fill="#545454">good at chapter outlines,</text>
+  <text x="350" y="146" text-anchor="middle" font-family="'Inter', sans-serif" font-size="9" fill="#545454">weak at retention hooks</text>
+  <line x1="350" y1="154" x2="350" y2="205" stroke="#D4D4D4" stroke-width="0.75"/>
+
+  <text x="475" y="120" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10" font-weight="600" fill="#545454">AI mixed</text>
+  <text x="475" y="134" text-anchor="middle" font-family="'Inter', sans-serif" font-size="9" fill="#545454">drafts viable;</text>
+  <text x="475" y="146" text-anchor="middle" font-family="'Inter', sans-serif" font-size="9" fill="#545454">tone risk high</text>
+  <line x1="475" y1="154" x2="475" y2="205" stroke="#D4D4D4" stroke-width="0.75"/>
+
+  <text x="560" y="120" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10" font-weight="600" fill="#2a1a0e">AI strong</text>
+  <text x="560" y="134" text-anchor="middle" font-family="'Inter', sans-serif" font-size="9" fill="#545454">caption variation,</text>
+  <text x="560" y="146" text-anchor="middle" font-family="'Inter', sans-serif" font-size="9" fill="#545454">professional register</text>
+  <line x1="560" y1="154" x2="560" y2="205" stroke="#D4D4D4" stroke-width="0.75"/>
+
+  <!-- Below-axis: what each platform's distribution rewards -->
+  <text x="120" y="298" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10" fill="#2a1a0e">~40 min watch behavior</text>
+  <text x="120" y="312" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10" fill="#545454">to converge a feed</text>
+
+  <text x="200" y="298" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10" fill="#2a1a0e">share-velocity</text>
+  <text x="200" y="312" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10" fill="#545454">signal-dominant</text>
+
+  <text x="350" y="298" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10" fill="#2a1a0e">watch-time + retention</text>
+  <text x="350" y="312" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10" fill="#545454">over follower count</text>
+
+  <text x="475" y="298" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10" fill="#2a1a0e">For You feed pulls</text>
+  <text x="475" y="312" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10" fill="#545454">toward recommendation</text>
+
+  <text x="560" y="298" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10" fill="#2a1a0e">knowledge-graph rank</text>
+  <text x="560" y="312" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10" fill="#545454">since 2023 pivot</text>
+
+  <!-- Aging-risk marker -->
+  <circle cx="650" cy="80" r="9" fill="#C8102E"/>
+  <text x="650" y="85" text-anchor="middle" font-family="'Inter', sans-serif" font-size="12" font-weight="700" fill="#FFFFFF">!</text>
+  <text x="635" y="84" text-anchor="end" font-family="'Inter', sans-serif" font-size="10" font-style="italic" fill="#C8102E">snapshot — ages in months</text>
+
+  <!-- Legend strip -->
+  <line x1="32" y1="358" x2="668" y2="358" stroke="#D4D4D4" stroke-width="0.75"/>
+  <text x="32" y="378" font-family="'Inter', sans-serif" font-size="10" font-weight="700" fill="#2a1a0e">Read:</text>
+  <text x="74" y="378" font-family="'Inter', sans-serif" font-size="10" fill="#545454">platform position = where the distribution model sits today; AI strength = where the format layer earns delegation</text>
+  <text x="32" y="394" font-family="'Inter', sans-serif" font-size="10" fill="#545454">Circle size is illustrative reach exposure — not quantitative. Re-check positions every quarterly review.</text>
+</svg>

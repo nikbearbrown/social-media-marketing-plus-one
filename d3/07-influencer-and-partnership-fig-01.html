@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Two-stage funnel: AI discovery, human decision</title>
+<style>
+:root{--color-white:#FFFFFF;--color-ink:#2a1a0e;--color-red:#C8102E;--color-secondary:#545454;--color-border:#D4D4D4;--color-ochre:#C8860E;--color-fill:#F5F5F5;}
+@media (prefers-color-scheme: dark){:root{--color-white:#111111;--color-ink:#F0EBE3;--color-red:#E8243A;--color-secondary:#A0978C;--color-border:#2E2E2E;--color-ochre:#D49A30;--color-fill:#1A1A1A;}}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--color-white);color:var(--color-ink);font-family:'Inter',-apple-system,'Helvetica Neue',sans-serif;padding:24px;}
+#chart{width:100%;min-height:480px;}
+.tooltip{position:absolute;pointer-events:none;opacity:0;background:var(--color-ink);color:var(--color-white);padding:6px 10px;font-size:12px;}
+.title{font-family:'EB Garamond','Garamond',Georgia,serif;font-size:18px;fill:var(--color-ink);}
+.subtitle{font-family:'Inter',sans-serif;font-size:12px;fill:var(--color-secondary);}
+.task-label{font-family:'Inter',sans-serif;font-size:11px;fill:var(--color-ink);}
+.stage-header{font-family:'Inter',sans-serif;font-size:13px;font-weight:700;fill:var(--color-ink);}
+.boundary-text{font-family:'EB Garamond',serif;font-style:italic;font-size:13px;fill:var(--color-ink);}
+.axis-tick{font-family:'JetBrains Mono','Fira Code','Courier New',monospace;font-size:10px;fill:var(--color-secondary);}
+@media (prefers-reduced-motion: reduce){*{transition:none !important;animation:none !important;}}
+</style></head><body>
+<div id="chart" role="main"></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+<script>
+const aiTasks=[
+ "Discovery and longlist filter",
+ "Audience-overlap calculation",
+ "Fraud and engagement-pod audit",
+ "Outreach first drafts",
+ "Contract scaffolding",
+ "Disclosure presence check",
+ "Campaign reporting"
+];
+const humanTasks=[
+ "Fit read (life-stage + intent)",
+ "Reputational forward-look",
+ "Tier-and-mix strategy",
+ "Negotiation read",
+ "Gray-zone disclosure call",
+ "Crisis decision on spillover",
+ "Relationship escalation"
+];
+function draw(){
+  const c=document.getElementById('chart');
+  d3.select(c).selectAll('*').remove();
+  const W=c.clientWidth||900,H=480;
+  const svg=d3.select(c).append('svg').attr('viewBox',`0 0 ${W} ${H}`).attr('role','img').attr('aria-labelledby','t d');
+  svg.append('title').attr('id','t').text('Two-stage funnel: AI discovery, human decision');
+  svg.append('desc').attr('id','d').text('Two-stage funnel showing AI delegate tasks on the left and human guard tasks on the right, with the shortlist-review handoff on the decision boundary.');
+
+  // Arrow marker
+  const defs=svg.append('defs');
+  defs.append('marker').attr('id','arrow').attr('markerWidth',8).attr('markerHeight',6).attr('refX',7).attr('refY',3).attr('orient','auto')
+    .append('polygon').attr('points','0 0, 8 3, 0 6').attr('fill','var(--color-ink)');
+
+  svg.append('text').attr('class','title').attr('x',32).attr('y',32).text('AI shortens the shortlist. It does not shorten the decision.');
+  svg.append('text').attr('class','subtitle').attr('x',32).attr('y',52).text('Pattern-shaped work on the left. Judgment work on the right.');
+
+  // Left trapezoid (AI)
+  svg.append('polygon').attr('points',`${60},${110} ${W*0.45},${110} ${W*0.43},${400} ${80},${400}`).attr('fill','var(--color-fill)').attr('stroke','var(--color-border)').attr('stroke-width',0.75);
+  svg.append('text').attr('class','stage-header').attr('x',80).attr('y',135).text('Delegate — AI stage');
+  svg.append('text').attr('class','subtitle').attr('x',80).attr('y',151).text('Pattern-shaped tasks · minutes per longlist of 2,000');
+
+  svg.selectAll('.ai-circ').data(aiTasks).join('circle').attr('class','ai-circ')
+    .attr('cx',100).attr('cy',(d,i)=>180+i*28).attr('r',6).attr('fill','var(--color-secondary)');
+  svg.selectAll('.ai-lbl').data(aiTasks).join('text').attr('class','task-label')
+    .attr('x',115).attr('y',(d,i)=>184+i*28).text(d=>d);
+
+  // Boundary
+  const bx=W*0.50;
+  svg.append('line').attr('x1',bx).attr('y1',100).attr('x2',bx).attr('y2',410).attr('stroke','var(--color-ochre)').attr('stroke-width',2);
+  svg.append('text').attr('class','boundary-text').attr('x',bx+8).attr('y',100).text('The decision point AI cannot cross');
+
+  // Handoff marker (Guard red)
+  svg.append('circle').attr('cx',bx).attr('cy',255).attr('r',11).attr('fill','var(--color-red)');
+  svg.append('circle').attr('cx',bx).attr('cy',255).attr('r',16).attr('fill','none').attr('stroke','var(--color-red)').attr('stroke-width',1).attr('stroke-dasharray','2 2');
+  svg.append('text').attr('class','task-label').attr('x',bx+22).attr('y',252).style('font-weight',700).style('fill','var(--color-red)').text('Shortlist review');
+  svg.append('text').attr('class','subtitle').attr('x',bx+22).attr('y',266).text('2–4 hours · load-bearing handoff');
+
+  // Right trapezoid (human)
+  const rx0=bx+20, rx1=W-40;
+  svg.append('polygon').attr('points',`${rx0},${140} ${rx1},${150} ${rx1},${380} ${rx0},${370}`).attr('fill','var(--color-fill)').attr('stroke','var(--color-border)').attr('stroke-width',0.75);
+  svg.append('text').attr('class','stage-header').attr('x',rx0+20).attr('y',172).text('Guard — Human stage');
+  svg.append('text').attr('class','subtitle').attr('x',rx0+20).attr('y',188).text('Judgment work · hours per twenty-five candidates');
+
+  svg.selectAll('.h-mark').data(humanTasks).join('rect').attr('class','h-mark')
+    .attr('x',rx0+24).attr('y',(d,i)=>210+i*22).attr('width',10).attr('height',10).attr('fill','var(--color-red)');
+  svg.selectAll('.h-lbl').data(humanTasks).join('text').attr('class','task-label')
+    .attr('x',rx0+40).attr('y',(d,i)=>219+i*22).text(d=>d);
+
+  // Flow arrow
+  svg.append('line').attr('x1',80).attr('y1',430).attr('x2',W-50).attr('y2',430).attr('stroke','var(--color-ink)').attr('stroke-width',1).attr('marker-end','url(#arrow)');
+  svg.append('text').attr('class','axis-tick').attr('x',80).attr('y',450).text('longlist');
+  svg.append('text').attr('class','axis-tick').attr('x',bx-30).attr('y',450).text('shortlist');
+  svg.append('text').attr('class','axis-tick').attr('x',W-130).attr('y',450).text('booked partners');
+}
+draw();
+new ResizeObserver(draw).observe(document.getElementById('chart'));
+</script></body></html>

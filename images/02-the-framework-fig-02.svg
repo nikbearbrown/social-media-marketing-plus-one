@@ -1,0 +1,105 @@
+<!--
+  Decomposition of a LinkedIn CEO Thread — Nine Steps
+  Book: Social Media Marketing plus One · Chapter: 02-the-framework · Figure: 02
+  Type: decomposition · Generated: 2026-05-27 · Source: chapters/02-the-framework.md
+-->
+<svg viewBox="0 0 700 720" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="fig-title fig-desc">
+  <title id="fig-title">Decomposition of a LinkedIn CEO Thread</title>
+  <desc id="fig-desc">A vertical nine-step workflow for a LinkedIn CEO thought-leadership thread. Six Delegate steps and three Guard steps. Callouts on the three Guard steps name the reason each requires a human: angle selection requires knowing what the CEO believes; voice pass requires sustained proximity; hook is where voice is most exposed. A bottom tally shows six Delegate and three Guard.</desc>
+  <metadata><cajal:figure xmlns:cajal="https://bearbrown.ai/cajal/1.0" book="Social Media Marketing plus One" book-slug="social-media-marketing-plus-one" chapter="02-the-framework" figure-number="02" figure-title="Decomposition of a LinkedIn CEO Thread" figure-slug="ceo-thread-decomposition" figure-type="decomposition" priority="Critical" author="Humanitarians AI" date-generated="2026-05-27" source-file="pantry/02-the-framework-cajal.md"/></metadata>
+  <rect x="0" y="0" width="700" height="720" fill="#FFFFFF"/>
+  <text x="32" y="36" font-family="'EB Garamond', Georgia, serif" font-size="14" fill="#2a1a0e">Decomposition of a LinkedIn CEO Thread — Six Delegate, Three Guard</text>
+  <text x="32" y="56" font-family="'Inter', sans-serif" font-size="11" fill="#545454">Most real tasks are mixed. Whole-task delegation hides the structure.</text>
+
+  <!-- Steps: x=160, w=300, step-height 50, gap 14 (total 64 per step) starting y=90 -->
+  <!-- Step 1: Ideation — Guard -->
+  <rect x="160" y="90" width="300" height="50" fill="#C8102E" opacity="0.18" stroke="#C8102E" stroke-width="1"/>
+  <text x="180" y="120" font-family="'JetBrains Mono', monospace" font-size="11" fill="#C8102E">1</text>
+  <text x="210" y="120" font-family="'Inter', sans-serif" font-size="13" fill="#2a1a0e" font-weight="600">Ideation</text>
+  <text x="295" y="120" font-family="'Inter', sans-serif" font-size="10" fill="#545454">— what is the thread about</text>
+  <line x1="310" y1="140" x2="310" y2="154" stroke="#2a1a0e" stroke-width="1" marker-end="url(#arrowGuard1)"/>
+  <polygon points="310,154 306,148 314,148" fill="#2a1a0e"/>
+
+  <!-- Step 2: Angle selection — Guard (callout) -->
+  <rect x="160" y="154" width="300" height="50" fill="#C8102E" opacity="0.18" stroke="#C8102E" stroke-width="1"/>
+  <text x="180" y="184" font-family="'JetBrains Mono', monospace" font-size="11" fill="#C8102E">2</text>
+  <text x="210" y="184" font-family="'Inter', sans-serif" font-size="13" fill="#2a1a0e" font-weight="600">Angle selection</text>
+  <text x="325" y="184" font-family="'Inter', sans-serif" font-size="10" fill="#545454">— which take to defend</text>
+  <!-- Callout right -->
+  <line x1="460" y1="179" x2="495" y2="179" stroke="#C8860E" stroke-width="0.5"/>
+  <circle cx="495" cy="179" r="2.5" fill="#C8860E"/>
+  <text x="503" y="176" font-family="'Inter', sans-serif" font-size="10" fill="#C8860E" font-weight="600">requires knowing</text>
+  <text x="503" y="188" font-family="'Inter', sans-serif" font-size="10" fill="#C8860E">what CEO believes</text>
+  <polygon points="310,218 306,212 314,212" fill="#2a1a0e"/>
+  <line x1="310" y1="204" x2="310" y2="214" stroke="#2a1a0e" stroke-width="1"/>
+
+  <!-- Step 3: Outline drafting — Delegate -->
+  <rect x="160" y="218" width="300" height="50" fill="#545454" opacity="0.20" stroke="#545454" stroke-width="1"/>
+  <text x="180" y="248" font-family="'JetBrains Mono', monospace" font-size="11" fill="#545454">3</text>
+  <text x="210" y="248" font-family="'Inter', sans-serif" font-size="13" fill="#2a1a0e" font-weight="600">Outline drafting</text>
+  <text x="330" y="248" font-family="'Inter', sans-serif" font-size="10" fill="#545454">— given the angle</text>
+  <line x1="310" y1="268" x2="310" y2="278" stroke="#2a1a0e" stroke-width="1"/>
+  <polygon points="310,282 306,276 314,276" fill="#2a1a0e"/>
+
+  <!-- Step 4: First-draft prose — Delegate -->
+  <rect x="160" y="282" width="300" height="50" fill="#545454" opacity="0.20" stroke="#545454" stroke-width="1"/>
+  <text x="180" y="312" font-family="'JetBrains Mono', monospace" font-size="11" fill="#545454">4</text>
+  <text x="210" y="312" font-family="'Inter', sans-serif" font-size="13" fill="#2a1a0e" font-weight="600">First-draft prose</text>
+  <text x="332" y="312" font-family="'Inter', sans-serif" font-size="10" fill="#545454">— edit pass is fast</text>
+  <line x1="310" y1="332" x2="310" y2="342" stroke="#2a1a0e" stroke-width="1"/>
+  <polygon points="310,346 306,340 314,340" fill="#2a1a0e"/>
+
+  <!-- Step 5: Voice pass — Guard (callout) -->
+  <rect x="160" y="346" width="300" height="50" fill="#C8102E" opacity="0.18" stroke="#C8102E" stroke-width="1"/>
+  <text x="180" y="376" font-family="'JetBrains Mono', monospace" font-size="11" fill="#C8102E">5</text>
+  <text x="210" y="376" font-family="'Inter', sans-serif" font-size="13" fill="#2a1a0e" font-weight="600">Voice pass</text>
+  <text x="298" y="376" font-family="'Inter', sans-serif" font-size="10" fill="#545454">— does this sound like the CEO</text>
+  <!-- Callout right -->
+  <line x1="460" y1="371" x2="495" y2="371" stroke="#C8860E" stroke-width="0.5"/>
+  <circle cx="495" cy="371" r="2.5" fill="#C8860E"/>
+  <text x="503" y="368" font-family="'Inter', sans-serif" font-size="10" fill="#C8860E" font-weight="600">requires sustained</text>
+  <text x="503" y="380" font-family="'Inter', sans-serif" font-size="10" fill="#C8860E">proximity</text>
+  <line x1="310" y1="396" x2="310" y2="406" stroke="#2a1a0e" stroke-width="1"/>
+  <polygon points="310,410 306,404 314,404" fill="#2a1a0e"/>
+
+  <!-- Step 6: Hook refinement — Guard (callout) -->
+  <rect x="160" y="410" width="300" height="50" fill="#C8102E" opacity="0.18" stroke="#C8102E" stroke-width="1"/>
+  <text x="180" y="440" font-family="'JetBrains Mono', monospace" font-size="11" fill="#C8102E">6</text>
+  <text x="210" y="440" font-family="'Inter', sans-serif" font-size="13" fill="#2a1a0e" font-weight="600">Hook refinement</text>
+  <text x="330" y="440" font-family="'Inter', sans-serif" font-size="10" fill="#545454">— opening line of thread</text>
+  <!-- Callout right -->
+  <line x1="460" y1="435" x2="495" y2="435" stroke="#C8860E" stroke-width="0.5"/>
+  <circle cx="495" cy="435" r="2.5" fill="#C8860E"/>
+  <text x="503" y="432" font-family="'Inter', sans-serif" font-size="10" fill="#C8860E" font-weight="600">voice most exposed</text>
+  <text x="503" y="444" font-family="'Inter', sans-serif" font-size="10" fill="#C8860E">engagement decided here</text>
+  <line x1="310" y1="460" x2="310" y2="470" stroke="#2a1a0e" stroke-width="1"/>
+  <polygon points="310,474 306,468 314,468" fill="#2a1a0e"/>
+
+  <!-- Step 7: Hashtag + tag generation — Delegate -->
+  <rect x="160" y="474" width="300" height="50" fill="#545454" opacity="0.20" stroke="#545454" stroke-width="1"/>
+  <text x="180" y="504" font-family="'JetBrains Mono', monospace" font-size="11" fill="#545454">7</text>
+  <text x="210" y="504" font-family="'Inter', sans-serif" font-size="13" fill="#2a1a0e" font-weight="600">Hashtag &amp; tag generation</text>
+  <text x="372" y="504" font-family="'Inter', sans-serif" font-size="10" fill="#545454">— combinatorial</text>
+  <line x1="310" y1="524" x2="310" y2="534" stroke="#2a1a0e" stroke-width="1"/>
+  <polygon points="310,538 306,532 314,532" fill="#2a1a0e"/>
+
+  <!-- Step 8: Publishing time + platform tuning — Delegate -->
+  <rect x="160" y="538" width="300" height="50" fill="#545454" opacity="0.20" stroke="#545454" stroke-width="1"/>
+  <text x="180" y="568" font-family="'JetBrains Mono', monospace" font-size="11" fill="#545454">8</text>
+  <text x="210" y="568" font-family="'Inter', sans-serif" font-size="13" fill="#2a1a0e" font-weight="600">Publishing time + tuning</text>
+  <text x="372" y="568" font-family="'Inter', sans-serif" font-size="10" fill="#545454">— well-tooled</text>
+  <line x1="310" y1="588" x2="310" y2="598" stroke="#2a1a0e" stroke-width="1"/>
+  <polygon points="310,602 306,596 314,596" fill="#2a1a0e"/>
+
+  <!-- Step 9: First-hour comment monitoring — Guard -->
+  <rect x="160" y="602" width="300" height="50" fill="#C8102E" opacity="0.18" stroke="#C8102E" stroke-width="1"/>
+  <text x="180" y="632" font-family="'JetBrains Mono', monospace" font-size="11" fill="#C8102E">9</text>
+  <text x="210" y="632" font-family="'Inter', sans-serif" font-size="13" fill="#2a1a0e" font-weight="600">First-hour comment monitor</text>
+  <text x="395" y="632" font-family="'Inter', sans-serif" font-size="10" fill="#545454">— same voice replies</text>
+
+  <!-- Tally tiles at the bottom -->
+  <rect x="220" y="672" width="100" height="32" fill="#545454" opacity="0.25" stroke="#545454" stroke-width="1"/>
+  <text x="270" y="693" text-anchor="middle" font-family="'Inter', sans-serif" font-size="12" font-weight="600" fill="#2a1a0e">6 Delegate</text>
+  <rect x="340" y="672" width="100" height="32" fill="#C8102E" opacity="0.18" stroke="#C8102E" stroke-width="1"/>
+  <text x="390" y="693" text-anchor="middle" font-family="'Inter', sans-serif" font-size="12" font-weight="600" fill="#C8102E">3 Guard</text>
+</svg>

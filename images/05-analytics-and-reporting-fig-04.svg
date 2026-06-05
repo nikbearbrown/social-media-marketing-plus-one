@@ -1,0 +1,121 @@
+<!--
+  Deming — Common-Cause vs Special-Cause Variation
+  Book: Social Media Marketing plus One
+  Chapter: 05-analytics-and-reporting
+  Figure: 04
+  Type: chart
+  Generated: 2026-05-27
+  Source: pantry/05-analytics-and-reporting-cajal.md
+-->
+<svg viewBox="0 0 700 480" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="fig-title-04">
+  <title id="fig-title-04">Deming — Common-Cause vs Special-Cause Variation</title>
+  <desc>A control chart of a weekly metric. A mean line runs horizontally with dashed upper and lower three-sigma limits. Most weekly points oscillate within the limits — common-cause variation, no action required. Two points break the upper limit — special-cause variation, where the practitioner should investigate. An AI anomaly flag fires on a common-cause point, illustrating the Red Bead trap.</desc>
+  <metadata><cajal:figure xmlns:cajal="https://bearbrown.ai/cajal/1.0" book="Social Media Marketing plus One" book-slug="social-media-marketing-plus-one" chapter="05-analytics-and-reporting" figure-number="04" figure-title="Deming — Common-Cause vs Special-Cause Variation" figure-slug="deming-control-chart" figure-type="chart" priority="Recommended" author="Nik Bear Brown Milivoje Davidovic" date-generated="2026-05-27" source-file="pantry/05-analytics-and-reporting-cajal.md"/></metadata>
+  <defs><marker id="arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#2a1a0e"/></marker></defs>
+  <rect x="0" y="0" width="700" height="480" fill="#FFFFFF"/>
+  <text x="32" y="36" font-family="'EB Garamond', 'Garamond', Georgia, serif" font-size="14" fill="#2a1a0e">Deming — most "anomalies" are common-cause noise, not signal</text>
+  <text x="32" y="56" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="11" fill="#545454">Reacting to common-cause variation as if it were special-cause makes the system worse. The Red Bead trap.</text>
+
+  <!-- Plot region -->
+  <rect x="80" y="100" width="560" height="240" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="0.75"/>
+
+  <!-- Y axis -->
+  <line x1="80" y1="100" x2="80" y2="340" stroke="#2a1a0e" stroke-width="1"/>
+  <!-- X axis -->
+  <line x1="80" y1="340" x2="640" y2="340" stroke="#2a1a0e" stroke-width="1"/>
+
+  <!-- Mean line (centered around y=220 in plot region) -->
+  <line x1="80" y1="220" x2="640" y2="220" stroke="#2a1a0e" stroke-width="1"/>
+  <text x="650" y="223" font-family="'JetBrains Mono', monospace" font-size="10" fill="#2a1a0e">mean</text>
+
+  <!-- Upper control limit (UCL) at y=140 -->
+  <line x1="80" y1="140" x2="640" y2="140" stroke="#545454" stroke-width="0.75" stroke-dasharray="4 3"/>
+  <text x="650" y="143" font-family="'JetBrains Mono', monospace" font-size="10" fill="#545454">+3σ</text>
+
+  <!-- Lower control limit (LCL) at y=300 -->
+  <line x1="80" y1="300" x2="640" y2="300" stroke="#545454" stroke-width="0.75" stroke-dasharray="4 3"/>
+  <text x="650" y="303" font-family="'JetBrains Mono', monospace" font-size="10" fill="#545454">-3σ</text>
+
+  <!-- Y-axis tick at the mean -->
+  <text x="73" y="143" text-anchor="end" font-family="'JetBrains Mono', monospace" font-size="10" fill="#545454">115</text>
+  <text x="73" y="223" text-anchor="end" font-family="'JetBrains Mono', monospace" font-size="10" fill="#545454">100</text>
+  <text x="73" y="303" text-anchor="end" font-family="'JetBrains Mono', monospace" font-size="10" fill="#545454">85</text>
+
+  <!-- X-axis ticks -->
+  <text x="105" y="358" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="9" fill="#545454">w1</text>
+  <text x="155" y="358" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="9" fill="#545454">w3</text>
+  <text x="205" y="358" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="9" fill="#545454">w5</text>
+  <text x="255" y="358" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="9" fill="#545454">w7</text>
+  <text x="305" y="358" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="9" fill="#545454">w9</text>
+  <text x="355" y="358" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="9" fill="#545454">w11</text>
+  <text x="405" y="358" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="9" fill="#545454">w13</text>
+  <text x="455" y="358" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="9" fill="#545454">w15</text>
+  <text x="505" y="358" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="9" fill="#545454">w17</text>
+  <text x="555" y="358" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="9" fill="#545454">w19</text>
+  <text x="605" y="358" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="9" fill="#545454">w21</text>
+
+  <!-- Axis titles -->
+  <text x="50" y="220" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" fill="#545454" transform="rotate(-90 50 220)">weekly engagement rate</text>
+  <text x="360" y="378" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" fill="#545454">week</text>
+
+  <!-- Jagged metric trace (Blue / ink) — 22 points, mostly within bounds, two break upper limit -->
+  <polyline points="105,218 130,212 155,228 180,205 205,232 230,210 255,225 280,200 305,135 330,210 355,218 380,228 405,205 430,222 455,215 480,238 505,210 530,125 555,215 580,228 605,205 630,222"
+            fill="none" stroke="#2a1a0e" stroke-width="1.2"/>
+
+  <!-- Common-cause points (in-bounds) — neutral gray dots -->
+  <g fill="#545454">
+    <circle cx="105" cy="218" r="3"/>
+    <circle cx="130" cy="212" r="3"/>
+    <circle cx="155" cy="228" r="3"/>
+    <circle cx="180" cy="205" r="3"/>
+    <circle cx="205" cy="232" r="3"/>
+    <circle cx="230" cy="210" r="3"/>
+    <circle cx="255" cy="225" r="3"/>
+    <circle cx="280" cy="200" r="3"/>
+    <circle cx="330" cy="210" r="3"/>
+    <circle cx="355" cy="218" r="3"/>
+    <circle cx="380" cy="228" r="3"/>
+    <circle cx="405" cy="205" r="3"/>
+    <circle cx="430" cy="222" r="3"/>
+    <circle cx="455" cy="215" r="3"/>
+    <circle cx="505" cy="210" r="3"/>
+    <circle cx="555" cy="215" r="3"/>
+    <circle cx="580" cy="228" r="3"/>
+    <circle cx="605" cy="205" r="3"/>
+    <circle cx="630" cy="222" r="3"/>
+  </g>
+
+  <!-- AI false-flag marker on a common-cause point (week 16, around 480,238) — ochre ring shows AI flagged it; underlying point is still gray -->
+  <circle cx="480" cy="238" r="3" fill="#545454"/>
+  <circle cx="480" cy="238" r="7" fill="none" stroke="#C8860E" stroke-width="1.5"/>
+  <line x1="480" y1="231" x2="480" y2="210" stroke="#C8860E" stroke-width="0.75"/>
+  <text x="478" y="205" text-anchor="end" font-family="'Inter', sans-serif" font-size="9" fill="#C8860E" font-weight="600">AI flag —</text>
+  <text x="478" y="217" text-anchor="end" font-family="'Inter', sans-serif" font-size="9" fill="#C8860E">false positive</text>
+
+  <!-- Special-cause spikes — red triangles at week 9 (305,135) and week 18 (530,125), both break upper limit -->
+  <polygon points="305,127 311,138 299,138" fill="#C8102E"/>
+  <polygon points="530,117 536,128 524,128" fill="#C8102E"/>
+
+  <!-- Special-cause annotations -->
+  <line x1="305" y1="135" x2="305" y2="110" stroke="#C8102E" stroke-width="0.75"/>
+  <text x="305" y="106" text-anchor="middle" font-family="'Inter', sans-serif" font-size="9" fill="#C8102E" font-weight="700">special-cause</text>
+  <line x1="530" y1="125" x2="530" y2="110" stroke="#C8102E" stroke-width="0.75"/>
+  <text x="530" y="106" text-anchor="middle" font-family="'Inter', sans-serif" font-size="9" fill="#C8102E" font-weight="700">special-cause</text>
+
+  <!-- Practitioner classify-marker below the time axis at the false-positive week -->
+  <text x="480" y="390" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="14" font-weight="700" fill="#C8860E">?</text>
+  <text x="480" y="404" text-anchor="middle" font-family="'Inter', sans-serif" font-size="9" fill="#545454">stop, classify</text>
+
+  <!-- Legend -->
+  <text x="32" y="430" font-family="'Inter', sans-serif" font-size="10" font-weight="700" fill="#2a1a0e">How to read this chart</text>
+
+  <circle cx="40" cy="450" r="3" fill="#545454"/>
+  <text x="50" y="453" font-family="'Inter', sans-serif" font-size="10" fill="#2a1a0e">common-cause — inside ±3σ, no action</text>
+
+  <polygon points="265,448 271,458 259,458" fill="#C8102E"/>
+  <text x="280" y="453" font-family="'Inter', sans-serif" font-size="10" fill="#2a1a0e">special-cause — outside limits, investigate</text>
+
+  <circle cx="503" cy="450" r="3" fill="#545454"/>
+  <circle cx="503" cy="450" r="7" fill="none" stroke="#C8860E" stroke-width="1.5"/>
+  <text x="515" y="453" font-family="'Inter', sans-serif" font-size="10" fill="#2a1a0e">AI flag on common-cause — the Red Bead trap</text>
+</svg>

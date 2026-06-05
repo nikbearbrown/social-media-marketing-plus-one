@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Decomposition of a CEO LinkedIn Essay — 13 Steps</title>
+<style>
+:root{--color-white:#FFFFFF;--color-ink:#2a1a0e;--color-red:#C8102E;--color-secondary:#545454;--color-border:#D4D4D4;--color-ochre:#C8860E;--color-fill:#F5F5F5;}
+@media (prefers-color-scheme: dark){:root{--color-white:#111111;--color-ink:#F0EBE3;--color-red:#E8243A;--color-secondary:#A0978C;--color-border:#2E2E2E;--color-ochre:#D49A30;--color-fill:#1A1A1A;}}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--color-white);color:var(--color-ink);font-family:'Inter',-apple-system,'Helvetica Neue',sans-serif;padding:24px;}
+#chart{width:100%;min-height:640px;}
+.tooltip{position:absolute;pointer-events:none;opacity:0;background:var(--color-ink);color:var(--color-white);padding:6px 10px;font-size:12px;max-width:240px;}
+.title{font-family:'EB Garamond','Garamond',Georgia,serif;font-size:16px;fill:var(--color-ink);}
+.subtitle{font-family:'Inter',sans-serif;font-size:12px;fill:var(--color-secondary);}
+.step-label{font-family:'Inter',sans-serif;font-size:12px;fill:var(--color-white);}
+.role-label{font-family:'JetBrains Mono','Fira Code','Courier New',monospace;font-size:10px;fill:var(--color-white);}
+.callout{font-family:'EB Garamond','Garamond',Georgia,serif;font-size:11px;fill:var(--color-secondary);font-style:italic;}
+.tally-num{font-family:'EB Garamond','Garamond',Georgia,serif;font-size:18px;fill:var(--color-white);}
+.tally-role{font-family:'JetBrains Mono','Fira Code','Courier New',monospace;font-size:10px;fill:var(--color-white);}
+@media (prefers-reduced-motion: reduce){*{transition:none !important;animation:none !important;}}
+</style>
+</head>
+<body>
+<div id="chart" role="main"></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+<script>
+const STEPS = [
+  {n:1, label:'Topic selection', role:'guard', callout:'strategic positioning'},
+  {n:2, label:'Angle on the topic', role:'guard', callout:'requires knowing CEO'},
+  {n:3, label:'Research synthesis', role:'delegate'},
+  {n:4, label:'Outline', role:'delegate'},
+  {n:5, label:'First-draft prose', role:'delegate'},
+  {n:6, label:'Voice pass', role:'guard', callout:'surface easy, depth hard'},
+  {n:7, label:'Opening hook', role:'guard', callout:'voice most exposed'},
+  {n:8, label:'Closing line', role:'guard', callout:'take-home line'},
+  {n:9, label:'Hashtags and tags', role:'delegate'},
+  {n:10, label:'Posting time and format tuning', role:'delegate'},
+  {n:11, label:'Pre-publication legal / brand check', role:'delegate', flag:true},
+  {n:12, label:'Decision to publish', role:'guard', callout:'the shipping decision'},
+  {n:13, label:'Sort / respond to comments', role:'split'}
+];
+
+const tooltip = d3.select('body').append('div').attr('class','tooltip');
+
+function draw(){
+  const container = document.getElementById('chart');
+  d3.select(container).selectAll('*').remove();
+  const W = container.clientWidth || 800;
+  const H = 700;
+  const margin = { top: 80, right: 220, bottom: 80, left: 80 };
+  const chartWidth = W - margin.left - margin.right;
+
+  const stepH = 32;
+  const stepGap = 6;
+
+  const svg = d3.select(container).append('svg')
+    .attr('viewBox', `0 0 ${W} ${H}`)
+    .attr('role','img').attr('aria-labelledby','t d');
+  svg.append('title').attr('id','t').text('Decomposition of a CEO LinkedIn essay');
+  svg.append('desc').attr('id','d').text('Thirteen-step vertical workflow with five Guard steps in red and eight Delegate steps in gray. Bottom tally: 8 Delegate, 5 Guard.');
+
+  svg.append('text').attr('class','title').attr('x', margin.left).attr('y', 32)
+    .text('One essay. Thirteen steps. Eight Delegate. Five Guard.');
+  svg.append('text').attr('class','subtitle').attr('x', margin.left).attr('y', 52)
+    .text('A B2B SaaS social manager publishing a 1,200-word LinkedIn essay under the CEO byline.');
+
+  const g = svg.append('g').attr('transform', `translate(${margin.left},${margin.top})`);
+
+  STEPS.forEach((s, i) => {
+    const y = i * (stepH + stepGap);
+    if (s.role === 'split') {
+      const halfW = chartWidth / 2;
+      g.append('rect').attr('x', 0).attr('y', y).attr('width', halfW).attr('height', stepH)
+        .attr('fill','var(--color-secondary)').attr('rx',0);
+      g.append('rect').attr('x', halfW).attr('y', y).attr('width', halfW).attr('height', stepH)
+        .attr('fill','var(--color-red)').attr('rx',0);
+      g.append('text').attr('class','step-label').attr('x', 14).attr('y', y + 20)
+        .text(`${s.n} · Sort comments`);
+      g.append('text').attr('class','step-label').attr('x', halfW + 14).attr('y', y + 20)
+        .text('respond');
+    } else {
+      const fill = s.role === 'guard' ? 'var(--color-red)' : 'var(--color-secondary)';
+      g.append('rect').attr('x', 0).attr('y', y).attr('width', chartWidth).attr('height', stepH)
+        .attr('fill', fill).attr('rx', 0)
+        .attr('tabindex', 0)
+        .attr('aria-label', `${s.n}: ${s.label} (${s.role})`)
+        .on('mouseover',(event)=>{tooltip.html(`<strong>${s.label}</strong><br>${s.role === 'guard' ? 'Guard — keep with human' : 'Delegate — pattern-shaped'}${s.callout ? '<br><em>' + s.callout + '</em>' : ''}`).style('opacity',1).style('left',(event.pageX+12)+'px').style('top',(event.pageY-28)+'px');})
+        .on('mousemove',(event)=>tooltip.style('left',(event.pageX+12)+'px').style('top',(event.pageY-28)+'px'))
+        .on('mouseout',()=>tooltip.style('opacity',0));
+      g.append('text').attr('class','step-label').attr('x', 14).attr('y', y + 20)
+        .text(`${s.n} · ${s.label}`);
+      g.append('text').attr('class','role-label').attr('x', chartWidth - 12).attr('y', y + 20)
+        .attr('text-anchor','end').text(s.role.toUpperCase());
+      if (s.flag) {
+        g.append('circle').attr('cx', chartWidth - 8).attr('cy', y + 6).attr('r', 4)
+          .attr('fill','var(--color-ochre)').attr('aria-hidden','true');
+      }
+      if (s.callout) {
+        g.append('text').attr('class','callout').attr('x', chartWidth + 16).attr('y', y + 20)
+          .text(s.callout);
+      }
+    }
+  });
+
+  // Tally tiles
+  const tallyY = STEPS.length * (stepH + stepGap) + 16;
+  const tallyW = chartWidth / 2 - 4;
+  g.append('rect').attr('x', 0).attr('y', tallyY).attr('width', tallyW).attr('height', 40)
+    .attr('fill','var(--color-secondary)');
+  g.append('text').attr('class','tally-num').attr('x', tallyW/2).attr('y', tallyY + 22)
+    .attr('text-anchor','middle').text('8');
+  g.append('text').attr('class','tally-role').attr('x', tallyW/2).attr('y', tallyY + 35)
+    .attr('text-anchor','middle').text('DELEGATE');
+
+  g.append('rect').attr('x', tallyW + 8).attr('y', tallyY).attr('width', tallyW).attr('height', 40)
+    .attr('fill','var(--color-red)');
+  g.append('text').attr('class','tally-num').attr('x', tallyW + 8 + tallyW/2).attr('y', tallyY + 22)
+    .attr('text-anchor','middle').text('5');
+  g.append('text').attr('class','tally-role').attr('x', tallyW + 8 + tallyW/2).attr('y', tallyY + 35)
+    .attr('text-anchor','middle').text('GUARD');
+}
+
+draw();
+new ResizeObserver(draw).observe(document.getElementById('chart'));
+</script>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!--
+  Fit-vs-reach matrix
+  Book: Social Media Marketing plus One
+  Chapter: 07-influencer-and-partnership
+  Figure: 03
+  Type: MATRIX
+  Generated: 2026-05-27
+  Source: pantry/07-influencer-and-partnership-cajal.md
+-->
+<svg viewBox="0 0 700 540" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="fig-title-03 fig-desc-03">
+  <title id="fig-title-03">Fit-vs-reach matrix</title>
+  <desc id="fig-desc-03">A 2x2 matrix with reach on the x-axis and fit on the y-axis. Four quadrants name the archetypes — micro-creator sweet spot, rare ideal, mega-creator default, rejection zone. A De Veirman log-linear decay curve overlays the diagonal showing engagement-per-follower decreases as reach grows.</desc>
+  <metadata><cajal:figure xmlns:cajal="https://bearbrown.ai/cajal/1.0" book="Social Media Marketing plus One" book-slug="social-media-marketing-plus-one" chapter="07-influencer-and-partnership" figure-number="03" figure-title="Fit-vs-reach matrix" figure-slug="fit-vs-reach-matrix" figure-type="MATRIX" priority="Critical" author="Nik Bear Brown Milivoje Davidovic" date-generated="2026-05-27" source-file="pantry/07-influencer-and-partnership-cajal.md"/></metadata>
+  <defs><marker id="arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#2a1a0e"/></marker></defs>
+  <rect x="0" y="0" width="700" height="540" fill="#FFFFFF"/>
+  <text x="32" y="36" font-family="'EB Garamond', 'Garamond', Georgia, serif" font-size="14" fill="#2a1a0e">Fit-vs-reach — where the tier decisions actually sit</text>
+  <text x="32" y="56" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="11" fill="#545454">De Veirman, Cauberghe &amp; Hudders (2017): engagement-per-follower decays log-linearly with follower count.</text>
+
+  <!-- Plot region 480x380 starting at x=110, y=90 -->
+  <rect x="110" y="90" width="480" height="380" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="0.75"/>
+
+  <!-- Quadrant divider lines -->
+  <line x1="350" y1="90" x2="350" y2="470" stroke="#2a1a0e" stroke-width="1"/>
+  <line x1="110" y1="280" x2="590" y2="280" stroke="#2a1a0e" stroke-width="1"/>
+
+  <!-- Axis lines (left and bottom) -->
+  <line x1="110" y1="90" x2="110" y2="470" stroke="#2a1a0e" stroke-width="1"/>
+  <line x1="110" y1="470" x2="590" y2="470" stroke="#2a1a0e" stroke-width="1"/>
+
+  <!-- Axis titles -->
+  <text x="350" y="500" text-anchor="middle" font-family="'Inter', sans-serif" font-size="12" fill="#2a1a0e">Reach — follower count (log scale)</text>
+  <text x="50" y="280" text-anchor="middle" font-family="'Inter', sans-serif" font-size="12" fill="#2a1a0e" transform="rotate(-90 50 280)">Fit — audience-creator alignment</text>
+
+  <!-- Axis tick labels -->
+  <g font-family="'JetBrains Mono', monospace" font-size="10" fill="#545454">
+    <text x="116" y="484">10k</text>
+    <text x="290" y="484">100k</text>
+    <text x="525" y="484">1M+</text>
+    <text x="104" y="473" text-anchor="end">low</text>
+    <text x="104" y="284" text-anchor="end">mid</text>
+    <text x="104" y="96" text-anchor="end">high</text>
+  </g>
+
+  <!-- Quadrant background labels (top-left, top-right, bottom-left, bottom-right) -->
+  <text x="120" y="110" font-family="'JetBrains Mono', monospace" font-size="9" fill="#787878">high fit · low reach</text>
+  <text x="360" y="110" font-family="'JetBrains Mono', monospace" font-size="9" fill="#787878">high fit · high reach</text>
+  <text x="120" y="300" font-family="'JetBrains Mono', monospace" font-size="9" fill="#787878">low fit · low reach</text>
+  <text x="360" y="300" font-family="'JetBrains Mono', monospace" font-size="9" fill="#787878">low fit · high reach</text>
+
+  <!-- Top-left quadrant: micro-creator sweet spot (gray dense cluster) -->
+  <g fill="#545454">
+    <circle cx="155" cy="160" r="6"/>
+    <circle cx="185" cy="180" r="6"/>
+    <circle cx="170" cy="200" r="6"/>
+    <circle cx="205" cy="155" r="6"/>
+    <circle cx="225" cy="185" r="6"/>
+    <circle cx="250" cy="170" r="6"/>
+    <circle cx="195" cy="225" r="6"/>
+    <circle cx="270" cy="200" r="6"/>
+    <circle cx="155" cy="240" r="6"/>
+    <circle cx="290" cy="160" r="6"/>
+    <circle cx="220" cy="245" r="6"/>
+    <circle cx="245" cy="225" r="6"/>
+  </g>
+  <text x="230" y="135" text-anchor="middle" font-family="'EB Garamond', Georgia, serif" font-size="13" font-weight="700" fill="#2a1a0e">Micro sweet spot</text>
+  <text x="230" y="148" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10" fill="#545454">tight audience, high engagement</text>
+
+  <!-- Top-right quadrant: rare ideal (one red dot with ring) -->
+  <circle cx="470" cy="180" r="11" fill="#C8102E"/>
+  <circle cx="470" cy="180" r="18" fill="none" stroke="#C8102E" stroke-width="1" stroke-dasharray="3 2"/>
+  <text x="470" y="135" text-anchor="middle" font-family="'EB Garamond', Georgia, serif" font-size="13" font-weight="700" fill="#C8102E">Rare ideal</text>
+  <text x="470" y="148" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10" fill="#545454">authentic fit at scale</text>
+  <text x="470" y="220" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10" font-style="italic" fill="#545454">hard to find · book early</text>
+
+  <!-- Bottom-right quadrant: mega-creator default (medium dense, gray) -->
+  <g fill="#ADADAD">
+    <circle cx="400" cy="335" r="7"/>
+    <circle cx="440" cy="360" r="7"/>
+    <circle cx="475" cy="335" r="7"/>
+    <circle cx="510" cy="375" r="7"/>
+    <circle cx="540" cy="340" r="7"/>
+    <circle cx="430" cy="400" r="7"/>
+    <circle cx="490" cy="410" r="7"/>
+    <circle cx="560" cy="395" r="7"/>
+    <circle cx="390" cy="425" r="7"/>
+    <circle cx="530" cy="435" r="7"/>
+  </g>
+  <text x="470" y="320" text-anchor="middle" font-family="'EB Garamond', Georgia, serif" font-size="13" font-weight="700" fill="#2a1a0e">Mega-creator default</text>
+  <text x="470" y="453" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10" font-style="italic" fill="#545454">reach without resonance — pay-for-impressions trap</text>
+
+  <!-- Bottom-left quadrant: rejection zone (single outlined circle) -->
+  <circle cx="180" cy="395" r="9" fill="none" stroke="#787878" stroke-width="1" stroke-dasharray="3 2"/>
+  <text x="180" y="380" text-anchor="middle" font-family="'EB Garamond', Georgia, serif" font-size="13" font-weight="700" fill="#2a1a0e">Avoid</text>
+  <text x="180" y="425" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10" font-style="italic" fill="#545454">neither fit nor scale</text>
+
+  <!-- De Veirman log-linear decay curve from top-left to bottom-right -->
+  <path d="M 130 130 Q 280 175, 380 280 T 580 445" fill="none" stroke="#C8860E" stroke-width="1.5"/>
+
+  <!-- Inflection marker on the curve at quadrant boundary -->
+  <circle cx="350" cy="232" r="5" fill="#C8860E"/>
+  <text x="362" y="220" font-family="'EB Garamond', Georgia, serif" font-style="italic" font-size="12" fill="#C8860E">inflection — where</text>
+  <text x="362" y="234" font-family="'EB Garamond', Georgia, serif" font-style="italic" font-size="12" fill="#C8860E">most tier decisions sit</text>
+
+  <!-- Legend -->
+  <g transform="translate(32,510)">
+    <circle cx="6" cy="6" r="6" fill="#545454"/>
+    <text x="20" y="10" font-family="'Inter', sans-serif" font-size="11" fill="#2a1a0e">Candidates</text>
+    <circle cx="120" cy="6" r="7" fill="#C8102E"/>
+    <text x="134" y="10" font-family="'Inter', sans-serif" font-size="11" fill="#2a1a0e">Ideal partner (rare)</text>
+    <line x1="290" y1="6" x2="320" y2="6" stroke="#C8860E" stroke-width="1.5"/>
+    <text x="326" y="10" font-family="'Inter', sans-serif" font-size="11" fill="#2a1a0e">De Veirman log-linear engagement decay</text>
+  </g>
+</svg>

@@ -1,0 +1,53 @@
+<!--
+  Three Nested Framework Levels — Conceptual / Operational / Execution
+  Book: Social Media Marketing plus One · Chapter: 02-the-framework · Figure: 01
+  Type: nested-rings · Generated: 2026-05-27 · Source: chapters/02-the-framework.md
+-->
+<svg viewBox="0 0 700 480" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="fig-title fig-desc">
+  <title id="fig-title">Three Nested Framework Levels</title>
+  <desc id="fig-desc">A concentric-ring diagram with three nested levels: an outermost ring for the conceptual level (pattern-shaped vs. judgment-shaped), a middle ring for the operational level (Delegate List vs. Guard List), and an innermost disc for the execution level (Do This vs. Never Do This). Each ring connects to a right-side label naming what that level produces.</desc>
+  <metadata><cajal:figure xmlns:cajal="https://bearbrown.ai/cajal/1.0" book="Social Media Marketing plus One" book-slug="social-media-marketing-plus-one" chapter="02-the-framework" figure-number="01" figure-title="Three Nested Framework Levels" figure-slug="nested-framework-levels" figure-type="nested-rings" priority="Critical" author="Humanitarians AI" date-generated="2026-05-27" source-file="pantry/02-the-framework-cajal.md"/></metadata>
+  <defs><marker id="arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#2a1a0e"/></marker></defs>
+  <rect x="0" y="0" width="700" height="480" fill="#FFFFFF"/>
+  <text x="32" y="36" font-family="'EB Garamond', Georgia, serif" font-size="14" fill="#2a1a0e">Three Nested Framework Levels — Conceptual, Operational, Execution</text>
+  <text x="32" y="56" font-family="'Inter', sans-serif" font-size="11" fill="#545454">A stack, not synonyms. Confusing the levels is the most common adoption failure.</text>
+
+  <!-- center coords: (260, 260) — leaves room on right for callouts -->
+  <!-- Outer ring (Conceptual) -->
+  <circle cx="260" cy="260" r="160" fill="#545454" opacity="0.18" stroke="#2a1a0e" stroke-width="1"/>
+  <!-- Middle ring (Operational) -->
+  <circle cx="260" cy="260" r="105" fill="#C8102E" opacity="0.15" stroke="#2a1a0e" stroke-width="1"/>
+  <!-- Inner disc (Execution) -->
+  <circle cx="260" cy="260" r="55" fill="#2a1a0e" opacity="0.25" stroke="#2a1a0e" stroke-width="1"/>
+
+  <!-- Ring labels (inside rings, at top of each band) -->
+  <text x="260" y="125" text-anchor="middle" font-family="'Inter', sans-serif" font-size="12" font-weight="600" fill="#2a1a0e">CONCEPTUAL</text>
+  <text x="260" y="140" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10" fill="#545454">pattern vs. judgment</text>
+
+  <text x="260" y="180" text-anchor="middle" font-family="'Inter', sans-serif" font-size="12" font-weight="600" fill="#C8102E">OPERATIONAL</text>
+  <text x="260" y="195" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10" fill="#545454">Delegate vs. Guard</text>
+
+  <text x="260" y="258" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" font-weight="600" fill="#FFFFFF">EXECUTION</text>
+  <text x="260" y="273" text-anchor="middle" font-family="'Inter', sans-serif" font-size="9" fill="#FFFFFF">Do / Never</text>
+
+  <!-- Callout brackets on the right -->
+  <!-- Outer ring callout -->
+  <line x1="420" y1="195" x2="500" y2="195" stroke="#2a1a0e" stroke-width="0.5"/>
+  <circle cx="500" cy="195" r="3" fill="#2a1a0e"/>
+  <text x="510" y="190" font-family="'Inter', sans-serif" font-size="11" fill="#2a1a0e" font-weight="600">produces vocabulary</text>
+  <text x="510" y="205" font-family="'Inter', sans-serif" font-size="10" fill="#545454">the philosophical foundation</text>
+
+  <!-- Middle ring callout -->
+  <line x1="365" y1="260" x2="500" y2="260" stroke="#2a1a0e" stroke-width="0.5"/>
+  <circle cx="500" cy="260" r="3" fill="#2a1a0e"/>
+  <text x="510" y="255" font-family="'Inter', sans-serif" font-size="11" fill="#C8102E" font-weight="600">produces lists</text>
+  <text x="510" y="270" font-family="'Inter', sans-serif" font-size="10" fill="#545454">five-column Delegate &amp; Guard</text>
+
+  <!-- Inner ring callout -->
+  <line x1="315" y1="325" x2="500" y2="325" stroke="#2a1a0e" stroke-width="0.5"/>
+  <circle cx="500" cy="325" r="3" fill="#2a1a0e"/>
+  <text x="510" y="320" font-family="'Inter', sans-serif" font-size="11" fill="#2a1a0e" font-weight="600">produces actions</text>
+  <text x="510" y="335" font-family="'Inter', sans-serif" font-size="10" fill="#545454">Do This / Never Do This pairs</text>
+
+  <text x="350" y="462" text-anchor="middle" font-family="'EB Garamond', Georgia, serif" font-size="11" fill="#C8102E" font-style="italic">Conceptual → Operational → Execution: the levels are a stack, not synonyms.</text>
+</svg>

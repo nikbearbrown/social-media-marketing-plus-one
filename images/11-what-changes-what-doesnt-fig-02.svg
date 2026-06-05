@@ -1,0 +1,108 @@
+<!--
+  Capability-Bound vs Attribution-Bound (Durable vs Decaying Layer)
+  Book: Social Media Marketing plus One
+  Chapter: 11-what-changes-what-doesnt
+  Figure: 02
+  Type: comparison
+  Generated: 2026-05-27
+  Source: pantry/11-what-changes-what-doesnt-cajal.md
+-->
+<svg viewBox="0 0 700 480" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="fig-title-02">
+  <title id="fig-title-02">Capability-Bound vs Attribution-Bound</title>
+  <desc>Two columns separate Guard items by why they are guarded. The left column lists capability-bound items that will migrate to Delegate as models improve. The right lists attribution-bound items that stay human even at very high model capability. A time arrow underneath shows drift left to right.</desc>
+  <metadata><cajal:figure xmlns:cajal="https://bearbrown.ai/cajal/1.0" book="Social Media Marketing plus One" book-slug="social-media-marketing-plus-one" chapter="11-what-changes-what-doesnt" figure-number="02" figure-title="Capability-Bound vs Attribution-Bound" figure-slug="capability-vs-attribution-bound" figure-type="comparison" priority="Critical" author="Nik Bear Brown Milivoje Davidovic" date-generated="2026-05-27" source-file="pantry/11-what-changes-what-doesnt-cajal.md"/></metadata>
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#2a1a0e"/></marker>
+    <marker id="arrowGray" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#545454"/></marker>
+  </defs>
+  <rect x="0" y="0" width="700" height="480" fill="#FFFFFF"/>
+  <text x="32" y="36" font-family="'EB Garamond', 'Garamond', Georgia, serif" font-size="14" fill="#2a1a0e">Capability-bound vs attribution-bound — the decaying layer and the durable one</text>
+  <text x="32" y="56" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="11" fill="#545454">Two reasons a task lives on the Guard List. Only one of them decays as models improve.</text>
+
+  <!-- Left column header -->
+  <rect x="32" y="80" width="306" height="36" fill="#2a1a0e" opacity="0.10"/>
+  <text x="185" y="103" text-anchor="middle" font-family="'Inter', sans-serif" font-size="12" font-weight="700" fill="#2a1a0e">Capability-bound (decaying layer)</text>
+  <text x="185" y="116" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10" fill="#545454">today a Guard item; tomorrow may migrate to Delegate</text>
+
+  <!-- Right column header -->
+  <rect x="362" y="80" width="306" height="36" fill="#C8102E" opacity="0.12"/>
+  <text x="515" y="103" text-anchor="middle" font-family="'Inter', sans-serif" font-size="12" font-weight="700" fill="#C8102E">Attribution-bound (durable layer)</text>
+  <text x="515" y="116" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10" fill="#545454">stays human even at very high model capability</text>
+
+  <!-- Left column items -->
+  <rect x="32" y="124" width="306" height="244" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="0.75"/>
+
+  <g font-family="'Inter', sans-serif" font-size="11" fill="#2a1a0e">
+    <circle cx="56" cy="148" r="5" fill="#545454"/>
+    <text x="72" y="152">Caption variation across A/B sets</text>
+    <text x="72" y="166" font-size="9" fill="#787878">model capability gap, no structural reason</text>
+
+    <circle cx="56" cy="190" r="5" fill="#545454"/>
+    <text x="72" y="194">Hashtag and tag research</text>
+    <text x="72" y="208" font-size="9" fill="#787878">pattern-shaped recall, weakly contextual</text>
+
+    <circle cx="56" cy="232" r="5" fill="#545454"/>
+    <text x="72" y="236">Schedule optimization</text>
+    <text x="72" y="250" font-size="9" fill="#787878">timing inference from prior engagement</text>
+
+    <circle cx="56" cy="274" r="5" fill="#545454"/>
+    <text x="72" y="278">First-pass image alt text</text>
+    <text x="72" y="292" font-size="9" fill="#787878">describable from pixels; quality-check still human</text>
+
+    <circle cx="56" cy="316" r="5" fill="#545454"/>
+    <text x="72" y="320">Reply triage / first-draft response</text>
+    <text x="72" y="334" font-size="9" fill="#787878">classification + template selection</text>
+
+    <circle cx="56" cy="358" r="5" fill="#545454"/>
+    <text x="72" y="362">Trend-watch summarization</text>
+  </g>
+
+  <!-- Right column items -->
+  <rect x="362" y="124" width="306" height="244" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="0.75"/>
+
+  <g font-family="'Inter', sans-serif" font-size="11" fill="#2a1a0e">
+    <circle cx="386" cy="148" r="5" fill="#C8102E"/>
+    <text x="402" y="152">CEO / founder byline content</text>
+    <text x="402" y="166" font-size="9" fill="#787878">accountability — name is the artifact</text>
+
+    <circle cx="386" cy="190" r="5" fill="#C8102E"/>
+    <text x="402" y="194">Regulated-content sign-off</text>
+    <text x="402" y="208" font-size="9" fill="#787878">structural — record-keeping and liability</text>
+
+    <circle cx="386" cy="232" r="5" fill="#C8102E"/>
+    <text x="402" y="236">Crisis posting and recovery</text>
+    <text x="402" y="250" font-size="9" fill="#787878">relationship — trust is held by a person</text>
+
+    <circle cx="386" cy="274" r="5" fill="#C8102E"/>
+    <text x="402" y="278">Apology and accountability statements</text>
+    <text x="402" y="292" font-size="9" fill="#787878">attribution — apology by a model is not an apology</text>
+
+    <circle cx="386" cy="316" r="5" fill="#C8102E"/>
+    <text x="402" y="320">Community-norm boundary calls</text>
+    <text x="402" y="334" font-size="9" fill="#787878">context — judgment about people in a specific room</text>
+
+    <circle cx="386" cy="358" r="5" fill="#C8102E"/>
+    <text x="402" y="362">Final voice review on owned channels</text>
+  </g>
+
+  <!-- Drift indicator: gray items migrate over time -->
+  <text x="32" y="402" font-family="'Inter', sans-serif" font-size="11" font-weight="700" fill="#2a1a0e">Time</text>
+  <line x1="32" y1="420" x2="668" y2="420" stroke="#2a1a0e" stroke-width="1" marker-end="url(#arrow)"/>
+
+  <!-- Gray drift arrows from left toward right (capability closes) -->
+  <line x1="190" y1="404" x2="320" y2="404" stroke="#545454" stroke-width="1" stroke-dasharray="4 3" marker-end="url(#arrowGray)"/>
+  <text x="255" y="398" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10" font-style="italic" fill="#545454">migrates as capability closes</text>
+
+  <!-- Vermillion items remain locked in place -->
+  <text x="515" y="398" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10" font-style="italic" fill="#C8102E">stays put — does not migrate</text>
+  <circle cx="438" cy="404" r="3" fill="#C8102E"/>
+  <circle cx="468" cy="404" r="3" fill="#C8102E"/>
+  <circle cx="498" cy="404" r="3" fill="#C8102E"/>
+  <circle cx="528" cy="404" r="3" fill="#C8102E"/>
+  <circle cx="558" cy="404" r="3" fill="#C8102E"/>
+  <circle cx="588" cy="404" r="3" fill="#C8102E"/>
+
+  <!-- Footer -->
+  <text x="32" y="450" font-family="'Inter', sans-serif" font-size="10" fill="#545454">Quantity of Guard work decreases. The judgment density of what remains increases.</text>
+  <text x="32" y="466" font-family="'Inter', sans-serif" font-size="10" fill="#545454">Forecast at the task-family level — not at the platform or tool level.</text>
+</svg>

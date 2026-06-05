@@ -1,0 +1,69 @@
+<!--
+  How the delegation log compounds across time
+  Book: Social Media Marketing plus One · Chapter: 12-the-plus-one-practice · Figure: 01
+  Type: timeline · Generated: 2026-05-27 · Source: chapters/12-the-plus-one-practice.md
+-->
+<svg viewBox="0 0 700 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="fig-title-01 fig-desc-01">
+  <title id="fig-title-01">How the delegation log compounds across time</title>
+  <desc id="fig-desc-01">A horizontal timeline showing four log milestones: Month 1 pattern detection, Month 6 map revision, Year 1 professional artifact, Year 3 longitudinal calibration record. Each stage shows what the log reveals that a dashboard does not.</desc>
+  <metadata><cajal:figure xmlns:cajal="https://bearbrown.ai/cajal/1.0" book="Social Media Marketing plus One" chapter="12-the-plus-one-practice" figure-number="01" figure-title="How the delegation log compounds" figure-type="timeline" author="Nik Bear Brown Milivoje Davidovic" date-generated="2026-05-27" source-file="chapters/12-the-plus-one-practice.md"/></metadata>
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#2a1a0e"/></marker>
+  </defs>
+  <rect x="0" y="0" width="700" height="420" fill="#FFFFFF"/>
+
+  <text x="32" y="36" font-family="'EB Garamond', 'Garamond', Georgia, serif" font-size="16" fill="#2a1a0e">How the delegation log compounds</text>
+  <text x="32" y="56" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="11" fill="#545454">Month 1 → Month 6 → Year 1 → Year 3 — what the log reveals at each stage</text>
+
+  <!-- Plot region -->
+  <rect x="56" y="100" width="612" height="220" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="0.75"/>
+
+  <!-- Timeline baseline -->
+  <line x1="80" y1="210" x2="660" y2="210" stroke="#2a1a0e" stroke-width="1" marker-end="url(#arrow)"/>
+
+  <!-- Milestone markers with rising scale -->
+  <circle cx="140" cy="210" r="6" fill="#545454"/>
+  <circle cx="290" cy="210" r="8" fill="#545454"/>
+  <circle cx="450" cy="210" r="10" fill="#C8860E"/>
+  <circle cx="610" cy="210" r="12" fill="#C8102E"/>
+
+  <!-- Tick labels (JetBrains Mono) -->
+  <text x="140" y="232" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="11" fill="#545454">Month 1</text>
+  <text x="290" y="232" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="11" fill="#545454">Month 6</text>
+  <text x="450" y="232" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="11" fill="#545454">Year 1</text>
+  <text x="610" y="232" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="11" fill="#545454">Year 3</text>
+
+  <!-- Stage labels above -->
+  <text x="140" y="135" text-anchor="middle" font-family="'Inter', sans-serif" font-size="12" font-weight="700" fill="#2a1a0e">pattern detection</text>
+  <text x="290" y="135" text-anchor="middle" font-family="'Inter', sans-serif" font-size="12" font-weight="700" fill="#2a1a0e">map revision</text>
+  <text x="450" y="135" text-anchor="middle" font-family="'Inter', sans-serif" font-size="12" font-weight="700" fill="#2a1a0e">professional artifact</text>
+  <text x="610" y="135" text-anchor="middle" font-family="'Inter', sans-serif" font-size="12" font-weight="700" fill="#2a1a0e">calibration record</text>
+
+  <!-- Connector lines from labels to markers -->
+  <line x1="140" y1="142" x2="140" y2="200" stroke="#D4D4D4" stroke-width="0.75"/>
+  <line x1="290" y1="142" x2="290" y2="198" stroke="#D4D4D4" stroke-width="0.75"/>
+  <line x1="450" y1="142" x2="450" y2="196" stroke="#D4D4D4" stroke-width="0.75"/>
+  <line x1="610" y1="142" x2="610" y2="194" stroke="#D4D4D4" stroke-width="0.75"/>
+
+  <!-- Stage descriptions below -->
+  <text x="140" y="258" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10" fill="#545454">surprises and</text>
+  <text x="140" y="272" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10" fill="#545454">drift become</text>
+  <text x="140" y="286" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10" fill="#545454">visible</text>
+
+  <text x="290" y="258" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10" fill="#545454">items move</text>
+  <text x="290" y="272" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10" fill="#545454">Delegate ↔ Guard</text>
+  <text x="290" y="286" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10" fill="#545454">with reasoning</text>
+
+  <text x="450" y="258" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10" fill="#545454">evidence of</text>
+  <text x="450" y="272" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10" fill="#545454">calibrated</text>
+  <text x="450" y="286" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10" fill="#545454">judgment</text>
+
+  <text x="610" y="258" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10" fill="#545454">longitudinal</text>
+  <text x="610" y="272" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10" fill="#545454">record AI cannot</text>
+  <text x="610" y="286" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10" fill="#545454">produce for you</text>
+
+  <!-- Bottom callout -->
+  <line x1="32" y1="350" x2="668" y2="350" stroke="#D4D4D4" stroke-width="0.75"/>
+  <text x="32" y="372" font-family="'Inter', sans-serif" font-size="11" fill="#2a1a0e">The model has a context window.</text>
+  <text x="32" y="390" font-family="'Inter', sans-serif" font-size="11" fill="#C8102E">The practitioner has a career.</text>
+</svg>

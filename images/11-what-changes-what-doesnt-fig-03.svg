@@ -1,0 +1,109 @@
+<!--
+  Three Trajectory Camps
+  Book: Social Media Marketing plus One
+  Chapter: 11-what-changes-what-doesnt
+  Figure: 03
+  Type: comparison
+  Generated: 2026-05-27
+  Source: pantry/11-what-changes-what-doesnt-cajal.md
+-->
+<svg viewBox="0 0 700 480" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="fig-title-03">
+  <title id="fig-title-03">Three Trajectory Camps</title>
+  <desc>Three columns name the current camps on AI capability trajectory — Capability stagnation, Capability plus structural limits, and Capability solves judgment. Each lists what the camp predicts and what evidence would change its mind. The middle camp is highlighted as the book's working assumption.</desc>
+  <metadata><cajal:figure xmlns:cajal="https://bearbrown.ai/cajal/1.0" book="Social Media Marketing plus One" book-slug="social-media-marketing-plus-one" chapter="11-what-changes-what-doesnt" figure-number="03" figure-title="Three Trajectory Camps" figure-slug="three-trajectory-camps" figure-type="comparison" priority="Important" author="Nik Bear Brown Milivoje Davidovic" date-generated="2026-05-27" source-file="pantry/11-what-changes-what-doesnt-cajal.md"/></metadata>
+  <defs><marker id="arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#2a1a0e"/></marker></defs>
+  <rect x="0" y="0" width="700" height="480" fill="#FFFFFF"/>
+  <text x="32" y="36" font-family="'EB Garamond', 'Garamond', Georgia, serif" font-size="14" fill="#2a1a0e">Three trajectory camps — what each one predicts, and what would change its mind</text>
+  <text x="32" y="56" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="11" fill="#545454">The book sits in the middle camp: capability keeps closing, but structural reasons keep some work human.</text>
+
+  <!-- Column 1: Capability stagnation -->
+  <rect x="40" y="80" width="200" height="360" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="0.75"/>
+  <rect x="40" y="80" width="200" height="40" fill="#787878"/>
+  <text x="140" y="98" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" font-weight="700" fill="#FFFFFF">Camp 1</text>
+  <text x="140" y="113" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10" fill="#FFFFFF">Capability stagnation</text>
+
+  <!-- Mini curve illustration -->
+  <line x1="60" y1="190" x2="220" y2="190" stroke="#2a1a0e" stroke-width="1"/>
+  <line x1="60" y1="135" x2="60" y2="190" stroke="#2a1a0e" stroke-width="1"/>
+  <path d="M 60 175 Q 110 162 160 158 T 220 156" fill="none" stroke="#787878" stroke-width="1.5"/>
+
+  <text x="56" y="216" font-family="'Inter', sans-serif" font-size="10" font-weight="700" fill="#2a1a0e">predicts</text>
+  <text x="56" y="232" font-family="'Inter', sans-serif" font-size="10" fill="#2a1a0e">scaling laws bend;</text>
+  <text x="56" y="246" font-family="'Inter', sans-serif" font-size="10" fill="#2a1a0e">capability flattens;</text>
+  <text x="56" y="260" font-family="'Inter', sans-serif" font-size="10" fill="#2a1a0e">Guard List shape</text>
+  <text x="56" y="274" font-family="'Inter', sans-serif" font-size="10" fill="#2a1a0e">stays roughly as today.</text>
+
+  <text x="56" y="304" font-family="'Inter', sans-serif" font-size="10" font-weight="700" fill="#2a1a0e">would change mind if:</text>
+  <text x="56" y="320" font-family="'Inter', sans-serif" font-size="10" fill="#545454">METR doublings continue</text>
+  <text x="56" y="334" font-family="'Inter', sans-serif" font-size="10" fill="#545454">past 12 more months;</text>
+  <text x="56" y="348" font-family="'Inter', sans-serif" font-size="10" fill="#545454">long-horizon agent</text>
+  <text x="56" y="362" font-family="'Inter', sans-serif" font-size="10" fill="#545454">benchmarks crack.</text>
+
+  <text x="56" y="392" font-family="'Inter', sans-serif" font-size="10" font-style="italic" fill="#787878">LeCun, Marcus,</text>
+  <text x="56" y="406" font-family="'Inter', sans-serif" font-size="10" font-style="italic" fill="#787878">Kambhampati</text>
+
+  <!-- Classification dot below -->
+  <circle cx="140" cy="428" r="6" fill="#787878"/>
+
+  <!-- Column 2: Capability + structural limits (BOOK'S CAMP — red) -->
+  <rect x="252" y="80" width="200" height="360" fill="#C8102E" opacity="0.08" stroke="#C8102E" stroke-width="1.5"/>
+  <rect x="252" y="80" width="200" height="40" fill="#C8102E"/>
+  <text x="352" y="98" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" font-weight="700" fill="#FFFFFF">Camp 2 — book's working assumption</text>
+  <text x="352" y="113" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10" fill="#FFFFFF">Capability + structural limits remain</text>
+
+  <!-- Mini curve -->
+  <line x1="272" y1="190" x2="432" y2="190" stroke="#2a1a0e" stroke-width="1"/>
+  <line x1="272" y1="135" x2="272" y2="190" stroke="#2a1a0e" stroke-width="1"/>
+  <path d="M 272 175 Q 322 150 372 142 T 432 138" fill="none" stroke="#C8102E" stroke-width="1.5"/>
+  <line x1="272" y1="155" x2="432" y2="155" stroke="#C8102E" stroke-width="0.75" stroke-dasharray="3 2"/>
+
+  <text x="268" y="216" font-family="'Inter', sans-serif" font-size="10" font-weight="700" fill="#2a1a0e">predicts</text>
+  <text x="268" y="232" font-family="'Inter', sans-serif" font-size="10" fill="#2a1a0e">capability keeps closing;</text>
+  <text x="268" y="246" font-family="'Inter', sans-serif" font-size="10" fill="#2a1a0e">attribution-bound items</text>
+  <text x="268" y="260" font-family="'Inter', sans-serif" font-size="10" fill="#2a1a0e">stay human; Guard List</text>
+  <text x="268" y="274" font-family="'Inter', sans-serif" font-size="10" fill="#2a1a0e">shrinks in quantity, grows</text>
+  <text x="268" y="288" font-family="'Inter', sans-serif" font-size="10" fill="#2a1a0e">in judgment density.</text>
+
+  <text x="268" y="318" font-family="'Inter', sans-serif" font-size="10" font-weight="700" fill="#2a1a0e">would change mind if:</text>
+  <text x="268" y="334" font-family="'Inter', sans-serif" font-size="10" fill="#545454">regulators accept</text>
+  <text x="268" y="348" font-family="'Inter', sans-serif" font-size="10" fill="#545454">AI sign-off as compliant;</text>
+  <text x="268" y="362" font-family="'Inter', sans-serif" font-size="10" fill="#545454">audiences stop</text>
+  <text x="268" y="376" font-family="'Inter', sans-serif" font-size="10" fill="#545454">distinguishing voice.</text>
+
+  <text x="268" y="406" font-family="'Inter', sans-serif" font-size="10" font-style="italic" fill="#C8102E">the position of</text>
+  <text x="268" y="418" font-family="'Inter', sans-serif" font-size="10" font-style="italic" fill="#C8102E">this book</text>
+
+  <circle cx="352" cy="428" r="6" fill="#C8102E"/>
+
+  <!-- Column 3: Capability solves judgment -->
+  <rect x="464" y="80" width="200" height="360" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="0.75"/>
+  <rect x="464" y="80" width="200" height="40" fill="#ADADAD"/>
+  <text x="564" y="98" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" font-weight="700" fill="#FFFFFF">Camp 3</text>
+  <text x="564" y="113" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10" fill="#FFFFFF">Capability solves judgment</text>
+
+  <!-- Mini curve: overhang -->
+  <line x1="484" y1="190" x2="644" y2="190" stroke="#2a1a0e" stroke-width="1"/>
+  <line x1="484" y1="135" x2="484" y2="190" stroke="#2a1a0e" stroke-width="1"/>
+  <path d="M 484 178 L 540 172 L 580 168 Q 610 165 644 140" fill="none" stroke="#545454" stroke-width="1.5"/>
+
+  <text x="480" y="216" font-family="'Inter', sans-serif" font-size="10" font-weight="700" fill="#2a1a0e">predicts</text>
+  <text x="480" y="232" font-family="'Inter', sans-serif" font-size="10" fill="#2a1a0e">scaling + agents close</text>
+  <text x="480" y="246" font-family="'Inter', sans-serif" font-size="10" fill="#2a1a0e">capability and erode</text>
+  <text x="480" y="260" font-family="'Inter', sans-serif" font-size="10" fill="#2a1a0e">structural barriers too;</text>
+  <text x="480" y="274" font-family="'Inter', sans-serif" font-size="10" fill="#2a1a0e">Guard List approaches</text>
+  <text x="480" y="288" font-family="'Inter', sans-serif" font-size="10" fill="#2a1a0e">empty.</text>
+
+  <text x="480" y="318" font-family="'Inter', sans-serif" font-size="10" font-weight="700" fill="#2a1a0e">would change mind if:</text>
+  <text x="480" y="334" font-family="'Inter', sans-serif" font-size="10" fill="#545454">a public crisis is</text>
+  <text x="480" y="348" font-family="'Inter', sans-serif" font-size="10" fill="#545454">resolved cleanly by</text>
+  <text x="480" y="362" font-family="'Inter', sans-serif" font-size="10" fill="#545454">an AI agent without</text>
+  <text x="480" y="376" font-family="'Inter', sans-serif" font-size="10" fill="#545454">a named human owner.</text>
+
+  <text x="480" y="406" font-family="'Inter', sans-serif" font-size="10" font-style="italic" fill="#787878">Amodei,</text>
+  <text x="480" y="418" font-family="'Inter', sans-serif" font-size="10" font-style="italic" fill="#787878">continuation-scaling camp</text>
+
+  <circle cx="564" cy="428" r="6" fill="#ADADAD"/>
+
+  <!-- Bottom: shared question -->
+  <text x="350" y="465" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10" font-style="italic" fill="#545454">Pick a camp. Write down the falsifier. Re-read it every quarter.</text>
+</svg>

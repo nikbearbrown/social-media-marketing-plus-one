@@ -22,6 +22,10 @@ The RIA case illustrates what happens when you skip that application step. The b
 
 But regulatory exposure is only one axis of calibration. The other two are shape and tail-risk, and these vary just as much across contexts, though less visibly.
 
+![Isometric cube with three axes: shape (pattern → judgment), regulatory weight (light → heavy), and reputational tail-risk (low → high). The near-origin corner is the Delegate region; the far corner is the Guard region; intermediate vertices are marked as boundary cases. A diagonal line shows the Guard List growing as tasks move toward the judgment-shaped, heavy-regulated, high-tail-risk corner.](../images/10-building-your-own-map-fig-01.png)
+
+*Figure 10.1 — Three-axis classification. The Guard List grows along the diagonal from the near corner to the far one.*
+
 <!-- → [INFOGRAPHIC: three-axis classification diagram — x-axis: pattern-shaped to judgment-shaped; y-axis: low regulatory weight to heavy regulated; z-axis: low reputational tail-risk to high; quadrants labeled with example task types; the Guard List grows as you move toward the judgment-shaped + heavy-regulated + high-tail-risk corner] -->
 
 Shape is the distinction the whole book has been building: pattern-shaped work follows a transferable recipe; judgment-shaped work depends on context the recipe cannot capture. You know this distinction by now. What you may not have mapped is which tasks in your specific workflow fall where. A DTC founder's "is today the day to post about my father's funeral" is judgment-shaped in a way that no classification framework produces from the outside — only she knows the relationship between her personal narrative and her audience's tolerance for it. A hospital system's "does this patient story require explicit HIPAA authorization" is judgment-shaped in a way that requires knowing whether the poster is identifiable by the 18 identifiers under 45 CFR Part 164, which requires a person who has read the rule and is accountable to the institution.
@@ -48,6 +52,19 @@ You begin with inventory. Not a theoretical list of tasks in your role — a lis
 
 Then classify each item on the three axes: shape, regulatory weight, and reputational tail-risk. The classification is a draft, not a verdict. Tasks that are judgment-shaped, heavily regulated, and high tail-risk go on the Guard List by default. Tasks that are pattern-shaped, lightly regulated, and low tail-risk go on the Delegate List by default. Everything else is a boundary case, and boundary cases are where the map does its most important work — because they are the tasks most likely to be classified by default rather than by decision, and default classification is where the borrowed map gets firms into trouble.
 
+| Industry / Task | Shape | Regulatory weight | Tail-risk | Verdict |
+|---|---|---|---|---|
+| Financial advisory — LinkedIn post implying performance | Judgment-shaped | Heavy (SEC Marketing Rule) | High | Guard |
+| Hospital system — disease-awareness content, no patient connection | Pattern-shaped | Moderate (HIPAA-adjacent) | Low | Delegate |
+| DTC founder-led brand — post in founder's personal narrative voice | Judgment-shaped | Light | High | Guard |
+| B2B SaaS — top-of-funnel thought-leadership draft | Pattern-shaped | Light | Low | Delegate |
+| All — analytics summary for internal use | Pattern-shaped | Light | Low | Delegate |
+| Hospital system — response to public patient post | Judgment-shaped | Heavy (HIPAA / 45 CFR Part 164) | High | Guard |
+| B2B SaaS — comment touching a named account in active deal | Judgment-shaped | Light | Medium | Boundary |
+| DTC apparel — paid copy variation on approved creative | Pattern-shaped | Light | Low | Delegate |
+
+*Table 10.1 — Worked classification across industries. Same audit method; verdicts differ because the regulatory weight and tail-risk inputs differ.*
+
 <!-- → [TABLE: worked classification example — three columns: task / three-axis score / Delegate or Guard or boundary; rows spanning industries: financial advisory (LinkedIn post implying performance: judgment-shaped, heavy, high → Guard), hospital system (disease-awareness content: pattern-shaped, moderate, low → Delegate), DTC founder (post in founder's personal narrative voice: judgment-shaped, light, high → Guard), B2B SaaS (top-of-funnel thought leadership draft: pattern-shaped, light, low → Delegate), all (analytics summary for internal use: pattern-shaped, light, low → Delegate)] -->
 
 After classification comes the tool audit, which is the step most practitioners skip and which makes the map describe a workflow that does not exist. The Salesforce and Microsoft workforce surveys from 2024–2025 both documented that the majority of knowledge workers using AI at work do so on personal accounts with unsanctioned tools. This is not a moral failure — it is what happens when organizational AI policy lags individual capability. But a delegation map that does not account for shadow AI use cannot be calibrated against actual risk. Surface the actual tool use without punishment, because you cannot calibrate what you cannot see.
@@ -71,6 +88,10 @@ The map is a living document, not a one-time artifact, and treating it as static
 The other five failure modes are worth naming briefly, because each is common and each has a specific remedy.
 
 Borrowing someone else's map wholesale is the Meridian failure — the borrowed map has not done your regulatory analysis. Skipping the tool audit means the map describes a workflow that does not exist. Letting AI write the Guard List unsupervised produces a plausible-looking list that is precisely least reliable where reliability matters most, because regulatory specificity is exactly where the model's training data is noisiest. Outsourcing the judgment-surface articulation — asking the model to explain why you personally guard a certain kind of post — produces a confident-sounding answer that is probably not your actual reason; the discomfort of articulating tacit knowledge is the work. And building the map without compliance produces shelfware: a map that compliance has not seen is theatre, and you will revert to manual drafting the first time something feels uncertain because nobody has authorized you to delegate.
+
+![Clockwise nine-station cycle. Stations in order: inventory (two weeks of actual tasks), classify (three axes), tool audit, draft Delegate/Guard lists, boundary cases, one-week trial, revise, socialize with compliance, quarterly re-audit. The return arrow from station nine back to station one is drawn in red to mark the periodic loop. The center holds three small output circles: Delegate, Guard, and the boundary backlog.](../images/10-building-your-own-map-fig-02.png)
+
+*Figure 10.2 — The audit protocol cycle. The red return arrow is the discipline: quarterly re-audit closes the loop and re-opens the cycle.*
 
 <!-- → [IMAGE: map lifecycle diagram — audit (two weeks of actual tasks) → classify (three axes) → tool audit → draft Delegate/Guard lists → identify boundary cases → one-week trial → revise → socialize with compliance → quarterly re-audit; arrows showing cyclical review] -->
 
@@ -105,3 +126,15 @@ The chapter claims that the Guard List is the part of the map most likely to be 
 **Exercise 4 — Draft or audit a professional deliverable**
 
 Using the Chapter 10 protocol, produce a socialization memo for your actual or hypothetical map. The memo should frame the Delegate/Guard map as a risk-management document, specify who has reviewed the regulatory assumptions, name the boundary cases and the re-audit schedule, and identify who in the org has authority to approve changes to the Guard List. Draft a first version using a language model, then audit it against your actual organizational structure and your CCO's or manager's known concerns. Rewrite every section where the model's framing would not survive the first conversation with compliance.
+
+---
+
+## Prompts
+
+### Figure 10.1 — Three-Axis Classification Space
+
+Build an isometric three-axis cube in D3 v7. Three orthogonal axes emerge from a bottom-left origin: x-axis shape (pattern → judgment) runs right; y-axis regulatory weight (light → heavy) runs up; z-axis reputational tail-risk (low → high) projects up-right at an isometric angle. Draw the back-face cube edges as 0.5pt dashed gray hairlines and the three axes as solid 1pt ink lines with arrowheads. Place eight vertex nodes at the cube corners: the near-origin corner (pattern, light, low) is a secondary-gray r=10 filled circle labeled "Delegate"; the far corner (judgment, heavy, high) is a red r=10 filled circle labeled "Guard"; the six intermediate vertices are ochre r=8 filled circles marking boundary regions. Draw a single dashed 1.25pt ink diagonal connecting the Delegate and Guard corners with an italic "Guard List grows along this diagonal" label rotated to follow the diagonal. Bottom three-swatch legend in a fill-color box with border hairline. Deliver as a standalone responsive HTML file with role="img", aria-labelledby, and prefers-reduced-motion guard.
+
+### Figure 10.2 — Map Lifecycle (Audit Protocol Cycle)
+
+Build a clockwise nine-station cycle in D3 v7 around a center at width/2, 320 with radius 200. Each station is a 22-radius fill-color circle with a 1pt ink border, numbered 1–9 inside in bold. Station labels and short subtitles placed radially outward. Stations in clockwise order from top: inventory ("two weeks of actual tasks"), classify ("three axes"), tool audit ("incl. shadow AI"), draft lists ("Delegate / Guard"), boundary cases, trial — one week, revise, socialize ("with compliance"), quarterly re-audit. Connect consecutive stations with 1pt ink arc arrows on the cycle perimeter. Draw the final return arc — from station 9 back to station 1 — as a 1.25pt red arc with a red arrowhead, and stroke station 9's outline in red 1.25pt to mark the periodic loop. At the center, place three small output circles: a secondary-gray r=14 Delegate circle, a red r=14 Guard circle, and below them an ochre r=10 boundary backlog circle, each with a small caption. Italic ink footer line at the bottom of the canvas. Deliver as a standalone responsive HTML file with keyboard-reachable stations.
